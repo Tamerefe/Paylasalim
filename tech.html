@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Teknoloji & Nasıl Çalışır — Paylaşalım</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="tech-how-title">Nasıl Çalışır?</h2>
+                    <p data-i18n="tech-how-subtitle">5 basit adımda yolculuğa başla</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 data-i18n="tech-step1-title">Kayıt Ol ve Profil Oluştur</h3>
+                            <p data-i18n="tech-step1-desc">Firebase ile güvenli kayıt, profil fotoğrafı ve tercihlerini
+                                ekle.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 data-i18n="tech-step2-title">Yolculuk Oluştur veya Ara</h3>
+                            <p data-i18n="tech-step2-desc">Sürücüysen yolculuğunu oluştur (başlangıç, bitiş, tarih,
+                                koltuk sayısı). Yolcuysan uygun
+                                yolculukları bul.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 data-i18n="tech-step3-title">Anlık Mesajlaşma ile Anlaş</h3>
+                            <p data-i18n="tech-step3-desc">Uygulama içi güvenli mesajlaşma ile detayları netleştir.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 data-i18n="tech-step4-title">Canlı Takip ile Yolculuğa Çık</h3>
+                            <p data-i18n="tech-step4-desc">Google Maps entegrasyonu ile gerçek zamanlı konum paylaşımı.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3 data-i18n="tech-step5-title">Değerlendir ve Topluluğu Güçlendir</h3>
+                            <p data-i18n="tech-step5-desc">Yolculuk sonrası puanlama sistemiyle güvenilir bir topluluk
+                                oluştur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="tech-stack-title">Teknoloji Stack</h2>
+                    <p data-i18n="tech-stack-subtitle">Modern ve güvenilir teknolojiler</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3 data-i18n="tech-frontend-title">Frontend</h3>
+                        <p data-i18n="tech-frontend-desc">Flutter 3.7.0 • Dart 3.0+</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔥</div>
+                        <h3 data-i18n="tech-backend-title">Backend</h3>
+                        <p data-i18n="tech-backend-desc">Firebase (Firestore, Auth, FCM)</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3 data-i18n="tech-maps-title">Harita</h3>
+                        <p data-i18n="tech-maps-desc">Google Maps API</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3 data-i18n="tech-state-title">State Management</h3>
+                        <p data-i18n="tech-state-desc">Provider</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3 data-i18n="tech-location-title">Konum</h3>
+                        <p data-i18n="tech-location-desc">Geolocator</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔔</div>
+                        <h3 data-i18n="tech-notifications-title">Bildirimler</h3>
+                        <p data-i18n="tech-notifications-desc">Firebase Cloud Messaging</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer-copyright">© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.</p>
+            <nav>
+                <a href="privacy.html" data-i18n="footer-privacy">Gizlilik ve Sorumluluk</a>
+                <a href="privacy.html#kvkk" data-i18n="footer-kvkk">KVKK</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

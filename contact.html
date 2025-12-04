@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>İletişim — Paylaşalım</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="contact-title">İletişim</h2>
+                    <p data-i18n="contact-subtitle">Geri bildirim, kurumsal iş birlikleri, destek veya sorularınız için
+                        bize ulaşın</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span class="info-icon">📧</span>
+                            <div>
+                                <h4 data-i18n="contact-email-label">E-posta</h4>
+                                <a href="mailto:info@paylasalim.com">info@paylasalim.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🌍</span>
+                            <div>
+                                <h4 data-i18n="contact-website-label">Website</h4>
+                                <a href="https://paylasalim.com" target="_blank">paylasalim.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer-copyright">© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.</p>
+            <nav>
+                <a href="privacy.html" data-i18n="footer-privacy">Gizlilik ve Sorumluluk</a>
+                <a href="privacy.html#kvkk" data-i18n="footer-kvkk">KVKK</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

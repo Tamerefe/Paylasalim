@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hakkımızda — Paylaşalım</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="about-title">Hakkımızda</h2>
+                    <p data-i18n="about-subtitle">Kuzey Kıbrıs için geliştirilmiş güvenli paylaşımlı yolculuk uygulaması
+                    </p>
+                </div>
+                <div class="about-content">
+                    <p data-i18n="about-intro"><strong>Paylaşalım</strong>, Kıbrıs'ta yaşayan insanlar için
+                        geliştirilmiş, güvenli ve kullanıcı
+                        dostu bir paylaşımlı yolculuk uygulamasıdır.</p>
+                    <p data-i18n="about-description">Uygulama, yolcuların ve sürücülerin bir araya gelmesini sağlayarak
+                        hem ekonomik hem de çevre
+                        dostu bir ulaşım çözümü sunar. Flutter ve Firebase teknolojileriyle geliştirilmiş modern bir
+                        mobil platformdur.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 data-i18n="about-feature1-title">Güvenli Firebase Authentication</h3>
+                        <p data-i18n="about-feature1-desc">Kullanıcı bilgileriniz Firebase ile güvence altında</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3 data-i18n="about-feature2-title">Çevre Dostu Paylaşım</h3>
+                        <p data-i18n="about-feature2-desc">Karşılıklı paylaşımla karbon ayak izini azalt</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💸</div>
+                        <h3 data-i18n="about-feature3-title">Ekonomik Yolculuklar</h3>
+                        <p data-i18n="about-feature3-desc">Yakıt masraflarını paylaşarak tasarruf edin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer-copyright">© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.</p>
+            <nav>
+                <a href="privacy.html" data-i18n="footer-privacy">Gizlilik ve Sorumluluk</a>
+                <a href="privacy.html#kvkk" data-i18n="footer-kvkk">KVKK</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

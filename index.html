@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Paylaşalım — Kuzey Kıbrıs Yolculuk Paylaşımı</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="badge" data-i18n="hero-badge">🚗 Flutter ile Geliştirildi</span>
+                        <h1 data-i18n="hero-title">Güvenli ve Uygun<br>Yolculuk Paylaşımı</h1>
+                        <p class="hero-subtitle" data-i18n="hero-subtitle">Sürücüler ve yolcuları akıllı şekilde
+                            eşleştiren modern ulaşım çözümü.
+                            Kıbrıs'ta ekonomik ve çevre dostu seyahat.</p>
+                        <div class="hero-buttons">
+                            <a href="download.html" class="btn btn-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                                </svg>
+                                <span data-i18n="hero-download">Uygulamayı İndir</span>
+                            </a>
+                            <a href="tech.html" class="btn btn-secondary" data-i18n="hero-explore">Özellikleri
+                                Keşfet</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <strong>100%</strong>
+                                <span data-i18n="stat-secure">Güvenli</span>
+                            </div>
+                            <div class="stat">
+                                <strong>%40</strong>
+                                <span data-i18n="stat-savings">Tasarruf</span>
+                            </div>
+                            <div class="stat">
+                                <strong>7/24</strong>
+                                <span data-i18n="stat-support">Destek</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-notch"></div>
+                                <div class="phone-screen">
+                                    <div class="screenshot-slider">
+                                        <img src="assets/slider/sc1.png" alt="Screenshot 1" class="slider-image active">
+                                        <img src="assets/slider/sc2.png" alt="Screenshot 2" class="slider-image">
+                                        <img src="assets/slider/sc3.png" alt="Screenshot 3" class="slider-image">
+                                        <img src="assets/slider/sc4.png" alt="Screenshot 4" class="slider-image">
+                                        <img src="assets/slider/sc5.png" alt="Screenshot 5" class="slider-image">
+                                    </div>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-element el-1">💚</div>
+                        <div class="floating-element el-2">⭐</div>
+                        <div class="floating-element el-3">🌿</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="features-title">Neden Paylaşalım?</h2>
+                    <p data-i18n="features-subtitle">Modern teknoloji ile güvenli yolculuk deneyimi</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3 data-i18n="feature1-title">Kullanıcı Yönetimi</h3>
+                        <p data-i18n="feature1-desc">Firebase Authentication ile güvenli kayıt, profil yönetimi ve
+                            değerlendirme sistemi.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3 data-i18n="feature2-title">Akıllı Eşleştirme</h3>
+                        <p data-i18n="feature2-desc">Google Maps ile rota optimizasyonu, canlı takip ve mesafe
+                            hesaplama.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3 data-i18n="feature3-title">Anlık Mesajlaşma</h3>
+                        <p data-i18n="feature3-desc">Güvenli iletişim, push bildirimler ve mesaj geçmişi ile kolay
+                            koordinasyon.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3 data-i18n="feature4-title">Konum Servisleri</h3>
+                        <p data-i18n="feature4-desc">GPS entegrasyonu ile hassas konum tespiti ve yakın yolculuk
+                            önerileri.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <h3 data-i18n="feature5-title">Güvenilir Topluluk</h3>
+                        <p data-i18n="feature5-desc">Şeffaf değerlendirme sistemi ile doğrulanmış sürücü ve yolcu
+                            profilleri.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 data-i18n="feature6-title">Uygun Fiyat</h3>
+                        <p data-i18n="feature6-desc">Yakıt ve yol masraflarını paylaş, %40'a varan tasarruf sağla.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Hemen Başla</h2>
+                    <p>Uygulamayı indir, topluluğumuza katıl ve ekonomik yolculuğa başla.</p>
+                    <div class="cta-buttons">
+                        <a href="download.html" class="btn btn-primary btn-lg">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                <line x1="12" y1="18" x2="12" y2="18" />
+                            </svg>
+                            Uygulamayı İndir
+                        </a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer-copyright">© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.</p>
+            <nav>
+                <a href="privacy.html" data-i18n="footer-privacy">Gizlilik ve Sorumluluk</a>
+                <a href="privacy.html#kvkk" data-i18n="footer-kvkk">KVKK</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

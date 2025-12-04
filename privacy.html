@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gizlilik ve Sorumluluk Reddi — Paylaşalım</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="privacy-policy">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Gizlilik Politikası ve Sorumluluk Reddi</h2>
+                    <p>Kişisel Verilerin Korunması ve Kullanım Şartları</p>
+                </div>
+
+                <div class="policy-content">
+                    <div class="policy-section">
+                        <h3>1. Genel Bilgiler</h3>
+                        <p>Paylaşalım uygulaması, kullanıcılar arasında paylaşımlı yolculuk organizasyonunu
+                            kolaylaştırmak amacıyla geliştirilmiş bir platformdur. Bu uygulama herhangi bir ticari
+                            kuruluş, şirket veya resmi kurum tarafından işletilmemektedir.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>2. Sorumluluk Reddi</h3>
+                        <p><strong>Paylaşalım platformu ve geliştiricileri, aşağıdaki konularda hiçbir sorumluluk kabul
+                                etmez:</strong></p>
+                        <ul>
+                            <li>Kullanıcılar arasında gerçekleşen yolculuklar sırasında meydana gelebilecek kaza,
+                                yaralanma, ölüm veya maddi/manevi zararlar,</li>
+                            <li>Kullanıcılar arasındaki anlaşmazlıklar, tartışmalar veya hukuki uyuşmazlıklar,</li>
+                            <li>Sürücülerin trafik kurallarına uymaması, yetersiz araç bakımı veya güvenliksiz sürüş
+                                davranışları,</li>
+                            <li>Kullanıcıların birbirlerine karşı gerçekleştirdiği dolandırıcılık, hırsızlık veya suç
+                                teşkil eden eylemler,</li>
+                            <li>Ödeme anlaşmazlıkları, para transferi sorunları veya finansal kayıplar,</li>
+                            <li>Uygulama üzerinden paylaşılan kişisel bilgilerin kötüye kullanılması,</li>
+                            <li>Teknik aksaklıklar, hizmet kesintileri veya veri kayıpları nedeniyle oluşabilecek
+                                zararlar,</li>
+                            <li>Üçüncü taraf servislerin (Google Maps, Firebase vb.) çalışmamasından kaynaklanan
+                                sorunlar.</li>
+                        </ul>
+                        <p><strong>Kullanıcılar, platformu kullanarak bu riskleri kabul etmiş sayılırlar ve tüm
+                                sorumluluğun kendilerine ait olduğunu beyan ederler.</strong></p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>3. Kişisel Verilerin Korunması (KVKK)</h3>
+                        <p>Uygulamanız aşağıdaki kişisel verileri toplamakta ve işlemektedir:</p>
+                        <ul>
+                            <li><strong>Kimlik Bilgileri:</strong> Ad, soyad, profil fotoğrafı</li>
+                            <li><strong>İletişim Bilgileri:</strong> E-posta adresi, telefon numarası</li>
+                            <li><strong>Konum Bilgileri:</strong> GPS koordinatları, yolculuk rotaları</li>
+                            <li><strong>İşlem Bilgileri:</strong> Yolculuk geçmişi, değerlendirmeler, mesajlaşma
+                                kayıtları</li>
+                        </ul>
+                        <p><strong>Verileriniz yalnızca uygulamanın çalışması için gerekli olan amaçlarla
+                                kullanılır:</strong></p>
+                        <ul>
+                            <li>Kullanıcı profili oluşturma ve kimlik doğrulama</li>
+                            <li>Yolculuk eşleştirme ve konum bazlı hizmetler</li>
+                            <li>Kullanıcılar arası iletişim (mesajlaşma)</li>
+                            <li>Güvenlik ve hizmet kalitesinin artırılması</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>4. Veri Güvenliği</h3>
+                        <p>Kişisel verileriniz Firebase platformu üzerinde saklanmaktadır. Firebase Authentication ile
+                            güvenli giriş, Firestore Database ile şifrelenmiş veri depolama sağlanmaktadır.</p>
+                        <p><strong>Ancak, dijital platformlarda %100 güvenlik garanti edilemez. Kullanıcılar bu riski
+                                kabul ederek platformu kullanmalıdır.</strong></p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>5. Veri Paylaşımı</h3>
+                        <p>Kişisel verileriniz üçüncü şahıslarla <strong>asla ticari amaçla paylaşılmaz</strong>. Ancak,
+                            aşağıdaki durumlar için sınırlı veri paylaşımı yapılabilir:</p>
+                        <ul>
+                            <li>Yolculuk eşleştirmesi için diğer kullanıcılarla ad, profil fotoğrafı ve konum bilgisi
+                                paylaşımı</li>
+                            <li>Yasal zorunluluklar gereği (mahkeme kararı, emniyet talebi vb.)</li>
+                            <li>Google Maps API ile konum hizmetleri</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>6. Kullanıcı Hakları</h3>
+                        <p>KVKK kapsamında kullanıcılar aşağıdaki haklara sahiptir:</p>
+                        <ul>
+                            <li>Kişisel verilerinin işlenip işlenmediğini öğrenme</li>
+                            <li>Kişisel verilerin silinmesini veya anonim hale getirilmesini talep etme</li>
+                            <li>Hesabı kapatma ve tüm verilerin silinmesini isteme</li>
+                        </ul>
+                        <p>Bu talepleriniz için <a href="mailto:info@paylasalim.com">info@paylasalim.com</a> adresine
+                            başvurabilirsiniz.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>7. Kullanım Şartları</h3>
+                        <p>Uygulamayı kullanarak aşağıdaki şartları kabul etmiş sayılırsınız:</p>
+                        <ul>
+                            <li>18 yaşından büyük olduğunuzu ve hukuki ehliyete sahip olduğunuzu,</li>
+                            <li>Sağladığınız bilgilerin doğru ve güncel olduğunu,</li>
+                            <li>Diğer kullanıcılara saygılı davranacağınızı ve yasalara uyacağınızı,</li>
+                            <li>Platform üzerinden gerçekleştirilen tüm işlemlerin sorumluluğunun size ait olduğunu,
+                            </li>
+                            <li>Platformun herhangi bir garanti vermediğini ve "olduğu gibi" sunulduğunu kabul
+                                edersiniz.</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>8. Değişiklikler</h3>
+                        <p>Bu gizlilik politikası ve sorumluluk reddi beyanı, önceden haber verilmeksizin
+                            güncellenebilir. Güncellemeler bu sayfada yayınlanacaktır. Kullanıcıların düzenli olarak
+                            kontrol etmesi önerilir.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>9. İletişim</h3>
+                        <p>Sorularınız, şikayetleriniz veya veri talepleriniz için:</p>
+                        <p><strong>E-posta:</strong> <a href="mailto:info@paylasalim.com">info@paylasalim.com</a></p>
+                        <p><strong>Web:</strong> <a href="https://paylasalim.com">paylasalim.com</a></p>
+                    </div>
+
+                    <div class="policy-footer">
+                        <p><strong>Son Güncelleme:</strong> 4 Aralık 2025</p>
+                        <p><em>Bu belge, Paylaşalım platformunun kullanım koşullarını ve sorumluluk sınırlarını
+                                belirtir. Uygulamayı kullanmaya devam ederek bu şartları kabul etmiş sayılırsınız.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer-copyright">© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.</p>
+            <nav>
+                <a href="privacy.html" data-i18n="footer-privacy">Gizlilik ve Sorumluluk</a>
+                <a href="privacy.html#kvkk" data-i18n="footer-kvkk">KVKK</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
