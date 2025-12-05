@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Teknoloji & Nasıl Çalışır — Paylaşalım</title>
+    <title>Teknoloji & Nasıl Çalışır | Paylaşalım</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -144,6 +145,17 @@
     <script src="cookie-consent.js"></script>
     <script src="i18n.js"></script>
     <script src="script.js"></script>
+
+    <!-- Vanilla Tilt for 3D hover effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".feature-card"), {
+            max: 10,
+            speed: 300,
+            glare: true,
+            "max-glare": 0.25,
+        });
+    </script>
 </body>
 
 </html>

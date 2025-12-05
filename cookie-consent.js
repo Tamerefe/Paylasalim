@@ -126,8 +126,6 @@ class CookieConsent {
             });
         `;
         document.head.appendChild(script2);
-
-        console.log('Google Analytics 4 loaded:', GA_MEASUREMENT_ID);
     }
 
     loadMicrosoftClarity() {
@@ -148,8 +146,6 @@ class CookieConsent {
             })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
         `;
         document.head.appendChild(script);
-
-        console.log('Microsoft Clarity loaded:', CLARITY_PROJECT_ID);
     }
 
     showToast(message) {
