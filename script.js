@@ -3,21 +3,24 @@ const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
 
 if (navToggle && mainNav) {
+    const navUl = mainNav.querySelector('ul');
+
     navToggle.addEventListener('click', () => {
         const expanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', String(!expanded));
-        if (!expanded) {
-            mainNav.style.display = 'block';
-        } else {
-            mainNav.style.display = '';
+
+        if (navUl) {
+            navUl.classList.toggle('mobile-active');
         }
     });
 
     // Menüde bir bağlantıya tıklandığında mobil menüyü kapat
     const links = mainNav.querySelectorAll('a');
     links.forEach(a => a.addEventListener('click', () => {
-        if (window.innerWidth <= 680) {
-            mainNav.style.display = '';
+        if (window.innerWidth <= 768) {
+            if (navUl) {
+                navUl.classList.remove('mobile-active');
+            }
             navToggle.setAttribute('aria-expanded', 'false');
         }
     }));
