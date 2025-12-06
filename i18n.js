@@ -44,9 +44,10 @@ const translations = {
         'step3-desc': 'Anlaş, buluş ve güvenli bir şekilde yolculuğa çık.',
 
         // CTA Section
-        'cta-title': 'Yolculuğa Hazır mısın?',
-        'cta-subtitle': 'Hemen uygulamayı indir, ekonomik ve çevre dostu seyahate başla.',
+        'cta-title': 'Hemen Başla',
+        'cta-subtitle': 'Uygulamayı indir, topluluğumuza katıl ve ekonomik yolculuğa başla.',
         'cta-download': 'Uygulamayı İndir',
+        'cta-contact': 'İletişime Geç',
         'cta-learn': 'Daha Fazla Bilgi',
 
         // Footer
@@ -106,6 +107,8 @@ const translations = {
         // Contact Page
         'contact-title': 'İletişim',
         'contact-subtitle': 'Geri bildirim, kurumsal iş birlikleri, destek veya sorularınız için bize ulaşın',
+        'contact-chat-label': 'Canlı Destek',
+        'contact-chat-desc': 'Sağ alt köşedeki yeşil butona tıklayarak anında bizimle sohbet edebilirsiniz!',
         'contact-email-label': 'E-posta',
         'contact-website-label': 'Website'
     },
@@ -153,8 +156,11 @@ const translations = {
         'step3-desc': 'Agree, meet and start your journey safely.',
 
         // CTA Section
-        'cta-title': 'Ready to Travel?',
-        'cta-subtitle': 'Download the app now and start economical and eco-friendly travel.',
+        'cta-title': 'Get Started Now',
+        'cta-subtitle': 'Download the app, join our community and start economical travel.',
+        'cta-download': 'Download App',
+        'cta-contact': 'Get in Touch',
+        'cta-learn': 'Learn More',
         'cta-download': 'Download App',
         'cta-learn': 'Learn More',
 
@@ -215,6 +221,8 @@ const translations = {
         // Contact Page
         'contact-title': 'Contact',
         'contact-subtitle': 'Reach out to us for feedback, corporate partnerships, support or questions',
+        'contact-chat-label': 'Live Support',
+        'contact-chat-desc': 'Click the green button in the bottom right corner to chat with us instantly!',
         'contact-email-label': 'Email',
         'contact-website-label': 'Website'
     }

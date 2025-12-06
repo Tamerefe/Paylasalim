@@ -6,7 +6,7 @@ const ANALYTICS_CONFIG = {
     googleAnalyticsId: 'G-5F6M3DNQKZ',
 
     // Microsoft Clarity Project ID
-    microsoftClarityId: 'XXXXXXXXXX', // Clarity ID'nizi buraya ekleyin
+    microsoftClarityId: 'D70C36C201F549FEA1899E6E3EAA7685', // Clarity ID'nizi buraya ekleyin
 
     // Analytics Settings
     settings: {
