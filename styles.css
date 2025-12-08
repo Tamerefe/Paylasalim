@@ -752,11 +752,87 @@ main {
 /* Footer */
 .site-footer {
     margin-top: auto;
-    padding: 56px 0;
     background: var(--text-dark);
     color: white;
 }
 
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3xl);
+    padding: var(--space-3xl) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h4 {
+    color: white;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-bottom {
+    padding: var(--space-lg) 0;
+}
+
+.footer-bottom p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+/* Old footer styles - keep for backwards compatibility */
 .footer-inner {
     display: flex;
     justify-content: space-between;
@@ -1046,6 +1122,17 @@ main {
         display: flex;
         flex-direction: column;
         gap: 8px;
+    }
+
+    /* New footer responsive */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        padding: var(--space-2xl) 0;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 
     /* Tech page responsive */
@@ -1459,5 +1546,441 @@ main {
         left: var(--space-sm);
         right: var(--space-sm);
         top: var(--space-sm);
+    }
+}
+
+/* Search Page Styles */
+.search-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+    min-height: 100vh;
+}
+
+.search-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.8fr 1.2fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.filter-group label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-dark);
+    white-space: nowrap;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+#search-btn {
+    white-space: nowrap;
+    height: 48px;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    gap: 1rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    font-size: var(--text-2xl);
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    font-size: var(--text-base);
+    color: var(--text-gray);
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+}
+
+/* Trips Grid */
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Trip Card */
+.trip-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.trip-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #F0FFF4 0%, #FFFFFF 100%);
+}
+
+.trip-route {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.trip-from,
+.trip-to {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: var(--text-base);
+}
+
+.trip-arrow {
+    color: var(--primary);
+    font-size: var(--text-2xl);
+    line-height: 1;
+}
+
+.trip-price {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.trip-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.trip-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
+    color: var(--text-gray);
+}
+
+.info-icon {
+    font-size: var(--text-lg);
+}
+
+.trip-driver {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+}
+
+.driver-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: 700;
+}
+
+.driver-info {
+    flex: 1;
+}
+
+.driver-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: var(--text-sm);
+}
+
+.driver-rating {
+    font-size: var(--text-xs);
+    color: var(--text-gray);
+}
+
+.trip-notes {
+    font-size: var(--text-sm);
+    color: var(--text-gray);
+    font-style: italic;
+    padding: 0.75rem;
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary);
+}
+
+.trip-card-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.btn-sm {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--text-sm);
+    width: 100%;
+}
+
+/* Error State */
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 1rem;
+}
+
+.error-icon {
+    font-size: 4rem;
+}
+
+.error-state h3 {
+    font-size: var(--text-2xl);
+    color: var(--text-dark);
+}
+
+.error-state p {
+    color: var(--text-gray);
+    max-width: 500px;
+}
+
+/* Autocomplete Dropdown */
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: -1px;
+}
+
+.autocomplete-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background-color: var(--bg-light);
+}
+
+.autocomplete-item strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Custom Date Picker */
+.custom-date-picker {
+    position: relative;
+    width: 100%;
+}
+
+.filter-group {
+    position: relative;
+}
+
+.date-display {
+    padding: 0.875rem 1rem;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 48px;
+}
+
+.date-display:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.date-display::after {
+    content: '📅';
+    font-size: 1rem;
+}
+
+.day-label {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: var(--text-sm);
+}
+
+.days-grid {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    min-width: 24rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    display: none;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.days-grid.show {
+    display: grid;
+}
+
+.day-btn {
+    aspect-ratio: 1;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.day-btn:hover:not(:disabled) {
+    background: var(--bg-light);
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.day-btn.today {
+    border-color: var(--primary);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.day-btn.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.day-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-filters {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    #search-btn {
+        align-self: stretch;
+    }
+
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trip-card-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .trip-price {
+        align-self: flex-start;
     }
 }

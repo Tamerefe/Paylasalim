@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title id="page-title" data-i18n-title="search-page-title">Yolculuk Ara | Paylaşalım</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="search-title">🔍 Yolculuk Ara</h2>
+                    <p data-i18n="search-subtitle">Rotana uygun yolculukları bul ve sürücülerle iletişime geç</p>
+                </div>
+
+                <!-- Search Filters -->
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label for="from-location" data-i18n="search-from">📍 Nereden</label>
+                        <input type="text" id="from-location" placeholder="Lefkoşa, Gazimağusa..."
+                            data-i18n-placeholder="search-from-placeholder">
+                    </div>
+                    <div class="filter-group">
+                        <label for="to-location" data-i18n="search-to">🎯 Nereye</label>
+                        <input type="text" id="to-location" placeholder="Girne, Güzelyurt..."
+                            data-i18n-placeholder="search-to-placeholder">
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-filter" data-i18n="search-date">📅 Tarih</label>
+                        <div class="custom-date-picker" id="custom-date-picker">
+                            <div class="date-display" id="date-display">
+                                <span class="day-label">Gün Seçin</span>
+                            </div>
+                            <div class="days-grid" id="days-grid">
+                                <!-- JavaScript ile doldurulacak -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="seats-filter" data-i18n="search-seats">👥 Koltuk</label>
+                        <select id="seats-filter">
+                            <option value="" data-i18n="search-seats-all">Tümü</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+                    <button id="search-btn" class="btn btn-primary" data-i18n="search-button">
+                        🔎 Ara
+                    </button>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading-state" class="loading-state" style="display: none;">
+                    <div class="spinner"></div>
+                    <p data-i18n="search-loading">Yolculuklar yükleniyor...</p>
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <div class="empty-icon">🚗</div>
+                    <h3 data-i18n="search-empty-title">Yolculuk Bulunamadı</h3>
+                    <p data-i18n="search-empty-desc">Filtreleri değiştirerek tekrar deneyin veya uygulamadan yeni
+                        yolculuk oluşturun.</p>
+                    <a href="download.html" class="btn btn-primary" data-i18n="search-download-app">Uygulamayı İndir</a>
+                </div>
+
+                <!-- Trips List -->
+                <div id="trips-container" class="trips-grid">
+                    <!-- Trips will be loaded here dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="analytics-config.js"></script>
+    <script src="cookie-consent.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Search Script -->
+    <script src="search.js"></script>
+</body>
+
+</html>

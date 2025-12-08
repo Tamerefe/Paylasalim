@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Gizlilik ve Sorumluluk Reddi | Paylaşalım</title>
+    <title id="page-title" data-i18n-title="privacy-page-title">Gizlilik ve Sorumluluk Reddi | Paylaşalım</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
                 <ul>
                     <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
                     <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
                     <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
                     <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
                     <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
@@ -41,8 +42,8 @@
         <section class="privacy-policy">
             <div class="container">
                 <div class="section-header">
-                    <h2>Gizlilik Politikası ve Sorumluluk Reddi</h2>
-                    <p>Kişisel Verilerin Korunması ve Kullanım Şartları</p>
+                    <h2 data-i18n="privacy-title">Gizlilik Politikası ve Sorumluluk Reddi</h2>
+                    <p data-i18n="privacy-subtitle">Kişisel Verilerin Korunması ve Kullanım Şartları</p>
                 </div>
 
                 <div class="policy-content">
@@ -72,7 +73,7 @@
                             <li>Üçüncü taraf servislerin (Google Maps, Firebase vb.) çalışmamasından kaynaklanan
                                 sorunlar.</li>
                         </ul>
-                        <p id="kvkk"><strong>Kullanıcılar, platformu kullanarak bu riskleri kabul etmiş sayılırlar ve
+                        <p><strong>Kullanıcılar, platformu kullanarak bu riskleri kabul etmiş sayılırlar ve
                                 tüm
                                 sorumluluğun kendilerine ait olduğunu beyan ederler.</strong></p>
                     </div>
@@ -104,7 +105,8 @@
                         <p>Çerezleri tarayıcı ayarlarınızdan dilediğiniz zaman silebilir veya engelleyebilirsiniz. Ancak
                             bazı çerezlerin devre dışı bırakılması sitenin bazı işlevlerinin düzgün çalışmamasına neden
                             olabilir.</p>
-                        <p><strong>Siteyi kullanmaya devam ederek çerez kullanımını kabul etmiş olursunuz.</strong></p>
+                        <p id="kvkk"><strong>Siteyi kullanmaya devam ederek çerez kullanımını kabul etmiş
+                                olursunuz.</strong></p>
                     </div>
 
                     <div class="policy-section">
@@ -235,15 +237,7 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p data-i18n="footer-copyright">© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.</p>
-            <nav>
-                <a href="privacy.html" data-i18n="footer-privacy">Gizlilik ve Sorumluluk</a>
-                <a href="privacy.html#kvkk" data-i18n="footer-kvkk">KVKK</a>
-            </nav>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="analytics-config.js"></script>
     <script src="cookie-consent.js"></script>

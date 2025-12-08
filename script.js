@@ -1,3 +1,22 @@
+// Load footer component
+async function loadFooter() {
+    try {
+        const response = await fetch('footer.html');
+        const footerHTML = await response.text();
+        const footerContainer = document.getElementById('footer-placeholder');
+        if (footerContainer) {
+            footerContainer.innerHTML = footerHTML;
+        }
+    } catch (error) {
+        console.error('Footer yüklenemedi:', error);
+    }
+}
+
+// Load footer on page load
+document.addEventListener('DOMContentLoaded', () => {
+    loadFooter();
+});
+
 // Mobil menü ve aktif link işlevleri
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');

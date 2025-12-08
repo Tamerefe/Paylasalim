@@ -2,7 +2,9 @@
 const translations = {
     tr: {
         // Navigation
+        'nav-home': 'Ana Sayfa',
         'nav-tech': 'Teknoloji & Nasıl Çalışır',
+        'nav-search': 'Yolculuk Ara',
         'nav-download': 'İndir',
         'nav-about': 'Hakkımızda',
         'nav-contact': 'İletişim',
@@ -51,6 +53,10 @@ const translations = {
         'cta-learn': 'Daha Fazla Bilgi',
 
         // Footer
+        'footer-about': 'Paylaşalım',
+        'footer-description': 'Kuzey Kıbrıs\'ta güvenli ve ekonomik paylaşımlı yolculuk platformu.',
+        'footer-links-title': 'Hızlı Bağlantılar',
+        'footer-social-title': 'Sosyal Medya',
         'footer-privacy': 'Gizlilik ve Sorumluluk',
         'footer-kvkk': 'KVKK',
         'footer-copyright': '© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.',
@@ -110,11 +116,33 @@ const translations = {
         'contact-chat-label': 'Canlı Destek',
         'contact-chat-desc': 'Sağ alt köşedeki yeşil butona tıklayarak anında bizimle sohbet edebilirsiniz!',
         'contact-email-label': 'E-posta',
-        'contact-website-label': 'Website'
+        'contact-website-label': 'Website',
+
+        // Search Page
+        'search-title': '🔍 Yolculuk Ara',
+        'search-subtitle': 'Rotana uygun yolculukları bul ve sürücülerle iletişime geç',
+        'search-from': '📍 Nereden',
+        'search-to': '🎯 Nereye',
+        'search-date': '📅 Tarih',
+        'search-seats': '👥 Koltuk',
+        'search-button': '🔎 Ara',
+        'search-loading': 'Yolculuklar yükleniyor...',
+        'search-empty-title': 'Yolculuk Bulunamadı',
+        'search-empty-desc': 'Filtreleri değiştirerek tekrar deneyin veya uygulamadan yeni yolculuk oluşturun.',
+        'search-download-app': 'Uygulamayı İndir',
+        'search-seats-all': 'Tümü',
+
+        // Privacy Page
+        'privacy-title': 'Gizlilik Politikası ve Sorumluluk Reddi',
+        'privacy-subtitle': 'Kişisel Verilerin Korunması ve Kullanım Şartları',
+        'privacy-page-title': 'Gizlilik ve Sorumluluk Reddi | Paylaşalım',
+        'search-page-title': 'Yolculuk Ara | Paylaşalım'
     },
     en: {
         // Navigation
+        'nav-home': 'Home',
         'nav-tech': 'Technology & How It Works',
+        'nav-search': 'Search Trips',
         'nav-download': 'Download',
         'nav-about': 'About Us',
         'nav-contact': 'Contact',
@@ -165,6 +193,10 @@ const translations = {
         'cta-learn': 'Learn More',
 
         // Footer
+        'footer-about': 'Paylaşalım',
+        'footer-description': 'Safe and economical ridesharing platform in North Cyprus.',
+        'footer-links-title': 'Quick Links',
+        'footer-social-title': 'Social Media',
         'footer-privacy': 'Privacy & Disclaimer',
         'footer-kvkk': 'GDPR',
         'footer-copyright': '© 2025 Paylaşalım — North Cyprus. All rights reserved.',
@@ -224,7 +256,27 @@ const translations = {
         'contact-chat-label': 'Live Support',
         'contact-chat-desc': 'Click the green button in the bottom right corner to chat with us instantly!',
         'contact-email-label': 'Email',
-        'contact-website-label': 'Website'
+        'contact-website-label': 'Website',
+
+        // Search Page
+        'search-title': '🔍 Search Trips',
+        'search-subtitle': 'Find trips that match your route and connect with drivers',
+        'search-from': '📍 From',
+        'search-to': '🎯 To',
+        'search-date': '📅 Date',
+        'search-seats': '👥 Seats',
+        'search-button': '🔎 Search',
+        'search-loading': 'Loading trips...',
+        'search-empty-title': 'No Trips Found',
+        'search-empty-desc': 'Try changing filters or create a new trip from the app.',
+        'search-download-app': 'Download App',
+        'search-seats-all': 'All',
+
+        // Privacy Page
+        'privacy-title': 'Privacy Policy and Disclaimer',
+        'privacy-subtitle': 'Personal Data Protection and Terms of Use',
+        'privacy-page-title': 'Privacy & Disclaimer | Paylaşalım',
+        'search-page-title': 'Search Trips | Paylaşalım'
     }
 };
 
@@ -236,6 +288,15 @@ function setLanguage(lang) {
 
     // Update HTML lang attribute
     document.documentElement.lang = lang;
+
+    // Update page title if exists
+    const pageTitle = document.getElementById('page-title');
+    if (pageTitle) {
+        const pageTitleKey = pageTitle.getAttribute('data-i18n-title');
+        if (pageTitleKey && translations[lang][pageTitleKey]) {
+            pageTitle.textContent = translations[lang][pageTitleKey];
+        }
+    }
 
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
