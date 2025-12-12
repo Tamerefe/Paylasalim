@@ -1,3 +1,20 @@
+// Security Functions
+function sanitizeInput(input) {
+    if (typeof input !== 'string') return '';
+    // XSS koruması: Tehlikeli karakterleri temizle
+    return input
+        .replace(/[<>"'`]/g, '')
+        .replace(/javascript:/gi, '')
+        .replace(/on\w+=/gi, '')
+        .trim();
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 // Firebase Configuration
 // Firebase projenizin config bilgilerini buraya ekleyin
 const firebaseConfig = {
@@ -9,40 +26,81 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 
-// Kuzey Kıbrıs Şehirleri
+// Kuzey Kıbrıs Şehirleri ve Mahalleler
 const CITIES = [
+    // Lefkoşa ve Mahalleleri
     'Lefkoşa',
+    'Lefkoşa - Köşklüçiftlik',
+    'Lefkoşa - Hamitköy',
+    'Lefkoşa - Ortaköy',
+    'Lefkoşa - Gönyeli',
+    'Lefkoşa - Haspolat',
+    'Lefkoşa - Minareliköy',
+    'Lefkoşa - Kanlıköy',
+
+    // Gazimağusa ve Mahalleleri
     'Gazimağusa',
+    'Gazimağusa - İsmet Paşa',
+    'Gazimağusa - Karakol',
+    'Gazimağusa - Tuzla',
+    'Gazimağusa - Yeni Boğaziçi',
+    'Gazimağusa - Salamis',
+    'Gazimağusa - Çanakkale',
+
+    // Girne ve Mahalleleri
     'Girne',
+    'Girne - Karşıyaka',
+    'Girne - Karaoğlanoğlu',
+    'Girne - Alsancak',
+    'Girne - Lapta',
+    'Girne - Çatalköy',
+    'Girne - Bellapais',
+    'Girne - Ozanköy',
+    'Girne - Arapköy',
+    'Girne - Kayalar',
+    'Girne - Esentepe',
+
+    // Güzelyurt ve Mahalleleri
     'Güzelyurt',
+    'Güzelyurt - Akincilar',
+    'Güzelyurt - Güngör',
+    'Güzelyurt - Sadrazamköy',
+    'Güzelyurt - Kalkanlı',
+
+    // İskele ve Mahalleleri
     'İskele',
+    'İskele - Boğaz',
+    'İskele - Mehmetçik',
+    'İskele - Kaplıca',
+    'İskele - Yeni Erenköy',
+    'İskele - Büyükkonuk',
+
+    // Lefke
     'Lefke',
+    'Lefke - Gemikonağı',
+    'Lefke - Yeşilyurt',
+
+    // Diğer Bölgeler
     'Dipkarpaz',
-    'Bogaz',
     'Akdoğan',
-    'Alsancak',
-    'Arapköy',
-    'Bellapais',
     'Beyarmudu',
     'Boğazköy',
-    'Çatalköy',
     'Değirmenlik',
-    'Esentepe',
     'Geçitkale',
-    'Gönyeli',
-    'Güngör',
-    'Karaoğlanoğlu',
-    'Karşıyaka',
-    'Kayalar',
-    'Lapta',
     'Maraş',
-    'Ozanköy',
-    'Sadrazamköy',
     'Şehitler',
     'Tatlısu',
-    'Yenierenköy',
-    'Yeni Boğaziçi',
-    'Zeytinlik'
+    'Zeytinlik',
+    'Pile',
+    'Yedidalga',
+    'Çamlıbel',
+    'Kalavaç',
+    'Paşaköy',
+    'Türkeli',
+    'Tatlısu',
+    'Aydınköy',
+    'Bahçeli',
+    'Kaleburnu'
 ];
 
 // Initialize Firebase
@@ -174,6 +232,10 @@ function initAutocomplete() {
     fromInput.addEventListener('input', (e) => handleAutocomplete(e.target, fromAutocomplete));
     toInput.addEventListener('input', (e) => handleAutocomplete(e.target, toAutocomplete));
 
+    // Enter key listeners
+    fromInput.addEventListener('keydown', (e) => handleKeydown(e, fromInput, fromAutocomplete));
+    toInput.addEventListener('keydown', (e) => handleKeydown(e, toInput, toAutocomplete));
+
     // Close on click outside
     document.addEventListener('click', (e) => {
         if (!fromInput.contains(e.target) && !fromAutocomplete.contains(e.target)) {
@@ -195,7 +257,7 @@ function createAutocompleteContainer(input) {
 
 // Handle autocomplete
 function handleAutocomplete(input, container) {
-    const value = input.value.toLowerCase().trim();
+    const value = sanitizeInput(input.value.toLowerCase().trim());
 
     if (value.length < 2) {
         container.style.display = 'none';
@@ -213,23 +275,87 @@ function handleAutocomplete(input, container) {
     }
 
     container.innerHTML = '';
-    matches.slice(0, 8).forEach(city => {
+    matches.slice(0, 8).forEach((city, index) => {
         const item = document.createElement('div');
         item.className = 'autocomplete-item';
+        if (index === 0) {
+            item.classList.add('autocomplete-active');
+        }
 
-        // Highlight matching text
-        const regex = new RegExp(`(${escapeRegex(value)})`, 'gi');
-        item.innerHTML = city.replace(regex, '<strong>$1</strong>');
+        // XSS koruması: Güvenli DOM manipülasyonu
+        const cityText = document.createTextNode('');
+        const parts = city.split(new RegExp(`(${escapeRegex(value)})`, 'gi'));
+        parts.forEach(part => {
+            if (part.toLowerCase() === value.toLowerCase()) {
+                const strong = document.createElement('strong');
+                strong.textContent = part;
+                item.appendChild(strong);
+            } else {
+                item.appendChild(document.createTextNode(part));
+            }
+        });
 
         item.addEventListener('click', () => {
             input.value = city;
             container.style.display = 'none';
+            input.focus();
         });
 
         container.appendChild(item);
     });
 
     container.style.display = 'block';
+}
+
+// Handle keyboard navigation
+function handleKeydown(e, input, container) {
+    const items = container.querySelectorAll('.autocomplete-item');
+
+    if (e.key === 'Enter') {
+        e.preventDefault();
+
+        // Find active item or get first item
+        const activeItem = container.querySelector('.autocomplete-active');
+        if (activeItem) {
+            input.value = activeItem.textContent;
+            container.style.display = 'none';
+        } else if (items.length > 0) {
+            input.value = items[0].textContent;
+            container.style.display = 'none';
+        }
+    } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateItems(items, 1);
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigateItems(items, -1);
+    } else if (e.key === 'Escape') {
+        container.style.display = 'none';
+    }
+}
+
+// Navigate through autocomplete items
+function navigateItems(items, direction) {
+    if (items.length === 0) return;
+
+    let currentIndex = -1;
+    items.forEach((item, index) => {
+        if (item.classList.contains('autocomplete-active')) {
+            currentIndex = index;
+        }
+        item.classList.remove('autocomplete-active');
+    });
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+    }
+
+    items[currentIndex].classList.add('autocomplete-active');
+    items[currentIndex].scrollIntoView({ block: 'nearest' });
 }
 
 // Remove Turkish characters for better matching
@@ -254,12 +380,14 @@ searchBtn.addEventListener('click', () => {
 });
 
 // Enter key on inputs
-[fromInput, toInput, dateInput, seatsInput].forEach(input => {
-    input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            loadTrips();
-        }
-    });
+[fromInput, toInput, seatsInput].forEach(input => {
+    if (input) {
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                loadTrips();
+            }
+        });
+    }
 });
 
 // Load trips from Firestore
@@ -358,7 +486,7 @@ function displayTrips(trips) {
     });
 }
 
-// Create trip card element
+// Create trip card element - XSS korumalı
 function createTripCard(trip) {
     const card = document.createElement('div');
     card.className = 'trip-card';
@@ -367,51 +495,115 @@ function createTripCard(trip) {
     const formattedDate = formatDate(departureDate);
     const formattedTime = formatTime(departureDate);
 
-    card.innerHTML = `
-        <div class="trip-card-header">
-            <div class="trip-route">
-                <span class="trip-from">📍 ${trip.from || 'Başlangıç'}</span>
-                <span class="trip-arrow">→</span>
-                <span class="trip-to">🎯 ${trip.to || 'Varış'}</span>
-            </div>
-            <div class="trip-price">${trip.price || '0'}₺</div>
-        </div>
+    // Güvenli DOM manipülasyonu - XSS koruması
+    const header = document.createElement('div');
+    header.className = 'trip-card-header';
 
-        <div class="trip-card-body">
-            <div class="trip-info">
-                <div class="info-item">
-                    <span class="info-icon">📅</span>
-                    <span>${formattedDate}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">🕐</span>
-                    <span>${formattedTime}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">👥</span>
-                    <span>${trip.availableSeats || 0} koltuk</span>
-                </div>
-            </div>
+    const route = document.createElement('div');
+    route.className = 'trip-route';
 
-            <div class="trip-driver">
-                <div class="driver-avatar">
-                    ${trip.driverName ? trip.driverName.charAt(0).toUpperCase() : '👤'}
-                </div>
-                <div class="driver-info">
-                    <div class="driver-name">${trip.driverName || 'Sürücü'}</div>
-                    <div class="driver-rating">⭐ ${trip.driverRating || '5.0'}</div>
-                </div>
-            </div>
+    const fromSpan = document.createElement('span');
+    fromSpan.className = 'trip-from';
+    fromSpan.textContent = `📍 ${trip.from || 'Başlangıç'}`;
 
-            ${trip.notes ? `<div class="trip-notes">💬 ${trip.notes}</div>` : ''}
-        </div>
+    const arrowSpan = document.createElement('span');
+    arrowSpan.className = 'trip-arrow';
+    arrowSpan.textContent = '→';
 
-        <div class="trip-card-footer">
-            <a href="download.html" class="btn btn-primary btn-sm">
-                📱 Uygulamadan İletişime Geç
-            </a>
-        </div>
-    `;
+    const toSpan = document.createElement('span');
+    toSpan.className = 'trip-to';
+    toSpan.textContent = `🎯 ${trip.to || 'Varış'}`;
+
+    route.appendChild(fromSpan);
+    route.appendChild(arrowSpan);
+    route.appendChild(toSpan);
+
+    const priceDiv = document.createElement('div');
+    priceDiv.className = 'trip-price';
+    priceDiv.textContent = `${trip.price || '0'}₺`;
+
+    header.appendChild(route);
+    header.appendChild(priceDiv);
+
+    // Body
+    const body = document.createElement('div');
+    body.className = 'trip-card-body';
+
+    const tripInfo = document.createElement('div');
+    tripInfo.className = 'trip-info';
+
+    const dateItem = document.createElement('div');
+    dateItem.className = 'info-item';
+    dateItem.innerHTML = '<span class="info-icon">📅</span>';
+    const dateSpan = document.createElement('span');
+    dateSpan.textContent = formattedDate;
+    dateItem.appendChild(dateSpan);
+
+    const timeItem = document.createElement('div');
+    timeItem.className = 'info-item';
+    timeItem.innerHTML = '<span class="info-icon">🕐</span>';
+    const timeSpan = document.createElement('span');
+    timeSpan.textContent = formattedTime;
+    timeItem.appendChild(timeSpan);
+
+    const seatsItem = document.createElement('div');
+    seatsItem.className = 'info-item';
+    seatsItem.innerHTML = '<span class="info-icon">👥</span>';
+    const seatsSpan = document.createElement('span');
+    seatsSpan.textContent = `${trip.availableSeats || 0} koltuk`;
+    seatsItem.appendChild(seatsSpan);
+
+    tripInfo.appendChild(dateItem);
+    tripInfo.appendChild(timeItem);
+    tripInfo.appendChild(seatsItem);
+
+    const driver = document.createElement('div');
+    driver.className = 'trip-driver';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'driver-avatar';
+    avatar.textContent = trip.driverName ? trip.driverName.charAt(0).toUpperCase() : '👤';
+
+    const driverInfo = document.createElement('div');
+    driverInfo.className = 'driver-info';
+
+    const driverName = document.createElement('div');
+    driverName.className = 'driver-name';
+    driverName.textContent = trip.driverName || 'Sürücü';
+
+    const driverRating = document.createElement('div');
+    driverRating.className = 'driver-rating';
+    driverRating.textContent = `⭐ ${trip.driverRating || '5.0'}`;
+
+    driverInfo.appendChild(driverName);
+    driverInfo.appendChild(driverRating);
+    driver.appendChild(avatar);
+    driver.appendChild(driverInfo);
+
+    body.appendChild(tripInfo);
+    body.appendChild(driver);
+
+    if (trip.notes) {
+        const notes = document.createElement('div');
+        notes.className = 'trip-notes';
+        notes.textContent = `💬 ${trip.notes}`;
+        body.appendChild(notes);
+    }
+
+    // Footer
+    const footer = document.createElement('div');
+    footer.className = 'trip-card-footer';
+
+    const link = document.createElement('a');
+    link.href = 'download.html';
+    link.className = 'btn btn-primary btn-sm';
+    link.textContent = '📱 Uygulamadan İletişime Geç';
+
+    footer.appendChild(link);
+
+    card.appendChild(header);
+    card.appendChild(body);
+    card.appendChild(footer);
 
     return card;
 }
@@ -454,11 +646,26 @@ function hideEmpty() {
 // Show error
 function showError() {
     hideLoading();
-    tripsContainer.innerHTML = `
-        <div class="error-state">
-            <div class="error-icon">⚠️</div>
-            <h3>Bir Hata Oluştu</h3>
-            <p>Yolculuklar yüklenirken bir sorun oluştu. Lütfen daha sonra tekrar deneyin.</p>
-        </div>
-    `;
+
+    // Güvenli DOM oluşturma - XSS koruması
+    tripsContainer.innerHTML = '';
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-state';
+
+    const errorIcon = document.createElement('div');
+    errorIcon.className = 'error-icon';
+    errorIcon.textContent = '⚠️';
+
+    const errorTitle = document.createElement('h3');
+    errorTitle.textContent = 'Bir Hata Oluştu';
+
+    const errorText = document.createElement('p');
+    errorText.textContent = 'Yolculuklar yüklenirken bir sorun oluştu. Lütfen daha sonra tekrar deneyin.';
+
+    errorDiv.appendChild(errorIcon);
+    errorDiv.appendChild(errorTitle);
+    errorDiv.appendChild(errorText);
+
+    tripsContainer.appendChild(errorDiv);
 }

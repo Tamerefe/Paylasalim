@@ -11,7 +11,8 @@ const ANALYTICS_CONFIG = {
     // Analytics Settings
     settings: {
         anonymizeIp: true,
-        cookieFlags: 'SameSite=None;Secure',
+        // CSRF koruması için SameSite=Strict
+        cookieFlags: 'SameSite=Strict;Secure',
         debug: false // Production'da false olmalı
     }
 };

@@ -113,8 +113,6 @@ const translations = {
         // Contact Page
         'contact-title': 'İletişim',
         'contact-subtitle': 'Geri bildirim, kurumsal iş birlikleri, destek veya sorularınız için bize ulaşın',
-        'contact-chat-label': 'Canlı Destek',
-        'contact-chat-desc': 'Sağ alt köşedeki yeşil butona tıklayarak anında bizimle sohbet edebilirsiniz!',
         'contact-email-label': 'E-posta',
         'contact-website-label': 'Website',
 
@@ -253,8 +251,6 @@ const translations = {
         // Contact Page
         'contact-title': 'Contact',
         'contact-subtitle': 'Reach out to us for feedback, corporate partnerships, support or questions',
-        'contact-chat-label': 'Live Support',
-        'contact-chat-desc': 'Click the green button in the bottom right corner to chat with us instantly!',
         'contact-email-label': 'Email',
         'contact-website-label': 'Website',
 
@@ -280,7 +276,7 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('language') || 'tr';
+let currentLang = localStorage.getItem('language') || 'tr'; // localStorage'dan dil tercihini oku, yoksa Türkçe başlat
 
 function setLanguage(lang) {
     currentLang = lang;
@@ -301,8 +297,29 @@ function setLanguage(lang) {
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-            element.innerHTML = translations[lang][key];
+        if (translations[lang] && translations[lang][key]) {
+            const content = translations[lang][key];
+
+            // Güvenli içerik güncellemesi
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.value = content;
+            } else if (content.includes('<br>') || content.includes('<strong>')) {
+                // XSS koruması: Sadece <br> ve <strong> taglarına izin ver
+                // Diğer HTML taglarını escape et
+                const safeBr = content.replace(/<br>/g, '___BR___');
+                const safeStrong = safeBr.replace(/<strong>/g, '___STRONG___').replace(/<\/strong>/g, '___/STRONG___');
+                const textNode = document.createTextNode(safeStrong);
+                const tempDiv = document.createElement('div');
+                tempDiv.appendChild(textNode);
+                const safeHtml = tempDiv.innerHTML
+                    .replace(/___BR___/g, '<br>')
+                    .replace(/___STRONG___/g, '<strong>')
+                    .replace(/___\/STRONG___/g, '</strong>');
+                element.innerHTML = safeHtml;
+            } else {
+                // Diğerleri için güvenli textContent
+                element.textContent = content;
+            }
         }
     });
 

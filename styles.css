@@ -1856,6 +1856,10 @@ main {
     background-color: var(--bg-light);
 }
 
+.autocomplete-item.autocomplete-active {
+    background-color: var(--bg-light);
+}
+
 .autocomplete-item strong {
     color: var(--primary);
     font-weight: 600;

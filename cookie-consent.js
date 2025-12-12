@@ -35,20 +35,52 @@ class CookieConsent {
         const currentLang = localStorage.getItem('language') || 'tr';
         const content = this.getContent(currentLang);
 
-        banner.innerHTML = `
-            <div class="cookie-banner-content">
-                <div class="cookie-icon">🍪</div>
-                <div class="cookie-text">
-                    <h3>${content.title}</h3>
-                    <p>${content.description}</p>
-                    <a href="privacy.html" class="cookie-link">${content.learnMore}</a>
-                </div>
-                <div class="cookie-actions">
-                    <button id="cookie-accept" class="btn btn-primary btn-cookie">${content.accept}</button>
-                    <button id="cookie-reject" class="btn btn-secondary btn-cookie">${content.reject}</button>
-                </div>
-            </div>
-        `;
+        // Güvenli DOM manipülasyonu - XSS koruması
+        const bannerContent = document.createElement('div');
+        bannerContent.className = 'cookie-banner-content';
+
+        const icon = document.createElement('div');
+        icon.className = 'cookie-icon';
+        icon.textContent = '🍪';
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'cookie-text';
+
+        const title = document.createElement('h3');
+        title.textContent = content.title;
+
+        const desc = document.createElement('p');
+        desc.textContent = content.description;
+
+        const link = document.createElement('a');
+        link.href = 'privacy.html';
+        link.className = 'cookie-link';
+        link.textContent = content.learnMore;
+
+        textDiv.appendChild(title);
+        textDiv.appendChild(desc);
+        textDiv.appendChild(link);
+
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'cookie-actions';
+
+        const acceptBtn = document.createElement('button');
+        acceptBtn.id = 'cookie-accept';
+        acceptBtn.className = 'btn btn-primary btn-cookie';
+        acceptBtn.textContent = content.accept;
+
+        const rejectBtn = document.createElement('button');
+        rejectBtn.id = 'cookie-reject';
+        rejectBtn.className = 'btn btn-secondary btn-cookie';
+        rejectBtn.textContent = content.reject;
+
+        actionsDiv.appendChild(acceptBtn);
+        actionsDiv.appendChild(rejectBtn);
+
+        bannerContent.appendChild(icon);
+        bannerContent.appendChild(textDiv);
+        bannerContent.appendChild(actionsDiv);
+        banner.appendChild(bannerContent);
 
         document.body.appendChild(banner);
 
@@ -116,7 +148,7 @@ class CookieConsent {
 
         // gtag initialization
         const script2 = document.createElement('script');
-        script2.innerHTML = `
+        script2.textContent = `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -138,7 +170,7 @@ class CookieConsent {
         }
 
         const script = document.createElement('script');
-        script.innerHTML = `
+        script.textContent = `
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

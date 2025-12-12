@@ -4,18 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.clarity.ms; frame-src 'self';">
     <title>İletişim | Paylaşalım</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Tawk.to widget position adjustment */
-        #tawk-bubble-container {
-            bottom: 80px !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -68,14 +64,6 @@
                                 <a href="https://paylasalim.com.tr" target="_blank">paylasalim.com.tr</a>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <span class="info-icon">💬</span>
-                            <div>
-                                <h4 data-i18n="contact-chat-label">Canlı Destek</h4>
-                                <p data-i18n="contact-chat-desc">Sağ alt köşedeki yeşil butona tıklayarak anında bizimle
-                                    sohbet edebilirsiniz!</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -88,20 +76,6 @@
     <script src="cookie-consent.js"></script>
     <script src="i18n.js"></script>
     <script src="script.js"></script>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6934aa7137fc4e197cdb8007/1jbqrjjls';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
 </body>
 
 </html>
