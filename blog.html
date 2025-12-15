@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Kıbrıs yolculuk paylaşımı, araç paylaşımı ipuçları, ekonomik ulaşım rehberleri ve carpool hakkında her şey. Paylaşalım blog ile tasarruf edin.">
+    <meta name="keywords"
+        content="kıbrıs yolculuk paylaşımı blog, araç paylaşımı ipuçları, carpool rehberi, kıbrıs ulaşım, paylaşımlı yolculuk">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.clarity.ms; frame-src 'self';">
+    <title>Blog | Kıbrıs Yolculuk Paylaşımı İpuçları - Paylaşalım</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img" width="50" height="50">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag" id="lang-flag"></span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>📝 Paylaşalım Blog</h1>
+                <p>Kıbrıs yolculuk paylaşımı ipuçları, rehberler ve tasarruf önerileri</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-grid">
+
+                    <!-- Blog Post 1 -->
+                    <article class="blog-card" data-url="blog/kibrista-ulasim-maliyetlerini-dusurmenin-yollari.html">
+                        <div class="blog-image">
+                            💰
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 15 Aralık 2025</span>
+                                <span>•</span>
+                                <span>⏱️ 5 dk okuma</span>
+                            </div>
+                            <h2>
+                                <a href="blog/kibrista-ulasim-maliyetlerini-dusurmenin-yollari.html">
+                                    Kıbrıs'ta Ulaşım Maliyetlerini Düşürmenin 7 Yolu
+                                </a>
+                            </h2>
+                            <p>
+                                Kıbrıs'ta aylık ulaşım masraflarınızı %50'ye kadar azaltmanın pratik yollarını keşfedin.
+                                Kıbrıs yolculuk paylaşımı ile nasıl tasarruf edeceğinizi öğrenin.
+                            </p>
+                            <a href="blog/kibrista-ulasim-maliyetlerini-dusurmenin-yollari.html" class="read-more">
+                                Devamını Oku →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="blog-card" data-url="blog/paylasimli-yolculuk-cevre-etkileri.html">
+                        <div class="blog-image">
+                            🌱
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 12 Aralık 2025</span>
+                                <span>•</span>
+                                <span>⏱️ 4 dk okuma</span>
+                            </div>
+                            <h2>
+                                <a href="blog/paylasimli-yolculuk-cevre-etkileri.html">
+                                    Paylaşımlı Yolculuk ile Çevreyi Nasıl Koruruz?
+                                </a>
+                            </h2>
+                            <p>
+                                Araç paylaşımının karbon ayak izine etkisi ve Kıbrıs'ta sürdürülebilir ulaşım için neler
+                                yapabileceğinizi öğrenin.
+                            </p>
+                            <a href="blog/paylasimli-yolculuk-cevre-etkileri.html" class="read-more">
+                                Devamını Oku →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="blog-card" data-url="blog/guvenli-carpool-icin-10-altin-kural.html">
+                        <div class="blog-image">
+                            🚗
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 8 Aralık 2025</span>
+                                <span>•</span>
+                                <span>⏱️ 6 dk okuma</span>
+                            </div>
+                            <h2>
+                                <a href="blog/guvenli-carpool-icin-10-altin-kural.html">
+                                    Güvenli Carpool için 10 Altın Kural
+                                </a>
+                            </h2>
+                            <p>
+                                Lefkoşa araç paylaşımı ve Gazimağusa carpool kullanırken dikkat etmeniz gereken güvenlik
+                                ipuçları.
+                            </p>
+                            <a href="blog/guvenli-carpool-icin-10-altin-kural.html" class="read-more">
+                                Devamını Oku →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 4 -->
+                    <article class="blog-card" data-url="blog/ogrenciler-icin-ulasim-rehberi.html">
+                        <div class="blog-image">
+                            🎓
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 5 Aralık 2025</span>
+                                <span>•</span>
+                                <span>⏱️ 5 dk okuma</span>
+                            </div>
+                            <h2>
+                                <a href="blog/ogrenciler-icin-ulasim-rehberi.html">
+                                    Öğrenciler için Kıbrıs Ulaşım Rehberi 2025
+                                </a>
+                            </h2>
+                            <p>
+                                Üniversite öğrencileri için ekonomik ulaşım çözümleri, kampüse gidiş-dönüş ipuçları ve
+                                bütçe planlaması.
+                            </p>
+                            <a href="blog/ogrenciler-icin-ulasim-rehberi.html" class="read-more">
+                                Devamını Oku →
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="newsletter-section">
+                    <h2>📬 Yeni Yazılardan Haberdar Olun</h2>
+                    <p>Kıbrıs ulaşım ipuçları, tasarruf rehberleri ve özel kampanyalardan ilk siz haberdar olun.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Teşekkürler! Yakında haber bültenimizi başlatacağız.');">
+                        <input type="email" placeholder="E-posta adresiniz" required>
+                        <button type="submit">Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+    <script src="cookie-consent.js"></script>
+    <script src="analytics-config.js"></script>
+</body>
+
+</html>

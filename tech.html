@@ -29,7 +29,7 @@
                     <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
                     <li>
                         <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
-                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-flag" id="lang-flag"></span>
                             <span class="lang-text">EN</span>
                         </button>
                     </li>
@@ -100,32 +100,72 @@
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">📱</div>
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="5" width="90" height="150" rx="12" fill="#512D80"/>
+                                <path d="M5 17C5 10.3726 10.3726 5 17 5H83C89.6274 5 95 10.3726 95 17V25H5V17Z" fill="#7E57C2" fill-opacity="0.3"/>
+                                <path d="M5 135H95V143C95 149.627 89.6274 155 83 155H17C10.3726 155 5 149.627 5 143V135Z" fill="#7E57C2" fill-opacity="0.3"/>
+                                <rect x="12" y="25" width="76" height="110" fill="#3949AB"/>
+                                <rect x="18" y="35" width="16" height="16" rx="3" fill="#FB8C00"/>
+                                <rect x="42" y="35" width="16" height="16" rx="3" fill="#4CAF50"/>
+                                <rect x="66" y="35" width="16" height="16" rx="3" fill="#FDD835"/>
+                                <rect x="18" y="60" width="16" height="16" rx="3" fill="#4CAF50"/>
+                                <rect x="42" y="60" width="16" height="16" rx="3" fill="#FDD835"/>
+                                <rect x="66" y="60" width="16" height="16" rx="3" fill="#FB8C00"/>
+                                <rect x="18" y="85" width="16" height="16" rx="3" fill="#FB8C00"/>
+                                <rect x="42" y="85" width="16" height="16" rx="3" fill="#4CAF50"/>
+                                <rect x="66" y="85" width="16" height="16" rx="3" fill="#FDD835"/>
+                                <rect x="38" y="12" width="24" height="4" rx="2" fill="white" fill-opacity="0.9"/>
+                                <circle cx="50" cy="145" r="6" fill="white"/>
+                            </svg>
+                        </div>
                         <h3 data-i18n="tech-frontend-title">Frontend</h3>
                         <p data-i18n="tech-frontend-desc">Flutter 3.7.0 • Dart 3.0+</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔥</div>
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="6" rx="1" fill="#263238" stroke="#37474F" stroke-width="2"/>
+                                <circle cx="6" cy="5" r="1" fill="#00BCD4"/>
+                                <path d="M18 5H20" stroke="#546E7A" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="2" y="9" width="20" height="6" rx="1" fill="#263238" stroke="#37474F" stroke-width="2"/>
+                                <circle cx="6" cy="12" r="1" fill="#00BCD4"/>
+                                <path d="M18 12H20" stroke="#546E7A" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="2" y="16" width="20" height="6" rx="1" fill="#263238" stroke="#37474F" stroke-width="2"/>
+                                <circle cx="6" cy="19" r="1" fill="#00BCD4"/>
+                                <path d="M18 19H20" stroke="#546E7A" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h3 data-i18n="tech-backend-title">Backend</h3>
                         <p data-i18n="tech-backend-desc">Firebase (Firestore, Auth, FCM)</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🗺️</div>
-                        <h3 data-i18n="tech-maps-title">Harita</h3>
-                        <p data-i18n="tech-maps-desc">Google Maps API</p>
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(12, 12) scale(1.15) translate(-12, -12)">
+                                    <path d="M20.5 3L14.5 5.5L9.5 3.5L3.5 6V21L9.5 18.5L14.5 20.5L20.5 18V3Z" fill="#FFECB3" stroke="#FFE082" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.5 5.5V20.5M9.5 3.5V18.5" stroke="#FFE082" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 6C10.07 6 8.5 7.57 8.5 9.5C8.5 12.12 12 16 12 16C12 16 15.5 12.12 15.5 9.5C15.5 7.57 13.93 6 12 6Z" fill="#EA4335"/>
+                                    <circle cx="12" cy="9.5" r="1.5" fill="white"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="tech-maps-title">Harita ve Konum</h3>
+                        <p data-i18n="tech-maps-desc">Google Maps API • Geolocator</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">⚙️</div>
-                        <h3 data-i18n="tech-state-title">State Management</h3>
-                        <p data-i18n="tech-state-desc">Provider</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📍</div>
-                        <h3 data-i18n="tech-location-title">Konum</h3>
-                        <p data-i18n="tech-location-desc">Geolocator</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔔</div>
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="bellGradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#FDD835"/>
+                                        <stop offset="100%" stop-color="#FB8C00"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M12 2C10.34 2 9 3.34 9 5V5.2C7.24 6.17 6 8.06 6 10.28V15L4 17V18H20V17L18 15V10.28C18 8.06 16.76 6.17 15 5.2V5C15 3.34 13.66 2 12 2Z" fill="url(#bellGradient)"/>
+                                <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22Z" fill="url(#bellGradient)"/>
+                            </svg>
+                        </div>
                         <h3 data-i18n="tech-notifications-title">Bildirimler</h3>
                         <p data-i18n="tech-notifications-desc">Firebase Cloud Messaging</p>
                     </div>
