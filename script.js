@@ -34,10 +34,9 @@ function loadFooter() {
 
     const links = [
         { href: 'blog.html', i18n: 'nav-blog', text: 'Blog' },
-        { href: 'privacy.html', i18n: 'footer-privacy', text: 'Gizlilik ve Sorumluluk' },
+        { href: 'faq.html', i18n: 'nav-faq', text: 'SSS' },
         { href: 'privacy.html#kvkk', i18n: 'footer-kvkk', text: 'KVKK' },
-        { href: 'about.html', i18n: 'nav-about', text: 'Hakkımızda' },
-        { href: 'contact.html', i18n: 'nav-contact', text: 'İletişim' }
+        { href: 'privacy.html', i18n: 'footer-privacy', text: 'Gizlilik ve Sorumluluk' }
     ];
 
     links.forEach(link => {

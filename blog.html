@@ -48,8 +48,25 @@
     <main>
         <section class="blog-hero">
             <div class="container">
-                <h1>📝 Paylaşalım Blog</h1>
-                <p>Kıbrıs yolculuk paylaşımı ipuçları, rehberler ve tasarruf önerileri</p>
+                <div class="blog-hero-content">
+                    <span class="blog-badge">✨ Güncel İçerikler</span>
+                    <h1>Paylaşalım Blog</h1>
+                    <p>Kıbrıs yolculuk paylaşımı ipuçları, rehberler ve tasarruf önerileri</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="blog-search">
+                        <input type="text" id="blog-search-input" placeholder="🔍 Blog yazılarında ara..." aria-label="Blog ara">
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="blog-categories">
+                        <button class="category-btn active" data-category="all">📚 Tümü</button>
+                        <button class="category-btn" data-category="tasarruf">💰 Tasarruf</button>
+                        <button class="category-btn" data-category="cevre">🌱 Çevre</button>
+                        <button class="category-btn" data-category="guvenlik">🚗 Güvenlik</button>
+                        <button class="category-btn" data-category="ogrenci">🎓 Öğrenci</button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -57,12 +74,18 @@
             <div class="container">
                 <div class="blog-grid">
 
-                    <!-- Blog Post 1 -->
-                    <article class="blog-card" data-url="blog/kibrista-ulasim-maliyetlerini-dusurmenin-yollari.html">
+                    <!-- Blog Post 1 - Featured -->
+                    <article class="blog-card featured" data-url="blog/kibrista-ulasim-maliyetlerini-dusurmenin-yollari.html" data-category="tasarruf">
+                        <div class="blog-badge-featured">🔥 Öne Çıkan</div>
                         <div class="blog-image">
-                            💰
+                            <div class="blog-emoji">💰</div>
+                            <div class="blog-gradient gradient-gold"></div>
                         </div>
                         <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag tag-gold">💰 Tasarruf</span>
+                                <span class="tag tag-purple">💡 İpuçları</span>
+                            </div>
                             <div class="blog-meta">
                                 <span>📅 15 Aralık 2025</span>
                                 <span>•</span>
@@ -84,11 +107,16 @@
                     </article>
 
                     <!-- Blog Post 2 -->
-                    <article class="blog-card" data-url="blog/paylasimli-yolculuk-cevre-etkileri.html">
+                    <article class="blog-card" data-url="blog/paylasimli-yolculuk-cevre-etkileri.html" data-category="cevre">
                         <div class="blog-image">
-                            🌱
+                            <div class="blog-emoji">🌱</div>
+                            <div class="blog-gradient gradient-green"></div>
                         </div>
                         <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag tag-green">🌱 Çevre</span>
+                                <span class="tag tag-blue">🌍 Sürdürülebilirlik</span>
+                            </div>
                             <div class="blog-meta">
                                 <span>📅 12 Aralık 2025</span>
                                 <span>•</span>
@@ -110,11 +138,16 @@
                     </article>
 
                     <!-- Blog Post 3 -->
-                    <article class="blog-card" data-url="blog/guvenli-carpool-icin-10-altin-kural.html">
+                    <article class="blog-card" data-url="blog/guvenli-carpool-icin-10-altin-kural.html" data-category="guvenlik">
                         <div class="blog-image">
-                            🚗
+                            <div class="blog-emoji">🚗</div>
+                            <div class="blog-gradient gradient-red"></div>
                         </div>
                         <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag tag-red">🚗 Güvenlik</span>
+                                <span class="tag tag-orange">⚡ Önemli</span>
+                            </div>
                             <div class="blog-meta">
                                 <span>📅 8 Aralık 2025</span>
                                 <span>•</span>
@@ -136,11 +169,16 @@
                     </article>
 
                     <!-- Blog Post 4 -->
-                    <article class="blog-card" data-url="blog/ogrenciler-icin-ulasim-rehberi.html">
+                    <article class="blog-card" data-url="blog/ogrenciler-icin-ulasim-rehberi.html" data-category="ogrenci">
                         <div class="blog-image">
-                            🎓
+                            <div class="blog-emoji">🎓</div>
+                            <div class="blog-gradient gradient-purple"></div>
                         </div>
                         <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag tag-purple">🎓 Öğrenci</span>
+                                <span class="tag tag-pink">📚 Rehber</span>
+                            </div>
                             <div class="blog-meta">
                                 <span>📅 5 Aralık 2025</span>
                                 <span>•</span>
@@ -165,12 +203,19 @@
 
                 <!-- Newsletter Section -->
                 <div class="newsletter-section">
-                    <h2>📬 Yeni Yazılardan Haberdar Olun</h2>
+                    <div class="newsletter-icon">📬</div>
+                    <h2>Yeni Yazılardan Haberdar Olun</h2>
                     <p>Kıbrıs ulaşım ipuçları, tasarruf rehberleri ve özel kampanyalardan ilk siz haberdar olun.</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Teşekkürler! Yakında haber bültenimizi başlatacağız.');">
-                        <input type="email" placeholder="E-posta adresiniz" required>
-                        <button type="submit">Abone Ol</button>
+                        <input type="email" placeholder="✉️ E-posta adresiniz" required>
+                        <button type="submit">
+                            <span>Abone Ol</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
                     </form>
+                    <p class="newsletter-note">🔒 Gizliliğinize saygı duyuyoruz. Spam göndermiyoruz.</p>
                 </div>
             </div>
         </section>
@@ -182,6 +227,65 @@
     <script src="i18n.js"></script>
     <script src="cookie-consent.js"></script>
     <script src="analytics-config.js"></script>
+    
+    <!-- Blog Filter & Search Script -->
+    <script>
+        // Category Filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                // Filter cards
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'flex';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+        
+        // Search Functionality
+        const searchInput = document.getElementById('blog-search-input');
+        
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            blogCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const content = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+            
+            // Reset category filter when searching
+            if (searchTerm) {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+            } else {
+                categoryBtns[0].classList.add('active');
+                blogCards.forEach(card => {
+                    card.style.display = 'flex';
+                    card.style.opacity = '1';
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

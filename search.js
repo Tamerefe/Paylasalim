@@ -26,57 +26,110 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 
-// Kuzey Kıbrıs Şehirleri ve Mahalleler
-const CITIES = [
-    // Lefkoşa ve Mahalleleri
+// Kuzey Kıbrıs Durakları
+const STOPS = [
+    // ANA ŞEHİRLER (Öncelikli)
     'Lefkoşa',
-    'Lefkoşa - Köşklüçiftlik',
-    'Lefkoşa - Hamitköy',
-    'Lefkoşa - Ortaköy',
-    'Lefkoşa - Gönyeli',
-    'Lefkoşa - Haspolat',
-    'Lefkoşa - Minareliköy',
-    'Lefkoşa - Kanlıköy',
-
-    // Gazimağusa ve Mahalleleri
     'Gazimağusa',
-    'Gazimağusa - İsmet Paşa',
-    'Gazimağusa - Karakol',
-    'Gazimağusa - Tuzla',
-    'Gazimağusa - Yeni Boğaziçi',
-    'Gazimağusa - Salamis',
-    'Gazimağusa - Çanakkale',
-
-    // Girne ve Mahalleleri
     'Girne',
-    'Girne - Karşıyaka',
-    'Girne - Karaoğlanoğlu',
-    'Girne - Alsancak',
-    'Girne - Lapta',
-    'Girne - Çatalköy',
-    'Girne - Bellapais',
-    'Girne - Ozanköy',
-    'Girne - Arapköy',
-    'Girne - Kayalar',
-    'Girne - Esentepe',
-
-    // Güzelyurt ve Mahalleleri
     'Güzelyurt',
-    'Güzelyurt - Akincilar',
-    'Güzelyurt - Güngör',
-    'Güzelyurt - Sadrazamköy',
-    'Güzelyurt - Kalkanlı',
-
-    // İskele ve Mahalleleri
-    'İskele',
-    'İskele - Boğaz',
-    'İskele - Mehmetçik',
-    'İskele - Kaplıca',
-    'İskele - Yeni Erenköy',
-    'İskele - Büyükkonuk',
-
-    // Lefke
     'Lefke',
+    'İskele',
+    
+    // LEFKOŞA DURAKLARI
+    'Lefkoşa - Kızılbaş Parkı',
+    'Lefkoşa - Metropol',
+    'Lefkoşa - Campus Cyprus',
+    'Lefkoşa - (YDÜ-NEU) Yakın Doğu Üniversitesi',
+    'Lefkoşa - Dormi Öğrenci Yurdu',
+    'Lefkoşa - Fuar Durağı',
+    'Lefkoşa - Devlet Hastanesi',
+    'Lefkoşa - Kiler 3 Gönyeli',
+    'Lefkoşa - İrmar 2 Gönyeli Belediyesi Karşısı',
+    'Lefkoşa - Tepehome',
+    'Lefkoşa - Can Sigorta',
+    'Lefkoşa - Ortaköy China Bazaar',
+    'Lefkoşa - Sağlık Bakanlığı',
+    'Lefkoşa - Merit Lefkoşa',
+    'Lefkoşa - Girne Kapısı',
+    'Lefkoşa - KIBHAS Terminal',
+    'Lefkoşa - Eski Kaymaklı Mezarlığı (Macro)',
+    'Lefkoşa - Çangar',
+    'Lefkoşa - Creditwest (Honda)',
+    'Lefkoşa - Cadde Mutfak',
+    'Lefkoşa - UKÜ (CIU) Molto',
+    'Lefkoşa - Değirmenlik',
+    'Lefkoşa - Erülkü Süpermarket',
+    
+    // GİRNE
+    'Girne - KIBHAS Merkez (Colony Hotel)',
+    'Girne - (GAÜ) Girne Amerikan Üniversitesi',
+    'Girne - Karmi Öğrenci Yurdu',
+    'Girne - Hale Sultan Öğrenci Yurdu',
+    'Girne - Özerin Öğrenci Yurdu (Ship Inn Hotel)',
+    'Girne - Şokmar',
+    'Girne - Barış Parkı Durağı',
+    'Girne - Bestmar Durağı (Lavash Çaprazı)',
+    'Girne - Caffe Pascucci',
+    'Girne - Barbaroslar Market',
+    'Girne - Girne Öğretmenevi',
+    'Girne - Pia Bella Hotel Karşısı',
+    'Girne - Oscar Hotel',
+    'Girne - Lord\'s Palace Hotel',
+    'Girne - Molto Market Karakum',
+    'Girne - Büyük Anadolu Hotel',
+    'Girne - Lefkoşa Çemberi',
+    'Girne - Boğaz Durağı',
+    'Girne - UKÜ Yurtlar Kahramanlar Market',
+    
+    // LEFKE - GÜZELYURT
+    'Lefke - Karadağ',
+    'Lefke - Akva Polis Karakolu',
+    'Lefke - Portakal Çemberi',
+    'Lefke - 4. Tabur',
+    'Lefke - Tüfekçi Evleri',
+    'Lefke - Gemikonağı Sos. Konutlar',
+    'Lefke - LAÜ Orta Cafe',
+    'Lefke - D.K. Corner Cafe',
+    'Lefke - Doyum Market',
+    'Lefke - Arap Petrol',
+    'Lefke - Cengiz Topel Hastanesi',
+    'Lefke - Yeşilyurt Askeri Kantin',
+    'Lefke - Yeşilyurt Şeker Sok.',
+    'Lefke - Green House',
+    'Lefke - Doğancı Argonya',
+    'Lefke - Gaziveren Okulu',
+    'Lefke - Aydınköy',
+    'Güzelyurt - Terminal',
+    'Güzelyurt - Gepaz Çemberi',
+    'Güzelyurt - ODTÜ II. Yurt',
+    'Güzelyurt - ODTÜ Misafirhane',
+    'Güzelyurt - Kalkanlı Lavish',
+    'Güzelyurt - Gönyeli İrmar Karşısı',
+    'Güzelyurt - Gönyeli Arda Karşısı',
+    'Güzelyurt - Gönyeli Sismar Karşısı',
+    
+    // MAĞUSA (GAZİMAĞUSA) - İSKELE
+    'Gazimağusa - Anıt Çemberi Durağı',
+    'Gazimağusa - KIBHAS Terminal',
+    'Gazimağusa - Ordu Evi',
+    'Gazimağusa - Kaliland',
+    'Gazimağusa - DAÜ Ofis (EMU)',
+    'Gazimağusa - DAÜ Güney Kampüs Üst Geçit',
+    'Gazimağusa - Sabancı Durağı',
+    'İskele - Arkın Hotel',
+    'İskele - Begonvilla Court',
+    'İskele - Royal Sun Elite',
+    'İskele - Grand Sapphire Resort',
+    'İskele - Caesar Resort B Kapısı',
+    'İskele - Zagidas Pembe Cafe',
+    'İskele - Doktorlar Sitesi Süpermarket',
+    'İskele - Narin Pastanesi',
+    'İskele - Court Yard Long Beach',
+    'İskele - Long Beach',
+    'İskele - Ünimar',
+    'İskele - Salamis Hotel',
+    'İskele - Yeni Boğaziçi Durağı',
     'Lefke - Gemikonağı',
     'Lefke - Yeşilyurt',
 
@@ -220,17 +273,35 @@ function updateDateDisplay() {
 function initAutocomplete() {
     // From input autocomplete
     fromAutocomplete = createAutocompleteContainer(fromInput);
-    fromInput.parentNode.style.position = 'relative';
-    fromInput.parentNode.appendChild(fromAutocomplete);
+    const fromWrapper = fromInput.closest('.custom-select-wrapper');
+    if (fromWrapper) {
+        fromWrapper.appendChild(fromAutocomplete);
+    } else {
+        fromInput.parentNode.style.position = 'relative';
+        fromInput.parentNode.appendChild(fromAutocomplete);
+    }
 
     // To input autocomplete
     toAutocomplete = createAutocompleteContainer(toInput);
-    toInput.parentNode.style.position = 'relative';
-    toInput.parentNode.appendChild(toAutocomplete);
+    const toWrapper = toInput.closest('.custom-select-wrapper');
+    if (toWrapper) {
+        toWrapper.appendChild(toAutocomplete);
+    } else {
+        toInput.parentNode.style.position = 'relative';
+        toInput.parentNode.appendChild(toAutocomplete);
+    }
 
     // Event listeners
     fromInput.addEventListener('input', (e) => handleAutocomplete(e.target, fromAutocomplete));
     toInput.addEventListener('input', (e) => handleAutocomplete(e.target, toAutocomplete));
+    
+    // Focus listeners - show all options
+    fromInput.addEventListener('focus', () => showAllOptions(fromInput, fromAutocomplete));
+    toInput.addEventListener('focus', () => showAllOptions(toInput, toAutocomplete));
+    
+    // Click listeners - show all options
+    fromInput.addEventListener('click', () => showAllOptions(fromInput, fromAutocomplete));
+    toInput.addEventListener('click', () => showAllOptions(toInput, toAutocomplete));
 
     // Enter key listeners
     fromInput.addEventListener('keydown', (e) => handleKeydown(e, fromInput, fromAutocomplete));
@@ -255,19 +326,91 @@ function createAutocompleteContainer(input) {
     return container;
 }
 
+// Show all options when input is focused/clicked
+function showAllOptions(input, container) {
+    const value = sanitizeInput(input.value.toLowerCase().trim());
+    
+    // If already has value and container is showing, don't override
+    if (value.length > 0 && container.style.display === 'block') {
+        return;
+    }
+    
+    // Show all stops
+    container.innerHTML = '';
+    STOPS.slice(0, 15).forEach((stop, index) => {
+        const item = document.createElement('div');
+        item.className = 'autocomplete-item';
+        if (index === 0) {
+            item.classList.add('autocomplete-active');
+        }
+        
+        const textNode = document.createTextNode(stop);
+        item.appendChild(textNode);
+        
+        item.addEventListener('click', () => {
+            input.value = stop;
+            container.style.display = 'none';
+        });
+        
+        container.appendChild(item);
+    });
+    
+    container.style.display = 'block';
+}
+
 // Handle autocomplete
 function handleAutocomplete(input, container) {
     const value = sanitizeInput(input.value.toLowerCase().trim());
 
-    if (value.length < 2) {
-        container.style.display = 'none';
+    if (value.length < 1) {
+        showAllOptions(input, container);
         return;
     }
 
-    const matches = CITIES.filter(city =>
-        city.toLowerCase().includes(value) ||
-        removeTurkishChars(city.toLowerCase()).includes(removeTurkishChars(value))
-    );
+    // Akıllı arama: Öncelik sırasına göre filtrele
+    let normalizedValue = removeTurkishChars(value);
+    
+    // Gazimağusa/Mağusa eşleştirmesi
+    const altValue = value.includes('magusa') || value.includes('mağusa') || value.includes('măğusa') 
+        ? 'gazimağusa' 
+        : (value.includes('gazi') || value.includes('gazimag') || value.includes('gazimagusa'))
+            ? 'gazimağusa'
+            : value;
+    
+    // 1. Öncelik: Başında geçenler
+    const startsWithMatches = STOPS.filter(stop => {
+        const normalizedStop = removeTurkishChars(stop.toLowerCase());
+        return normalizedStop.startsWith(normalizedValue) || 
+               normalizedStop.startsWith(removeTurkishChars(altValue)) ||
+               stop.toLowerCase().startsWith(value) ||
+               stop.toLowerCase().startsWith(altValue);
+    });
+    
+    // 2. Öncelik: Kelime başlarında geçenler (Girne - Boğaz → "boğaz")
+    const wordStartMatches = STOPS.filter(stop => {
+        if (startsWithMatches.includes(stop)) return false;
+        
+        const normalizedStop = removeTurkishChars(stop.toLowerCase());
+        const words = stop.toLowerCase().split(/[\s\-,()]+/);
+        const normalizedWords = normalizedStop.split(/[\s\-,()]+/);
+        
+        return words.some(word => word.startsWith(value) || word.startsWith(altValue)) ||
+               normalizedWords.some(word => word.startsWith(normalizedValue) || word.startsWith(removeTurkishChars(altValue)));
+    });
+    
+    // 3. Öncelik: İçinde geçenler
+    const containsMatches = STOPS.filter(stop => {
+        if (startsWithMatches.includes(stop) || wordStartMatches.includes(stop)) return false;
+        
+        const normalizedStop = removeTurkishChars(stop.toLowerCase());
+        return stop.toLowerCase().includes(value) || 
+               stop.toLowerCase().includes(altValue) ||
+               normalizedStop.includes(normalizedValue) ||
+               normalizedStop.includes(removeTurkishChars(altValue));
+    });
+    
+    // Tüm sonuçları birleştir (öncelik sırasıyla)
+    const matches = [...startsWithMatches, ...wordStartMatches, ...containsMatches];
 
     if (matches.length === 0) {
         container.style.display = 'none';
@@ -275,7 +418,7 @@ function handleAutocomplete(input, container) {
     }
 
     container.innerHTML = '';
-    matches.slice(0, 8).forEach((city, index) => {
+    matches.slice(0, 12).forEach((city, index) => {
         const item = document.createElement('div');
         item.className = 'autocomplete-item';
         if (index === 0) {

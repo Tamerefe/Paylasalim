@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.clarity.ms; frame-src 'self';">
+    <title>Sık Sorulan Sorular | Paylaşalım</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag" id="lang-flag"></span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="margin-bottom: 2rem;">
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="faq-title">❓ Sık Sorulan Sorular</h2>
+                    <p data-i18n="faq-subtitle">Paylaşalım hakkında merak ettikleriniz</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q1">Paylaşalım nedir ve nasıl çalışır?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a1">Paylaşalım, Kuzey Kıbrıs'ta sürücüler ve yolcuları bir araya getiren modern bir paylaşımlı yolculuk platformudur. Sürücüler boş koltuklarını paylaşarak yakıt masraflarını azaltır, yolcular ise uygun fiyata güvenli ulaşım sağlar. Firebase ve Google Maps teknolojileriyle geliştirilmiş, güvenli ve kullanıcı dostu bir mobil uygulamadır.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q2">Güvenlik önlemleri nelerdir?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a2">Güvenliğiniz bizim önceliğimiz! Firebase Authentication ile kimlik doğrulama, kullanıcı değerlendirme ve puanlama sistemi, doğrulanmış telefon numaraları, gerçek zamanlı konum paylaşımı, güvenli mesajlaşma sistemi ve 7/24 destek ekibi ile güvenli yolculuklar sağlıyoruz. Her kullanıcı profili onaylanır ve kullanıcılar birbirlerini değerlendirebilir.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q3">Kayıt olmak için ne gereklidir?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a3">Kayıt olmak için geçerli bir e-posta adresi, telefon numarası ve profil fotoğrafı yeterlidir. Sürücü olarak kayıt olacaksanız ek olarak araç bilgilerinizi (marka, model, plaka ve renk) eklemeniz gerekmektedir. Kimlik doğrulama işlemi 24 saat içinde tamamlanır.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q4">Ücretlendirme nasıl işler?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a4">Sürücüler yolculuk oluştururken koltuk başına fiyat belirler. Bu fiyat yakıt, yol ve araç yıpranma masraflarını karşılayacak şekilde olmalıdır. Uygulama kullanımı ücretsizdir, sadece paylaşılan masraflar için ödeme yapılır. Ödemeler nakit veya uygulama içi dijital cüzdan ile güvenli şekilde gerçekleştirilir.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q5">Yolculuk iptal edilirse ne olur?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a5">Yolculuklar, sefer saatinden 24 saat öncesine kadar ücretsiz iptal edilebilir. 24 saatten daha kısa sürede iptal edilmesi durumunda iptal politikası devreye girer. Sürücünün yolculuğu iptal etmesi durumunda, rezervasyon yapmış tüm yolcular anında bilgilendirilir ve ödeme yapılmışsa iade edilir. Acil durumlar için destek ekibimiz 7/24 hizmetinizdedir.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q6">Değerlendirme sistemi nasıl çalışır?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a6">Her yolculuk sonrasında sürücüler ve yolcular birbirlerini 1-5 yıldız arası puanlayabilir. Değerlendirmeler profilinizde görüntülenir ve güvenilir bir topluluk oluşturmamıza yardımcı olur. Olumsuz değerlendirme alan kullanıcılar incelenir ve gerekirse hesapları askıya alınır. Olumlu puanlar toplulukta güven oluşturur.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q7">Ödeme nasıl yapılır?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a7">Ödemeler nakit olarak yolculuk sırasında veya uygulama içi dijital cüzdan ile yapılabilir. Dijital cüzdan kullanıcıları kredi kartı, banka kartı ile önceden bakiye yükleyebilir ve güvenli ödemeler yapabilir. Tüm online ödemeler SSL sertifikası ve PCI DSS standartlarıyla korunmaktadır.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q8">Uygulama hangi bölgelerde kullanılabilir?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a8">Paylaşalım şu an için Kuzey Kıbrıs Türk Cumhuriyeti (KKTC) genelinde hizmet vermektedir. Lefkoşa, Gazimağusa, Girne, Güzelyurt, İskele ve tüm bölgeler arası yolculuklar için kullanılabilir. Yakın zamanda güney bölgelerine ve diğer Akdeniz adalarına da genişleme planlamaktayız.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q9">Bagaj limiti var mı?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a9">Bagaj politikası sürücü tarafından belirlenir. Yolculuk oluştururken sürücüler bagaj kabul edip etmediklerini ve boyut limitlerini belirtirler. Genellikle küçük bir sırt çantası veya el bagajı kabul edilir. Büyük bavul veya hacimli eşyalarınız varsa rezervasyon öncesi mutlaka sürücü ile iletişime geçin ve onay alın.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-i18n="faq-q10">Sorun yaşadığımda nasıl destek alabilirim?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq-a10">Destek ekibimiz 7/24 hizmetinizdedir! Uygulama içindeki "Yardım" bölümünden canlı destek ile iletişime geçebilir, e-posta (destek@paylasalim.com) veya telefon ile bize ulaşabilirsiniz. Acil durumlar için uygulama içinde "Acil Durum" butonu bulunmaktadır. Ortalama yanıt süremiz 1 saattir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact CTA -->
+                <div class="faq-cta">
+                    <h3 data-i18n="faq-cta-title">Başka sorularınız mı var?</h3>
+                    <p data-i18n="faq-cta-desc">Ekibimizle iletişime geçmekten çekinmeyin!</p>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="faq-cta-button">İletişime Geç</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="analytics-config.js"></script>
+    <script src="cookie-consent.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = question.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        otherQuestion.setAttribute('aria-expanded', 'false');
+                        otherAnswer.style.maxHeight = null;
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isOpen) {
+                        question.setAttribute('aria-expanded', 'true');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+

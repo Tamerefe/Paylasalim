@@ -7,6 +7,7 @@ const translations = {
         'nav-search': 'Yolculuk Ara',
         'nav-download': 'İndir',
         'nav-blog': 'Blog',
+        'nav-faq': 'SSS',
         'nav-about': 'Hakkımızda',
         'nav-contact': 'İletişim',
 
@@ -120,11 +121,11 @@ const translations = {
         // Search Page
         'search-title': '🔍 Yolculuk Ara',
         'search-subtitle': 'Rotana uygun yolculukları bul ve sürücülerle iletişime geç',
-        'search-from': '📍 Nereden',
-        'search-to': '🎯 Nereye',
-        'search-date': '📅 Tarih',
-        'search-seats': '👥 Koltuk',
-        'search-button': '🔎 Ara',
+        'search-from': 'Nereden',
+        'search-to': 'Nereye',
+        'search-date': 'Tarih',
+        'search-seats': 'Koltuk',
+        'search-button': 'Ara',
         'search-loading': 'Yolculuklar yükleniyor...',
         'search-empty-title': 'Yolculuk Bulunamadı',
         'search-empty-desc': 'Filtreleri değiştirerek tekrar deneyin veya uygulamadan yeni yolculuk oluşturun.',
@@ -135,7 +136,143 @@ const translations = {
         'privacy-title': 'Gizlilik Politikası ve Sorumluluk Reddi',
         'privacy-subtitle': 'Kişisel Verilerin Korunması ve Kullanım Şartları',
         'privacy-page-title': 'Gizlilik ve Sorumluluk Reddi | Paylaşalım',
-        'search-page-title': 'Yolculuk Ara | Paylaşalım'
+        'search-page-title': 'Yolculuk Ara | Paylaşalım',
+
+        // Privacy Page - Section 1
+        'privacy-section1-title': '1. Genel Bilgiler',
+        'privacy-section1-text': 'Paylaşalım uygulaması, kullanıcılar arasında paylaşımlı yolculuk organizasyonunu kolaylaştırmak amacıyla geliştirilmiş bir platformdur. Bu uygulama herhangi bir ticari kuruluş, şirket veya resmi kurum tarafından işletilmemektedir.',
+
+        // Privacy Page - Section 2
+        'privacy-section2-title': '2. Sorumluluk Reddi',
+        'privacy-section2-intro': '<strong>Paylaşalım platformu ve geliştiricileri, aşağıdaki konularda hiçbir sorumluluk kabul etmez:</strong>',
+        'privacy-section2-li1': 'Kullanıcılar arasında gerçekleşen yolculuklar sırasında meydana gelebilecek kaza, yaralanma, ölüm veya maddi/manevi zararlar,',
+        'privacy-section2-li2': 'Kullanıcılar arasındaki anlaşmazlıklar, tartışmalar veya hukuki uyuşmazlıklar,',
+        'privacy-section2-li3': 'Sürücülerin trafik kurallarına uymaması, yetersiz araç bakımı veya güvenliksiz sürüş davranışları,',
+        'privacy-section2-li4': 'Kullanıcıların birbirlerine karşı gerçekleştirdiği dolandırıcılık, hırsızlık veya suç teşkil eden eylemler,',
+        'privacy-section2-li5': 'Ödeme anlaşmazlıkları, para transferi sorunları veya finansal kayıplar,',
+        'privacy-section2-li6': 'Uygulama üzerinden paylaşılan kişisel bilgilerin kötüye kullanılması,',
+        'privacy-section2-li7': 'Teknik aksaklıklar, hizmet kesintileri veya veri kayıpları nedeniyle oluşabilecek zararlar,',
+        'privacy-section2-li8': 'Üçüncü taraf servislerin (Google Maps, Firebase vb.) çalışmamasından kaynaklanan sorunlar.',
+        'privacy-section2-conclusion': '<strong>Kullanıcılar, platformu kullanarak bu riskleri kabul etmiş sayılırlar ve tüm sorumluluğun kendilerine ait olduğunu beyan ederler.</strong>',
+
+        // Privacy Page - Section 3
+        'privacy-section3-title': '3. 🍪 Çerez (Cookie) Aydınlatma Metni',
+        'privacy-section3-intro': 'Bu internet sitesinde, kullanıcı deneyimini geliştirmek, site performansını analiz etmek ve hizmet kalitesini artırmak amacıyla çerezler (cookies) kullanılmaktadır.',
+        'privacy-section3-types-title': '<strong>Kullanılan çerez türleri:</strong>',
+        'privacy-section3-type1': '<strong>✅ Zorunlu Çerezler:</strong> Sitenin düzgün çalışması için gereklidir.',
+        'privacy-section3-type2': '<strong>✅ Analitik Çerezler:</strong> Ziyaretçi davranışlarını anonim olarak analiz etmek için kullanılır (Google Analytics 4, Microsoft Clarity).',
+        'privacy-section3-type3': '<strong>✅ Performans Çerezleri:</strong> Sayfa yüklenme hızı ve kullanım performansını ölçer.',
+        'privacy-section3-data-title': '<strong>Toplanan veriler:</strong>',
+        'privacy-section3-data1': 'IP adresinin anonimleştirilmiş hali',
+        'privacy-section3-data2': 'Ziyaret edilen sayfalar',
+        'privacy-section3-data3': 'Tıklama, kaydırma (scroll), oturum süresi',
+        'privacy-section3-data4': 'Cihaz, tarayıcı ve ekran bilgileri',
+        'privacy-section3-note1': 'Bu veriler kimlik bilgileriyle ilişkilendirilmez, tamamen istatistiksel analiz amacıyla işlenir.',
+        'privacy-section3-note2': 'Çerezleri tarayıcı ayarlarınızdan dilediğiniz zaman silebilir veya engelleyebilirsiniz. Ancak bazı çerezlerin devre dışı bırakılması sitenin bazı işlevlerinin düzgün çalışmamasına neden olabilir.',
+        'privacy-section3-accept': '<strong>Siteyi kullanmaya devam ederek çerez kullanımını kabul etmiş olursunuz.</strong>',
+
+        // Privacy Page - Section 4
+        'privacy-section4-title': '4. 🔐 KVKK Aydınlatma Metni (Kişisel Verilerin Korunması)',
+        'privacy-section4-intro': '6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında, bu internet sitesi üzerinden elde edilen kişisel verileriniz aşağıda belirtilen amaçlar doğrultusunda işlenmektedir.',
+        'privacy-section4-web-title': '<strong>✅ İşlenen Veriler (Web Sitesi):</strong>',
+        'privacy-section4-web1': 'IP adresi (anonimleştirilmiş)',
+        'privacy-section4-web2': 'Site üzerindeki gezinme ve kullanım hareketleri',
+        'privacy-section4-web3': 'Cihaz ve tarayıcı bilgileri',
+        'privacy-section4-web4': 'Çerez (cookie) verileri',
+        'privacy-section4-app-title': '<strong>✅ İşlenen Veriler (Uygulama):</strong>',
+        'privacy-section4-app1': '<strong>Kimlik Bilgileri:</strong> Ad, soyad, profil fotoğrafı',
+        'privacy-section4-app2': '<strong>İletişim Bilgileri:</strong> E-posta adresi, telefon numarası',
+        'privacy-section4-app3': '<strong>Konum Bilgileri:</strong> GPS koordinatları, yolculuk rotaları',
+        'privacy-section4-app4': '<strong>İşlem Bilgileri:</strong> Yolculuk geçmişi, değerlendirmeler, mesajlaşma kayıtları',
+        'privacy-section4-purposes-title': '<strong>✅ Veri İşleme Amaçları:</strong>',
+        'privacy-section4-purpose1': 'Hizmet kalitesinin artırılması',
+        'privacy-section4-purpose2': 'Site performansının analiz edilmesi',
+        'privacy-section4-purpose3': 'Kullanıcı deneyiminin iyileştirilmesi',
+        'privacy-section4-purpose4': 'Güvenlik ve teknik sorunların tespiti',
+        'privacy-section4-purpose5': 'Kullanıcı profili oluşturma ve kimlik doğrulama',
+        'privacy-section4-purpose6': 'Yolculuk eşleştirme ve konum bazlı hizmetler',
+        'privacy-section4-purpose7': 'Kullanıcılar arası iletişim (mesajlaşma)',
+        'privacy-section4-sharing-title': '<strong>✅ Veri Paylaşımı:</strong>',
+        'privacy-section4-sharing-text': 'Verileriniz, yalnızca analiz hizmeti sağlayıcıları olan <strong>Google Analytics 4</strong> ve <strong>Microsoft Clarity</strong> ile, KVKK ve GDPR uyumlu şekilde paylaşılmaktadır. Üçüncü şahıslarla ticari amaçla paylaşılmaz.',
+        'privacy-section4-security-title': '<strong>✅ Veri Güvenliği:</strong>',
+        'privacy-section4-security-text': 'Kişisel verileriniz, yetkisiz erişime karşı korunmakta ve güvenli sunucularda saklanmaktadır. Firebase platformu üzerinde şifrelenmiş veri depolama sağlanmaktadır.',
+        'privacy-section4-rights-title': '<strong>✅ Haklarınız (KVKK Madde 11):</strong>',
+        'privacy-section4-rights-intro': 'Kişisel verilerinizle ilgili olarak:',
+        'privacy-section4-right1': 'Kişisel verilerinizin işlenip işlenmediğini öğrenme',
+        'privacy-section4-right2': 'İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme',
+        'privacy-section4-right3': 'Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme',
+        'privacy-section4-right4': 'Eksik veya yanlış işlenmiş olması halinde düzeltilmesini isteme',
+        'privacy-section4-right5': 'Verilerin silinmesini veya yok edilmesini talep etme',
+        'privacy-section4-right6': 'Düzeltme ve silme işlemlerinin paylaşıldığı üçüncü kişilere bildirilmesini isteme',
+        'privacy-section4-right7': 'Verilerin münhasıran otomatik sistemler ile analiz edilmesi nedeniyle aleyhinize bir sonuç doğması halinde itiraz etme',
+        'privacy-section4-right8': 'Kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız halinde zararın giderilmesini talep etme',
+        'privacy-section4-contact': 'Bu haklarınızı kullanmak için <a href="mailto:info@paylasalim.com.tr">info@paylasalim.com.tr</a> adresine başvurabilirsiniz.',
+
+        // Privacy Page - Section 5
+        'privacy-section5-title': '5. Veri Güvenliği',
+        'privacy-section5-text': '<strong>Ancak, dijital platformlarda %100 güvenlik garanti edilemez. Kullanıcılar bu riski kabul ederek platformu kullanmalıdır.</strong>',
+
+        // Privacy Page - Section 6
+        'privacy-section6-title': '6. Veri Paylaşımı (Uygulama)',
+        'privacy-section6-intro': 'Kişisel verileriniz üçüncü şahıslarla <strong>asla ticari amaçla paylaşılmaz</strong>. Ancak, aşağıdaki durumlar için sınırlı veri paylaşımı yapılabilir:',
+        'privacy-section6-li1': 'Yolculuk eşleştirmesi için diğer kullanıcılarla ad, profil fotoğrafı ve konum bilgisi paylaşımı',
+        'privacy-section6-li2': 'Yasal zorunluluklar gereği (mahkeme kararı, emniyet talebi vb.)',
+        'privacy-section6-li3': 'Google Maps API ile konum hizmetleri',
+
+        // Privacy Page - Section 7
+        'privacy-section7-title': '7. Kullanıcı Hakları',
+        'privacy-section7-text1': 'Hesabınızı kapatma ve tüm verilerinizin silinmesini isteme hakkınız bulunmaktadır.',
+        'privacy-section7-text2': 'Bu talepleriniz için <a href="mailto:info@paylasalim.com.tr">info@paylasalim.com.tr</a> adresine başvurabilirsiniz.',
+
+        // Privacy Page - Section 8
+        'privacy-section8-title': '8. Kullanım Şartları',
+        'privacy-section8-intro': 'Uygulamayı kullanarak aşağıdaki şartları kabul etmiş sayılırsınız:',
+        'privacy-section8-li1': '18 yaşından büyük olduğunuzu ve hukuki ehliyete sahip olduğunuzu,',
+        'privacy-section8-li2': 'Sağladığınız bilgilerin doğru ve güncel olduğunu,',
+        'privacy-section8-li3': 'Diğer kullanıcılara saygılı davranacağınızı ve yasalara uyacağınızı,',
+        'privacy-section8-li4': 'Platform üzerinden gerçekleştirilen tüm işlemlerin sorumluluğunun size ait olduğunu,',
+        'privacy-section8-li5': 'Platformun herhangi bir garanti vermediğini ve "olduğu gibi" sunulduğunu kabul edersiniz.',
+
+        // Privacy Page - Section 9
+        'privacy-section9-title': '9. Değişiklikler',
+        'privacy-section9-text': 'Bu gizlilik politikası ve sorumluluk reddi beyanı, önceden haber verilmeksizin güncellenebilir. Güncellemeler bu sayfada yayınlanacaktır. Kullanıcıların düzenli olarak kontrol etmesi önerilir.',
+
+        // Privacy Page - Section 10
+        'privacy-section10-title': '10. İletişim',
+        'privacy-section10-intro': 'Sorularınız, şikayetleriniz veya veri talepleriniz için:',
+        'privacy-section10-email': '<strong>E-posta:</strong> <a href="mailto:info@paylasalim.com.tr">info@paylasalim.com.tr</a>',
+        'privacy-section10-web': '<strong>Web:</strong> <a href="https://paylasalim.com.tr">paylasalim.com.tr</a>',
+
+        // Privacy Page - Footer
+        'privacy-footer-updated': '<strong>Son Güncelleme:</strong> 6 Aralık 2025',
+        'privacy-footer-disclaimer': '<em>Bu belge, Paylaşalım platformunun kullanım koşullarını ve sorumluluk sınırlarını belirtir. Uygulamayı kullanmaya devam ederek bu şartları kabul etmiş sayılırsınız.</em>',
+
+        // FAQ Page
+        'faq-title': '❓ Sık Sorulan Sorular',
+        'faq-subtitle': 'Paylaşalım hakkında merak ettikleriniz',
+        'faq-q1': 'Paylaşalım nedir ve nasıl çalışır?',
+        'faq-a1': 'Paylaşalım, Kuzey Kıbrıs\'ta sürücüler ve yolcuları bir araya getiren modern bir paylaşımlı yolculuk platformudur. Sürücüler boş koltuklarını paylaşarak yakıt masraflarını azaltır, yolcular ise uygun fiyata güvenli ulaşım sağlar. Firebase ve Google Maps teknolojileriyle geliştirilmiş, güvenli ve kullanıcı dostu bir mobil uygulamadır.',
+        'faq-q2': 'Güvenlik önlemleri nelerdir?',
+        'faq-a2': 'Güvenliğiniz bizim önceliğimiz! Firebase Authentication ile kimlik doğrulama, kullanıcı değerlendirme ve puanlama sistemi, doğrulanmış telefon numaraları, gerçek zamanlı konum paylaşımı, güvenli mesajlaşma sistemi ve 7/24 destek ekibi ile güvenli yolculuklar sağlıyoruz. Her kullanıcı profili onaylanır ve kullanıcılar birbirlerini değerlendirebilir.',
+        'faq-q3': 'Kayıt olmak için ne gereklidir?',
+        'faq-a3': 'Kayıt olmak için geçerli bir e-posta adresi, telefon numarası ve profil fotoğrafı yeterlidir. Sürücü olarak kayıt olacaksanız ek olarak araç bilgilerinizi (marka, model, plaka ve renk) eklemeniz gerekmektedir. Kimlik doğrulama işlemi 24 saat içinde tamamlanır.',
+        'faq-q4': 'Ücretlendirme nasıl işler?',
+        'faq-a4': 'Sürücüler yolculuk oluştururken koltuk başına fiyat belirler. Bu fiyat yakıt, yol ve araç yıpranma masraflarını karşılayacak şekilde olmalıdır. Uygulama kullanımı ücretsizdir, sadece paylaşılan masraflar için ödeme yapılır. Ödemeler nakit veya uygulama içi dijital cüzdan ile güvenli şekilde gerçekleştirilir.',
+        'faq-q5': 'Yolculuk iptal edilirse ne olur?',
+        'faq-a5': 'Yolculuklar, sefer saatinden 24 saat öncesine kadar ücretsiz iptal edilebilir. 24 saatten daha kısa sürede iptal edilmesi durumunda iptal politikası devreye girer. Sürücünün yolculuğu iptal etmesi durumunda, rezervasyon yapmış tüm yolcular anında bilgilendirilir ve ödeme yapılmışsa iade edilir. Acil durumlar için destek ekibimiz 7/24 hizmetinizdedir.',
+        'faq-q6': 'Değerlendirme sistemi nasıl çalışır?',
+        'faq-a6': 'Her yolculuk sonrasında sürücüler ve yolcular birbirlerini 1-5 yıldız arası puanlayabilir. Değerlendirmeler profilinizde görüntülenir ve güvenilir bir topluluk oluşturmamıza yardımcı olur. Olumsuz değerlendirme alan kullanıcılar incelenir ve gerekirse hesapları askıya alınır. Olumlu puanlar toplulukta güven oluşturur.',
+        'faq-q7': 'Ödeme nasıl yapılır?',
+        'faq-a7': 'Ödemeler nakit olarak yolculuk sırasında veya uygulama içi dijital cüzdan ile yapılabilir. Dijital cüzdan kullanıcıları kredi kartı, banka kartı ile önceden bakiye yükleyebilir ve güvenli ödemeler yapabilir. Tüm online ödemeler SSL sertifikası ve PCI DSS standartlarıyla korunmaktadır.',
+        'faq-q8': 'Uygulama hangi bölgelerde kullanılabilir?',
+        'faq-a8': 'Paylaşalım şu an için Kuzey Kıbrıs Türk Cumhuriyeti (KKTC) genelinde hizmet vermektedir. Lefkoşa, Gazimağusa, Girne, Güzelyurt, İskele ve tüm bölgeler arası yolculuklar için kullanılabilir. Yakın zamanda güney bölgelerine ve diğer Akdeniz adalarına da genişleme planlamaktayız.',
+        'faq-q9': 'Bagaj limiti var mı?',
+        'faq-a9': 'Bagaj politikası sürücü tarafından belirlenir. Yolculuk oluştururken sürücüler bagaj kabul edip etmediklerini ve boyut limitlerini belirtirler. Genellikle küçük bir sırt çantası veya el bagajı kabul edilir. Büyük bavul veya hacimli eşyalarınız varsa rezervasyon öncesi mutlaka sürücü ile iletişime geçin ve onay alın.',
+        'faq-q10': 'Sorun yaşadığımda nasıl destek alabilirim?',
+        'faq-a10': 'Destek ekibimiz 7/24 hizmetinizdedir! Uygulama içindeki "Yardım" bölümünden canlı destek ile iletişime geçebilir, e-posta (destek@paylasalim.com) veya telefon ile bize ulaşabilirsiniz. Acil durumlar için uygulama içinde "Acil Durum" butonu bulunmaktadır. Ortalama yanıt süremiz 1 saattir.',
+        'faq-cta-title': 'Başka sorularınız mı var?',
+        'faq-cta-desc': 'Ekibimizle iletişime geçmekten çekinmeyin!',
+        'faq-cta-button': 'İletişime Geç'
     },
     en: {
         // Navigation
@@ -144,6 +281,7 @@ const translations = {
         'nav-search': 'Search Trips',
         'nav-download': 'Download',
         'nav-blog': 'Blog',
+        'nav-faq': 'FAQ',
         'nav-about': 'About Us',
         'nav-contact': 'Contact',
 
@@ -259,11 +397,11 @@ const translations = {
         // Search Page
         'search-title': '🔍 Search Trips',
         'search-subtitle': 'Find trips that match your route and connect with drivers',
-        'search-from': '📍 From',
-        'search-to': '🎯 To',
-        'search-date': '📅 Date',
-        'search-seats': '👥 Seats',
-        'search-button': '🔎 Search',
+        'search-from': 'From',
+        'search-to': 'To',
+        'search-date': 'Date',
+        'search-seats': 'Seats',
+        'search-button': 'Search',
         'search-loading': 'Loading trips...',
         'search-empty-title': 'No Trips Found',
         'search-empty-desc': 'Try changing filters or create a new trip from the app.',
@@ -274,7 +412,143 @@ const translations = {
         'privacy-title': 'Privacy Policy and Disclaimer',
         'privacy-subtitle': 'Personal Data Protection and Terms of Use',
         'privacy-page-title': 'Privacy & Disclaimer | Paylaşalım',
-        'search-page-title': 'Search Trips | Paylaşalım'
+        'search-page-title': 'Search Trips | Paylaşalım',
+
+        // Privacy Page - Section 1
+        'privacy-section1-title': '1. General Information',
+        'privacy-section1-text': 'Paylaşalım application is a platform developed to facilitate shared ride organization between users. This application is not operated by any commercial entity, company or official institution.',
+
+        // Privacy Page - Section 2
+        'privacy-section2-title': '2. Disclaimer',
+        'privacy-section2-intro': '<strong>The Paylaşalım platform and developers accept no responsibility for the following:</strong>',
+        'privacy-section2-li1': 'Accidents, injuries, deaths or material/moral damages that may occur during trips between users,',
+        'privacy-section2-li2': 'Disagreements, disputes or legal conflicts between users,',
+        'privacy-section2-li3': 'Drivers\' non-compliance with traffic rules, inadequate vehicle maintenance or unsafe driving behavior,',
+        'privacy-section2-li4': 'Fraud, theft or criminal acts committed by users against each other,',
+        'privacy-section2-li5': 'Payment disputes, money transfer problems or financial losses,',
+        'privacy-section2-li6': 'Misuse of personal information shared through the app,',
+        'privacy-section2-li7': 'Damages that may occur due to technical malfunctions, service interruptions or data loss,',
+        'privacy-section2-li8': 'Problems arising from the failure of third-party services (Google Maps, Firebase, etc.).',
+        'privacy-section2-conclusion': '<strong>Users are deemed to have accepted these risks by using the platform and declare that all responsibility belongs to them.</strong>',
+
+        // Privacy Page - Section 3
+        'privacy-section3-title': '3. 🍪 Cookie Disclosure',
+        'privacy-section3-intro': 'This website uses cookies to improve user experience, analyze site performance and enhance service quality.',
+        'privacy-section3-types-title': '<strong>Types of cookies used:</strong>',
+        'privacy-section3-type1': '<strong>✅ Essential Cookies:</strong> Required for the site to function properly.',
+        'privacy-section3-type2': '<strong>✅ Analytics Cookies:</strong> Used to anonymously analyze visitor behavior (Google Analytics 4, Microsoft Clarity).',
+        'privacy-section3-type3': '<strong>✅ Performance Cookies:</strong> Measures page loading speed and usage performance.',
+        'privacy-section3-data-title': '<strong>Data collected:</strong>',
+        'privacy-section3-data1': 'Anonymized IP address',
+        'privacy-section3-data2': 'Pages visited',
+        'privacy-section3-data3': 'Clicks, scrolling, session duration',
+        'privacy-section3-data4': 'Device, browser and screen information',
+        'privacy-section3-note1': 'This data is not associated with identity information and is processed solely for statistical analysis purposes.',
+        'privacy-section3-note2': 'You can delete or block cookies from your browser settings at any time. However, disabling some cookies may cause some site functions to not work properly.',
+        'privacy-section3-accept': '<strong>By continuing to use the site, you accept the use of cookies.</strong>',
+
+        // Privacy Page - Section 4
+        'privacy-section4-title': '4. 🔐 GDPR Disclosure (Personal Data Protection)',
+        'privacy-section4-intro': 'Under Law No. 6698 on the Protection of Personal Data (KVKK), your personal data obtained through this website is processed for the purposes specified below.',
+        'privacy-section4-web-title': '<strong>✅ Data Processed (Website):</strong>',
+        'privacy-section4-web1': 'IP address (anonymized)',
+        'privacy-section4-web2': 'Navigation and usage activities on the site',
+        'privacy-section4-web3': 'Device and browser information',
+        'privacy-section4-web4': 'Cookie data',
+        'privacy-section4-app-title': '<strong>✅ Data Processed (Application):</strong>',
+        'privacy-section4-app1': '<strong>Identity Information:</strong> Name, surname, profile photo',
+        'privacy-section4-app2': '<strong>Contact Information:</strong> Email address, phone number',
+        'privacy-section4-app3': '<strong>Location Information:</strong> GPS coordinates, trip routes',
+        'privacy-section4-app4': '<strong>Transaction Information:</strong> Trip history, reviews, messaging records',
+        'privacy-section4-purposes-title': '<strong>✅ Data Processing Purposes:</strong>',
+        'privacy-section4-purpose1': 'Improving service quality',
+        'privacy-section4-purpose2': 'Analyzing site performance',
+        'privacy-section4-purpose3': 'Improving user experience',
+        'privacy-section4-purpose4': 'Detecting security and technical issues',
+        'privacy-section4-purpose5': 'Creating user profiles and identity verification',
+        'privacy-section4-purpose6': 'Trip matching and location-based services',
+        'privacy-section4-purpose7': 'Communication between users (messaging)',
+        'privacy-section4-sharing-title': '<strong>✅ Data Sharing:</strong>',
+        'privacy-section4-sharing-text': 'Your data is shared only with analytics service providers <strong>Google Analytics 4</strong> and <strong>Microsoft Clarity</strong>, in compliance with KVKK and GDPR. It is not shared with third parties for commercial purposes.',
+        'privacy-section4-security-title': '<strong>✅ Data Security:</strong>',
+        'privacy-section4-security-text': 'Your personal data is protected against unauthorized access and stored on secure servers. Encrypted data storage is provided on the Firebase platform.',
+        'privacy-section4-rights-title': '<strong>✅ Your Rights (KVKK Article 11):</strong>',
+        'privacy-section4-rights-intro': 'Regarding your personal data:',
+        'privacy-section4-right1': 'Learning whether your personal data is processed',
+        'privacy-section4-right2': 'Learning the purpose of processing and whether it is used appropriately',
+        'privacy-section4-right3': 'Knowing the third parties to whom it is transferred domestically or abroad',
+        'privacy-section4-right4': 'Requesting correction if processed incompletely or incorrectly',
+        'privacy-section4-right5': 'Requesting deletion or destruction of data',
+        'privacy-section4-right6': 'Requesting notification of correction and deletion to third parties with whom it is shared',
+        'privacy-section4-right7': 'Objecting if an adverse result occurs due to exclusive analysis by automated systems',
+        'privacy-section4-right8': 'Requesting compensation for damages if you suffer harm due to unlawful processing',
+        'privacy-section4-contact': 'You can apply to <a href="mailto:info@paylasalim.com.tr">info@paylasalim.com.tr</a> to exercise these rights.',
+
+        // Privacy Page - Section 5
+        'privacy-section5-title': '5. Data Security',
+        'privacy-section5-text': '<strong>However, 100% security cannot be guaranteed on digital platforms. Users should use the platform by accepting this risk.</strong>',
+
+        // Privacy Page - Section 6
+        'privacy-section6-title': '6. Data Sharing (Application)',
+        'privacy-section6-intro': 'Your personal data is <strong>never shared for commercial purposes</strong> with third parties. However, limited data sharing may occur for the following situations:',
+        'privacy-section6-li1': 'Sharing name, profile photo and location information with other users for trip matching',
+        'privacy-section6-li2': 'Due to legal requirements (court order, security request, etc.)',
+        'privacy-section6-li3': 'Location services with Google Maps API',
+
+        // Privacy Page - Section 7
+        'privacy-section7-title': '7. User Rights',
+        'privacy-section7-text1': 'You have the right to close your account and request deletion of all your data.',
+        'privacy-section7-text2': 'For these requests, you can apply to <a href="mailto:info@paylasalim.com.tr">info@paylasalim.com.tr</a>.',
+
+        // Privacy Page - Section 8
+        'privacy-section8-title': '8. Terms of Use',
+        'privacy-section8-intro': 'By using the application, you are deemed to have accepted the following terms:',
+        'privacy-section8-li1': 'That you are over 18 years old and have legal capacity,',
+        'privacy-section8-li2': 'That the information you provide is accurate and up to date,',
+        'privacy-section8-li3': 'That you will be respectful to other users and comply with the laws,',
+        'privacy-section8-li4': 'That you are responsible for all transactions carried out through the platform,',
+        'privacy-section8-li5': 'You accept that the platform does not provide any warranty and is provided "as is".',
+
+        // Privacy Page - Section 9
+        'privacy-section9-title': '9. Changes',
+        'privacy-section9-text': 'This privacy policy and disclaimer may be updated without prior notice. Updates will be published on this page. Users are advised to check regularly.',
+
+        // Privacy Page - Section 10
+        'privacy-section10-title': '10. Contact',
+        'privacy-section10-intro': 'For your questions, complaints or data requests:',
+        'privacy-section10-email': '<strong>Email:</strong> <a href="mailto:info@paylasalim.com.tr">info@paylasalim.com.tr</a>',
+        'privacy-section10-web': '<strong>Website:</strong> <a href="https://paylasalim.com.tr">paylasalim.com.tr</a>',
+
+        // Privacy Page - Footer
+        'privacy-footer-updated': '<strong>Last Updated:</strong> December 6, 2025',
+        'privacy-footer-disclaimer': '<em>This document specifies the terms of use and limitations of liability of the Paylaşalım platform. By continuing to use the application, you are deemed to have accepted these terms.</em>',
+
+        // FAQ Page
+        'faq-title': '❓ Frequently Asked Questions',
+        'faq-subtitle': 'Everything you need to know about Paylaşalım',
+        'faq-q1': 'What is Paylaşalım and how does it work?',
+        'faq-a1': 'Paylaşalım is a modern ridesharing platform that brings drivers and passengers together in North Cyprus. Drivers share their empty seats to reduce fuel costs, while passengers get safe transportation at affordable prices. It is a secure and user-friendly mobile app developed with Firebase and Google Maps technologies.',
+        'faq-q2': 'What are the security measures?',
+        'faq-a2': 'Your safety is our priority! We provide secure trips with Firebase Authentication identity verification, user rating and review system, verified phone numbers, real-time location sharing, secure messaging system, and 24/7 support team. Every user profile is verified and users can rate each other.',
+        'faq-q3': 'What is required to register?',
+        'faq-a3': 'To register, you need a valid email address, phone number, and profile picture. If you are registering as a driver, you also need to add your vehicle information (make, model, license plate, and color). Identity verification is completed within 24 hours.',
+        'faq-q4': 'How does pricing work?',
+        'faq-a4': 'Drivers set the price per seat when creating a trip. This price should cover fuel, road, and vehicle wear costs. The app is free to use, you only pay for the shared costs. Payments are made securely in cash or via the in-app digital wallet.',
+        'faq-q5': 'What happens if a trip is cancelled?',
+        'faq-a5': 'Trips can be cancelled free of charge up to 24 hours before departure. If cancelled less than 24 hours before, the cancellation policy applies. If the driver cancels the trip, all passengers with reservations are notified immediately and any payments are refunded. Our support team is available 24/7 for emergencies.',
+        'faq-q6': 'How does the rating system work?',
+        'faq-a6': 'After each trip, drivers and passengers can rate each other on a scale of 1-5 stars. Ratings are displayed on your profile and help us build a trusted community. Users with negative ratings are reviewed and their accounts may be suspended if necessary. Positive ratings build trust in the community.',
+        'faq-q7': 'How do payments work?',
+        'faq-a7': 'Payments can be made in cash during the trip or via the in-app digital wallet. Digital wallet users can preload balance with credit or debit cards and make secure payments. All online payments are protected with SSL certificate and PCI DSS standards.',
+        'faq-q8': 'In which regions is the app available?',
+        'faq-a8': 'Paylaşalım currently serves throughout the Turkish Republic of Northern Cyprus (TRNC). It is available for trips between Nicosia, Famagusta, Kyrenia, Morphou, Iskele, and all regions. We plan to expand to southern regions and other Mediterranean islands soon.',
+        'faq-q9': 'Is there a luggage limit?',
+        'faq-a9': 'Luggage policy is determined by the driver. When creating a trip, drivers specify whether they accept luggage and size limits. Generally, a small backpack or hand luggage is accepted. If you have large suitcases or bulky items, be sure to contact the driver and get approval before booking.',
+        'faq-q10': 'How can I get support if I have a problem?',
+        'faq-a10': 'Our support team is available 24/7! You can contact live support from the "Help" section in the app, reach us via email (support@paylasalim.com) or phone. There is an "Emergency" button in the app for emergencies. Our average response time is 1 hour.',
+        'faq-cta-title': 'Have more questions?',
+        'faq-cta-desc': 'Don\'t hesitate to contact our team!',
+        'faq-cta-button': 'Get in Touch'
     }
 };
 
@@ -305,19 +579,11 @@ function setLanguage(lang) {
             // Güvenli içerik güncellemesi
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.value = content;
-            } else if (content.includes('<br>') || content.includes('<strong>')) {
-                // XSS koruması: Sadece <br> ve <strong> taglarına izin ver
-                // Diğer HTML taglarını escape et
-                const safeBr = content.replace(/<br>/g, '___BR___');
-                const safeStrong = safeBr.replace(/<strong>/g, '___STRONG___').replace(/<\/strong>/g, '___/STRONG___');
-                const textNode = document.createTextNode(safeStrong);
-                const tempDiv = document.createElement('div');
-                tempDiv.appendChild(textNode);
-                const safeHtml = tempDiv.innerHTML
-                    .replace(/___BR___/g, '<br>')
-                    .replace(/___STRONG___/g, '<strong>')
-                    .replace(/___\/STRONG___/g, '</strong>');
-                element.innerHTML = safeHtml;
+            } else if (content.includes('<') && content.includes('>')) {
+                // HTML içeriği varsa innerHTML kullan
+                // Çeviriler kontrollü olduğu için güvenle kullanabiliriz
+                // İzin verilen tagler: <br>, <strong>, <a>, <em>, <ul>, <li>, <p>
+                element.innerHTML = content;
             } else {
                 // Diğerleri için güvenli textContent
                 element.textContent = content;
@@ -337,7 +603,7 @@ function setLanguage(lang) {
             text.textContent = 'EN';
         } else {
             // Türkiye bayrağı göster (mevcut dil İngilizce ise)
-            flag.innerHTML = '<svg height="24px" width="24px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ED1F34" d="M8.258,126.624v258.753c0,19.763,16.022,35.785,35.785,35.785h423.914c19.763,0,35.785-16.022,35.785-35.785V126.624c0-19.763-16.022-35.785-35.785-35.785H44.043C24.28,90.839,8.258,106.86,8.258,126.624z"/><g><path fill="#FFFFFF" d="M210.305,337.677c-45.109,0-81.677-36.568-81.677-81.677s36.568-81.677,81.677-81.677c22.245,0,42.402,8.906,57.133,23.33c-19.526-31.397-54.323-52.311-94.019-52.311c-61.115,0-110.658,49.543-110.658,110.658s49.543,110.658,110.658,110.658c39.696,0,74.492-20.915,94.019-52.312C252.708,328.771,232.55,337.677,210.305,337.677z"/><polygon fill="#FFFFFF" points="277.628,256 309.847,243.659 311.627,209.204 333.32,236.033 366.638,227.079 347.826,256 366.638,284.921 333.32,275.967 311.627,302.796 309.847,268.341"/></g><g><path fill="#121B21" d="M373.32,222.225c-2.012-2.768-5.522-4.01-8.824-3.122l-28.132,7.56l-18.315-22.651c-2.15-2.66-5.718-3.719-8.974-2.661c-3.254,1.057-5.519,4.011-5.695,7.428l-1.503,29.092l-27.202,10.418c-3.194,1.223-5.304,4.291-5.304,7.712s2.11,6.489,5.304,7.712l27.202,10.418l1.503,29.091c0.177,3.416,2.442,6.371,5.695,7.428c0.839,0.273,1.699,0.405,2.551,0.405c2.45,0,4.826-1.092,6.423-3.066l18.315-22.651l28.132,7.56c3.301,0.887,6.813-0.353,8.824-3.122c2.011-2.768,2.106-6.489,0.241-9.357L357.678,256l15.883-24.419C375.426,228.713,375.33,224.993,373.32,222.225z M340.904,260.502l7.057,10.848l-12.498-3.358c-3.152-0.846-6.511,0.243-8.564,2.782l-8.137,10.063l-0.667-12.923c-0.168-3.261-2.243-6.118-5.293-7.286l-12.084-4.629l12.084-4.629c3.05-1.168,5.124-4.024,5.293-7.286l0.667-12.923l8.137,10.063c2.053,2.539,5.415,3.627,8.564,2.782l12.498-3.358l-7.057,10.848C339.124,254.235,339.124,257.765,340.904,260.502z"/><path fill="#121B21" d="M272.605,307.905c-3.261-2.615-7.961-2.384-10.946,0.542c-13.81,13.525-32.048,20.972-51.354,20.972c-34.701,0-64.946-24.63-71.915-58.564c-0.917-4.467-5.281-7.343-9.75-6.428c-4.468,0.917-7.345,5.283-6.428,9.75c8.539,41.579,45.588,71.757,88.094,71.757c4.804,0,9.554-0.377,14.216-1.115c-15.252,8.787-32.767,13.581-51.102,13.581c-56.463,0-102.4-45.937-102.4-102.4s45.937-102.4,102.4-102.4c18.335,0,35.851,4.795,51.102,13.581c-4.662-0.739-9.412-1.115-14.216-1.115c-42.506,0-79.555,30.178-88.094,71.757c-0.918,4.468,1.96,8.833,6.428,9.75c4.463,0.916,8.833-1.96,9.75-6.428c6.969-33.934,37.213-58.564,71.915-58.564c19.306,0,37.544,7.448,51.354,20.972c2.986,2.923,7.685,3.156,10.946,0.542c3.259-2.615,4.052-7.254,1.844-10.803c-21.888-35.195-59.657-56.207-101.03-56.207c-65.57,0-118.916,53.346-118.916,118.916s53.346,118.916,118.916,118.916c41.373,0,79.141-21.013,101.03-56.209C276.657,315.159,275.866,310.52,272.605,307.905z"/><path fill="#121B21" d="M468.324,82.581H43.676C19.593,82.581,0,102.173,0,126.256v259.487c0,24.084,19.593,43.676,43.676,43.676h424.648c24.083,0,43.675-19.593,43.675-43.676V126.256C512,102.173,492.407,82.581,468.324,82.581z M495.484,385.743c0,14.977-12.183,27.16-27.16,27.16H43.676c-14.977,0-27.16-12.183-27.16-27.16V126.256c0-14.976,12.183-27.159,27.16-27.159h424.648c14.976,0,27.159,12.183,27.159,27.159V385.743z"/></g></svg>';
+            flag.innerHTML = '<svg height="24px" width="36px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><path d="M0 0h900v600H0z" fill="#e30a17"/><path d="m417.504 300 135.68-44.078-83.86 115.41V228.668l83.86 115.41Zm9.25 80.21c-35.7 56.415-104.387 82.446-168.508 63.86C194.125 425.488 150 366.762 150 300s44.125-125.488 108.246-144.07c64.121-18.586 132.809 7.445 168.508 63.86-33.223-36.97-85.797-49.63-132.203-31.84C248.14 205.737 217.5 250.296 217.5 300s30.64 94.262 77.05 112.05c46.407 17.79 98.981 5.13 132.204-31.84" fill="#fff"/></svg>';
             text.textContent = 'TR';
         }
     }
