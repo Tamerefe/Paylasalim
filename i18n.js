@@ -20,6 +20,11 @@ const translations = {
         'stat-secure': 'Güvenli',
         'stat-savings': 'Tasarruf',
         'stat-support': 'Destek',
+        'support-status': 'Türkiye Saati',
+        'support-hours': 'Destek Saatleri: 09:00 - 17:00 (Türkiye)',
+        'support-closed-hours': 'Destek Saatleri: 09:00 - 17:00',
+        'support-active': '✅ Aktif',
+        'support-inactive': '🕐 Kapalı',
 
         // Features Section
         'features-title': 'Neden Paylaşalım?',
@@ -253,13 +258,13 @@ const translations = {
         'faq-q1': 'Paylaşalım nedir ve nasıl çalışır?',
         'faq-a1': 'Paylaşalım, Kuzey Kıbrıs\'ta sürücüler ve yolcuları bir araya getiren modern bir paylaşımlı yolculuk platformudur. Sürücüler boş koltuklarını paylaşarak yakıt masraflarını azaltır, yolcular ise uygun fiyata güvenli ulaşım sağlar. Firebase ve Google Maps teknolojileriyle geliştirilmiş, güvenli ve kullanıcı dostu bir mobil uygulamadır.',
         'faq-q2': 'Güvenlik önlemleri nelerdir?',
-        'faq-a2': 'Güvenliğiniz bizim önceliğimiz! Firebase Authentication ile kimlik doğrulama, kullanıcı değerlendirme ve puanlama sistemi, doğrulanmış telefon numaraları, gerçek zamanlı konum paylaşımı, güvenli mesajlaşma sistemi ve 7/24 destek ekibi ile güvenli yolculuklar sağlıyoruz. Her kullanıcı profili onaylanır ve kullanıcılar birbirlerini değerlendirebilir.',
+        'faq-a2': 'Güvenliğiniz bizim önceliğimiz! Firebase Authentication ile kimlik doğrulama, kullanıcı değerlendirme ve puanlama sistemi, doğrulanmış telefon numaraları, gerçek zamanlı konum paylaşımı, güvenli mesajlaşma sistemi ve destek ekibi (Pazartesi-Cuma 09:00-17:00 Türkiye Saati) ile güvenli yolculuklar sağlıyoruz. Her kullanıcı profili onaylanır ve kullanıcılar birbirlerini değerlendirebilir.',
         'faq-q3': 'Kayıt olmak için ne gereklidir?',
         'faq-a3': 'Kayıt olmak için geçerli bir e-posta adresi, telefon numarası ve profil fotoğrafı yeterlidir. Sürücü olarak kayıt olacaksanız ek olarak araç bilgilerinizi (marka, model, plaka ve renk) eklemeniz gerekmektedir. Kimlik doğrulama işlemi 24 saat içinde tamamlanır.',
         'faq-q4': 'Ücretlendirme nasıl işler?',
         'faq-a4': 'Sürücüler yolculuk oluştururken koltuk başına fiyat belirler. Bu fiyat yakıt, yol ve araç yıpranma masraflarını karşılayacak şekilde olmalıdır. Uygulama kullanımı ücretsizdir, sadece paylaşılan masraflar için ödeme yapılır. Ödemeler nakit veya uygulama içi dijital cüzdan ile güvenli şekilde gerçekleştirilir.',
         'faq-q5': 'Yolculuk iptal edilirse ne olur?',
-        'faq-a5': 'Yolculuklar, sefer saatinden 24 saat öncesine kadar ücretsiz iptal edilebilir. 24 saatten daha kısa sürede iptal edilmesi durumunda iptal politikası devreye girer. Sürücünün yolculuğu iptal etmesi durumunda, rezervasyon yapmış tüm yolcular anında bilgilendirilir ve ödeme yapılmışsa iade edilir. Acil durumlar için destek ekibimiz 7/24 hizmetinizdedir.',
+        'faq-a5': 'Yolculuklar, sefer saatinden 24 saat öncesine kadar ücretsiz iptal edilebilir. 24 saatten daha kısa sürede iptal edilmesi durumunda iptal politikası devreye girer. Sürücünün yolculuğu iptal etmesi durumunda, rezervasyon yapmış tüm yolcular anında bilgilendirilir ve ödeme yapılmışsa iade edilir. Acil durumlar için destek ekibimize iletişim kurunuz (Pazartesi-Cuma 09:00-17:00 Türkiye Saati).',
         'faq-q6': 'Değerlendirme sistemi nasıl çalışır?',
         'faq-a6': 'Her yolculuk sonrasında sürücüler ve yolcular birbirlerini 1-5 yıldız arası puanlayabilir. Değerlendirmeler profilinizde görüntülenir ve güvenilir bir topluluk oluşturmamıza yardımcı olur. Olumsuz değerlendirme alan kullanıcılar incelenir ve gerekirse hesapları askıya alınır. Olumlu puanlar toplulukta güven oluşturur.',
         'faq-q7': 'Ödeme nasıl yapılır?',
@@ -269,10 +274,42 @@ const translations = {
         'faq-q9': 'Bagaj limiti var mı?',
         'faq-a9': 'Bagaj politikası sürücü tarafından belirlenir. Yolculuk oluştururken sürücüler bagaj kabul edip etmediklerini ve boyut limitlerini belirtirler. Genellikle küçük bir sırt çantası veya el bagajı kabul edilir. Büyük bavul veya hacimli eşyalarınız varsa rezervasyon öncesi mutlaka sürücü ile iletişime geçin ve onay alın.',
         'faq-q10': 'Sorun yaşadığımda nasıl destek alabilirim?',
-        'faq-a10': 'Destek ekibimiz 7/24 hizmetinizdedir! Uygulama içindeki "Yardım" bölümünden canlı destek ile iletişime geçebilir, e-posta (destek@paylasalim.com) veya telefon ile bize ulaşabilirsiniz. Acil durumlar için uygulama içinde "Acil Durum" butonu bulunmaktadır. Ortalama yanıt süremiz 1 saattir.',
+        'faq-a10': 'Destek ekibimiz hizmetinizdedir (Pazartesi-Cuma 09:00-17:00 Türkiye Saati)! Uygulama içindeki "Yardım" bölümünden canlı destek ile iletişime geçebilir, e-posta (destek@paylasalim.com) veya telefon ile bize ulaşabilirsiniz. Acil durumlar için uygulama içinde "Acil Durum" butonu bulunmaktadır. Ortalama yanıt süremiz 1 saattir.',
         'faq-cta-title': 'Başka sorularınız mı var?',
         'faq-cta-desc': 'Ekibimizle iletişime geçmekten çekinmeyin!',
-        'faq-cta-button': 'İletişime Geç'
+        'faq-cta-button': 'İletişime Geç',
+
+        // Waitlist Page
+        'wl-badge': 'Yakında Yayında',
+        'wl-heading-main': 'Kıbrıs\'ın Carpool Uygulaması',
+        'wl-heading-highlight': 'Yolda Geliyor',
+        'wl-subtitle': 'Paylaşalım\'ı erken keşfeden kullanıcılardan biri ol. Yayına girdiğimizde sana hemen haber veririz ve özel avantajlardan yararlanırsın.',
+        'wl-social-text': '<strong>50+</strong> kişi bekleme listesinde',
+        'wl-counter-cities': '3 şehir',
+        'wl-counter-uni': '5 üniversite',
+        'wl-counter-savings': '%40 tasarruf',
+        'wl-form-title': 'Erken Erişim Listesine Katıl',
+        'wl-form-desc': 'Bildirim al, sürpriz ayrıcalıkları yakala.',
+        'wl-label-fname': 'Adın',
+        'wl-label-lname': 'Soyadın',
+        'wl-label-email': 'E-posta adresin *',
+        'wl-label-type': 'Nasıl kullanacaksın?',
+        'wl-type-placeholder': 'Seçin...',
+        'wl-type-passenger': 'Yolcu — Araç aramak istiyorum',
+        'wl-type-driver': 'Sürücü — Yolcu almak istiyorum',
+        'wl-type-both': 'Her ikisi de',
+        'wl-check-label': 'Test kullanıcısı olmak istiyorum — beta avantajlarından faydalanmak istiyorum',
+        'wl-submit': 'Listeye Katıl — Ücretsiz',
+        'wl-privacy': '🔒 E-posta adresin güvende. Sadece uygulama haberleri için kullanılır, asla satılmaz.',
+        'wl-perk1': 'Yayında ilk sana haber veririz',
+        'wl-perk2': 'İlk kullanıcılara özel avantajlar',
+        'wl-perk3': 'İlk yolculukta %20 indirim',
+        'wl-perk4': 'Öncelikli destek hakkı',
+        'wl-success-title': 'Harika, listedesin!',
+        'wl-success-pre': 'Uygulama yayına girdiğinde ',
+        'wl-success-post': ' adresine haber vereceğiz. Bizi arkadaşlarınla paylaş!',
+        'wl-share-desc': 'Arkadaşlarını da davet et:',
+        'wl-copy-label': 'Kopyala'
     },
     en: {
         // Navigation
@@ -294,6 +331,11 @@ const translations = {
         'stat-secure': 'Secure',
         'stat-savings': 'Savings',
         'stat-support': 'Support',
+        'support-status': 'Turkey Time',
+        'support-hours': 'Support Hours: 09:00 - 17:00 (Turkey)',
+        'support-closed-hours': 'Support Hours: 09:00 - 17:00',
+        'support-active': '✅ Active',
+        'support-inactive': '🕐 Closed',
 
         // Features Section
         'features-title': 'Why Paylaşalım?',
@@ -529,13 +571,13 @@ const translations = {
         'faq-q1': 'What is Paylaşalım and how does it work?',
         'faq-a1': 'Paylaşalım is a modern ridesharing platform that brings drivers and passengers together in North Cyprus. Drivers share their empty seats to reduce fuel costs, while passengers get safe transportation at affordable prices. It is a secure and user-friendly mobile app developed with Firebase and Google Maps technologies.',
         'faq-q2': 'What are the security measures?',
-        'faq-a2': 'Your safety is our priority! We provide secure trips with Firebase Authentication identity verification, user rating and review system, verified phone numbers, real-time location sharing, secure messaging system, and 24/7 support team. Every user profile is verified and users can rate each other.',
+        'faq-a2': 'Your safety is our priority! We provide secure trips with Firebase Authentication identity verification, user rating and review system, verified phone numbers, real-time location sharing, secure messaging system, and support team (Monday-Friday 09:00-17:00 Turkey Time). Every user profile is verified and users can rate each other.',
         'faq-q3': 'What is required to register?',
         'faq-a3': 'To register, you need a valid email address, phone number, and profile picture. If you are registering as a driver, you also need to add your vehicle information (make, model, license plate, and color). Identity verification is completed within 24 hours.',
         'faq-q4': 'How does pricing work?',
         'faq-a4': 'Drivers set the price per seat when creating a trip. This price should cover fuel, road, and vehicle wear costs. The app is free to use, you only pay for the shared costs. Payments are made securely in cash or via the in-app digital wallet.',
         'faq-q5': 'What happens if a trip is cancelled?',
-        'faq-a5': 'Trips can be cancelled free of charge up to 24 hours before departure. If cancelled less than 24 hours before, the cancellation policy applies. If the driver cancels the trip, all passengers with reservations are notified immediately and any payments are refunded. Our support team is available 24/7 for emergencies.',
+        'faq-a5': 'Trips can be cancelled free of charge up to 24 hours before departure. If cancelled less than 24 hours before, the cancellation policy applies. If the driver cancels the trip, all passengers with reservations are notified immediately and any payments are refunded. Please contact our support team for emergencies (Monday-Friday 09:00-17:00 Turkey Time).',
         'faq-q6': 'How does the rating system work?',
         'faq-a6': 'After each trip, drivers and passengers can rate each other on a scale of 1-5 stars. Ratings are displayed on your profile and help us build a trusted community. Users with negative ratings are reviewed and their accounts may be suspended if necessary. Positive ratings build trust in the community.',
         'faq-q7': 'How do payments work?',
@@ -545,10 +587,42 @@ const translations = {
         'faq-q9': 'Is there a luggage limit?',
         'faq-a9': 'Luggage policy is determined by the driver. When creating a trip, drivers specify whether they accept luggage and size limits. Generally, a small backpack or hand luggage is accepted. If you have large suitcases or bulky items, be sure to contact the driver and get approval before booking.',
         'faq-q10': 'How can I get support if I have a problem?',
-        'faq-a10': 'Our support team is available 24/7! You can contact live support from the "Help" section in the app, reach us via email (support@paylasalim.com) or phone. There is an "Emergency" button in the app for emergencies. Our average response time is 1 hour.',
+        'faq-a10': 'Our support team is available (Monday-Friday 09:00-17:00 Turkey Time)! You can contact live support from the "Help" section in the app, reach us via email (support@paylasalim.com) or phone. There is an "Emergency" button in the app for emergencies. Our average response time is 1 hour.',
         'faq-cta-title': 'Have more questions?',
         'faq-cta-desc': 'Don\'t hesitate to contact our team!',
-        'faq-cta-button': 'Get in Touch'
+        'faq-cta-button': 'Get in Touch',
+
+        // Waitlist Page
+        'wl-badge': 'Coming Soon',
+        'wl-heading-main': 'Cyprus\'s Carpool App',
+        'wl-heading-highlight': 'On the Way',
+        'wl-subtitle': 'Be one of the first to discover Paylaşalım. When we launch, we\'ll notify you immediately and you\'ll enjoy exclusive benefits.',
+        'wl-social-text': '<strong>50+</strong> people on the waitlist',
+        'wl-counter-cities': '3 cities',
+        'wl-counter-uni': '5 universities',
+        'wl-counter-savings': '40% savings',
+        'wl-form-title': 'Join the Early Access List',
+        'wl-form-desc': 'Get notified, grab surprise perks.',
+        'wl-label-fname': 'First Name',
+        'wl-label-lname': 'Last Name',
+        'wl-label-email': 'Your Email *',
+        'wl-label-type': 'How will you use it?',
+        'wl-type-placeholder': 'Select...',
+        'wl-type-passenger': 'Passenger — I want to find rides',
+        'wl-type-driver': 'Driver — I want to offer rides',
+        'wl-type-both': 'Both',
+        'wl-check-label': 'I want to be a test user — I want to benefit from beta perks',
+        'wl-submit': 'Join the List — Free',
+        'wl-privacy': '🔒 Your email is safe. Used only for app updates, never sold.',
+        'wl-perk1': 'You\'ll be first to know when we launch',
+        'wl-perk2': 'Exclusive perks for early users',
+        'wl-perk3': '20% off your first trip',
+        'wl-perk4': 'Priority support access',
+        'wl-success-title': 'You\'re on the list!',
+        'wl-success-pre': 'We\'ll notify ',
+        'wl-success-post': ' when the app launches. Share us with your friends!',
+        'wl-share-desc': 'Invite your friends too:',
+        'wl-copy-label': 'Copy'
     }
 };
 
@@ -606,6 +680,11 @@ function setLanguage(lang) {
             flag.innerHTML = '<svg height="24px" width="36px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><path d="M0 0h900v600H0z" fill="#e30a17"/><path d="m417.504 300 135.68-44.078-83.86 115.41V228.668l83.86 115.41Zm9.25 80.21c-35.7 56.415-104.387 82.446-168.508 63.86C194.125 425.488 150 366.762 150 300s44.125-125.488 108.246-144.07c64.121-18.586 132.809 7.445 168.508 63.86-33.223-36.97-85.797-49.63-132.203-31.84C248.14 205.737 217.5 250.296 217.5 300s30.64 94.262 77.05 112.05c46.407 17.79 98.981 5.13 132.204-31.84" fill="#fff"/></svg>';
             text.textContent = 'TR';
         }
+    }
+
+    // Destek durumunu dil değiştiğinde güncelle
+    if (typeof updateSupportStatus === 'function') {
+        updateSupportStatus();
     }
 }
 

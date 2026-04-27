@@ -54,6 +54,7 @@
                     <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
                     <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
                     <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="waitlist.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none;">Erken Erişim</a></li>
                     <li><a href="contact.html" class="btn btn-light" data-i18n="nav-contact">İletişim</a></li>
                     <li>
                         <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
@@ -101,8 +102,9 @@
                                 <span data-i18n="stat-savings">Tasarruf</span>
                             </div>
                             <div class="stat">
-                                <strong>7/24</strong>
+                                <strong id="support-status">09:00 - 17:00</strong>
                                 <span data-i18n="stat-support">Destek</span>
+                                <small id="support-indicator" class="support-status-label" data-i18n="support-status">Türkiye Saati</small>
                             </div>
                         </div>
                     </div>
@@ -239,6 +241,27 @@
                         <p data-i18n="feature6-desc">Yakıt ve yol masraflarını paylaş, %40'a varan tasarruf sağla.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Waitlist / Erken Erişim Section -->
+        <section style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 5rem 1.5rem;">
+            <div class="container" style="max-width: 680px; text-align: center;">
+                <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(22,163,74,0.12); border: 1px solid rgba(22,163,74,0.25); color: #15803d; font-size: 0.875rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 1.25rem;">
+                    <span style="width:7px;height:7px;background:#16a34a;border-radius:50%;display:inline-block;"></span>
+                    Yakında Yayında
+                </span>
+                <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: #0f172a; margin-bottom: 1rem; line-height: 1.2;">Yayına Girdiğimizde<br>İlk Sen Haberdar Ol</h2>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">Erken erişim listesine katıl — uygulama çıktığında sana hemen bildiririz ve <strong>ilk kullanıcılara özel %20 indirim</strong> kazanırsın.</p>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.5rem 1rem; font-size: 0.875rem; color: #334155; font-weight: 500;">⚡ Anında bildirim</div>
+                    <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.5rem 1rem; font-size: 0.875rem; color: #334155; font-weight: 500;">🎁 %20 ilk yolculuk indirimi</div>
+                    <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.5rem 1rem; font-size: 0.875rem; color: #334155; font-weight: 500;">🛡️ Öncelikli destek</div>
+                </div>
+                <a href="waitlist.html" style="display: inline-flex; align-items: center; gap: 0.6rem; background: linear-gradient(135deg, #16a34a, #15803d); color: white; text-decoration: none; padding: 1rem 2.5rem; border-radius: 14px; font-size: 1.05rem; font-weight: 700; box-shadow: 0 6px 20px rgba(22,163,74,0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 28px rgba(22,163,74,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(22,163,74,0.35)'">
+                    🚀 Erken Erişim Listesine Katıl
+                </a>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 1rem;">🔒 E-posta adresin güvende. Spam göndermiyoruz.</p>
             </div>
         </section>
 

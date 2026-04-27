@@ -94,6 +94,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Erken Erişim / Waitlist -->
+  <url>
+    <loc>https://paylasalim.com.tr/waitlist.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Gizlilik Politikası -->
   <url>
     <loc>https://paylasalim.com.tr/privacy.html</loc>

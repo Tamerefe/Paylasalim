@@ -394,6 +394,26 @@ main {
     color: var(--text-gray);
 }
 
+/* Support Status Styles */
+.support-status-label {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.support-active {
+    color: #10b981 !important;
+}
+
+.support-inactive {
+    color: #ef4444 !important;
+}
+
+#support-status {
+    transition: color 0.3s ease;
+}
+
 /* Phone Mockup - Premium iPhone 15 Pro Style */
 .hero-visual {
     position: relative;

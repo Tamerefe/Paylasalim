@@ -289,3 +289,63 @@ infoCards.forEach(card => {
         }
     });
 });
+
+// Dynamic Support Status - Türkiye Saatine Göre
+function updateSupportStatus() {
+    // Türkiye saatini al (Istanbul Time Zone: UTC+3 veya UTC+2)
+    const formatter = new Intl.DateTimeFormat('tr-TR', {
+        timeZone: 'Europe/Istanbul',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+    
+    const turkeyTime = formatter.format(new Date());
+    const [hourStr, minuteStr] = turkeyTime.split(':');
+    const hour = parseInt(hourStr, 10);
+    const minute = parseInt(minuteStr, 10);
+    
+    // Destek durumunu kontrol et (9:00 - 17:00 arası)
+    const isOpen = hour >= 9 && hour < 17;
+    
+    const supportStatusEl = document.getElementById('support-status');
+    const supportIndicatorEl = document.getElementById('support-indicator');
+    
+    if (!supportStatusEl) return;
+    
+    if (isOpen) {
+        // Şu anki saati göster
+        supportStatusEl.textContent = `${hourStr}:${minuteStr}`;
+        supportStatusEl.classList.add('support-active');
+        supportStatusEl.classList.remove('support-inactive');
+        
+        if (supportIndicatorEl) {
+            // i18n çevirilerini kullan
+            const activeLabel = translations[currentLang]['support-active'] || '✅ Aktif';
+            supportIndicatorEl.textContent = activeLabel;
+            supportIndicatorEl.classList.add('support-active');
+            supportIndicatorEl.classList.remove('support-inactive');
+        }
+    } else {
+        // Kapalı olduğunu göster
+        supportStatusEl.textContent = '09:00 - 17:00';
+        supportStatusEl.classList.add('support-inactive');
+        supportStatusEl.classList.remove('support-active');
+        
+        if (supportIndicatorEl) {
+            // i18n çevirilerini kullan
+            const inactiveLabel = translations[currentLang]['support-inactive'] || '🕐 Kapalı';
+            supportIndicatorEl.textContent = inactiveLabel;
+            supportIndicatorEl.classList.add('support-inactive');
+            supportIndicatorEl.classList.remove('support-active');
+        }
+    }
+}
+
+// İlk yükleme
+document.addEventListener('DOMContentLoaded', () => {
+    updateSupportStatus();
+});
+
+// Her dakika güncelle
+setInterval(updateSupportStatus, 60000);
