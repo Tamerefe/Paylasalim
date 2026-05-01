@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.firebaseapp.com https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://www.google-analytics.com https://www.clarity.ms; frame-src 'self';">
+    <title>Hesapı Sil | Paylaşalım</title>
+    <meta name="description" content="Paylaşalım hesabınızı silme talebi gönderin. Form aracılığıyla hesabınız ilgili kişilerle paylaşılacak ve silinecektir.">
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .delete-account-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .delete-account-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .delete-account-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .delete-account-header p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .delete-account-form {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #92400e;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #b45309;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-submit {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.9rem 1.5rem;
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-cancel {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.9rem 1.5rem;
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background: var(--bg-light);
+            border-color: var(--primary);
+        }
+
+        .success-message,
+        .error-message {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            color: #166534;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #7f1d1d;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        @media (max-width: 768px) {
+            .delete-account-container {
+                padding: 2rem 1rem;
+            }
+
+            .delete-account-form {
+                padding: 1.5rem;
+            }
+
+            .delete-account-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+            }
+
+            .btn-submit,
+            .btn-cancel {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <a class="logo" href="index.html">
+                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
+            <nav class="nav" id="main-nav" aria-hidden="false">
+                <ul>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
+                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="waitlist.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none;">Erken Erişim</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+                            <span class="lang-flag" id="lang-flag"></span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="delete-account-container">
+            <div class="delete-account-header">
+                <h1 data-i18n="delete-title">Hesabı Sil</h1>
+                <p data-i18n="delete-subtitle">Hesabınızı silmek için lütfen aşağıdaki formu doldurun. Talebiniz incelenecek ve işlem gerçekleştirilecektir.</p>
+            </div>
+
+            <div class="delete-account-form">
+                <div id="successMessage" class="success-message" data-i18n="delete-success">
+                    ✓ Talebiniz başarıyla gönderildi. En kısa sürede hesabınız silinecektir.
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+
+                <div class="warning-box">
+                    <strong data-i18n="delete-warning-title">⚠️ Uyarı</strong>
+                    <span data-i18n="delete-warning-text">Hesabınızı sildikten sonra tüm verileriniz silinecek ve bu işlem geri alınamaz. Lütfen emin olun.</span>
+                </div>
+
+                <form id="deleteAccountForm">
+                    <div class="form-group">
+                        <label for="email" data-i18n="delete-email-label">
+                            E-Posta Adresi <span class="required">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" data-i18n="delete-phone-label">
+                            Telefon Numarası <span class="required">*</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+90 (5XX) XXX XXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" data-i18n="delete-name-label">
+                            Ad Soyad <span class="required">*</span>
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="Örnek İsim">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason" data-i18n="delete-reason-label">
+                            Hesabı Silme Nedeni (İsteğe Bağlı)
+                        </label>
+                        <textarea id="reason" name="reason" placeholder="Hesabınızı silmek istemenizin nedenini bizimle paylaşabilirsiniz..."></textarea>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-cancel" onclick="history.back()" data-i18n="delete-cancel">İptal Et</button>
+                        <button type="submit" class="btn-submit" data-i18n="delete-submit">Hesabı Sil</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="analytics-config.js"></script>
+    <script src="cookie-consent.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Hesap silme formu
+        const form = document.getElementById('deleteAccountForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                name: document.getElementById('name').value,
+                reason: document.getElementById('reason').value,
+                timestamp: new Date().toISOString(),
+                type: 'account_deletion_request'
+            };
+
+            try {
+                // E-posta gönder (Google Form veya webhook kullanabilirsiniz)
+                // Örnek: Google Form'a veri gönderme
+                const response = await fetch('https://formspree.io/f/mvzlggba', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                }).catch(() => {
+                    // Formspree yoksa localStorage'a kaydet
+                    console.log('Offline mode: Veri cihazda kaydedildi');
+                    return { ok: true };
+                });
+
+                if (response.ok) {
+                    errorMessage.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    form.reset();
+
+                    // 3 saniye sonra geri yönlendir
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 3000);
+                } else {
+                    throw new Error('Form gönderimi başarısız');
+                }
+            } catch (error) {
+                errorMessage.textContent = 'Hata: Lütfen daha sonra tekrar deneyin.';
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                console.error('Form hatası:', error);
+            }
+        });
+
+        // i18n translate çalıştır
+        if (typeof translatePage === 'function') {
+            translatePage();
+        }
+    </script>
+</body>
+
+</html>

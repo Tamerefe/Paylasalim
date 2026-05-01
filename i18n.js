@@ -35,6 +35,25 @@ const translations = {
         'feature5-desc': 'Şeffaf değerlendirme sistemi ile doğrulanmış sürücü ve yolcu profilleri.',
         'feature6-title': 'Uygun Fiyat',
         'feature6-desc': 'Yakıt ve yol masraflarını paylaş, %40\'a varan tasarruf sağla.',
+        'feature7-title': 'Yeni İnsanlarla Tanış',
+        'feature7-desc': 'Benzer ilgi alanlarına sahip insanlarla tanışın, dostluk kurun ve sosyalleşin.',
+
+        // Community & Socialization Section
+        'community-badge': 'Sosyal Ağ Özellikleri',
+        'community-title': 'Sadece Yolculuk Değil,<br>Yeni Arkadaşlıklar Kur',
+        'community-desc': 'Paylaşalım\'da her yolculuk bir fırsat. Benzer rotaları kullanan, aynı çıkış saatlerine sahip insanlarla tanışın ve yeni dostluklar kurun.',
+        'community-feature1': 'Benzer İnsanları Bul',
+        'community-feature1-desc': 'Profil tercihlerine ve yolculuk rutinine göre uygun insanları keşfet.',
+        'community-feature2': 'Rahat İletişim',
+        'community-feature2-desc': 'Yolculuktan önce sohbet et, tanış ve konuşarak bağlantı kur.',
+        'community-feature3': 'Güvenli & Doğrulanmış',
+        'community-feature3-desc': 'Her kullanıcı doğrulanmış ve değerlendirilmiş, güvenle tanış.',
+        'community-feature4': 'Kuzey Kıbrıs Topluluğu',
+        'community-feature4-desc': 'Girne, Lefkoşa, Gazimağusa ve çevresinde aktif topluluk.',
+        'community-feature5': 'Ortak İlgiler',
+        'community-feature5-desc': 'İlgi alanlarına göre filtrele ve ortak noktaları olan insanları bul.',
+        'community-feature6': 'Uzun Süreli Dostluk',
+        'community-feature6-desc': 'Tekrar tekrar yolculuk yapan kişilerle düzenli arkadaşlıklar kur.',
 
         // How It Works
         'how-title': 'Nasıl Çalışır?',
@@ -60,7 +79,21 @@ const translations = {
         'footer-social-title': 'Sosyal Medya',
         'footer-privacy': 'Gizlilik ve Sorumluluk',
         'footer-kvkk': 'KVKK',
+        'footer-delete-account': 'Hesabı Sil',
         'footer-copyright': '© 2025 Paylaşalım — Kuzey Kıbrıs. Tüm hakları saklıdır.',
+
+        // Delete Account Page
+        'delete-title': 'Hesabı Sil',
+        'delete-subtitle': 'Hesabınızı silmek için lütfen aşağıdaki formu doldurun. Talebiniz incelenecek ve işlem gerçekleştirilecektir.',
+        'delete-warning-title': '⚠️ Uyarı',
+        'delete-warning-text': 'Hesabınızı sildikten sonra tüm verileriniz silinecek ve bu işlem geri alınamaz. Lütfen emin olun.',
+        'delete-email-label': 'E-Posta Adresi',
+        'delete-phone-label': 'Telefon Numarası',
+        'delete-name-label': 'Ad Soyad',
+        'delete-reason-label': 'Hesabı Silme Nedeni (İsteğe Bağlı)',
+        'delete-cancel': 'İptal Et',
+        'delete-submit': 'Hesabı Sil',
+        'delete-success': '✓ Talebiniz başarıyla gönderildi. En kısa sürede hesabınız silinecektir.',
 
         // Tech Page - How It Works
         'tech-how-title': 'Nasıl Çalışır?',
@@ -338,6 +371,25 @@ const translations = {
         'feature5-desc': 'Verified driver and passenger profiles with transparent rating system.',
         'feature6-title': 'Affordable Price',
         'feature6-desc': 'Share fuel and road costs, save up to 40%.',
+        'feature7-title': 'Meet New People',
+        'feature7-desc': 'Connect with people who share your interests, build friendships and socialize.',
+
+        // Community & Socialization Section
+        'community-badge': 'Social Features',
+        'community-title': 'More Than Just a Ride,<br>Make New Friends',
+        'community-desc': 'On Paylaşalım, every trip is an opportunity. Meet people using similar routes, at the same times, and make lasting friendships.',
+        'community-feature1': 'Find Similar People',
+        'community-feature1-desc': 'Discover compatible people based on profile preferences and travel routines.',
+        'community-feature2': 'Easy Communication',
+        'community-feature2-desc': 'Chat before trips, get to know each other and build connections.',
+        'community-feature3': 'Safe & Verified',
+        'community-feature3-desc': 'Every user is verified and rated, connect with confidence.',
+        'community-feature4': 'North Cyprus Community',
+        'community-feature4-desc': 'Active community across Kyrenia, Nicosia, Famagusta and surrounding areas.',
+        'community-feature5': 'Shared Interests',
+        'community-feature5-desc': 'Filter by interests and find people with common ground.',
+        'community-feature6': 'Long-Term Friendships',
+        'community-feature6-desc': 'Build regular friendships with people you travel with frequently.',
 
         // How It Works
         'how-title': 'How It Works?',
@@ -365,7 +417,21 @@ const translations = {
         'footer-social-title': 'Social Media',
         'footer-privacy': 'Privacy & Disclaimer',
         'footer-kvkk': 'GDPR',
+        'footer-delete-account': 'Delete Account',
         'footer-copyright': '© 2025 Paylaşalım — North Cyprus. All rights reserved.',
+
+        // Delete Account Page
+        'delete-title': 'Delete Account',
+        'delete-subtitle': 'Please fill out the form below to request account deletion. Your request will be reviewed and processed.',
+        'delete-warning-title': '⚠️ Warning',
+        'delete-warning-text': 'Once your account is deleted, all your data will be permanently deleted and this action cannot be undone. Please make sure.',
+        'delete-email-label': 'Email Address',
+        'delete-phone-label': 'Phone Number',
+        'delete-name-label': 'Full Name',
+        'delete-reason-label': 'Reason for Deletion (Optional)',
+        'delete-cancel': 'Cancel',
+        'delete-submit': 'Delete Account',
+        'delete-success': '✓ Your request has been submitted successfully. Your account will be deleted shortly.',
 
         // Tech Page - How It Works
         'tech-how-title': 'How It Works?',

@@ -36,7 +36,8 @@ function loadFooter() {
         { href: 'blog.html', i18n: 'nav-blog', text: 'Blog' },
         { href: 'faq.html', i18n: 'nav-faq', text: 'SSS' },
         { href: 'privacy.html#kvkk', i18n: 'footer-kvkk', text: 'KVKK' },
-        { href: 'privacy.html', i18n: 'footer-privacy', text: 'Gizlilik ve Sorumluluk' }
+        { href: 'privacy.html', i18n: 'footer-privacy', text: 'Gizlilik ve Sorumluluk' },
+        { href: 'delete-account.html', i18n: 'footer-delete-account', text: 'Hesabı Sil' }
     ];
 
     links.forEach(link => {
