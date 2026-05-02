@@ -129,7 +129,7 @@ const translations = {
         'download-title': 'Uygulamayı İndir',
         'download-subtitle': 'iOS ve Android için yakında App Store ve Play Store\'da!',
         'download-appstore': 'App Store\'dan İndir (Yakında)',
-        'download-playstore': 'Google Play\'den İndir (Yakında)',
+        'download-playstore': 'Google Play\'den İndir (Kapalı Beta)',
         'download-requirements': 'Minimum gereksinimler: Android 5.0+ • iOS 12.0+',
 
         // About Page
@@ -467,7 +467,7 @@ const translations = {
         'download-title': 'Download App',
         'download-subtitle': 'Coming soon to App Store and Play Store for iOS and Android!',
         'download-appstore': 'Download from App Store (Coming Soon)',
-        'download-playstore': 'Download from Google Play (Coming Soon)',
+        'download-playstore': 'Download from Google Play (Closed Beta)',
         'download-requirements': 'Minimum requirements: Android 5.0+ • iOS 12.0+',
 
         // About Page
