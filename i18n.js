@@ -319,7 +319,7 @@ const translations = {
         'wl-label-os': 'Telefon İşletim Sistemi',
         'wl-os-placeholder': 'Seçin...',
         'wl-os-android': 'Android',
-        'wl-os-apple': 'Apple (iOS)',
+        'wl-os-apple': 'Apple iOS',
         'wl-label-email': 'E-posta adresin *',
 
         'wl-check-label': 'Test kullanıcısı olmak ister misin?',
@@ -658,7 +658,7 @@ const translations = {
         'wl-label-os': 'Phone Operating System',
         'wl-os-placeholder': 'Select...',
         'wl-os-android': 'Android',
-        'wl-os-apple': 'Apple (iOS)',
+        'wl-os-apple': 'Apple iOS',
         'wl-label-email': 'Your Email *',
 
         'wl-check-label': 'Would you like to be a test user?',
