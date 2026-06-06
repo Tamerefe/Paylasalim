@@ -125,11 +125,26 @@ const translations = {
         'tech-notifications-title': 'Bildirimler',
         'tech-notifications-desc': 'Firebase Cloud Messaging',
 
+        // Events Feature Section
+        'events-badge': 'YENİ ÖZELLİK!',
+        'events-title': 'Artık Etkinlik Oluşturabilisin',
+        'events-subtitle': 'Paylaşalım şimdi sadece paylaşımlı yolculuk değil; etkinlik oluşturma ve etkinliğe katılma deneyimi de sunuyor.',
+        'events-how-title': 'NASIL KULLANILIR?',
+        'event-step1': '1. Etkinlik bilgilerini gir',
+        'event-step1-desc': 'Başlık, kategori ve açıklamayı belirle',
+        'event-step2': '2. Tarih, saat ve konumu seç',
+        'event-step2-desc': 'Etkinliğin gerçekleşeceği zamanı ve yeri belirle',
+        'event-step3': '3. Oluştur ve katılımcıları bekle',
+        'event-step3-desc': 'Etkinliğini yayınla ve uygun katılımcıları bul',
+        'events-highlight': 'Etkinlikleri keşfet, katıl ve sosyalleş!',
+        'events-cta': 'Hemen Dene',
+
         // Download Page
         'download-title': 'Uygulamayı İndir',
         'download-subtitle': 'iOS ve Android için yakında App Store ve Play Store\'da!',
-        'download-appstore': 'App Store\'dan İndir (Yakında)',
+        'download-appstore': 'App Store\'dan İndir',
         'download-playstore': 'Google Play\'den İndir (Kapalı Beta)',
+        'closed-beta-note': '<strong>Kapalı Beta:</strong> Uygulamayı indirdikten sonra erişim almak için kayıt formunu doldurmanız gerekmektedir.',
         'download-requirements': 'Minimum gereksinimler: Android 5.0+ • iOS 12.0+',
 
         // About Page
@@ -463,11 +478,26 @@ const translations = {
         'tech-notifications-title': 'Notifications',
         'tech-notifications-desc': 'Firebase Cloud Messaging',
 
+        // Events Feature Section
+        'events-badge': 'NEW FEATURE!',
+        'events-title': 'Now You Can Create Events',
+        'events-subtitle': 'Paylaşalım is no longer just ridesharing; it also offers event creation and event participation experience.',
+        'events-how-title': 'HOW TO USE?',
+        'event-step1': '1. Enter event information',
+        'event-step1-desc': 'Specify the title, category and description',
+        'event-step2': '2. Choose date, time and location',
+        'event-step2-desc': 'Determine when and where the event will take place',
+        'event-step3': '3. Create and wait for participants',
+        'event-step3-desc': 'Publish your event and find suitable participants',
+        'events-highlight': 'Discover events, participate and socialize!',
+        'events-cta': 'Try Now',
+
         // Download Page
         'download-title': 'Download App',
         'download-subtitle': 'Coming soon to App Store and Play Store for iOS and Android!',
-        'download-appstore': 'Download from App Store (Coming Soon)',
+        'download-appstore': 'Download from App Store',
         'download-playstore': 'Download from Google Play (Closed Beta)',
+        'closed-beta-note': '<strong>Closed Beta:</strong> After downloading the app, you need to fill out the registration form to get access.',
         'download-requirements': 'Minimum requirements: Android 5.0+ • iOS 12.0+',
 
         // About Page
