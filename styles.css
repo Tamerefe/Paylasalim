@@ -4956,3 +4956,176 @@ main {
         flex-direction: column;
       }
     }
+
+    @media (max-width: 768px) {
+      /* Presentation Main Container */
+      #slide-viewport {
+        overflow-y: auto;
+        display: block;
+        padding: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      #slide-canvas {
+        aspect-ratio: auto;
+        height: auto;
+        min-height: calc(100vh - 120px);
+        overflow: visible;
+        border-radius: 12px;
+      }
+
+      .slide {
+        height: auto;
+        min-height: calc(100vh - 120px);
+      }
+
+      .slide.active {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      }
+
+      .slide-body {
+        padding: 0 16px 20px;
+        flex: none;
+      }
+
+      /* Slide 1 - Kapak */
+      .s1-wrap {
+        padding: 40px 20px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .s1-badge {
+        margin-bottom: 20px;
+      }
+
+      .s1-title {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      .s1-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
+      .s1-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .s1-stat {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border2);
+        border-radius: 12px;
+        padding: 12px;
+      }
+
+      .s1-deco {
+        display: none;
+      }
+
+      /* Slide 2 & 6 - Tablolar */
+      .itab-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 8px;
+      }
+
+      .itab {
+        min-width: 600px; /* Force table horizontal scroll on mobile for legibility */
+      }
+
+      /* Slide 3, 5, 8 - Gridler */
+      .assumption-grid,
+      .mono-grid,
+      .focus-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .assumption-card,
+      .mono-card,
+      .focus-card {
+        padding: 16px;
+      }
+
+      /* Slide 4 - MAU Trend */
+      .chart-wrapper {
+        height: 200px;
+      }
+
+      .mau-stats-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* Slide 7 - Break-Even */
+      .be-timeline {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        height: auto;
+        padding-bottom: 12px;
+        display: flex;
+        gap: 4px;
+      }
+
+      .be-month {
+        min-width: 75px;
+        flex-shrink: 0;
+        padding: 8px 4px;
+      }
+
+      .breakeven-layout {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .breakeven-left,
+      .breakeven-right {
+        flex: none;
+        width: 100%;
+      }
+
+      /* Auth Gate */
+      .auth-box {
+        width: calc(100% - 32px);
+        padding: 36px 24px;
+        margin: 16px;
+        border-radius: 18px;
+      }
+
+      .auth-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+      }
+
+      .auth-box h2 {
+        font-size: 18px;
+      }
+
+      .auth-box p {
+        margin-bottom: 24px;
+      }
+
+      /* Controls */
+      #topbar {
+        padding: 0 12px;
+      }
+
+      .tb-controls {
+        gap: 4px;
+      }
+
+      .tb-btn {
+        padding: 4px 10px;
+        font-size: 12px;
+      }
+    }

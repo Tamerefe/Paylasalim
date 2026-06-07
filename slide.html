@@ -21,11 +21,11 @@
   <div id="auth-gate">
     <div class="auth-box">
       <div class="auth-logo"><img src="assets/logo.jpeg" alt="Paylaşalım Logo" /></div>
-      <h2>Yatırımcı Sunumu</h2>
-      <p>Bu sayfa yalnızca davetli yatırımcılar için erişime açıktır.</p>
+      <h2 data-i18n="auth-title">Yatırımcı Sunumu</h2>
+      <p data-i18n="auth-desc">Bu sayfa yalnızca davetli yatırımcılar için erişime açıktır.</p>
       <input type="password" class="auth-field" id="auth-input" placeholder="Erişim şifresi" autocomplete="off" />
-      <button class="auth-btn" id="auth-submit-btn" onclick="checkAuth()">Devam Et →</button>
-      <div class="auth-error" id="auth-error">Hatalı şifre. Lütfen tekrar deneyin.</div>
+      <button class="auth-btn" id="auth-submit-btn" onclick="checkAuth()" data-i18n="auth-submit">Devam Et →</button>
+      <div class="auth-error" id="auth-error" data-i18n="auth-error">Hatalı şifre. Lütfen tekrar deneyin.</div>
     </div>
   </div>
 
@@ -39,11 +39,19 @@
         <span>Paylaş<em>alım</em></span>
       </div>
       <div class="tb-slide-info">
-        Slayt <span id="current-slide-num">1</span> / <span id="total-slide-num">8</span>
+        <span data-i18n="slide-label">Slayt</span> <span id="current-slide-num">1</span> / <span
+          id="total-slide-num">8</span>
       </div>
       <div class="tb-controls">
-        <button class="tb-btn active" id="interactive-mode-btn" onclick="setMode('interactive')">İnteraktif</button>
-        <button class="tb-btn" id="present-mode-btn" onclick="setMode('present')">Sunum</button>
+        <button class="tb-btn" id="lang-toggle-btn" onclick="toggleLanguage()" title="Dili Değiştir"
+          style="margin-right: 8px; border-color: rgba(56, 189, 248, 0.35); color: var(--accent); font-weight: 600;">EN</button>
+        <button class="tb-btn" id="currency-toggle-btn" onclick="toggleCurrency()" title="Para Birimi Değiştir"
+          style="margin-right: 8px; border-color: rgba(251, 191, 36, 0.35); color: var(--gold); font-weight: 600;">₺
+          (TRY)</button>
+        <button class="tb-btn active" id="interactive-mode-btn" onclick="setMode('interactive')"
+          data-i18n="interactive-mode">İnteraktif</button>
+        <button class="tb-btn" id="present-mode-btn" onclick="setMode('present')"
+          data-i18n="present-mode">Sunum</button>
         <button class="tb-btn" id="fullscreen-btn" onclick="toggleFullscreen()" title="Tam Ekran">⛶</button>
       </div>
     </div>
@@ -56,49 +64,49 @@
         <div class="slide-thumb active" onclick="goToSlide(1)" id="thumb-1">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">1</span>
-            <span class="slide-thumb-title">Kapak &amp;<br />Giriş</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-1">Kapak &amp;<br />Giriş</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(2)" id="thumb-2">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">2</span>
-            <span class="slide-thumb-title">Maliyet<br />Projeksiyonu</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-2">Maliyet<br />Projeksiyonu</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(3)" id="thumb-3">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">3</span>
-            <span class="slide-thumb-title">Büyüme<br />Varsayımları</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-3">Büyüme<br />Varsayımları</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(4)" id="thumb-4">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">4</span>
-            <span class="slide-thumb-title">MAU<br />Trend</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-4">MAU<br />Trend</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(5)" id="thumb-5">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">5</span>
-            <span class="slide-thumb-title">Monetizasyon</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-5">Monetizasyon</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(6)" id="thumb-6">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">6</span>
-            <span class="slide-thumb-title">Kârlılık<br />Analizi</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-6">Kârlılık<br />Analizi</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(7)" id="thumb-7">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">7</span>
-            <span class="slide-thumb-title">Break-Even</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-7">Break-Even</span>
           </div>
         </div>
         <div class="slide-thumb" onclick="goToSlide(8)" id="thumb-8">
           <div class="slide-thumb-inner">
             <span class="slide-thumb-num">8</span>
-            <span class="slide-thumb-title">Odak<br />Noktaları</span>
+            <span class="slide-thumb-title" data-i18n="thumb-title-8">Odak<br />Noktaları</span>
           </div>
         </div>
       </div>
@@ -114,25 +122,25 @@
             <div class="slide-content">
               <div class="s1-wrap">
                 <div class="s1-badge">
-                  <span>Yatırımcı Sunumu</span> &nbsp;·&nbsp; 2026
+                  <span data-i18n="cover-badge">Yatırımcı Sunumu</span> &nbsp;·&nbsp; 2026
                 </div>
-                <h1 class="s1-title">Paylaşalım<br />12 Aylık Büyüme Raporu</h1>
-                <p class="s1-subtitle">
+                <h1 class="s1-title" data-i18n="cover-title">Paylaşalım<br />12 Aylık Büyüme Raporu</h1>
+                <p class="s1-subtitle" data-i18n="cover-subtitle">
                   Lojistik Büyüme Modeli, K-Faktörü ve Ağ Etkisi Çerçevesinde<br />
                   Gerçekçi Stratejik Analiz &amp; Finansal Projeksiyon
                 </p>
                 <div class="s1-stats">
                   <div class="s1-stat">
                     <div class="s1-stat-val" id="cover-mau-val">1.450</div>
-                    <div class="s1-stat-lbl">12. Ay MAU Hedefi</div>
+                    <div class="s1-stat-lbl" data-i18n="cover-stat-mau">12. Ay MAU Hedefi</div>
                   </div>
                   <div class="s1-stat">
                     <div class="s1-stat-val" id="cover-be-val" style="color: var(--gold)">~11-12. Ay</div>
-                    <div class="s1-stat-lbl">Tahmini Break-Even</div>
+                    <div class="s1-stat-lbl" data-i18n="cover-stat-be">Tahmini Break-Even</div>
                   </div>
                   <div class="s1-stat">
                     <div class="s1-stat-val" id="cover-cost-val" style="color: var(--accent3)">24.300 ₺</div>
-                    <div class="s1-stat-lbl">12 Aylık Toplam Maliyet</div>
+                    <div class="s1-stat-lbl" data-i18n="cover-stat-cost">12 Aylık Toplam Maliyet</div>
                   </div>
                 </div>
               </div>
@@ -153,11 +161,12 @@
             <div class="slide-bg"></div>
             <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
               <div class="slide-header">
-                <div class="slide-title-tag">Finansal Planlama</div>
-                <div class="slide-title">12 Aylık Maliyet Projeksiyonu</div>
+                <div class="slide-title-tag" data-i18n="cost-tag">Finansal Planlama</div>
+                <div class="slide-title" data-i18n="cost-title">12 Aylık Maliyet Projeksiyonu</div>
               </div>
               <div class="slide-body" style="flex:1;overflow:hidden;">
-                <div class="note-text"><strong>Kaynak:</strong> Firebase Spark Plan ilk 2 ay ücretsiz. Reklam bütçeleri
+                <div class="note-text" id="cost-source-note"><strong>Kaynak:</strong> Firebase ilk 2 ay 500 ₺. Reklam
+                  bütçeleri
                   Türkiye/KKTC Meta (Instagram) CPM benchmarkları (CPM ~35–75 TL, YCF Digital 2025) baz alınarak, günlük
                   150–300 TL test bütçeleriyle başlayıp maksimum aylık 8.000 ₺ ile sınırlandırılmıştır. Kurucu emeği
                   maliyet dışı tutulmuştur. <em>(Hücrelere tıklayarak değerleri düzenleyebilirsiniz.)</em></div>
@@ -165,11 +174,11 @@
                   <table class="itab" id="cost-table">
                     <thead>
                       <tr>
-                        <th>Ay</th>
-                        <th>Altyapı &amp; API (Firebase, vb.)</th>
-                        <th>Pazarlama &amp; Reklam</th>
-                        <th>Operasyon Desteği</th>
-                        <th>Toplam Maliyet</th>
+                        <th data-i18n="th-month">Ay</th>
+                        <th data-i18n="th-infra">Altyapı &amp; API (Firebase, vb.)</th>
+                        <th data-i18n="th-mkt">Pazarlama &amp; Reklam</th>
+                        <th data-i18n="th-ops">Operasyon Desteği</th>
+                        <th data-i18n="th-total">Toplam Maliyet</th>
                       </tr>
                     </thead>
                     <tbody id="cost-body"></tbody>
@@ -185,27 +194,28 @@
               style="background: radial-gradient(ellipse at 20% 80%, #102040 0%, #0d1526 60%, #060d1c 100%);"></div>
             <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
               <div class="slide-header">
-                <div class="slide-title-tag">Model Parametreleri</div>
-                <div class="slide-title">Büyüme Varsayımları</div>
+                <div class="slide-title-tag" data-i18n="ass-tag">Model Parametreleri</div>
+                <div class="slide-title" data-i18n="ass-title">Büyüme Varsayımları</div>
               </div>
               <div class="slide-body" style="flex:1;">
                 <div class="assumption-grid">
                   <!-- CPA -->
                   <div class="assumption-card">
 
-                    <div class="ac-title">CPA Düşüşü</div>
-                    <div class="ac-desc">Adjust 2024 EMEA raporuna göre Türkiye CPA, global ortalamanın %30-50 altında.
+                    <div class="ac-title" data-i18n="cpa-title">CPA Düşüşü</div>
+                    <div class="ac-desc" data-i18n="cpa-desc">Adjust 2024 EMEA raporuna göre Türkiye CPA, global
+                      ortalamanın %30-50 altında.
                       Kampüs odaklı bootstrap için 80-100 ₺ başlangıç (Instagram Meta reklamları CPM ~35–75 TL, YCF
                       Digital 2025). Algoritma olgunlaştıkça düşer.</div>
                     <div class="ac-slider-wrap">
                       <div class="ac-slider-row">
-                        <span class="ac-slider-lbl">Başlangıç</span>
+                        <span class="ac-slider-lbl" data-i18n="lbl-start">Başlangıç</span>
                         <input type="range" class="ac-slider" id="cpa-start" min="50" max="200" value="90"
                           oninput="updateCPA()" />
                         <span class="ac-val" id="cpa-start-val">90 ₺</span>
                       </div>
                       <div class="ac-slider-row">
-                        <span class="ac-slider-lbl">6. Ay</span>
+                        <span class="ac-slider-lbl" data-i18n="lbl-m6">6. Ay</span>
                         <input type="range" class="ac-slider" id="cpa-end" min="30" max="100" value="55"
                           oninput="updateCPA()" />
                         <span class="ac-val" id="cpa-end-val">55 ₺</span>
@@ -216,19 +226,20 @@
                   <!-- K-Factor -->
                   <div class="assumption-card">
 
-                    <div class="ac-title">K-Faktörü (Viralite)</div>
-                    <div class="ac-desc">KKTC gibi küçük, kapalı bir pazarda K&gt;1 viral büyüme yıllar alır. Başlangıç
+                    <div class="ac-title" data-i18n="k-title">K-Faktörü (Viralite)</div>
+                    <div class="ac-desc" data-i18n="k-desc">KKTC gibi küçük, kapalı bir pazarda K&gt;1 viral büyüme
+                      yıllar alır. Başlangıç
                       K=0.05 (her 20 kullanıcı 1 yeni kullanıcı getirir). 6. ayda K=0.15 hedefi gerçekçi bir iyimserlik.
                       Kaynak: Bootstrap rideshare K-factor benchmarks 2024.</div>
                     <div class="ac-slider-wrap">
                       <div class="ac-slider-row">
-                        <span class="ac-slider-lbl">1. Ay</span>
+                        <span class="ac-slider-lbl" data-i18n="lbl-m1">1. Ay</span>
                         <input type="range" class="ac-slider" id="k-start" min="1" max="30" value="5"
                           oninput="updateK()" />
                         <span class="ac-val" id="k-start-val">0.05</span>
                       </div>
                       <div class="ac-slider-row">
-                        <span class="ac-slider-lbl">6. Ay</span>
+                        <span class="ac-slider-lbl" data-i18n="lbl-m6">6. Ay</span>
                         <input type="range" class="ac-slider" id="k-end" min="5" max="40" value="15"
                           oninput="updateK()" />
                         <span class="ac-val" id="k-end-val">0.15</span>
@@ -239,19 +250,20 @@
                   <!-- Churn -->
                   <div class="assumption-card">
 
-                    <div class="ac-title">Kayıp Oranı (Churn)</div>
-                    <div class="ac-desc">pmtoolkit.ai 2024 benchmark: Mobil uygulamalarda D-30 elde tutma oranı %5-15.
+                    <div class="ac-title" data-i18n="churn-title">Kayıp Oranı (Churn)</div>
+                    <div class="ac-desc" data-i18n="churn-desc">pmtoolkit.ai 2024 benchmark: Mobil uygulamalarda D-30
+                      elde tutma oranı %5-15.
                       Bootstrap, yatırımsız yeni uygulamalar için aylık churn %50-60'tan başlar. İçerik ve eşleşme
                       kalitesi arttıkça yavaşça düşer.</div>
                     <div class="ac-slider-wrap">
                       <div class="ac-slider-row">
-                        <span class="ac-slider-lbl">Başlangıç</span>
+                        <span class="ac-slider-lbl" data-i18n="lbl-start">Başlangıç</span>
                         <input type="range" class="ac-slider" id="churn-start" min="30" max="70" value="55"
                           oninput="updateChurn()" />
                         <span class="ac-val" id="churn-start-val">%55</span>
                       </div>
                       <div class="ac-slider-row">
-                        <span class="ac-slider-lbl">6. Ay</span>
+                        <span class="ac-slider-lbl" data-i18n="lbl-m6">6. Ay</span>
                         <input type="range" class="ac-slider" id="churn-end" min="15" max="45" value="30"
                           oninput="updateChurn()" />
                         <span class="ac-val" id="churn-end-val">%30</span>
@@ -477,8 +489,9 @@
                     <div class="focus-icon purple">💸</div>
                     <div class="focus-text">
                       <h4>Son Derece Düşük Nakit Yakımı</h4>
-                      <p id="focus-low-burn-desc">12 aylık toplam maliyet son derece makuldür. Firebase ücretsiz tier
-                        (ilk 2 ay), sosyal medya mikro-bütçe ve sıfır ofis/ekip maliyeti sayesinde sürdürülebilir bir
+                      <p id="focus-low-burn-desc">12 aylık toplam maliyet son derece makuldür. Firebase altyapı maliyeti
+                        (ilk 2 ay 500 ₺), sosyal medya mikro-bütçe ve sıfır ofis/ekip maliyeti sayesinde sürdürülebilir
+                        bir
                         modeldir.</p>
                     </div>
                   </div>
@@ -556,6 +569,8 @@
     let profitChartInst = null;
     let breakevenChartInst = null;
     let presentMode = false;
+    let currentCurrency = 'TRY';
+    let currentLang = 'tr';
 
     // Base data (editable)
     // ─────────────────────────────────────────────────────────────────────────────
@@ -565,49 +580,49 @@
     //  • CPA 80-100 ₺  → Adjust EMEA 2024 Raporu; TR pazarı global ortalamanın %30-50 altı
     //  • Churn %55→%30 → pmtoolkit.ai Mobile Benchmarks 2024 (D-30 retention avg %5-15)
     //  • K-faktörü 0.05→0.15 → Küçük pazar; K>1 viral büyüme KKTC ölçeğinde yıllar alır
-    //  • Firebase ücretsiz tier: Spark Plan 50K okuma/gün (Google Firebase Pricing 2024)
+    //  • Firebase altyapı maliyeti: İlk 2 ay 500 ₺ (Google Firebase Pricing 2024)
     //  • Premium dönüşüm %2: Transport/Marketplace median (Recurly.com Freemium 2024)
     //  • Komisyon %10, 7. aydan (marketplace bootstrap best practice)
     // ─────────────────────────────────────────────────────────────────────────────
 
     // Maliyet: [Altyapı & Firebase, Pazarlama & Reklam, Operasyon]
-    // Ay 1-2: Firebase ücretsiz tier (Spark Plan). Reklam = kampüs aktivasyon
+    // Ay 1-2: Firebase ilk 2 ay 500 ₺. Reklam = kampüs aktivasyon
     // Ay 3+: Firebase Blaze planı gerekebilir. Sosyal medya + mikro influencer bütçesi
     const USD_TRY = 35;
     const SMS_COST_USD = 0.03;
 
     let costData = [
-      [0, 2000, 0],      // 1. Ay
-      [0, 3500, 0],      // 2. Ay
-      [800, 4500, 0],      // 3. Ay
-      [1500, 5500, 0],   // 4. Ay
-      [2000, 6000, 0],   // 5. Ay
-      [3000, 6500, 0],   // 6. Ay
-      [4000, 7500, 3000],   // 7. Ay
-      [5000, 7500, 4000],   // 8. Ay
-      [6000, 7500, 4500],   // 9. Ay
-      [7000, 8000, 5000],   // 10. Ay
-      [8000, 8000, 5500],   // 11. Ay
-      [9000, 8000, 6000]   // 12. Ay
+      [500, 5000, 0],      // 1. Ay
+      [500, 5500, 0],      // 2. Ay
+      [800, 6000, 0],      // 3. Ay
+      [1500, 6500, 0],   // 4. Ay
+      [2000, 7000, 0],   // 5. Ay
+      [3000, 7000, 0],   // 6. Ay
+      [4000, 7500, 4000],   // 7. Ay
+      [5000, 8000, 5000],   // 8. Ay
+      [6000, 8500, 6000],   // 9. Ay
+      [7000, 9000, 7000],   // 10. Ay
+      [8000, 9000, 7500],   // 11. Ay
+      [9000, 9000, 8000]   // 12. Ay
     ];
 
     // MAU Projeksiyonu: 12 aya yayılmış lojistik/ağ büyüme trendi
-    let mauData = [80, 190, 370, 620, 980, 1450, 2100, 2900, 3900, 5100, 6500, 8000];
+    let mauData = [88, 209, 407, 682, 1078, 1595, 2310, 3190, 4290, 5610, 7150, 8800];
 
     // Gelir Projeksiyonu (12 Ay)
     let revenueData = [
-      { mau: 80, trips: 10, commission: 0 },
-      { mau: 190, trips: 25, commission: 0 },
-      { mau: 370, trips: 50, commission: 0 },
-      { mau: 620, trips: 90, commission: 0 },
-      { mau: 980, trips: 140, commission: 0 },
-      { mau: 1450, trips: 200, commission: 0 },
-      { mau: 2100, trips: 300, commission: 2400 },
-      { mau: 2900, trips: 420, commission: 3360 },
-      { mau: 3900, trips: 600, commission: 4800 },
-      { mau: 5100, trips: 800, commission: 6400 },
-      { mau: 6500, trips: 1100, commission: 8800 },
-      { mau: 8000, trips: 1500, commission: 12000 }
+      { mau: 88, trips: 10, commission: 0 },
+      { mau: 209, trips: 25, commission: 0 },
+      { mau: 407, trips: 50, commission: 0 },
+      { mau: 682, trips: 90, commission: 0 },
+      { mau: 1078, trips: 140, commission: 0 },
+      { mau: 1595, trips: 200, commission: 0 },
+      { mau: 2310, trips: 300, commission: 2400 },
+      { mau: 3190, trips: 420, commission: 3360 },
+      { mau: 4290, trips: 600, commission: 4800 },
+      { mau: 5610, trips: 800, commission: 6400 },
+      { mau: 7150, trips: 1100, commission: 8800 },
+      { mau: 8800, trips: 1500, commission: 12000 }
     ];
 
     const PREMIUM_RATE = 0.02;  // %2 (Recurly/Adapty: transport marketplace median 2024)
@@ -782,15 +797,15 @@
       const body = document.getElementById('cost-body');
       body.innerHTML = '';
 
-      months_labels.forEach((m, i) => {
+      getMonthLabels().forEach((m, i) => {
         const tr = document.createElement('tr');
         const total = getTotalCost(i);
         tr.innerHTML = `
       <td>${m}</td>
-      <td><input class="editable" type="text" id="cost-infra-${i}" value="${fmtNum(getInfraCostWithSMS(i))} ₺" onblur="updateCostCell(${i}, 0, this)" /></td>
-      <td><input class="editable" type="text" id="cost-mkt-${i}" value="${fmtNum(costData[i][1])} ₺" onblur="updateCostCell(${i}, 1, this)" /></td>
-      <td><input class="editable" type="text" id="cost-ops-${i}" value="${fmtNum(costData[i][2])} ₺" onblur="updateCostCell(${i}, 2, this)" /></td>
-      <td class="total-cell" id="cost-total-${i}">${fmtNum(total)} ₺</td>
+      <td><input class="editable" type="text" id="cost-infra-${i}" value="${formatVal(getInfraCostWithSMS(i))}" onblur="updateCostCell(${i}, 0, this)" /></td>
+      <td><input class="editable" type="text" id="cost-mkt-${i}" value="${formatVal(costData[i][1])}" onblur="updateCostCell(${i}, 1, this)" /></td>
+      <td><input class="editable" type="text" id="cost-ops-${i}" value="${formatVal(costData[i][2])}" onblur="updateCostCell(${i}, 2, this)" /></td>
+      <td class="total-cell" id="cost-total-${i}">${formatVal(total)}</td>
     `;
         body.appendChild(tr);
       });
@@ -804,17 +819,20 @@
         sumOps += costData[idx][2];
       }
       tfoot.innerHTML = `
-    <td>Toplam (12 Ay)</td>
-    <td class="total-cell" id="total-infra">${fmtNum(sumInfra)} ₺</td>
-    <td class="total-cell" id="total-mkt">${fmtNum(sumMkt)} ₺</td>
-    <td class="total-cell" id="total-ops">${fmtNum(sumOps)} ₺</td>
-    <td class="total-cell" id="total-all">${fmtNum(sumInfra + sumMkt + sumOps)} ₺</td>
+    <td data-i18n="th-total-12">${slideTranslations[currentLang]['th-total-12'] || 'Toplam (12 Ay)'}</td>
+    <td class="total-cell" id="total-infra">${formatVal(sumInfra)}</td>
+    <td class="total-cell" id="total-mkt">${formatVal(sumMkt)}</td>
+    <td class="total-cell" id="total-ops">${formatVal(sumOps)}</td>
+    <td class="total-cell" id="total-all">${formatVal(sumInfra + sumMkt + sumOps)}</td>
   `;
       body.appendChild(tfoot);
     }
 
     function updateCostCell(rowIdx, colIdx, input) {
-      const val = parseNum(input.value);
+      let val = parseNum(input.value);
+      if (currentCurrency === 'USD') {
+        val = val * USD_TRY;
+      }
       if (colIdx === 0) {
         const sms = getSMSCost(rowIdx);
         costData[rowIdx][colIdx] = Math.max(0, val - sms);
@@ -823,12 +841,12 @@
       }
 
       if (colIdx === 0) {
-        input.value = fmtNum(getInfraCostWithSMS(rowIdx)) + ' ₺';
+        input.value = formatVal(getInfraCostWithSMS(rowIdx));
       } else {
-        input.value = fmtNum(val) + ' ₺';
+        input.value = formatVal(val);
       }
 
-      document.getElementById(`cost-total-${rowIdx}`).textContent = fmtNum(getTotalCost(rowIdx)) + ' ₺';
+      document.getElementById(`cost-total-${rowIdx}`).textContent = formatVal(getTotalCost(rowIdx));
 
       let totalInfra = 0, totalMkt = 0, totalOps = 0;
       for (let idx = 0; idx < costData.length; idx++) {
@@ -837,10 +855,10 @@
         totalOps += costData[idx][2];
       }
 
-      document.getElementById('total-infra').textContent = fmtNum(totalInfra) + ' ₺';
-      document.getElementById('total-mkt').textContent = fmtNum(totalMkt) + ' ₺';
-      document.getElementById('total-ops').textContent = fmtNum(totalOps) + ' ₺';
-      document.getElementById('total-all').textContent = fmtNum(totalInfra + totalMkt + totalOps) + ' ₺';
+      document.getElementById('total-infra').textContent = formatVal(totalInfra);
+      document.getElementById('total-mkt').textContent = formatVal(totalMkt);
+      document.getElementById('total-ops').textContent = formatVal(totalOps);
+      document.getElementById('total-all').textContent = formatVal(totalInfra + totalMkt + totalOps);
       updateAll();
     }
 
@@ -851,7 +869,7 @@
       const body = document.getElementById('revenue-body');
       body.innerHTML = '';
 
-      months_labels.forEach((m, i) => {
+      getMonthLabels().forEach((m, i) => {
         const pl = getNetPL(i);
         const plClass = pl > 0 ? 'profit-pos' : pl < 0 ? 'profit-neg' : 'profit-zero';
         const hlClass = i >= 6 ? 'highlight-row' : '';
@@ -864,10 +882,10 @@
       <td>${m}</td>
       <td><input class="editable" type="text" id="rev-mau-${i}" value="${fmtNum(revenueData[i].mau)}" onblur="updateRevCell(${i}, 'mau', this)" /></td>
       <td><input class="editable" type="text" id="rev-trips-${i}" value="${fmtNum(revenueData[i].trips)}" onblur="updateRevCell(${i}, 'trips', this)" /></td>
-      <td><input class="editable" type="text" id="rev-comm-${i}" value="${fmtNum(revenueData[i].commission)} ₺" onblur="updateRevCell(${i}, 'commission', this)" /></td>
-      <td id="rev-prem-${i}">${fmtNum(premium + clubRev)} ₺</td>
-      <td id="rev-ad-${i}">${fmtNum(adRev)} ₺</td>
-      <td class="${plClass}" id="rev-pl-${i}">${pl > 0 ? '+' : ''}${fmtNum(pl)} ₺</td>
+      <td><input class="editable" type="text" id="rev-comm-${i}" value="${formatVal(revenueData[i].commission)}" onblur="updateRevCell(${i}, 'commission', this)" /></td>
+      <td id="rev-prem-${i}">${formatVal(premium + clubRev)}</td>
+      <td id="rev-ad-${i}">${formatVal(adRev)}</td>
+      <td class="${plClass}" id="rev-pl-${i}">${pl > 0 ? '+' : ''}${formatVal(pl)}</td>
     `;
         body.appendChild(tr);
       });
@@ -875,21 +893,24 @@
 
     function updateRevCell(idx, field, input) {
       let val = parseNum(input.value);
+      if (currentCurrency === 'USD' && field === 'commission') {
+        val = val * USD_TRY;
+      }
       revenueData[idx][field] = val;
-      if (field === 'commission') input.value = fmtNum(val) + ' ₺';
+      if (field === 'commission') input.value = formatVal(val);
       else input.value = fmtNum(val);
 
       const prem = getPremiumRevenue(revenueData[idx].mau);
       const clubRev = getClubRevenue(idx);
       const adRev = getAdRevenue(revenueData[idx].mau);
-      document.getElementById(`rev-prem-${idx}`).textContent = fmtNum(prem + clubRev) + ' ₺';
-      document.getElementById(`rev-ad-${idx}`).textContent = fmtNum(adRev) + ' ₺';
+      document.getElementById(`rev-prem-${idx}`).textContent = formatVal(prem + clubRev);
+      document.getElementById(`rev-ad-${idx}`).textContent = formatVal(adRev);
 
       const pl = getNetPL(idx);
       const plClass = pl > 0 ? 'profit-pos' : pl < 0 ? 'profit-neg' : 'profit-zero';
       const plEl = document.getElementById(`rev-pl-${idx}`);
       plEl.className = plClass;
-      plEl.textContent = (pl > 0 ? '+' : '') + fmtNum(pl) + ' ₺';
+      plEl.textContent = (pl > 0 ? '+' : '') + formatVal(pl);
       updateAll();
     }
 
@@ -910,7 +931,7 @@
       const ctx = document.getElementById('mauChart').getContext('2d');
       if (mauChartInst) mauChartInst.destroy();
 
-      const labels = months_labels;
+      const labels = getMonthLabels();
       const data = mauData;
 
       mauChartInst = new Chart(ctx, {
@@ -971,8 +992,11 @@
       const ctx = document.getElementById('profitChart').getContext('2d');
       if (profitChartInst) profitChartInst.destroy();
 
-      const labels = months_labels;
-      const plVals = revenueData.map((_, i) => getNetPL(i));
+      const labels = getMonthLabels();
+      const plVals = revenueData.map((_, i) => {
+        const pl = getNetPL(i);
+        return currentCurrency === 'USD' ? Math.round(pl / USD_TRY) : pl;
+      });
 
       profitChartInst = new Chart(ctx, {
         type: 'bar',
@@ -996,13 +1020,13 @@
               borderColor: 'rgba(56,189,248,0.3)',
               borderWidth: 1,
               callbacks: {
-                label: ctx3 => ` ${ctx3.raw >= 0 ? '+' : ''}${fmtNum(ctx3.raw)} ₺`
+                label: ctx3 => ` ${ctx3.raw >= 0 ? '+' : ''}${currentCurrency === 'USD' ? '$' + fmtNum(ctx3.raw) : fmtNum(ctx3.raw) + ' ₺'}`
               }
             }
           },
           scales: {
             x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 } } },
-            y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => fmtNum(v) } }
+            y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => currentCurrency === 'USD' ? '$' + fmtNum(v) : fmtNum(v) + ' ₺' } }
           }
         }
       });
@@ -1010,7 +1034,11 @@
       // Cumulative
       const cum = plVals.reduce((a, b) => a + b, 0);
       const el = document.getElementById('cumulative-net');
-      el.textContent = (cum >= 0 ? '+' : '') + fmtNum(cum) + ' ₺';
+      if (currentCurrency === 'USD') {
+        el.textContent = (cum >= 0 ? '+' : '') + '$' + fmtNum(cum);
+      } else {
+        el.textContent = (cum >= 0 ? '+' : '') + fmtNum(cum) + ' ₺';
+      }
       el.style.color = cum >= 0 ? 'var(--accent3)' : 'var(--danger)';
     }
 
@@ -1018,11 +1046,14 @@
       const ctx = document.getElementById('breakevenChart').getContext('2d');
       if (breakevenChartInst) breakevenChartInst.destroy();
 
-      const labels = months_labels;
+      const labels = getMonthLabels();
       const plVals = revenueData.map((_, i) => getNetPL(i));
       let cumVals = [];
       let cum = 0;
-      for (const v of plVals) { cum += v; cumVals.push(cum); }
+      for (const v of plVals) {
+        cum += v;
+        cumVals.push(currentCurrency === 'USD' ? Math.round(cum / USD_TRY) : cum);
+      }
 
       breakevenChartInst = new Chart(ctx, {
         type: 'line',
@@ -1044,12 +1075,12 @@
             legend: { display: false },
             tooltip: {
               backgroundColor: '#131d33',
-              callbacks: { label: ctx3 => ` ${ctx3.raw >= 0 ? '+' : ''}${fmtNum(ctx3.raw)} ₺` }
+              callbacks: { label: ctx3 => ` ${ctx3.raw >= 0 ? '+' : ''}${currentCurrency === 'USD' ? '$' + fmtNum(ctx3.raw) : fmtNum(ctx3.raw) + ' ₺'}` }
             }
           },
           scales: {
             x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 } } },
-            y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => fmtNum(v) } }
+            y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => currentCurrency === 'USD' ? '$' + fmtNum(v) : fmtNum(v) + ' ₺' } }
           }
         }
       });
@@ -1123,7 +1154,7 @@
       container.innerHTML = '';
       const plVals = revenueData.map((_, i) => getNetPL(i));
 
-      months_labels.forEach((m, i) => {
+      getMonthLabels().forEach((m, i) => {
         const div = document.createElement('div');
         let cls = 'loss';
         if (plVals[i] > 0) {
@@ -1132,7 +1163,7 @@
           cls = 'breakeven';
         }
         div.className = `be-month ${cls}`;
-        div.innerHTML = `<span class="mo-num">${i + 1}</span><span>${m}</span><span style="font-size:8px">${plVals[i] > 0 ? '+' + fmtCompact(plVals[i]) : fmtCompact(plVals[i])}</span>`;
+        div.innerHTML = `<span class="mo-num">${i + 1}</span><span>${m}</span><span style="font-size:8px">${plVals[i] > 0 ? '+' + formatValCompact(plVals[i]) : formatValCompact(plVals[i])}</span>`;
         container.appendChild(div);
       });
     }
@@ -1156,7 +1187,7 @@
         totalCostSum += getTotalCost(idx);
       }
       if (document.getElementById('cover-cost-val')) {
-        document.getElementById('cover-cost-val').textContent = fmtNum(totalCostSum) + ' ₺';
+        document.getElementById('cover-cost-val').textContent = formatVal(totalCostSum);
       }
 
       let beMonth = -1;
@@ -1167,7 +1198,7 @@
           beMonth = idx + 1;
         }
       }
-      const beText = beMonth !== -1 ? `~${beMonth}. Ay` : '12+ Ay';
+      const beText = beMonth !== -1 ? (currentLang === 'en' ? `~Month ${beMonth}` : `~${beMonth}. Ay`) : (currentLang === 'en' ? '12+ Months' : '12+ Ay');
       if (document.getElementById('cover-be-val')) {
         document.getElementById('cover-be-val').textContent = beText;
       }
@@ -1176,9 +1207,13 @@
       }
       if (document.getElementById('be-mau-target-val')) {
         if (beMonth !== -1) {
-          document.getElementById('be-mau-target-val').textContent = `MAU ~${fmtNum(mauData[beMonth - 1])} seviyesinde kârlılık başlıyor`;
+          document.getElementById('be-mau-target-val').textContent = currentLang === 'en'
+            ? `Profitability starts at MAU ~${fmtNum(mauData[beMonth - 1])}`
+            : `MAU ~${fmtNum(mauData[beMonth - 1])} seviyesinde kârlılık başlıyor`;
         } else {
-          document.getElementById('be-mau-target-val').textContent = `12 aylık projeksiyonda kârlılık henüz gerçekleşmedi`;
+          document.getElementById('be-mau-target-val').textContent = currentLang === 'en'
+            ? 'Profitability has not yet occurred in the 12-month projection'
+            : '12 aylık projeksiyonda kârlılık henüz gerçekleşmedi';
         }
       }
 
@@ -1193,39 +1228,116 @@
 
       if (cumLossEl) {
         if (finalCumPL >= 0) {
-          cumLossEl.textContent = `+${fmtNum(finalCumPL)} ₺`;
+          cumLossEl.textContent = `+${formatVal(finalCumPL)}`;
           cumLossEl.style.color = 'var(--accent3)';
-          if (cumLabelEl) cumLabelEl.textContent = '12. Ay Kümülatif Net Kâr';
-          if (cumDescEl) cumDescEl.textContent = '12. ay sonunda projemiz kümülatif bazda kâra geçmektedir.';
+          if (cumLabelEl) cumLabelEl.textContent = currentLang === 'en' ? '12-Month Cumulative Net Profit' : '12. Ay Kümülatif Net Kâr';
+          if (cumDescEl) cumDescEl.textContent = currentLang === 'en' ? 'At the end of month 12, our project becomes cumulatively profitable.' : '12. ay sonunda projemiz kümülatif bazda kâra geçmektedir.';
         } else {
-          cumLossEl.textContent = `${fmtNum(finalCumPL)} ₺`;
+          cumLossEl.textContent = `${formatVal(finalCumPL)}`;
           cumLossEl.style.color = 'var(--danger)';
-          if (cumLabelEl) cumLabelEl.textContent = '12. Ay Kümülatif Net Açık';
-          if (cumDescEl) cumDescEl.textContent = 'Nakit yakımı son derece dengeli seyretmektedir.';
+          if (cumLabelEl) cumLabelEl.textContent = currentLang === 'en' ? '12-Month Cumulative Net Loss' : '12. Ay Kümülatif Net Açık';
+          if (cumDescEl) cumDescEl.textContent = currentLang === 'en' ? 'Cash burn remains extremely balanced.' : 'Nakit yakımı son derece dengeli seyretmektedir.';
         }
       }
 
       const survivalUSD = Math.round(totalCostSum / USD_TRY);
       if (document.getElementById('be-survival-budget-val')) {
-        document.getElementById('be-survival-budget-val').textContent = `${fmtNum(totalCostSum)} ₺`;
+        document.getElementById('be-survival-budget-val').textContent = formatVal(totalCostSum);
       }
       if (document.getElementById('focus-survival-budget-val')) {
-        document.getElementById('focus-survival-budget-val').textContent = `${fmtNum(totalCostSum)} ₺ ≈ ${fmtNum(survivalUSD)} $`;
+        document.getElementById('focus-survival-budget-val').textContent = `${formatVal(totalCostSum)} ≈ $${fmtNum(survivalUSD)}`;
       }
       if (document.getElementById('focus-be-title')) {
-        document.getElementById('focus-be-title').textContent = `${beText}da Break-Even Hedefi`;
+        document.getElementById('focus-be-title').textContent = currentLang === 'en'
+          ? `Break-Even Target at ${beText}`
+          : `${beText}'da Break-Even Hedefi`;
       }
       if (document.getElementById('focus-survival-note')) {
-        document.getElementById('focus-survival-note').textContent = `Kurucu emeği hariç, 12 aylık tüm operasyon maliyeti. Teknopark / TÜBİTAK destekleri ile kısmen karşılanabilir. Hedef: ${beText}'da ilk net kâr.`;
+        document.getElementById('focus-survival-note').textContent = currentLang === 'en'
+          ? `All operations costs for 12 months, excluding founder labor. Can be partially covered by Teknopark/TÜBİTAK supports. Target: first net profit in ${beText}.`
+          : `Kurucu emeği hariç, 12 aylık tüm operasyon maliyeti. Teknopark / TÜBİTAK destekleri ile kısmen karşılanabilir. Hedef: ${beText}'da ilk net kâr.`;
       }
       if (document.getElementById('focus-low-burn-desc')) {
-        document.getElementById('focus-low-burn-desc').textContent = `12 aylık toplam maliyet yalnızca ${fmtNum(totalCostSum)} ₺. Firebase ücretsiz tier (ilk 2 ay), sosyal medya mikro-bütçe ve sıfır ofis/ekip maliyeti sayesinde.`;
+        const fbCostText = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+        document.getElementById('focus-low-burn-desc').textContent = currentLang === 'en'
+          ? `12-month total cost is only ${formatVal(totalCostSum)}. Achieved via low Firebase cost (first 2 months ${fbCostText}), social media micro-budget, and zero office/team costs.`
+          : `12 aylık toplam maliyet yalnızca ${formatVal(totalCostSum)}. Firebase altyapı maliyeti (ilk 2 ay ${fbCostText}), sosyal medya mikro-bütçe ve sıfır ofis/ekip maliyeti sayesinde.`;
       }
       if (document.getElementById('focus-be-desc')) {
-        document.getElementById('focus-be-desc').textContent = `MAU ~5.000-6.000 seviyesine ulaşıldığında komisyon + premium gelirlerin aylık giderleri karşılaması bekleniyor. 12. aya gelindiğinde kümülatif durum pozitiftir (Kümülatif Net: ${finalCumPL >= 0 ? '+' : ''}${fmtNum(finalCumPL)} ₺).`;
+        document.getElementById('focus-be-desc').textContent = currentLang === 'en'
+          ? `Commission + premium revenues are expected to cover monthly expenses at MAU ~5,000-6,000. At month 12, cumulative status is positive (Cumulative Net: ${finalCumPL >= 0 ? '+' : ''}${formatVal(finalCumPL)}).`
+          : `MAU ~5.000-6.000 seviyesine ulaşıldığında komisyon + premium gelirlerin aylık giderleri karşılaması bekleniyor. 12. aya gelindiğinde kümülatif durum pozitiftir (Kümülatif Net: ${finalCumPL >= 0 ? '+' : ''}${formatVal(finalCumPL)}).`;
+      }
+      if (document.getElementById('cost-source-note')) {
+        const fbCostText = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+        document.getElementById('cost-source-note').innerHTML = currentLang === 'en'
+          ? `<strong>Source:</strong> Firebase first 2 months ${fbCostText}. Marketing budgets are limited to a maximum of 8,000 ₺ per month based on Turkey/TRNC Meta (Instagram) CPM benchmarks (CPM ~35–75 TL, YCF Digital 2025) starting with daily 150–300 TL test budgets. Founder labor is excluded from costs. <em>(Click cells to edit values.)</em>`
+          : `<strong>Kaynak:</strong> Firebase ilk 2 ay ${fbCostText}. Reklam bütçeleri Türkiye/KKTC Meta (Instagram) CPM benchmarkları (CPM ~35–75 TL, YCF Digital 2025) baz alınarak, günlük 150–300 TL test bütçeleriyle başlayıp maksimum aylık 8.000 ₺ ile sınırlandırılmıştır. Kurucu emeği maliyet dışı tutulmuştur. <em>(Hücrelere tıklayarak değerleri düzenleyebilirsiniz.)</em>`;
+      }
+      if (document.getElementById('rev-source-note')) {
+        const avgTripCost = currentCurrency === 'USD' ? `$${Math.round(80 / USD_TRY)}` : '80 ₺';
+        const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+        const plusCost = currentCurrency === 'USD' ? `$${Math.round(60 / USD_TRY)}` : '60 ₺';
+        document.getElementById('rev-source-note').innerHTML = currentLang === 'en'
+          ? `<strong>Source:</strong> Commission revenue = trip count × avg. ${avgTripCost} × 10%. Premium + Club revenue = (MAU × 2% × ${plusCost}) + School Clubs (3 months free trial, afterwards ${clubCost}/month per club; starting from month 3: +1 club/month, starting from month 7: +2 clubs/month).`
+          : `<strong>Kaynak:</strong> Komisyon geliri = trip sayısı × ort. ${avgTripCost} × %10. Premium + Kulüp geliri = (MAU × %2 × ${plusCost}) + Okul Kulüpleri (3 ay deneme bedava, sonrasında kulüp başına ${clubCost}/ay; 3. aydan itibaren +1 kulüp/ay, 7. aydan itibaren +2 kulüp/ay).`;
+      }
+      if (document.getElementById('mono-c1-highlight')) {
+        const plusCost = currentCurrency === 'USD' ? `$${Math.round(60 / USD_TRY)}` : '60 ₺';
+        document.getElementById('mono-c1-highlight').innerHTML = currentLang === 'en'
+          ? `Monthly ${plusCost} "Paylaşalım Plus"<br />2% conversion target (Recurly 2024 Transport median)<br />Unlimited matches + profile boost`
+          : `Aylık ${plusCost} "Paylaşalım Plus"<br />%2 dönüşüm hedefi (Recurly 2024 Transport median)<br />Limitsiz eşleşme + profili öne çıkarma`;
+      }
+      if (document.getElementById('mono-c2-desc')) {
+        const avgTripCost = currentCurrency === 'USD' ? `$${Math.round(80 / USD_TRY)}` : '80 ₺';
+        document.getElementById('mono-c2-desc').textContent = currentLang === 'en'
+          ? `0% commission for the first 6 months while building marketplace trust. Average trip value: ~${avgTripCost}.`
+          : `Marketplace güveni inşa edilirken ilk 6 ay komisyon %0'dır. Ortalama yolculuk değeri: ~${avgTripCost}.`;
+      }
+      if (document.getElementById('mono-c2-highlight')) {
+        document.getElementById('mono-c2-highlight').innerHTML = currentLang === 'en'
+          ? `Starting from Month 7<br /><strong>10% service fee</strong> on successful rides`
+          : `7. aydan itibaren başarılı yolculuklardan<br /><strong>%10 hizmet bedeli</strong>`;
+      }
+      if (document.getElementById('mono-c4-highlight')) {
+        const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+        document.getElementById('mono-c4-highlight').innerHTML = currentLang === 'en'
+          ? `First 3 months free trial<br />Afterwards <strong>${clubCost} / month</strong> (per club)`
+          : `İlk 3 ay deneme bedava<br />Sonrasında <strong>${clubCost} / ay</strong> (kulüp başı)`;
+      }
+      if (document.getElementById('tag-clubs-el')) {
+        const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+        document.getElementById('tag-clubs-el').textContent = currentLang === 'en'
+          ? `School Clubs (${clubCost}/Month)`
+          : `Okul Kulüpleri (${clubCost}/Ay)`;
+      }
+      if (document.getElementById('mau-desc-el')) {
+        const mktTotalVal = currentCurrency === 'USD' ? `$${Math.round(53000 / USD_TRY)}` : '53.000 ₺';
+        const cpaValText = currentCurrency === 'USD' ? `$${Math.round(90 / USD_TRY)}` : '90 ₺';
+        document.getElementById('mau-desc-el').innerHTML = currentLang === 'en'
+          ? `<strong>Realistic model:</strong> Reachable market in TRNC ~60,000 people (TRNC Statistics Department 2024: 489K population, 40K university students + 20K workers). Cumulative MAU calculated based on a 6-month marketing budget of ${mktTotalVal} with CPA=${cpaValText} (~590 paid installs) and D-30 retention rate of 15%. Source: Adjust EMEA 2024, pmtoolkit.ai.`
+          : `<strong>Gerçekçi model:</strong> KKTC'deki ulaşılabilir pazar ~60.000 kişi (KKTC İstatistik Kurumu 2024: 489K nüfus, 40K üniversite öğrencisi + 20K çalışan). 6 aylık toplam pazarlama bütçesi ${mktTotalVal} ile CPA=${cpaValText} baz alındığında (~590 ödenen install) ve D-30 elde tutma %15 ile toplu MAU hesaplandı. Kaynak: Adjust EMEA 2024, pmtoolkit.ai.`;
+      }
+      if (document.getElementById('focus-survival-title')) {
+        document.getElementById('focus-survival-title').textContent = currentLang === 'en'
+          ? 'Minimum Survival Budget (12 Months)'
+          : 'Minimum Hayatta Kalma Bütçesi (12 Ay)';
+      }
+      if (document.getElementById('be-survival-label')) {
+        document.getElementById('be-survival-label').textContent = currentLang === 'en'
+          ? 'Minimum Survival Budget (12 Months)'
+          : 'Minimum Hayatta Kalma Bütçesi (12 Ay)';
+      }
+      if (document.getElementById('be-survival-sub')) {
+        document.getElementById('be-survival-sub').textContent = currentLang === 'en'
+          ? 'Total 12-month cash requirement — excluding founder labor'
+          : '12 aylık toplam nakit ihtiyacı — kurucu emeği hariç';
       }
     }
 
+    // ══════════════════════════════
+    //  UTILS
+    // ══════════════════════════════
     // ══════════════════════════════
     //  UTILS
     // ══════════════════════════════
@@ -1237,8 +1349,237 @@
       if (abs >= 1000) return (n >= 0 ? '+' : '-') + (abs / 1000).toFixed(0) + 'k₺';
       return (n >= 0 ? '' : '-') + abs + '₺';
     }
+    function getMonthLabels() {
+      return Array.from({ length: 12 }, (_, i) => currentLang === 'en' ? `Month ${i + 1}` : `${i + 1}. Ay`);
+    }
+    function getMonthLabelsDynamic() {
+      return getMonthLabels();
+    }
     function parseNum(str) {
       return parseFloat(str.replace(/[^\d,.-]/g, '').replace(',', '.')) || 0;
+    }
+
+    function formatVal(val) {
+      const isNeg = val < 0;
+      const absVal = Math.abs(val);
+      const converted = currentCurrency === 'USD' ? Math.round(absVal / USD_TRY) : Math.round(absVal);
+      const formatted = converted.toLocaleString('tr-TR');
+      if (currentCurrency === 'USD') {
+        return (isNeg ? '-' : '') + '$' + formatted;
+      }
+      return (isNeg ? '-' : '') + formatted + ' ₺';
+    }
+
+    function formatValCompact(val) {
+      if (currentCurrency === 'USD') {
+        const abs = Math.abs(val / USD_TRY);
+        const sign = val >= 0 ? '' : '-';
+        if (abs >= 1000) return (val >= 0 ? '+' : '-') + '$' + (abs / 1000).toFixed(1) + 'k';
+        return sign + '$' + Math.round(abs);
+      }
+      return fmtCompact(val);
+    }
+
+    function toggleCurrency() {
+      currentCurrency = currentCurrency === 'TRY' ? 'USD' : 'TRY';
+      const btn = document.getElementById('currency-toggle-btn');
+      if (btn) {
+        btn.textContent = currentCurrency === 'TRY' ? '₺ (TRY)' : '$ (USD)';
+      }
+      buildCostTable();
+      buildRevenueTable();
+      updateAll();
+    }
+
+    const slideTranslations = {
+      tr: {
+        "auth-title": "Yatırımcı Sunumu",
+        "auth-desc": "Bu sayfa yalnızca davetli yatırımcılar için erişime açıktır.",
+        "auth-submit": "Devam Et →",
+        "auth-error": "Hatalı şifre. Lütfen tekrar deneyin.",
+        "slide-label": "Slayt",
+        "interactive-mode": "İnteraktif",
+        "present-mode": "Sunum",
+        "thumb-title-1": "Kapak & Giriş",
+        "thumb-title-2": "Maliyet Projeksiyonu",
+        "thumb-title-3": "Büyüme Varsayımları",
+        "thumb-title-4": "MAU Trend",
+        "thumb-title-5": "Monetizasyon",
+        "thumb-title-6": "Kârlılık Analizi",
+        "thumb-title-7": "Break-Even",
+        "thumb-title-8": "Odak Noktaları",
+        "cover-badge": "Yatırımcı Sunumu",
+        "cover-title": "Paylaşalım<br>12 Aylık Büyüme Raporu",
+        "cover-subtitle": "Lojistik Büyüme Modeli, K-Faktörü ve Ağ Etkisi Çerçevesinde<br>Gerçekçi Stratejik Analiz & Finansal Projeksiyon",
+        "cover-stat-mau": "12. Ay MAU Hedefi",
+        "cover-stat-be": "Tahmini Break-Even",
+        "cover-stat-cost": "12 Aylık Toplam Maliyet",
+        "cost-tag": "Finansal Planlama",
+        "cost-title": "12 Aylık Maliyet Projeksiyonu",
+        "th-month": "Ay",
+        "th-infra": "Altyapı & API (Firebase, vb.)",
+        "th-mkt": "Pazarlama & Reklam",
+        "th-ops": "Operasyon Desteği",
+        "th-total": "Toplam Maliyet",
+        "th-total-12": "Toplam (12 Ay)",
+        "ass-tag": "Model Parametreleri",
+        "ass-title": "Büyüme Varsayımları",
+        "cpa-title": "CPA Düşüşü",
+        "cpa-desc": "Adjust 2024 EMEA raporuna göre Türkiye CPA, global ortalamanın %30-50 altında. Kampüs odaklı bootstrap için 80-100 ₺ başlangıç (Instagram Meta reklamları CPM ~35–75 TL, YCF Digital 2025). Algoritma olgunlaştıkça düşer.",
+        "lbl-start": "Başlangıç",
+        "lbl-m6": "6. Ay",
+        "k-title": "K-Faktörü (Viralite)",
+        "k-desc": "KKTC gibi küçük, kapalı bir pazarda K&gt;1 viral büyüme yıllar alır. Başlangıç K=0.05 (her 20 kullanıcı 1 yeni kullanıcı getirir). 6. ayda K=0.15 hedefi gerçekçi bir iyimserlik. Kaynak: Bootstrap rideshare K-factor benchmarks 2024.",
+        "lbl-m1": "1. Ay",
+        "churn-title": "Kayıp Oranı (Churn)",
+        "churn-desc": "pmtoolkit.ai 2024 benchmark: Mobil uygulamalarda D-30 elde tutma oranı %5-15. Bootstrap, yatırımsız yeni uygulamalar için aylık churn %50-60'tan başlar. İçerik ve eşleşme kalitesi arttıkça yavaşça düşer.",
+        "mau-tag": "Kullanıcı Büyümesi",
+        "mau-title": "Net Aktif Kullanıcı (MAU) Trendi",
+        "lbl-m3": "3. Ay",
+        "lbl-m6-target": "6. Ay (Hedef)",
+        "lbl-reachable-market": "Ulaşılabilir Pazar",
+        "mono-tag": "Gelir Modeli",
+        "mono-title": "Ticari Gelir Elde Etme Yolları (Monetizasyon)",
+        "mono-c1-title": "Premium Üyelik",
+        "mono-c1-desc": "Kullanıcıların günde maks. 3 ücretsiz eşleşme limiti vardır.",
+        "mono-c2-title": "İşlem Komisyonu",
+        "mono-c3-title": "Banner & Sponsor Reklamı",
+        "mono-c3-desc": "AdMob adaptive banner & sponsorlu lokasyon reklamları. TR/KKTC eCPM benchmarkı $0.35. Kullanıcı başı günlük ~5 gösterim ile aylık $0.05 / kullanıcı tahmini.",
+        "mono-c3-highlight": "Projeksiyona dahil edildi ($0.05 MAU/ay)",
+        "mono-c4-title": "Okul Kulüpleri (SaaS)",
+        "mono-c4-desc": "Kulüp yöneticilerine özel etkinlik düzenleme, üyelerle doğrudan iletişim kurma ve gruplar oluşturma imkanı.",
+        "tag-premium": "%2 Premium Dönüşüm Oranı",
+        "tag-commission": "Komisyon 7. Aydan İtibaren",
+        "tag-ad": "Reklam Geliri ($0.05/MAU)",
+        "pl-tag": "P&L Analizi",
+        "pl-title": "Tahmini Kazanç ve Kârlılık Analizi",
+        "th-mau": "Kullanıcı (MAU)",
+        "th-monthly-trips": "Aylık Yolculuk",
+        "th-comm-rev": "Komisyon Geliri",
+        "th-prem-club-rev": "Premium + Kulüp Geliri",
+        "th-ad-rev": "Reklam Geliri",
+        "th-monthly-net": "Aylık Net Kâr / Zarar",
+        "lbl-cum-net-12": "12 Aylık Kümülatif Net",
+        "be-tag": "Kritik Kilometre Taşı",
+        "be-title": "Finansal Kırılma Noktası",
+        "lbl-est-be": "Tahmini Break-Even",
+        "lbl-why-real": "Neden Gerçekçi?",
+        "be-realism-desc": "KKTC pazarı (~60K potansiyel kullanıcı), yatırımsız bir bootstrap projesinin kısa sürede karlılığa ulaşması için küçüktür. Ancak nakit ihtiyacı son derece düşük olduğundan kurucu emeği ile sürdürülebilirdir.",
+        "focus-tag": "Sonuç",
+        "focus-title": "Odak Noktaları",
+        "f-c1-title": "Kaynak Tabanlı Gerçekçi Büyüme",
+        "f-c1-desc": "CPA 90 ₺ (Adjust EMEA 2024), aylık churn %55→%30 (pmtoolkit.ai 2024), K-faktörü 0.05→0.15 (bootstrap rideshare benchmark). KKTC pazarı 60K kişi. Tüm veriler endüstri raporlarına dayanmaktadır.",
+        "f-c2-title": "Son Derece Düşük Nakit Yakımı",
+        "f-c3-title": "Üniversite Öğrencisi Avantajı",
+        "f-c3-desc": "Hedef kitle öğrenciler — ve kurucular da öğrenci. Kampüs ağı sıfır maliyetli edinim kanalı. Teknopark/TÜBİTAK 2244 gibi devlet destekleri ile UA maliyetleri sübvanse edilebilir (startinturkey.com)."
+      },
+      en: {
+        "auth-title": "Investor Presentation",
+        "auth-desc": "This page is accessible only for invited investors.",
+        "auth-submit": "Continue →",
+        "auth-error": "Incorrect password. Please try again.",
+        "slide-label": "Slide",
+        "interactive-mode": "Interactive",
+        "present-mode": "Present",
+        "thumb-title-1": "Cover &<br>Intro",
+        "thumb-title-2": "Cost<br>Projection",
+        "thumb-title-3": "Growth<br>Assumptions",
+        "thumb-title-4": "MAU<br>Trend",
+        "thumb-title-5": "Monetization",
+        "thumb-title-6": "P&L<br>Analysis",
+        "thumb-title-7": "Break-Even",
+        "thumb-title-8": "Focus<br>Points",
+        "cover-badge": "Investor Presentation",
+        "cover-title": "Paylaşalım<br>12-Month Growth Report",
+        "cover-subtitle": "Realistic Strategic Analysis & Financial Projection within Logistics Growth Model, K-Factor, and Network Effects",
+        "cover-stat-mau": "Month 12 MAU Target",
+        "cover-stat-be": "Estimated Break-Even",
+        "cover-stat-cost": "12-Month Total Cost",
+        "cost-tag": "Financial Planning",
+        "cost-title": "12-Month Cost Projection",
+        "th-month": "Month",
+        "th-infra": "Infrastructure & API (Firebase, etc.)",
+        "th-mkt": "Marketing & Advertising",
+        "th-ops": "Operations Support",
+        "th-total": "Total Cost",
+        "th-total-12": "Total (12 Months)",
+        "ass-tag": "Model Parameters",
+        "ass-title": "Growth Assumptions",
+        "cpa-title": "CPA Reduction",
+        "cpa-desc": "According to Adjust 2024 EMEA report, Turkey CPA is 30-50% below global average. 80-100 ₺ startup for campus-focused bootstrap (Instagram Meta ads CPM ~35–75 TL, YCF Digital 2025). Decreases as algorithm matures.",
+        "lbl-start": "Initial",
+        "lbl-m6": "Month 6",
+        "k-title": "K-Factor (Virality)",
+        "k-desc": "In a small, closed market like TRNC, K>1 viral growth takes years. Initial K=0.05 (every 20 users bring 1 new user). Month 6 target K=0.15 is realistic optimism. Source: Bootstrap rideshare K-factor benchmarks 2024.",
+        "lbl-m1": "Month 1",
+        "churn-title": "Churn Rate",
+        "churn-desc": "pmtoolkit.ai 2024 benchmark: Mobile app D-30 retention is 5-15%. Churn starts at 50-60% for new non-invested apps. Decreases slowly as content and matching quality improve.",
+        "mau-tag": "User Growth",
+        "mau-title": "Net Active Users (MAU) Trend",
+        "lbl-m3": "Month 3",
+        "lbl-m6-target": "Month 6 (Target)",
+        "lbl-reachable-market": "Reachable Market",
+        "mono-tag": "Revenue Model",
+        "mono-title": "Monetization Channels",
+        "mono-c1-title": "Premium Membership",
+        "mono-c1-desc": "Users have a maximum limit of 3 free matches per day.",
+        "mono-c2-title": "Transaction Fee",
+        "mono-c3-title": "Banner & Sponsor Ads",
+        "mono-c3-desc": "AdMob adaptive banners & sponsored location ads. TR/TRNC eCPM benchmark is $0.35. Estimated $0.05/user/month.",
+        "mono-c3-highlight": "Included in projection ($0.05 MAU/month)",
+        "mono-c4-title": "School Clubs (SaaS)",
+        "mono-c4-desc": "Exclusive features for club administrators: organize events, direct messaging and groups.",
+        "tag-premium": "2% Premium Conversion",
+        "tag-commission": "Commission from Month 7",
+        "tag-ad": "Ad Revenue ($0.05/MAU)",
+        "pl-tag": "P&L Analysis",
+        "pl-title": "Profitability & P&L Projections",
+        "th-mau": "Users (MAU)",
+        "th-monthly-trips": "Monthly Trips",
+        "th-comm-rev": "Commission Rev",
+        "th-prem-club-rev": "Premium + Club Rev",
+        "th-ad-rev": "Ad Revenue",
+        "th-monthly-net": "Monthly Net P&L",
+        "lbl-cum-net-12": "12-Month Cumulative Net",
+        "be-tag": "Critical Milestone",
+        "be-title": "Financial Break-Even",
+        "lbl-est-be": "Estimated Break-Even",
+        "lbl-why-real": "Why Realistic?",
+        "be-realism-desc": "TRNC market (~60K potential users) is small for a bootstrap project to reach profitability quickly. However, cash requirement is extremely low, making it sustainable through founder labor.",
+        "focus-tag": "Conclusion",
+        "focus-title": "Focus Areas",
+        "f-c1-title": "Resource-Based Realistic Growth",
+        "f-c1-desc": "CPA 90 ₺ (Adjust EMEA 2024), monthly churn %55→%30 (pmtoolkit.ai 2024), K-factor 0.05→0.15 (bootstrap rideshare benchmark). TRNC market size 60K. All data based on industry reports.",
+        "f-c2-title": "Extremely Low Cash Burn",
+        "f-c3-title": "University Student Advantage",
+        "f-c3-desc": "Target audience is students — and founders are students. Campus network is a zero-cost acquisition channel. UA costs can be subsidized by state grants."
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'tr' ? 'en' : 'tr';
+      const btn = document.getElementById('lang-toggle-btn');
+      if (btn) {
+        btn.textContent = currentLang === 'tr' ? 'EN' : 'TR';
+      }
+      translatePage();
+      buildCostTable();
+      buildRevenueTable();
+      updateAll();
+    }
+
+    function translatePage() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (slideTranslations[currentLang] && slideTranslations[currentLang][key]) {
+          el.innerHTML = slideTranslations[currentLang][key];
+        }
+      });
+
+      const authInput = document.getElementById('auth-input');
+      if (authInput) {
+        authInput.placeholder = currentLang === 'en' ? 'Access password' : 'Erişim şifresi';
+      }
     }
 
     // Init slider bars on load
