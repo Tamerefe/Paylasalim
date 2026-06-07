@@ -3739,3 +3739,1220 @@ main {
     }
 }
 }
+
+/* ==========================================================================
+   PRESENTATION SLIDE STYLES (Added dynamically from slide.html)
+   ========================================================================== */
+
+*,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-deep: #0a0f1e;
+      --bg-slide: #0d1526;
+      --bg-card: #131d33;
+      --bg-card2: #1a2440;
+      --accent: #38bdf8;
+      --accent2: #818cf8;
+      --accent3: #34d399;
+      --danger: #f87171;
+      --text-primary: #f0f6ff;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border: rgba(56, 189, 248, 0.12);
+      --border2: rgba(255, 255, 255, 0.06);
+      --gold: #fbbf24;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      overflow: hidden;
+    }
+
+    /* ── AUTH GATE ── */
+    #auth-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: radial-gradient(ellipse at 30% 20%, #0f2044 0%, #050a14 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .auth-box {
+      background: rgba(19, 29, 51, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 52px;
+      width: 420px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(56, 189, 248, 0.08);
+    }
+
+    .auth-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin: 0 auto 24px;
+      overflow: hidden;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .auth-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .auth-box h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .auth-box p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .auth-field {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--text-primary);
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 16px;
+    }
+
+    .auth-field:focus {
+      border-color: var(--accent);
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #1e6ec8, var(--accent));
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    .auth-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .auth-error {
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 12px;
+      display: none;
+    }
+
+    /* ── PRESENTATION SHELL ── */
+    #presentation {
+      display: none;
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+    }
+
+    #presentation.visible {
+      display: flex;
+    }
+
+    /* ── TOP BAR ── */
+    #topbar {
+      height: 52px;
+      background: rgba(10, 15, 30, 0.9);
+      border-bottom: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      backdrop-filter: blur(12px);
+      flex-shrink: 0;
+      z-index: 100;
+    }
+
+    .tb-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tb-brand .logo-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2);
+    }
+
+    .tb-brand .logo-dot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tb-brand span {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.3px;
+    }
+
+    .tb-brand span em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .tb-slide-info {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .tb-slide-info span {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .tb-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tb-btn {
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .tb-btn:hover {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tb-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+      font-weight: 600;
+    }
+
+    #fullscreen-btn {
+      padding: 6px 12px;
+    }
+
+    /* ── MAIN AREA ── */
+    #main-area {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ── */
+    #sidebar {
+      width: 200px;
+      flex-shrink: 0;
+      background: rgba(10, 15, 30, 0.8);
+      border-right: 1px solid var(--border2);
+      overflow-y: auto;
+      padding: 12px 8px;
+      scrollbar-width: thin;
+    }
+
+    #sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    #sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    #sidebar::-webkit-scrollbar-thumb {
+      background: var(--border2);
+      border-radius: 2px;
+    }
+
+    .slide-thumb {
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 8px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      aspect-ratio: 16/9;
+      background: var(--bg-card);
+      position: relative;
+    }
+
+    .slide-thumb:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .slide-thumb.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .slide-thumb-inner {
+      padding: 8px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-thumb-num {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      font-size: 9px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .slide-thumb-title {
+      font-size: 8px;
+      color: var(--text-secondary);
+      text-align: center;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    /* ── SLIDE VIEWPORT ── */
+    #slide-viewport {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #060a14;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #slide-canvas {
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16/9;
+      background: var(--bg-slide);
+      border-radius: 16px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.06);
+      overflow: hidden;
+      position: relative;
+      transition: opacity 0.35s ease;
+    }
+
+    #slide-canvas.transitioning {
+      opacity: 0;
+      transform: scale(0.985);
+    }
+
+    #slide-canvas {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    /* ── SLIDE CONTENT STYLES ── */
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Background gradient helper */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 75% 10%, #12263d 0%, #0d1526 50%, #060d1c 100%);
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── SLIDE 1 – KAPAK ── */
+    .s1-wrap {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 6% 8%;
+    }
+
+    .s1-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 28px;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .s1-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #94c9f0 60%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .s1-subtitle {
+      font-size: clamp(13px, 1.4vw, 17px);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    .s1-stats {
+      display: flex;
+      gap: 32px;
+    }
+
+    .s1-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .s1-stat-val {
+      font-size: clamp(20px, 2.4vw, 32px);
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+
+    .s1-stat-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .s1-deco {
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(180px, 28%, 340px);
+      aspect-ratio: 1;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      animation: spin 20s linear infinite;
+    }
+
+    .orbit-ring:nth-child(1) {
+      inset: 0;
+      animation-duration: 25s;
+    }
+
+    .orbit-ring:nth-child(2) {
+      inset: 12%;
+      animation-duration: 18s;
+      animation-direction: reverse;
+      border-color: rgba(129, 140, 248, 0.15);
+    }
+
+    .orbit-ring:nth-child(3) {
+      inset: 26%;
+      animation-duration: 12s;
+      border-color: rgba(52, 211, 153, 0.2);
+    }
+
+    .orbit-center {
+      position: absolute;
+      inset: 38%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.3), rgba(56, 189, 248, 0.05));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .orbit-dot-wrap {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      animation: spin 25s linear infinite;
+    }
+
+    .orbit-dot-wrap .orbit-dot {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ── SLIDE 2 – MALİYET TABLOSU ── */
+    .slide-header {
+      padding: 3.5% 6% 1.5%;
+    }
+
+    .slide-title-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .slide-title {
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      background: linear-gradient(135deg, #fff 0%, #94c9f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .slide-body {
+      padding: 0 6% 2%;
+      flex: 1;
+    }
+
+    .note-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      border-left: 2px solid var(--accent2);
+      padding-left: 12px;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    /* Interactive table */
+    .itab-wrap {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .itab {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(9px, 0.95vw, 11.5px);
+    }
+
+    .itab thead tr {
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .itab thead th {
+      padding: 6px 10px;
+      text-align: left;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .itab tbody tr {
+      border-bottom: 1px solid var(--border2);
+      transition: background 0.15s;
+    }
+
+    .itab tbody tr:hover {
+      background: rgba(56, 189, 248, 0.04);
+    }
+
+    .itab tbody tr:last-child {
+      background: rgba(56, 189, 248, 0.06);
+      border-bottom: none;
+    }
+
+    .itab tbody tr:last-child td {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .itab td {
+      padding: 5px 10px;
+      color: var(--text-primary);
+    }
+
+    .itab td:first-child {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .itab td input.editable {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: inherit;
+      font-weight: inherit;
+      width: 100%;
+      cursor: pointer;
+      border-bottom: 1px dashed transparent;
+      transition: border-color 0.2s;
+      padding: 2px 0;
+    }
+
+    .itab td input.editable:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    .itab td.auto-calc {
+      color: var(--accent2);
+    }
+
+    .itab td.total-cell {
+      color: var(--accent) !important;
+    }
+
+    .itab tbody tr:last-child td.total-cell {
+      color: var(--accent) !important;
+    }
+
+    /* ── SLIDE 3 – BÜYÜME VARSAYIMLARI ── */
+    .assumption-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .assumption-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border2);
+      border-radius: 14px;
+      padding: 18px 16px;
+      transition: border-color 0.2s;
+    }
+
+    .assumption-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .ac-icon {
+      display: none;
+    }
+
+    .ac-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .ac-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .ac-slider-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ac-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ac-slider-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      width: 68px;
+      font-weight: 500;
+    }
+
+    .ac-slider {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 5px;
+      background: rgba(56, 189, 248, 0.2);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .ac-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+    }
+
+    .ac-val {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      width: 42px;
+      text-align: right;
+    }
+
+    .progression-bar {
+      margin-top: 8px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      gap: 1px;
+    }
+
+    .prog-seg {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    /* ── SLIDE 4 – MAU TREND ── */
+    .chart-container {
+      position: relative;
+      height: 100%;
+      padding: 0 6% 4%;
+    }
+
+    .chart-wrapper {
+      height: clamp(160px, 55%, 280px);
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .mau-stats-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .mau-stat-card {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+    .mau-stat-val {
+      font-size: clamp(14px, 1.8vw, 22px);
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .mau-stat-lbl {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-top: 2px;
+    }
+
+    /* ── SLIDE 5 – MONETİZASYON ── */
+    .mono-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .mono-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      padding: 20px 18px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .mono-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .mono-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .mono-card:nth-child(1)::before {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .mono-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--accent3), #06b6d4);
+    }
+
+    .mono-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--gold), #f97316);
+    }
+
+    .mono-card:nth-child(4)::before {
+      background: linear-gradient(90deg, #ec4899, #f43f5e);
+    }
+
+    .mono-num {
+      font-size: 32px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.08);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .mono-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .mono-desc {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .mono-highlight {
+      margin-top: 12px;
+      padding: 8px 12px;
+      background: rgba(56, 189, 248, 0.07);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── SLIDE 6 – KAZANÇ ANALİZİ ── */
+    .revenue-layout {
+      display: flex;
+      gap: 16px;
+      height: 100%;
+    }
+
+    .rev-table-wrap {
+      flex: 1.2;
+    }
+
+    .rev-chart-wrap {
+      flex: 1;
+    }
+
+    .profit-row td {}
+
+    .profit-pos {
+      color: var(--accent3) !important;
+      font-weight: 700 !important;
+    }
+
+    .profit-neg {
+      color: var(--danger) !important;
+      font-weight: 700 !important;
+    }
+
+    .profit-zero {
+      color: var(--text-secondary) !important;
+    }
+
+    .highlight-row {
+      background: rgba(52, 211, 153, 0.07) !important;
+    }
+
+    .highlight-row td {
+      border-top: 1px solid rgba(52, 211, 153, 0.3) !important;
+    }
+
+    /* ── SLIDE 7 – BREAK EVEN ── */
+    .breakeven-layout {
+      display: flex;
+      gap: 24px;
+      height: 100%;
+      align-items: stretch;
+    }
+
+    .breakeven-left {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .breakeven-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .be-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border2);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+
+    .be-card.highlight {
+      background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(56, 189, 248, 0.05));
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+
+    .be-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .be-value {
+      font-size: clamp(18px, 2.5vw, 32px);
+      font-weight: 800;
+      color: var(--accent3);
+      letter-spacing: -1px;
+    }
+
+    .be-sub {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .be-timeline {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      height: 64px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .be-month {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      gap: 4px;
+      transition: background 0.3s;
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .be-month:last-child {
+      border-right: none;
+    }
+
+    .be-month.loss {
+      background: rgba(248, 113, 113, 0.15);
+      color: var(--danger);
+    }
+
+    .be-month.breakeven {
+      background: rgba(251, 191, 36, 0.2);
+      color: var(--gold);
+    }
+
+    .be-month.profit {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--accent3);
+    }
+
+    .be-month .mo-num {
+      font-size: 14px;
+    }
+
+    /* ── SLIDE 8 – ODAK NOKTALARI ── */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .focus-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border2);
+      border-radius: 14px;
+      padding: 18px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .focus-card:hover {
+      border-color: rgba(56, 189, 248, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .focus-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .focus-icon.blue {
+      background: rgba(56, 189, 248, 0.15);
+    }
+
+    .focus-icon.purple {
+      background: rgba(129, 140, 248, 0.15);
+    }
+
+    .focus-icon.green {
+      background: rgba(52, 211, 153, 0.15);
+    }
+
+    .focus-icon.gold {
+      background: rgba(251, 191, 36, 0.15);
+    }
+
+    .focus-text h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .focus-text p {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .seed-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.08));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .seed-box .seed-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+
+    .seed-box .seed-amount {
+      font-size: clamp(18px, 2.2vw, 28px);
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+
+    .seed-box .seed-note {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* ── BOTTOM NAV ── */
+    #bottom-nav {
+      height: 56px;
+      background: rgba(10, 15, 30, 0.9);
+      border-top: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-shrink: 0;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border2);
+      color: var(--text-secondary);
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-btn:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .slide-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .slide-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .slide-dot.active {
+      background: var(--accent);
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    /* ── UTILS ── */
+    .divider {
+      height: 1px;
+      background: var(--border2);
+      margin: 12px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .tag-blue {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .tag-green {
+      background: rgba(52, 211, 153, 0.12);
+      color: var(--accent3);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+    }
+
+    .tag-gold {
+      background: rgba(251, 191, 36, 0.12);
+      color: var(--gold);
+      border: 1px solid rgba(251, 191, 36, 0.2);
+    }
+
+    /* ── RESPONSIVE SCALE ── */
+    @media (max-width: 900px) {
+      #sidebar {
+        display: none;
+      }
+
+      .assumption-grid,
+      .mono-grid,
+      .focus-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .breakeven-layout {
+        flex-direction: column;
+      }
+    }
