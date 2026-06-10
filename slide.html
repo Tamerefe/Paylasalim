@@ -9,7 +9,7 @@
     content="Paylaşalım yatırımcı sunumu: Lojistik büyüme modeli, K-Faktörü ve ağ etkisi çerçevesinde gerçekçi stratejik analiz ve finansal projeksiyon." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="styles.css" />
@@ -29,6 +29,52 @@
     </div>
   </div>
 
+  <!-- ════════════ PRESENTATION SELECTOR HUB ════════════ -->
+  <div id="deck-hub">
+    <div class="hub-container">
+      <div class="hub-logo"><img src="assets/logo.jpeg" alt="Paylaşalım Logo" /></div>
+      <h2 class="hub-title" data-i18n="hub-title">Paylaşalım Sunum Paneli</h2>
+      <p class="hub-subtitle" data-i18n="hub-subtitle">Lütfen görüntülemek istediğiniz sunumu seçin.</p>
+      <div class="hub-cards">
+        <!-- Card 1: Investor Report -->
+        <div class="hub-card" onclick="selectDeck('investor')">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-info">
+                <h3 data-i18n="hub-c1-title">Yatırım & Büyüme Raporu</h3>
+                <span class="hub-badge" data-i18n="hub-c1-badge">Stratejik Plan</span>
+              </div>
+            </div>
+            <p class="hub-card-desc" data-i18n="hub-c1-desc">Lojistik büyüme modeli, K-Faktörü ve ağ etkisi çerçevesinde
+              12 aylık detaylı finansal projeksiyon ve P&L analizi.</p>
+          </div>
+          <div class="hub-card-footer">
+            <span data-i18n="hub-view">Sunumu İncele ➔</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Pitch Deck -->
+        <div class="hub-card" onclick="selectDeck('pitch')">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-info">
+                <h3 data-i18n="hub-c2-title">Startup Pitch Deck</h3>
+                <span class="hub-badge" data-i18n="hub-c2-badge"
+                  style="border-color: rgba(76, 175, 80, 0.3); color: #4CAF50; background: rgba(76, 175, 80, 0.1);">Hızlı
+                  Sunum</span>
+              </div>
+            </div>
+            <p class="hub-card-desc" data-i18n="hub-c2-desc">Problem, Çözüm, Pazar Büyüklüğü, İş Modeli, Büyüme
+              Stratejisi ve Yatırım İhtiyacını içeren özet girişim sunumu (Cheat Sheet).</p>
+          </div>
+          <div class="hub-card-footer">
+            <span data-i18n="hub-view">Sunumu İncele ➔</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ════════════ PRESENTATION ════════════ -->
   <div id="presentation">
 
@@ -43,10 +89,10 @@
           id="total-slide-num">8</span>
       </div>
       <div class="tb-controls">
-        <button class="tb-btn" id="lang-toggle-btn" onclick="toggleLanguage()" title="Dili Değiştir"
-          style="margin-right: 8px; border-color: rgba(56, 189, 248, 0.35); color: var(--accent); font-weight: 600;">EN</button>
-        <button class="tb-btn" id="currency-toggle-btn" onclick="toggleCurrency()" title="Para Birimi Değiştir"
-          style="margin-right: 8px; border-color: rgba(251, 191, 36, 0.35); color: var(--gold); font-weight: 600;">₺
+        <button class="tb-btn" id="hub-back-btn" onclick="backToHub()" title="Panele Dön" data-i18n="hub-back">⌂
+          Panel</button>
+        <button class="tb-btn" id="lang-toggle-btn" onclick="toggleLanguage()" title="Dili Değiştir">EN</button>
+        <button class="tb-btn" id="currency-toggle-btn" onclick="toggleCurrency()" title="Para Birimi Değiştir">₺
           (TRY)</button>
         <button class="tb-btn active" id="interactive-mode-btn" onclick="setMode('interactive')"
           data-i18n="interactive-mode">İnteraktif</button>
@@ -523,6 +569,637 @@
             </div>
           </div>
 
+          <!-- ════ PITCH DECK SLIDE 1 – KAPAK ════ -->
+          <div class="slide" id="pitch-slide-1">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 80% 30%, #0a2014 0%, #07130D 50%, #050A08 100%);"></div>
+            <div class="slide-content">
+              <div class="s1-wrap">
+                <div class="s1-badge">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <circle cx="5" cy="5" r="4" fill="#39D353" />
+                  </svg>
+                  <span data-i18n="pitch-cover-badge">Startup Pitch Deck</span> · 2026
+                </div>
+                <h1 class="s1-title" data-i18n="pitch-cover-title">Paylaşalım<br />Yolculuk Paylaşım Platformu</h1>
+                <p class="s1-subtitle" data-i18n="pitch-cover-subtitle">
+                  Kuzey Kıbrıs'ın Akıllı, Güvenli ve Çevre Dostu Carpool Uygulaması —
+                  Ulaşımda Birlikte Tasarruf ve Topluluk Gücü
+                </p>
+                <div class="s1-stats">
+                  <div class="s1-stat">
+                    <div class="s1-stat-val" id="pitch-stat-mau">8.800</div>
+                    <div class="s1-stat-lbl" data-i18n="pitch-cover-stat-mau">12. Ay MAU Hedefi</div>
+                  </div>
+                  <div class="s1-stat">
+                    <div class="s1-stat-val" id="pitch-stat-market">~60.000</div>
+                    <div class="s1-stat-lbl" data-i18n="pitch-cover-stat-market">Ulaşılabilir Pazar (KKTC)</div>
+                  </div>
+                  <div class="s1-stat">
+                    <div class="s1-stat-val" id="pitch-stat-ask">24.300 ₺</div>
+                    <div class="s1-stat-lbl" data-i18n="pitch-cover-stat-ask">Minimum Gerekli Nakit</div>
+                  </div>
+                </div>
+              </div>
+              <div class="s1-deco">
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="orbit-dot-wrap">
+                  <div class="orbit-dot"></div>
+                </div>
+                <div class="orbit-center"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 2 – PROBLEM ════ -->
+          <div class="slide" id="pitch-slide-2">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 30% 80%, #1a0a0a 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag"
+                  style="background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.2); color: var(--danger);"
+                  data-i18n="pitch-prob-tag">Pazar İhtiyacı</div>
+                <div class="slide-title" data-i18n="pitch-prob-title">Kuzey Kıbrıs Ulaşımındaki Temel Sorunlar</div>
+              </div>
+              <div class="slide-body" style="flex:1;overflow:hidden;">
+                <p class="note-text" data-i18n="pitch-prob-note">KKTC'de üniversiteler arası ve şehirler arası ulaşım,
+                  özellikle öğrenciler ve sabit gelirliler için ciddi bir yaşam kalitesi sorununa dönüşmüştür.</p>
+                <div class="problem-grid">
+                  <div class="problem-card">
+                    <div class="problem-card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                    </div>
+                    <h4 data-i18n="pitch-prob-c1-title">Aşırı Yüksek Maliyetler</h4>
+                    <p data-i18n="pitch-prob-c1-desc">Artan akaryakıt fiyatları ve fahiş taksi ücretleri, günlük ulaşımı
+                      öğrenciler için sürdürülemez hale getiriyor. Aylık harcamalarda seyahat bütçesi ilk sıralarda yer
+                      alıyor.</p>
+                  </div>
+                  <div class="problem-card">
+                    <div class="problem-card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="3" width="15" height="13" rx="2" />
+                        <path d="M16 8h4l3 3v5h-7V8z" />
+                        <circle cx="5.5" cy="18.5" r="2.5" />
+                        <circle cx="18.5" cy="18.5" r="2.5" />
+                      </svg>
+                    </div>
+                    <h4 data-i18n="pitch-prob-c2-title">Yetersiz Toplu Taşıma</h4>
+                    <p data-i18n="pitch-prob-c2-desc">Şehirler ve kampüsler arasındaki otobüs seferleri seyrek, belirli
+                      saatlerden sonra tamamen duruyor ve güzergahlar son derece sınırlı. Alternatif ulaşım imkânı
+                      bulunmuyor.</p>
+                  </div>
+                  <div class="problem-card">
+                    <div class="problem-card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                    </div>
+                    <h4 data-i18n="pitch-prob-c3-title">Güvensiz Çözüm Arayışları</h4>
+                    <p data-i18n="pitch-prob-c3-desc">İnsanlar çaresizlikten WhatsApp/Telegram gruplarında veya sosyal
+                      medyada kimlik doğrulaması olmadan yolculuk paylaşmaya çalışıyor. Bu durum ciddi güvenlik açıkları
+                      yaratıyor.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 3 – ÇÖZÜM ════ -->
+          <div class="slide" id="pitch-slide-3">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 20% 80%, #092012 0%, #0B1220 60%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-sol-tag">Çözümümüz</div>
+                <div class="slide-title" data-i18n="pitch-sol-title">Paylaşalım: Güvenli, Ekonomik ve Topluluk Odaklı
+                  Carpool</div>
+              </div>
+              <div class="slide-body" style="flex:1;">
+                <p class="note-text" data-i18n="pitch-sol-note">Paylaşalım, aynı güzergahta seyahat eden sürücü ve
+                  yolcuları buluşturarak ortak masrafları paylaşmalarını sağlayan akıllı mobil platformdur.</p>
+                <div class="solution-flow">
+                  <div class="solution-step">
+                    <span class="solution-step-num">01</span>
+                    <div class="solution-card-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                      </svg>
+                    </div>
+                    <h4 data-i18n="pitch-sol-c1-title">Yolculuk Oluştur</h4>
+                    <p data-i18n="pitch-sol-c1-desc">Sürücüler rota ve koltuk sayısını belirler. Yolcular ise kalkış
+                      noktası ve hedefe göre anında eşleşme isteği gönderir.</p>
+                  </div>
+                  <div class="solution-connector">→</div>
+                  <div class="solution-step">
+                    <span class="solution-step-num">02</span>
+                    <div class="solution-card-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                    </div>
+                    <h4 data-i18n="pitch-sol-c2-title">Güvenli Eşleş</h4>
+                    <p data-i18n="pitch-sol-c2-desc">SMS + üniversite e-posta doğrulama, profil puanlama ve yorum
+                      sistemi ile yalnızca güvenilir kullanıcılarla eşleşme.</p>
+                  </div>
+                  <div class="solution-connector">→</div>
+                  <div class="solution-step">
+                    <span class="solution-step-num">03</span>
+                    <div class="solution-card-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 8v4l3 3" />
+                      </svg>
+                    </div>
+                    <h4 data-i18n="pitch-sol-c3-title">Masrafı Paylaş</h4>
+                    <p data-i18n="pitch-sol-c3-desc">Taksiye göre %80 tasarruf. Tek araçla birden fazla kişi yolculuk
+                      ederek karbon emisyonları düşer, bütçe korunur.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 4 – ÜRÜN VE TEKNOLOJİ ════ -->
+          <div class="slide" id="pitch-slide-4">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 70% 20%, #071a0e 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-prod-tag">Ürün &amp; Altyapı</div>
+                <div class="slide-title" data-i18n="pitch-prod-title">Kusursuz Mobil Deneyim ve Güçlü Tech Stack</div>
+              </div>
+              <div class="slide-body" style="flex:1;overflow:hidden;">
+                <div class="prod-layout">
+                  <div class="prod-text-info">
+                    <div class="prod-feature-item">
+                      <div class="prod-feature-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                          <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                      </div>
+                      <div class="prod-feature-desc">
+                        <h5 data-i18n="pitch-prod-f1-title">Flutter · iOS &amp; Android</h5>
+                        <p data-i18n="pitch-prod-f1-desc">Cross-platform, yüksek performanslı akıcı kullanıcı arayüzü.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="prod-feature-item">
+                      <div class="prod-feature-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                      </div>
+                      <div class="prod-feature-desc">
+                        <h5 data-i18n="pitch-prod-f2-title">Firebase Cloud Backend</h5>
+                        <p data-i18n="pitch-prod-f2-desc">Firestore gerçek zamanlı veri, Auth ve push bildirimler.</p>
+                      </div>
+                    </div>
+                    <div class="prod-feature-item">
+                      <div class="prod-feature-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="11" cy="11" r="8" />
+                          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                      </div>
+                      <div class="prod-feature-desc">
+                        <h5 data-i18n="pitch-prod-f3-title">Google Maps Entegrasyonu</h5>
+                        <p data-i18n="pitch-prod-f3-desc">Canlı rota eşleme, kalkış-varış noktası belirleme.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prod-mockups-grid">
+                    <div class="prod-mockup-frame">
+                      <div class="phone-bezel">
+                        <div class="phone-screen"><img src="assets/slider/sc1.jpeg" alt="Uygulama Ekranı 1" /></div>
+                      </div>
+                    </div>
+                    <div class="prod-mockup-frame">
+                      <div class="phone-bezel">
+                        <div class="phone-screen"><img src="assets/slider/sc2.jpeg" alt="Uygulama Ekranı 2" /></div>
+                      </div>
+                    </div>
+                    <div class="prod-mockup-frame">
+                      <div class="phone-bezel">
+                        <div class="phone-screen"><img src="assets/slider/sc3.jpeg" alt="Uygulama Ekranı 3" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 5 – SOSYAL ETKİNLİKLER VE KULÜPLER ════ -->
+          <div class="slide" id="pitch-slide-5">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 30% 20%, #092015 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-events-tag">Sosyal &amp; Topluluk</div>
+                <div class="slide-title" data-i18n="pitch-events-title">Sosyal Etkinlikler ve Okul Kulüpleri
+                  Entegrasyonu</div>
+              </div>
+              <div class="slide-body" style="flex:1;overflow:hidden;">
+                <p class="note-text" data-i18n="pitch-events-note">Paylaşalım; kullanıcıların etkinlik oluşturup
+                  sosyalleşebildiği, kulüplerin ise ulaşımı koordine edebildiği bir carpool ekosistemidir.</p>
+                <div class="events-layout">
+                  <div class="events-text-info">
+
+                    <div class="events-feature-item">
+                      <div class="events-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                          <line x1="16" y1="2" x2="16" y2="6"></line>
+                          <line x1="8" y1="2" x2="8" y2="6"></line>
+                          <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                      </div>
+                      <div class="events-feature-desc">
+                        <h5 data-i18n="pitch-events-c1-title">Etkinlik Oluştur (Create)</h5>
+                        <p data-i18n="pitch-events-c1-desc">Sürücüler, yolcular veya yetkili kulüpler; konserler,
+                          festival veya kampüs etkinlikleri için kolayca başlık, rota, tarih ve saat belirterek
+                          etkinlikler yayınlar.</p>
+                      </div>
+                    </div>
+
+                    <div class="events-feature-item">
+                      <div class="events-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                          </path>
+                        </svg>
+                      </div>
+                      <div class="events-feature-desc">
+                        <h5 data-i18n="pitch-events-c2-title">Topluluğu Yönet (Manage)</h5>
+                        <p data-i18n="pitch-events-c2-desc">Okul kulüpleri kendilerine özel SaaS yönetim panelinden
+                          üyelerini doğrulanmış e-postalarla kontrol eder, katılım listesini listeler ve grup
+                          seyahatlerini koordine eder.</p>
+                      </div>
+                    </div>
+
+                    <div class="events-feature-item">
+                      <div class="events-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </div>
+                      <div class="events-feature-desc">
+                        <h5 data-i18n="pitch-events-c3-title">Yolculuğa Katıl (Participate)</h5>
+                        <p data-i18n="pitch-events-c3-desc">Aynı konsere veya maça giden diğer tüm kullanıcılar, tek bir
+                          tıkla ortak rotada seyahat eden araç sahiplerini bulup katılır. Bu, K-faktörünü ve ağ etkisini
+                          katlar.</p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="events-visual-col">
+
+                    <!-- Event Mockup Card -->
+                    <div class="event-mockup-card">
+                      <div class="event-mock-header">
+                        <span class="event-mock-tag" data-i18n="pitch-events-mock-tag">KAMPÜS ETKİNLİĞİ</span>
+                        <span class="event-mock-club" data-i18n="pitch-events-mock-club">DAÜ Müzik Kulübü</span>
+                      </div>
+                      <h4 class="event-mock-title" data-i18n="pitch-events-mock-title">Bahar Şenliği Konseri 2026</h4>
+                      <div class="event-mock-details">
+                        <span data-i18n="pitch-events-mock-details">📅 15 Mayıs 2026, 20:00 &nbsp;·&nbsp; 📍 Lefkoşa ➔
+                          Gazimağusa Kampüsü</span>
+                      </div>
+                      <div class="event-mock-rides">
+                        <div class="ride-indicator">
+                          <div class="ride-avatars">
+                            <span class="avatar-sm">A</span>
+                            <span class="avatar-sm">K</span>
+                            <span class="avatar-sm">+3</span>
+                          </div>
+                          <span class="ride-text" data-i18n="pitch-events-mock-rides">5 Aktif Yolculuk Paylaşımı</span>
+                        </div>
+                        <button class="join-ride-btn" data-i18n="pitch-events-mock-btn">Yolculuk Bul / Oluştur</button>
+                      </div>
+                    </div>
+
+                    <!-- User Event Mockup Card -->
+                    <div class="event-mockup-card user-event" style="border-color: rgba(56, 189, 248, 0.25); background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(19, 31, 53, 0.7) 100%);">
+                      <div class="event-mock-header">
+                        <span class="event-mock-tag" style="background: rgba(56, 189, 248, 0.1); color: var(--accent);" data-i18n="pitch-events-mock-user-tag">SOSYAL ETKİNLİK</span>
+                        <span class="event-mock-club" data-i18n="pitch-events-mock-user-creator">Oluşturan: Tamer A.</span>
+                      </div>
+                      <h4 class="event-mock-title" data-i18n="pitch-events-mock-user-title">Satranç Turnuvası &amp; Film Gecesi</h4>
+                      <div class="event-mock-details">
+                        <span data-i18n="pitch-events-mock-user-details">📅 Bugün, 18:30 &nbsp;·&nbsp; 📍 Lefkoşa ➔ Gloria Jean's &amp; Cinemax</span>
+                      </div>
+                      <div class="event-mock-rides">
+                        <div class="ride-indicator">
+                          <div class="ride-avatars">
+                            <span class="avatar-sm" style="border-color: var(--accent); color: var(--accent); background: rgba(56, 189, 248, 0.15);">C</span>
+                            <span class="avatar-sm" style="border-color: var(--accent); color: var(--accent); background: rgba(56, 189, 248, 0.15);">E</span>
+                          </div>
+                          <span class="ride-text" data-i18n="pitch-events-mock-user-rides">2 Aktif Yolculuk Paylaşımı</span>
+                        </div>
+                        <button class="join-ride-btn" style="background: var(--accent); color: #050A08;" data-i18n="pitch-events-mock-user-btn">Yolculuk Bul / Katıl</button>
+                      </div>
+                    </div>
+
+                    <!-- Club Dashboard Mockup -->
+                    <div class="dashboard-mockup-card">
+                      <div class="db-mock-header">
+                        <span class="db-title" data-i18n="pitch-events-db-title">Kulüp SaaS Yönetim Paneli</span>
+                        <span class="db-status online" data-i18n="pitch-events-db-status">Aktif</span>
+                      </div>
+                      <div class="db-stats-row">
+                        <div class="db-stat-box">
+                          <span class="db-stat-num" data-i18n="pitch-events-db-stat1-num">420</span>
+                          <span class="db-stat-lbl" data-i18n="pitch-events-db-stat1-lbl">Aktif Üye</span>
+                        </div>
+                        <div class="db-stat-box">
+                          <span class="db-stat-num" data-i18n="pitch-events-db-stat2-num">18</span>
+                          <span class="db-stat-lbl" data-i18n="pitch-events-db-stat2-lbl">Düzenlenen Etkinlik</span>
+                        </div>
+                        <div class="db-stat-box">
+                          <span class="db-stat-num" data-i18n="pitch-events-db-stat3-num">%84</span>
+                          <span class="db-stat-lbl" data-i18n="pitch-events-db-stat3-lbl">Carpool Tercihi</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 6 – PAZAR FIRSATI ════ -->
+          <div class="slide" id="pitch-slide-6">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 50% 0%, #0a2014 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-mkt-tag">Pazar Fırsatı</div>
+                <div class="slide-title" data-i18n="pitch-mkt-title">Hedef Kitle ve Potansiyel Pazar Büyüklüğü</div>
+              </div>
+              <div class="slide-body" style="flex:1;">
+                <p class="note-text" data-i18n="pitch-mkt-note">Kuzey Kıbrıs, yüksek öğrenci yoğunluğu ve kısıtlı ulaşım
+                  alternatifleri nedeniyle viral büyüme ve carpool modeli için ideal bir kapalı pazardır.</p>
+                <div class="market-funnel-layout">
+                  <div class="market-funnel">
+                    <div class="funnel-item tam">
+                      <span class="funnel-label">TAM</span>
+                      <span class="funnel-val">~490K</span>
+                      <span class="funnel-desc" data-i18n="pitch-mkt-c1-title">Toplam Pazar — KKTC Nüfusu</span>
+                    </div>
+                    <div class="funnel-item sam">
+                      <span class="funnel-label">SAM</span>
+                      <span class="funnel-val">~60K</span>
+                      <span class="funnel-desc" data-i18n="pitch-mkt-c2-title">Düzenli Seyahat Eden Öğrenci &amp;
+                        Çalışan</span>
+                    </div>
+                    <div class="funnel-item som">
+                      <span class="funnel-label">SOM</span>
+                      <span class="funnel-val">~40K</span>
+                      <span class="funnel-desc" data-i18n="pitch-mkt-c3-title">DAÜ, EMÜ, GAÜ — Dijital Yatkın
+                        Öğrenciler</span>
+                    </div>
+                  </div>
+                  <div class="market-stats-col">
+                    <div class="market-stat-card">
+                      <div class="market-stat-val">8.800</div>
+                      <div class="market-stat-lbl" data-i18n="pitch-cover-stat-mau">12. Ay MAU Hedefi</div>
+                    </div>
+                    <div class="market-stat-card">
+                      <div class="market-stat-val">~12. Ay</div>
+                      <div class="market-stat-lbl">Tahmini Break-Even</div>
+                    </div>
+                    <div class="market-stat-card">
+                      <div class="market-stat-val">%14.6</div>
+                      <div class="market-stat-lbl">SAM Penetrasyon Hedefi (1Y)</div>
+                    </div>
+                    <div class="market-stat-card"
+                      style="border-color: rgba(57,211,83,0.25); background: rgba(57,211,83,0.04);">
+                      <div class="market-stat-val" style="font-size: 13px; letter-spacing: 0;">KKTC Odaklı Lansman</div>
+                      <div class="market-stat-lbl">Kapalı pazar — Güçlü ağ etkisi</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 7 – İŞ MODELİ ════ -->
+          <div class="slide" id="pitch-slide-7">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 60% 50%, #081a10 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-biz-tag">Gelir Modeli</div>
+                <div class="slide-title" data-i18n="pitch-biz-title">Çoklu Gelir Akışları</div>
+              </div>
+              <div class="slide-body" style="flex:1;">
+                <p class="note-text" data-i18n="pitch-biz-note">Proje, çoklu gelir modeli yapısıyla ilk aylardan
+                  itibaren nakit yakımını minimize edip hızlıca kâra geçmeyi hedeflemektedir.</p>
+                <div class="revenue-cards-layout">
+                  <div class="revenue-card green-card">
+                    <div class="revenue-card-num">01</div>
+                    <div class="revenue-card-title" data-i18n="pitch-biz-c1-title">Paylaşalım Plus</div>
+                    <div class="revenue-card-desc" data-i18n="pitch-biz-c1-desc">Günlük eşleşme sınırını kaldıran,
+                      aramalarda öncelik veren ve profil öne çıkaran abonelik modeli.</div>
+                    <div class="revenue-card-badge">● Ay 1'den</div>
+                    <div class="revenue-card-highlight"
+                      style="color: var(--green-primary); border-color: rgba(57,211,83,0.2); background: rgba(57,211,83,0.05);"
+                      id="pitch-biz-c1-hl">Aylık 60 ₺ · %2 Dönüşüm</div>
+                  </div>
+                  <div class="revenue-card blue-card">
+                    <div class="revenue-card-num">02</div>
+                    <div class="revenue-card-title" data-i18n="pitch-biz-c2-title">Yolculuk Komisyonu</div>
+                    <div class="revenue-card-desc" data-i18n="pitch-biz-c2-desc">Güven ortamı oluştuktan sonra seyahat
+                      başına sürücüden alınan düşük oranlı hizmet komisyonu.</div>
+                    <div class="revenue-card-badge">● Ay 7'den</div>
+                    <div class="revenue-card-highlight"
+                      style="color: var(--accent); border-color: rgba(56,189,248,0.2); background: rgba(56,189,248,0.05);"
+                      id="pitch-biz-c2-hl">%10 Hizmet Bedeli</div>
+                  </div>
+                  <div class="revenue-card gold-card">
+                    <div class="revenue-card-num">03</div>
+                    <div class="revenue-card-title">AdMob Reklam</div>
+                    <div class="revenue-card-desc">MAU büyüdükçe hedefli in-app reklam gelirleri devreye girer.</div>
+                    <div class="revenue-card-badge">● Ay 4'ten</div>
+                    <div class="revenue-card-highlight"
+                      style="color: var(--gold); border-color: rgba(251,191,36,0.2); background: rgba(251,191,36,0.05);"
+                      id="pitch-biz-c3-hl">$0.05 / MAU</div>
+                  </div>
+                  <div class="revenue-card pink-card">
+                    <div class="revenue-card-num">04</div>
+                    <div class="revenue-card-title" data-i18n="pitch-biz-c3-title">SaaS Kulüp Paneli</div>
+                    <div class="revenue-card-desc">Öğrenci kulüplerine özel etkinlik planlama ve koordinasyon paneli
+                      aboneliği.</div>
+                    <div class="revenue-card-badge">● Ay 12'den</div>
+                    <div class="revenue-card-highlight"
+                      style="color: #ec4899; border-color: rgba(236,72,153,0.2); background: rgba(236,72,153,0.05);">500
+                      ₺ / Kulüp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 8 – YOL HARİTASI ════ -->
+          <div class="slide" id="pitch-slide-8">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 50% 100%, #0a2014 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-map-tag">Büyüme Planı</div>
+                <div class="slide-title" data-i18n="pitch-map-title">Stratejik Yol Haritası ve Hedefler</div>
+              </div>
+              <div class="slide-body" style="flex:1;">
+                <div class="roadmap-timeline">
+                  <div class="roadmap-line"></div>
+                  <div class="roadmap-steps">
+                    <div class="roadmap-step">
+                      <div class="roadmap-node">Ç1</div>
+                      <div class="roadmap-quarter">Ay 1 – 3</div>
+                      <h4 data-i18n="pitch-map-s1-title">Lansman &amp; Kampüs</h4>
+                      <p data-i18n="pitch-map-s1-desc">Üniversite temsilcileri aracılığıyla sıfır maliyetle kulüp
+                        entegrasyonu ve kampüs aktivasyonu.</p>
+                      <div class="roadmap-milestones">
+                        <div class="roadmap-milestone">DAÜ, EMÜ, GAÜ kulüp entegrasyonu</div>
+                        <div class="roadmap-milestone">İlk 200 aktif kullanıcı</div>
+                        <div class="roadmap-milestone">Plus abonelik lansmanı</div>
+                      </div>
+                    </div>
+                    <div class="roadmap-step">
+                      <div class="roadmap-node">Ç2</div>
+                      <div class="roadmap-quarter">Ay 4 – 7</div>
+                      <h4 data-i18n="pitch-map-s2-title">Büyüme &amp; Optimizasyon</h4>
+                      <p data-i18n="pitch-map-s2-desc">CPA'yı 90 ₺'den 55 ₺'ye düşürme, k-faktörünü 0.15'e çekme ve
+                        1.500 MAU hedefi.</p>
+                      <div class="roadmap-milestones">
+                        <div class="roadmap-milestone">1.500 MAU aşımı</div>
+                        <div class="roadmap-milestone">AdMob geliri başlangıcı</div>
+                        <div class="roadmap-milestone">Komisyon modeli devreye girişi</div>
+                      </div>
+                    </div>
+                    <div class="roadmap-step">
+                      <div class="roadmap-node">Ç3</div>
+                      <div class="roadmap-quarter">Ay 8 – 12</div>
+                      <h4 data-i18n="pitch-map-s3-title">Kârlılık &amp; Ölçek</h4>
+                      <p data-i18n="pitch-map-s3-desc">Reklam ve SaaS gelirlerinin devreye girmesi; 11-12. ayda
+                        break-even, 8.800 MAU hedefi.</p>
+                      <div class="roadmap-milestones">
+                        <div class="roadmap-milestone">8.800 MAU</div>
+                        <div class="roadmap-milestone">Break-even noktası</div>
+                        <div class="roadmap-milestone">SaaS kulüp paneli lansmanı</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ PITCH DECK SLIDE 9 – EKİP VE YATIRIM ════ -->
+          <div class="slide" id="pitch-slide-9">
+            <div class="slide-bg"
+              style="background: radial-gradient(ellipse at 80% 80%, #0a2014 0%, #0B1220 50%, #050A08 100%);"></div>
+            <div class="slide-content" style="display:flex;flex-direction:column;height:100%;">
+              <div class="slide-header">
+                <div class="slide-title-tag" data-i18n="pitch-ask-tag">Ekip &amp; Yatırım</div>
+                <div class="slide-title" data-i18n="pitch-ask-title">Ekip Yapımız ve Finansal Talep</div>
+              </div>
+              <div class="slide-body" style="flex:1;">
+                <div class="pitch-ask-layout">
+                  <div class="pitch-team-box">
+                    <p style="font-size:12px; color:var(--text-secondary); margin-bottom: 10px; line-height: 1.6;"
+                      data-i18n="pitch-ask-team-desc">Kurucu ekip, KKTC pazarını ve öğrenci ulaşım dinamiklerini çok iyi
+                      bilen, teknik ve pazarlama açısından yetkin kişilerden oluşmaktadır.</p>
+                    <div class="team-grid-pitch">
+                      <div class="team-member-card">
+                        <div class="member-avatar">ET</div>
+                        <div class="member-info">
+                          <h5>Celil Kaan Rumin</h5>
+                          <p data-i18n="pitch-ask-m1-role">Kurucu &amp; Flutter Geliştirici</p>
+                        </div>
+                      </div>
+                      <div class="team-member-card">
+                        <div class="member-avatar">TE</div>
+                        <div class="member-info">
+                          <h5>B. Tamer Akipek</h5>
+                          <p data-i18n="pitch-ask-m2-role">Kurucu Ortak &amp; Pazarlama</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      style="margin-top: 10px; padding: 10px 14px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-md);">
+                      <div
+                        style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: 700;">
+                        Güçlü Yanlar</div>
+                      <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <div
+                          style="font-size: 11px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px;">
+                          <span style="color: var(--green-primary);">✓</span> KKTC pazarı &amp; university ağına derin
+                          hakimiyet
+                        </div>
+                        <div
+                          style="font-size: 11px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px;">
+                          <span style="color: var(--green-primary);">✓</span> Teknik (Flutter/Firebase) uzmanlık
+                        </div>
+                        <div
+                          style="font-size: 11px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px;">
+                          <span style="color: var(--green-primary);">✓</span> Sıfır maaş ile bootstrap yaklaşımı
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pitch-ask-box">
+                    <h4 data-i18n="pitch-ask-box-title">Minimum Hayatta Kalma Bütçesi</h4>
+                    <div class="pitch-ask-amount" id="pitch-ask-amount-val">24.300 ₺</div>
+                    <div
+                      style="font-size:11px; font-weight:700; padding:4px 12px; border-radius:100px; margin-top:6px; background: rgba(57,211,83,0.08); border: 1px solid rgba(57,211,83,0.2); color: var(--green-primary);"
+                      id="pitch-ask-amount-usd">≈ 700 USD · 12 Ay</div>
+                    <div class="budget-breakdown">
+                      <div class="budget-item"><span class="budget-item-label">Firebase Altyapı</span><span
+                          class="budget-item-val">~7.000 ₺</span></div>
+                      <div class="budget-item"><span class="budget-item-label">Pazarlama &amp; İçerik</span><span
+                          class="budget-item-val">~9.600 ₺</span></div>
+                      <div class="budget-item"><span class="budget-item-label">Yasal &amp; Lisans</span><span
+                          class="budget-item-val">~4.200 ₺</span></div>
+                      <div class="budget-item"><span class="budget-item-label">Operasyonel</span><span
+                          class="budget-item-val">~3.500 ₺</span></div>
+                    </div>
+                    <p class="pitch-ask-note" id="pitch-ask-box-note">Kurucu emeği hariçtir. 12. ayda kümülatif kârlılık
+                      hedeflenmektedir.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div><!-- /#slide-canvas -->
       </div><!-- /#slide-viewport -->
 
@@ -551,8 +1228,7 @@
       const val = document.getElementById('auth-input').value;
       if (val === ACCESS_PASSWORD) {
         document.getElementById('auth-gate').style.display = 'none';
-        document.getElementById('presentation').classList.add('visible');
-        initPresentation();
+        document.getElementById('deck-hub').classList.add('visible');
       } else {
         document.getElementById('auth-error').style.display = 'block';
         document.getElementById('auth-input').value = '';
@@ -563,8 +1239,9 @@
     // ══════════════════════════════
     //  PRESENTATION STATE
     // ══════════════════════════════
+    let currentDeck = 'investor';
     let currentSlide = 1;
-    const TOTAL_SLIDES = 8;
+    let totalSlides = 8;
     let mauChartInst = null;
     let profitChartInst = null;
     let breakevenChartInst = null;
@@ -573,21 +1250,6 @@
     let currentLang = 'tr';
 
     // Base data (editable)
-    // ─────────────────────────────────────────────────────────────────────────────
-    // VERİ KAYNAKLARI:
-    //  • KKTC Nüfusu 489.308 (KKTC İstatistik Kurumu, 2024)
-    //  • Üniversite öğrenci tabanı ~40.000 (YÖK/YÖDAK 2024-25)
-    //  • CPA 80-100 ₺  → Adjust EMEA 2024 Raporu; TR pazarı global ortalamanın %30-50 altı
-    //  • Churn %55→%30 → pmtoolkit.ai Mobile Benchmarks 2024 (D-30 retention avg %5-15)
-    //  • K-faktörü 0.05→0.15 → Küçük pazar; K>1 viral büyüme KKTC ölçeğinde yıllar alır
-    //  • Firebase altyapı maliyeti: İlk 2 ay 500 ₺ (Google Firebase Pricing 2024)
-    //  • Premium dönüşüm %2: Transport/Marketplace median (Recurly.com Freemium 2024)
-    //  • Komisyon %10, 7. aydan (marketplace bootstrap best practice)
-    // ─────────────────────────────────────────────────────────────────────────────
-
-    // Maliyet: [Altyapı & Firebase, Pazarlama & Reklam, Operasyon]
-    // Ay 1-2: Firebase ilk 2 ay 500 ₺. Reklam = kampüs aktivasyon
-    // Ay 3+: Firebase Blaze planı gerekebilir. Sosyal medya + mikro influencer bütçesi
     const USD_TRY = 35;
     const SMS_COST_USD = 0.03;
 
@@ -606,10 +1268,8 @@
       [9000, 9000, 8000]   // 12. Ay
     ];
 
-    // MAU Projeksiyonu: 12 aya yayılmış lojistik/ağ büyüme trendi
     let mauData = [88, 209, 407, 682, 1078, 1595, 2310, 3190, 4290, 5610, 7150, 8800];
 
-    // Gelir Projeksiyonu (12 Ay)
     let revenueData = [
       { mau: 88, trips: 10, commission: 0 },
       { mau: 209, trips: 25, commission: 0 },
@@ -625,20 +1285,17 @@
       { mau: 8800, trips: 1500, commission: 12000 }
     ];
 
-    const PREMIUM_RATE = 0.02;  // %2 (Recurly/Adapty: transport marketplace median 2024)
-    const PREMIUM_PRICE = 60;   // 60 ₺/ay
+    const PREMIUM_RATE = 0.02;
+    const PREMIUM_PRICE = 60;
 
     function getNewUsers(i) {
       if (i === 0) return mauData[0];
       const prevMAU = mauData[i - 1];
-
-      // Churn oranı slider'dan veya interpolasyonla dinamik alınıyor
       const churnStartEl = document.getElementById('churn-start');
       const churnEndEl = document.getElementById('churn-end');
       const s = churnStartEl ? parseInt(churnStartEl.value) : 55;
       const e = churnEndEl ? parseInt(churnEndEl.value) : 30;
-      const churn = (s - (s - e) * i / 11) / 100; // 12 ay için 11'e bölüyoruz
-
+      const churn = (s - (s - e) * i / 11) / 100;
       const newUsers = mauData[i] - prevMAU * (1 - churn);
       return Math.max(0, Math.round(newUsers));
     }
@@ -653,7 +1310,7 @@
       return Math.round(baseInfra + sms);
     }
 
-    const AD_RATE_USD = 0.05; // Kullanıcı başına aylık ortalama banner geliri
+    const AD_RATE_USD = 0.05;
 
     function getAdRevenue(mau) {
       return Math.round(mau * AD_RATE_USD * USD_TRY);
@@ -664,10 +1321,6 @@
     }
 
     function getClubRevenue(i) {
-      // i is 0-indexed month
-      // 3. aydan itibaren ayda 1 yeni kulüp (months 3-6 / indexes 2-5)
-      // 7. aydan itibaren ayda 2 yeni kulüp (months 7-12 / indexes 6-11)
-      // İlk 3 ay deneme bedava. Bu nedenle kayıt ayı + 3. aydan itibaren ödeme başlar.
       let payingClubs = 0;
       for (let m = 0; m <= i - 3; m++) {
         if (m >= 2 && m <= 5) {
@@ -697,22 +1350,100 @@
     }
 
     // ══════════════════════════════
-    //  INIT
+    //  INIT / DECK SELECTION
     // ══════════════════════════════
-    function initPresentation() {
+    function selectDeck(deckName) {
+      currentDeck = deckName;
+      totalSlides = deckName === 'pitch' ? 9 : 8;
+
+      // Hide selection hub
+      document.getElementById('deck-hub').classList.remove('visible');
+
+      // Show presentation container
+      document.getElementById('presentation').classList.add('visible');
+
+      // Update total slides label
+      document.getElementById('total-slide-num').textContent = totalSlides;
+
+      // Show/hide interactive mode buttons
+      const modeBtn1 = document.getElementById('interactive-mode-btn');
+      const modeBtn2 = document.getElementById('present-mode-btn');
+      if (deckName === 'pitch') {
+        if (modeBtn1) modeBtn1.style.display = 'none';
+        if (modeBtn2) modeBtn2.style.display = 'none';
+        setMode('interactive'); // Keep sidebar visible, disable nothing
+      } else {
+        if (modeBtn1) modeBtn1.style.display = '';
+        if (modeBtn2) modeBtn2.style.display = '';
+        setMode('interactive');
+
+        // Initialize investor deck specific structures
+        buildCostTable();
+        buildRevenueTable();
+        initCharts();
+        buildBETimeline();
+      }
+
+      // Rebuild sidebar and dots
+      buildSidebar();
       buildDots();
-      buildCostTable();
-      buildRevenueTable();
-      initCharts();
-      buildBETimeline();
-      updateAll();
+
+      // Go to first slide
       goToSlide(1);
+
+      // Update all elements
+      updateAll();
+    }
+
+    function backToHub() {
+      // Hide presentation container
+      document.getElementById('presentation').classList.remove('visible');
+      // Show selection hub
+      document.getElementById('deck-hub').classList.add('visible');
+
+      // Exit fullscreen if active
+      if (document.fullscreenElement) {
+        document.exitFullscreen().catch(err => console.log(err));
+      }
+    }
+
+    function buildSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      if (!sidebar) return;
+      sidebar.innerHTML = '';
+      for (let i = 1; i <= totalSlides; i++) {
+        const thumb = document.createElement('div');
+        thumb.className = 'slide-thumb' + (i === currentSlide ? ' active' : '');
+        thumb.id = `thumb-${i}`;
+        thumb.onclick = () => goToSlide(i);
+
+        const inner = document.createElement('div');
+        inner.className = 'slide-thumb-inner';
+
+        const num = document.createElement('span');
+        num.className = 'slide-thumb-num';
+        num.textContent = i;
+
+        const title = document.createElement('span');
+        title.className = 'slide-thumb-title';
+        const key = currentDeck === 'investor' ? `thumb-title-${i}` : `pitch-thumb-title-${i}`;
+        title.setAttribute('data-i18n', key);
+
+        if (slideTranslations[currentLang] && slideTranslations[currentLang][key]) {
+          title.innerHTML = slideTranslations[currentLang][key];
+        }
+
+        inner.appendChild(num);
+        inner.appendChild(title);
+        thumb.appendChild(inner);
+        sidebar.appendChild(thumb);
+      }
     }
 
     function buildDots() {
       const container = document.getElementById('slide-dots');
       container.innerHTML = '';
-      for (let i = 1; i <= TOTAL_SLIDES; i++) {
+      for (let i = 1; i <= totalSlides; i++) {
         const d = document.createElement('div');
         d.className = 'slide-dot' + (i === 1 ? ' active' : '');
         d.id = `dot-${i}`;
@@ -725,7 +1456,7 @@
     //  NAVIGATION
     // ══════════════════════════════
     function goToSlide(n) {
-      if (n < 1 || n > TOTAL_SLIDES) return;
+      if (n < 1 || n > totalSlides) return;
 
       const canvas = document.getElementById('slide-canvas');
       canvas.classList.add('transitioning');
@@ -737,20 +1468,36 @@
         document.querySelectorAll('.slide-dot').forEach(d => d.classList.remove('active'));
 
         currentSlide = n;
-        document.getElementById(`slide-${n}`).classList.add('active');
-        document.getElementById(`thumb-${n}`).classList.add('active');
-        document.getElementById(`dot-${n}`).classList.add('active');
+
+        // Show correct slide based on deck
+        const slideId = currentDeck === 'investor' ? `slide-${n}` : `pitch-slide-${n}`;
+        const activeSlide = document.getElementById(slideId);
+        if (activeSlide) {
+          activeSlide.classList.add('active');
+        }
+
+        const activeThumb = document.getElementById(`thumb-${n}`);
+        if (activeThumb) {
+          activeThumb.classList.add('active');
+        }
+
+        const activeDot = document.getElementById(`dot-${n}`);
+        if (activeDot) {
+          activeDot.classList.add('active');
+        }
 
         document.getElementById('current-slide-num').textContent = n;
         document.getElementById('prev-btn').disabled = n === 1;
-        document.getElementById('next-btn').disabled = n === TOTAL_SLIDES;
+        document.getElementById('next-btn').disabled = n === totalSlides;
 
         canvas.classList.remove('transitioning');
 
-        // Init charts when slide becomes visible
-        if (n === 4) setTimeout(renderMAUChart, 100);
-        if (n === 6) setTimeout(renderProfitChart, 100);
-        if (n === 7) setTimeout(renderBreakevenChart, 100);
+        // Init charts when slide becomes visible (Investor Deck only)
+        if (currentDeck === 'investor') {
+          if (n === 4) setTimeout(renderMAUChart, 100);
+          if (n === 6) setTimeout(renderProfitChart, 100);
+          if (n === 7) setTimeout(renderBreakevenChart, 100);
+        }
       }, 200);
     }
 
@@ -777,17 +1524,44 @@
       });
     }
 
+    // ══════════════════════════════
+    //  FULLSCREEN
+    // ══════════════════════════════
     function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
+      const docEl = document.documentElement;
+      const isFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+
+      if (!isFullscreen) {
+        if (docEl.requestFullscreen) {
+          docEl.requestFullscreen();
+        } else if (docEl.webkitRequestFullscreen) {
+          docEl.webkitRequestFullscreen();
+        } else if (docEl.msRequestFullscreen) {
+          docEl.msRequestFullscreen();
+        }
       } else {
-        document.exitFullscreen();
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
       }
     }
 
-    // ══════════════════════════════
-    //  COST TABLE
-    // ══════════════════════════════
+    function handleFullscreenChange() {
+      const isFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+      const presentation = document.getElementById('presentation');
+      if (presentation) {
+        presentation.classList.toggle('fullscreen-active', isFullscreen);
+      }
+    }
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('msfullscreenchange', handleFullscreenChange);
+
     // ══════════════════════════════
     //  COST TABLE
     // ══════════════════════════════
@@ -795,6 +1569,7 @@
 
     function buildCostTable() {
       const body = document.getElementById('cost-body');
+      if (!body) return;
       body.innerHTML = '';
 
       getMonthLabels().forEach((m, i) => {
@@ -867,6 +1642,7 @@
     // ══════════════════════════════
     function buildRevenueTable() {
       const body = document.getElementById('revenue-body');
+      if (!body) return;
       body.innerHTML = '';
 
       getMonthLabels().forEach((m, i) => {
@@ -1034,12 +1810,14 @@
       // Cumulative
       const cum = plVals.reduce((a, b) => a + b, 0);
       const el = document.getElementById('cumulative-net');
-      if (currentCurrency === 'USD') {
-        el.textContent = (cum >= 0 ? '+' : '') + '$' + fmtNum(cum);
-      } else {
-        el.textContent = (cum >= 0 ? '+' : '') + fmtNum(cum) + ' ₺';
+      if (el) {
+        if (currentCurrency === 'USD') {
+          el.textContent = (cum >= 0 ? '+' : '') + '$' + fmtNum(cum);
+        } else {
+          el.textContent = (cum >= 0 ? '+' : '') + fmtNum(cum) + ' ₺';
+        }
+        el.style.color = cum >= 0 ? 'var(--accent3)' : 'var(--danger)';
       }
-      el.style.color = cum >= 0 ? 'var(--accent3)' : 'var(--danger)';
     }
 
     function renderBreakevenChart() {
@@ -1136,6 +1914,7 @@
 
     function buildProgressBar(containerId, n, labelFn, colorFn) {
       const el = document.getElementById(containerId);
+      if (!el) return;
       el.innerHTML = '';
       for (let i = 0; i < n; i++) {
         const seg = document.createElement('div');
@@ -1151,6 +1930,7 @@
     // ══════════════════════════════
     function buildBETimeline() {
       const container = document.getElementById('be-timeline');
+      if (!container) return;
       container.innerHTML = '';
       const plVals = revenueData.map((_, i) => getNetPL(i));
 
@@ -1172,172 +1952,213 @@
     //  UPDATE ALL
     // ══════════════════════════════
     function updateAll() {
-      buildBETimeline();
-      if (currentSlide === 4) renderMAUChart();
-      if (currentSlide === 6) { buildRevenueTable(); renderProfitChart(); }
-      if (currentSlide === 7) renderBreakevenChart();
-
-      // Dynamic Cover & Break-Even Slide Updates
-      if (document.getElementById('cover-mau-val')) {
-        document.getElementById('cover-mau-val').textContent = fmtNum(mauData[11]);
-      }
-
+      // Calculate dynamic sum from data
       let totalCostSum = 0;
       for (let idx = 0; idx < costData.length; idx++) {
         totalCostSum += getTotalCost(idx);
       }
-      if (document.getElementById('cover-cost-val')) {
-        document.getElementById('cover-cost-val').textContent = formatVal(totalCostSum);
-      }
+      const totalCostUSD = Math.round(totalCostSum / USD_TRY);
 
-      let beMonth = -1;
-      let cumPL = 0;
-      for (let idx = 0; idx < revenueData.length; idx++) {
-        cumPL += getNetPL(idx);
-        if (getNetPL(idx) >= 0 && beMonth === -1) {
-          beMonth = idx + 1;
+      // Investor Deck specific dynamic updates
+      if (currentDeck === 'investor') {
+        buildBETimeline();
+        if (currentSlide === 4) renderMAUChart();
+        if (currentSlide === 6) { buildRevenueTable(); renderProfitChart(); }
+        if (currentSlide === 7) renderBreakevenChart();
+
+        if (document.getElementById('cover-mau-val')) {
+          document.getElementById('cover-mau-val').textContent = fmtNum(mauData[11]);
+        }
+        if (document.getElementById('cover-cost-val')) {
+          document.getElementById('cover-cost-val').textContent = formatVal(totalCostSum);
+        }
+
+        let beMonth = -1;
+        let cumPL = 0;
+        for (let idx = 0; idx < revenueData.length; idx++) {
+          cumPL += getNetPL(idx);
+          if (getNetPL(idx) >= 0 && beMonth === -1) {
+            beMonth = idx + 1;
+          }
+        }
+        const beText = beMonth !== -1 ? (currentLang === 'en' ? `~Month ${beMonth}` : `~${beMonth}. Ay`) : (currentLang === 'en' ? '12+ Months' : '12+ Ay');
+        if (document.getElementById('cover-be-val')) {
+          document.getElementById('cover-be-val').textContent = beText;
+        }
+        if (document.getElementById('be-month-val')) {
+          document.getElementById('be-month-val').textContent = beText;
+        }
+        if (document.getElementById('be-mau-target-val')) {
+          if (beMonth !== -1) {
+            document.getElementById('be-mau-target-val').textContent = currentLang === 'en'
+              ? `Profitability starts at MAU ~${fmtNum(mauData[beMonth - 1])}`
+              : `MAU ~${fmtNum(mauData[beMonth - 1])} seviyesinde kârlılık başlıyor`;
+          } else {
+            document.getElementById('be-mau-target-val').textContent = currentLang === 'en'
+              ? 'Profitability has not yet occurred in the 12-month projection'
+              : '12 aylık projeksiyonda kârlılık henüz gerçekleşmedi';
+          }
+        }
+
+        const cumLossEl = document.getElementById('be-cum-loss-val');
+        const cumLabelEl = document.getElementById('be-cum-label');
+        const cumDescEl = document.getElementById('be-cum-desc');
+
+        let finalCumPL = 0;
+        for (let idx = 0; idx < revenueData.length; idx++) {
+          finalCumPL += getNetPL(idx);
+        }
+
+        if (cumLossEl) {
+          if (finalCumPL >= 0) {
+            cumLossEl.textContent = `+${formatVal(finalCumPL)}`;
+            cumLossEl.style.color = 'var(--accent3)';
+            if (cumLabelEl) cumLabelEl.textContent = currentLang === 'en' ? '12-Month Cumulative Net Profit' : '12. Ay Kümülatif Net Kâr';
+            if (cumDescEl) cumDescEl.textContent = currentLang === 'en' ? 'At the end of month 12, our project becomes cumulatively profitable.' : '12. ay sonunda projemiz kümülatif bazda kâra geçmektedir.';
+          } else {
+            cumLossEl.textContent = `${formatVal(finalCumPL)}`;
+            cumLossEl.style.color = 'var(--danger)';
+            if (cumLabelEl) cumLabelEl.textContent = currentLang === 'en' ? '12-Month Cumulative Net Loss' : '12. Ay Kümülatif Net Açık';
+            if (cumDescEl) cumDescEl.textContent = currentLang === 'en' ? 'Cash burn remains extremely balanced.' : 'Nakit yakımı son derece dengeli seyretmektedir.';
+          }
+        }
+
+        const survivalUSD = Math.round(totalCostSum / USD_TRY);
+        if (document.getElementById('be-survival-budget-val')) {
+          document.getElementById('be-survival-budget-val').textContent = formatVal(totalCostSum);
+        }
+        if (document.getElementById('focus-survival-budget-val')) {
+          document.getElementById('focus-survival-budget-val').textContent = `${formatVal(totalCostSum)} ≈ $${fmtNum(survivalUSD)}`;
+        }
+        if (document.getElementById('focus-be-title')) {
+          document.getElementById('focus-be-title').textContent = currentLang === 'en'
+            ? `Break-Even Target at ${beText}`
+            : `${beText}'da Break-Even Hedefi`;
+        }
+        if (document.getElementById('focus-survival-note')) {
+          document.getElementById('focus-survival-note').textContent = currentLang === 'en'
+            ? `All operations costs for 12 months, excluding founder labor. Can be partially covered by Teknopark/TÜBİTAK supports. Target: first net profit in ${beText}.`
+            : `Kurucu emeği hariç, 12 aylık tüm operasyon maliyeti. Teknopark / TÜBİTAK destekleri ile kısmen karşılanabilir. Hedef: ${beText}'da ilk net kâr.`;
+        }
+        if (document.getElementById('focus-low-burn-desc')) {
+          const fbCostText = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+          document.getElementById('focus-low-burn-desc').textContent = currentLang === 'en'
+            ? `12-month total cost is only ${formatVal(totalCostSum)}. Achieved via low Firebase cost (first 2 months ${fbCostText}), social media micro-budget, and zero office/team costs.`
+            : `12 aylık toplam maliyet yalnızca ${formatVal(totalCostSum)}. Firebase altyapı maliyeti (ilk 2 ay ${fbCostText}), sosyal medya mikro-bütçe ve sıfır ofis/ekip maliyeti sayesinde.`;
+        }
+        if (document.getElementById('focus-be-desc')) {
+          document.getElementById('focus-be-desc').textContent = currentLang === 'en'
+            ? `Commission + premium revenues are expected to cover monthly expenses at MAU ~5,000-6,000. At month 12, cumulative status is positive (Cumulative Net: ${finalCumPL >= 0 ? '+' : ''}${formatVal(finalCumPL)}).`
+            : `MAU ~5.000-6.000 seviyesine ulaşıldığında komisyon + premium gelirlerin aylık giderleri karşılaması bekleniyor. 12. aya gelindiğinde kümülatif durum pozitiftir (Kümülatif Net: ${finalCumPL >= 0 ? '+' : ''}${formatVal(finalCumPL)}).`;
+        }
+        if (document.getElementById('cost-source-note')) {
+          const fbCostText = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+          document.getElementById('cost-source-note').innerHTML = currentLang === 'en'
+            ? `<strong>Source:</strong> Firebase first 2 months ${fbCostText}. Marketing budgets are limited to a maximum of 8,000 ₺ per month based on Turkey/TRNC Meta (Instagram) CPM benchmarks (CPM ~35–75 TL, YCF Digital 2025) starting with daily 150–300 TL test budgets. Founder labor is excluded from costs. <em>(Click cells to edit values.)</em>`
+            : `<strong>Kaynak:</strong> Firebase ilk 2 ay ${fbCostText}. Reklam bütçeleri Türkiye/KKTC Meta (Instagram) CPM benchmarkları (CPM ~35–75 TL, YCF Digital 2025) baz alınarak, günlük 150–300 TL test bütçeleriyle başlayıp maksimum aylık 8.000 ₺ ile sınırlandırılmıştır. Kurucu emeği maliyet dışı tutulmuştur. <em>(Hücrelere tıklayarak değerleri düzenleyebilirsiniz.)</em>`;
+        }
+        if (document.getElementById('rev-source-note')) {
+          const avgTripCost = currentCurrency === 'USD' ? `$${Math.round(80 / USD_TRY)}` : '80 ₺';
+          const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+          const plusCost = currentCurrency === 'USD' ? `$${Math.round(60 / USD_TRY)}` : '60 ₺';
+          document.getElementById('rev-source-note').innerHTML = currentLang === 'en'
+            ? `<strong>Source:</strong> Commission revenue = trip count × avg. ${avgTripCost} × 10%. Premium + Club revenue = (MAU × 2% × ${plusCost}) + School Clubs (3 months free trial, afterwards ${clubCost}/month per club; starting from month 3: +1 club/month, starting from month 7: +2 clubs/month).`
+            : `<strong>Kaynak:</strong> Komisyon geliri = trip sayısı × ort. ${avgTripCost} × %10. Premium + Kulüp geliri = (MAU × %2 × ${plusCost}) + Okul Kulüpleri (3 ay deneme bedava, sonrasında kulüp başına ${clubCost}/ay; 3. aydan itibaren +1 kulüp/ay, 7. aydan itibaren +2 kulüp/ay).`;
+        }
+        if (document.getElementById('mono-c1-highlight')) {
+          const plusCost = currentCurrency === 'USD' ? `$${Math.round(60 / USD_TRY)}` : '60 ₺';
+          document.getElementById('mono-c1-highlight').innerHTML = currentLang === 'en'
+            ? `Monthly ${plusCost} "Paylaşalım Plus"<br />2% conversion target (Recurly 2024 Transport median)<br />Unlimited matches + profile boost`
+            : `Aylık ${plusCost} "Paylaşalım Plus"<br />%2 dönüşüm hedefi (Recurly 2024 Transport median)<br />Limitsiz eşleşme + profili öne çıkarma`;
+        }
+        if (document.getElementById('mono-c2-desc')) {
+          const avgTripCost = currentCurrency === 'USD' ? `$${Math.round(80 / USD_TRY)}` : '80 ₺';
+          document.getElementById('mono-c2-desc').textContent = currentLang === 'en'
+            ? `0% commission for the first 6 months while building marketplace trust. Average trip value: ~${avgTripCost}.`
+            : `Marketplace güveni inşa edilirken ilk 6 ay komisyon %0'dır. Ortalama yolculuk değeri: ~${avgTripCost}.`;
+        }
+        if (document.getElementById('mono-c2-highlight')) {
+          document.getElementById('mono-c2-highlight').innerHTML = currentLang === 'en'
+            ? `Starting from Month 7<br /><strong>10% service fee</strong> on successful rides`
+            : `7. aydan itibaren başarılı yolculuklardan<br /><strong>%10 hizmet bedeli</strong>`;
+        }
+        if (document.getElementById('mono-c4-highlight')) {
+          const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+          document.getElementById('mono-c4-highlight').innerHTML = currentLang === 'en'
+            ? `First 3 months free trial<br />Afterwards <strong>${clubCost} / month</strong> (per club)`
+            : `İlk 3 ay deneme bedava<br />Sonrasında <strong>${clubCost} / ay</strong> (kulüp başı)`;
+        }
+        if (document.getElementById('tag-clubs-el')) {
+          const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+          document.getElementById('tag-clubs-el').textContent = currentLang === 'en'
+            ? `School Clubs (${clubCost}/Month)`
+            : `Okul Kulüpleri (${clubCost}/Ay)`;
+        }
+        if (document.getElementById('mau-desc-el')) {
+          const mktTotalVal = currentCurrency === 'USD' ? `$${Math.round(53000 / USD_TRY)}` : '53.000 ₺';
+          const cpaValText = currentCurrency === 'USD' ? `$${Math.round(90 / USD_TRY)}` : '90 ₺';
+          document.getElementById('mau-desc-el').innerHTML = currentLang === 'en'
+            ? `<strong>Realistic model:</strong> Reachable market in TRNC ~60,000 people (TRNC Statistics Department 2024: 489K population, 40K university students + 20K workers). Cumulative MAU calculated based on a 6-month marketing budget of ${mktTotalVal} with CPA=${cpaValText} (~590 paid installs) and D-30 retention rate of 15%. Source: Adjust EMEA 2024, pmtoolkit.ai.`
+            : `<strong>Gerçekçi model:</strong> KKTC'deki ulaşılabilir pazar ~60.000 kişi (KKTC İstatistik Kurumu 2024: 489K nüfus, 40K üniversite öğrencisi + 20K çalışan). 6 aylık toplam pazarlama bütçesi ${mktTotalVal} ile CPA=${cpaValText} baz alındığında (~590 ödenen install) ve D-30 elde tutma %15 ile toplu MAU hesaplandı. Kaynak: Adjust EMEA 2024, pmtoolkit.ai.`;
+        }
+        if (document.getElementById('focus-survival-title')) {
+          document.getElementById('focus-survival-title').textContent = currentLang === 'en'
+            ? 'Minimum Survival Budget (12 Months)'
+            : 'Minimum Hayatta Kalma Bütçesi (12 Ay)';
+        }
+        if (document.getElementById('be-survival-label')) {
+          document.getElementById('be-survival-label').textContent = currentLang === 'en'
+            ? 'Minimum Survival Budget (12 Months)'
+            : 'Minimum Hayatta Kalma Bütçesi (12 Ay)';
+        }
+        if (document.getElementById('be-survival-sub')) {
+          document.getElementById('be-survival-sub').textContent = currentLang === 'en'
+            ? 'Total 12-month cash requirement — excluding founder labor'
+            : '12 aylık toplam nakit ihtiyacı — kurucu emeği hariç';
         }
       }
-      const beText = beMonth !== -1 ? (currentLang === 'en' ? `~Month ${beMonth}` : `~${beMonth}. Ay`) : (currentLang === 'en' ? '12+ Months' : '12+ Ay');
-      if (document.getElementById('cover-be-val')) {
-        document.getElementById('cover-be-val').textContent = beText;
+
+      // Pitch Deck specific dynamic updates
+      if (document.getElementById('pitch-stat-ask')) {
+        document.getElementById('pitch-stat-ask').textContent = formatVal(totalCostSum);
       }
-      if (document.getElementById('be-month-val')) {
-        document.getElementById('be-month-val').textContent = beText;
+      if (document.getElementById('pitch-ask-amount-val')) {
+        document.getElementById('pitch-ask-amount-val').textContent = formatVal(totalCostSum);
       }
-      if (document.getElementById('be-mau-target-val')) {
-        if (beMonth !== -1) {
-          document.getElementById('be-mau-target-val').textContent = currentLang === 'en'
-            ? `Profitability starts at MAU ~${fmtNum(mauData[beMonth - 1])}`
-            : `MAU ~${fmtNum(mauData[beMonth - 1])} seviyesinde kârlılık başlıyor`;
+      if (document.getElementById('pitch-ask-amount-usd')) {
+        if (currentCurrency === 'TRY') {
+          document.getElementById('pitch-ask-amount-usd').textContent = `≈ $${totalCostUSD.toLocaleString('tr-TR')}`;
         } else {
-          document.getElementById('be-mau-target-val').textContent = currentLang === 'en'
-            ? 'Profitability has not yet occurred in the 12-month projection'
-            : '12 aylık projeksiyonda kârlılık henüz gerçekleşmedi';
+          document.getElementById('pitch-ask-amount-usd').textContent = `≈ ${totalCostSum.toLocaleString('tr-TR')} ₺`;
         }
       }
-
-      const cumLossEl = document.getElementById('be-cum-loss-val');
-      const cumLabelEl = document.getElementById('be-cum-label');
-      const cumDescEl = document.getElementById('be-cum-desc');
-
-      let finalCumPL = 0;
-      for (let idx = 0; idx < revenueData.length; idx++) {
-        finalCumPL += getNetPL(idx);
+      if (document.getElementById('pitch-stat-mau')) {
+        document.getElementById('pitch-stat-mau').textContent = fmtNum(mauData[11]);
       }
-
-      if (cumLossEl) {
-        if (finalCumPL >= 0) {
-          cumLossEl.textContent = `+${formatVal(finalCumPL)}`;
-          cumLossEl.style.color = 'var(--accent3)';
-          if (cumLabelEl) cumLabelEl.textContent = currentLang === 'en' ? '12-Month Cumulative Net Profit' : '12. Ay Kümülatif Net Kâr';
-          if (cumDescEl) cumDescEl.textContent = currentLang === 'en' ? 'At the end of month 12, our project becomes cumulatively profitable.' : '12. ay sonunda projemiz kümülatif bazda kâra geçmektedir.';
-        } else {
-          cumLossEl.textContent = `${formatVal(finalCumPL)}`;
-          cumLossEl.style.color = 'var(--danger)';
-          if (cumLabelEl) cumLabelEl.textContent = currentLang === 'en' ? '12-Month Cumulative Net Loss' : '12. Ay Kümülatif Net Açık';
-          if (cumDescEl) cumDescEl.textContent = currentLang === 'en' ? 'Cash burn remains extremely balanced.' : 'Nakit yakımı son derece dengeli seyretmektedir.';
-        }
-      }
-
-      const survivalUSD = Math.round(totalCostSum / USD_TRY);
-      if (document.getElementById('be-survival-budget-val')) {
-        document.getElementById('be-survival-budget-val').textContent = formatVal(totalCostSum);
-      }
-      if (document.getElementById('focus-survival-budget-val')) {
-        document.getElementById('focus-survival-budget-val').textContent = `${formatVal(totalCostSum)} ≈ $${fmtNum(survivalUSD)}`;
-      }
-      if (document.getElementById('focus-be-title')) {
-        document.getElementById('focus-be-title').textContent = currentLang === 'en'
-          ? `Break-Even Target at ${beText}`
-          : `${beText}'da Break-Even Hedefi`;
-      }
-      if (document.getElementById('focus-survival-note')) {
-        document.getElementById('focus-survival-note').textContent = currentLang === 'en'
-          ? `All operations costs for 12 months, excluding founder labor. Can be partially covered by Teknopark/TÜBİTAK supports. Target: first net profit in ${beText}.`
-          : `Kurucu emeği hariç, 12 aylık tüm operasyon maliyeti. Teknopark / TÜBİTAK destekleri ile kısmen karşılanabilir. Hedef: ${beText}'da ilk net kâr.`;
-      }
-      if (document.getElementById('focus-low-burn-desc')) {
-        const fbCostText = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
-        document.getElementById('focus-low-burn-desc').textContent = currentLang === 'en'
-          ? `12-month total cost is only ${formatVal(totalCostSum)}. Achieved via low Firebase cost (first 2 months ${fbCostText}), social media micro-budget, and zero office/team costs.`
-          : `12 aylık toplam maliyet yalnızca ${formatVal(totalCostSum)}. Firebase altyapı maliyeti (ilk 2 ay ${fbCostText}), sosyal medya mikro-bütçe ve sıfır ofis/ekip maliyeti sayesinde.`;
-      }
-      if (document.getElementById('focus-be-desc')) {
-        document.getElementById('focus-be-desc').textContent = currentLang === 'en'
-          ? `Commission + premium revenues are expected to cover monthly expenses at MAU ~5,000-6,000. At month 12, cumulative status is positive (Cumulative Net: ${finalCumPL >= 0 ? '+' : ''}${formatVal(finalCumPL)}).`
-          : `MAU ~5.000-6.000 seviyesine ulaşıldığında komisyon + premium gelirlerin aylık giderleri karşılaması bekleniyor. 12. aya gelindiğinde kümülatif durum pozitiftir (Kümülatif Net: ${finalCumPL >= 0 ? '+' : ''}${formatVal(finalCumPL)}).`;
-      }
-      if (document.getElementById('cost-source-note')) {
-        const fbCostText = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
-        document.getElementById('cost-source-note').innerHTML = currentLang === 'en'
-          ? `<strong>Source:</strong> Firebase first 2 months ${fbCostText}. Marketing budgets are limited to a maximum of 8,000 ₺ per month based on Turkey/TRNC Meta (Instagram) CPM benchmarks (CPM ~35–75 TL, YCF Digital 2025) starting with daily 150–300 TL test budgets. Founder labor is excluded from costs. <em>(Click cells to edit values.)</em>`
-          : `<strong>Kaynak:</strong> Firebase ilk 2 ay ${fbCostText}. Reklam bütçeleri Türkiye/KKTC Meta (Instagram) CPM benchmarkları (CPM ~35–75 TL, YCF Digital 2025) baz alınarak, günlük 150–300 TL test bütçeleriyle başlayıp maksimum aylık 8.000 ₺ ile sınırlandırılmıştır. Kurucu emeği maliyet dışı tutulmuştur. <em>(Hücrelere tıklayarak değerleri düzenleyebilirsiniz.)</em>`;
-      }
-      if (document.getElementById('rev-source-note')) {
-        const avgTripCost = currentCurrency === 'USD' ? `$${Math.round(80 / USD_TRY)}` : '80 ₺';
-        const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
+      if (document.getElementById('pitch-biz-c1-hl')) {
         const plusCost = currentCurrency === 'USD' ? `$${Math.round(60 / USD_TRY)}` : '60 ₺';
-        document.getElementById('rev-source-note').innerHTML = currentLang === 'en'
-          ? `<strong>Source:</strong> Commission revenue = trip count × avg. ${avgTripCost} × 10%. Premium + Club revenue = (MAU × 2% × ${plusCost}) + School Clubs (3 months free trial, afterwards ${clubCost}/month per club; starting from month 3: +1 club/month, starting from month 7: +2 clubs/month).`
-          : `<strong>Kaynak:</strong> Komisyon geliri = trip sayısı × ort. ${avgTripCost} × %10. Premium + Kulüp geliri = (MAU × %2 × ${plusCost}) + Okul Kulüpleri (3 ay deneme bedava, sonrasında kulüp başına ${clubCost}/ay; 3. aydan itibaren +1 kulüp/ay, 7. aydan itibaren +2 kulüp/ay).`;
+        document.getElementById('pitch-biz-c1-hl').textContent = currentLang === 'en'
+          ? `Monthly ${plusCost} / 2% Conversion`
+          : `Aylık ${plusCost} / %2 Dönüşüm`;
       }
-      if (document.getElementById('mono-c1-highlight')) {
-        const plusCost = currentCurrency === 'USD' ? `$${Math.round(60 / USD_TRY)}` : '60 ₺';
-        document.getElementById('mono-c1-highlight').innerHTML = currentLang === 'en'
-          ? `Monthly ${plusCost} "Paylaşalım Plus"<br />2% conversion target (Recurly 2024 Transport median)<br />Unlimited matches + profile boost`
-          : `Aylık ${plusCost} "Paylaşalım Plus"<br />%2 dönüşüm hedefi (Recurly 2024 Transport median)<br />Limitsiz eşleşme + profili öne çıkarma`;
+      if (document.getElementById('pitch-biz-c2-hl')) {
+        document.getElementById('pitch-biz-c2-hl').textContent = currentLang === 'en'
+          ? `10% Service Fee`
+          : `%10 Hizmet Bedeli`;
       }
-      if (document.getElementById('mono-c2-desc')) {
-        const avgTripCost = currentCurrency === 'USD' ? `$${Math.round(80 / USD_TRY)}` : '80 ₺';
-        document.getElementById('mono-c2-desc').textContent = currentLang === 'en'
-          ? `0% commission for the first 6 months while building marketplace trust. Average trip value: ~${avgTripCost}.`
-          : `Marketplace güveni inşa edilirken ilk 6 ay komisyon %0'dır. Ortalama yolculuk değeri: ~${avgTripCost}.`;
-      }
-      if (document.getElementById('mono-c2-highlight')) {
-        document.getElementById('mono-c2-highlight').innerHTML = currentLang === 'en'
-          ? `Starting from Month 7<br /><strong>10% service fee</strong> on successful rides`
-          : `7. aydan itibaren başarılı yolculuklardan<br /><strong>%10 hizmet bedeli</strong>`;
-      }
-      if (document.getElementById('mono-c4-highlight')) {
+      if (document.getElementById('pitch-biz-c3-hl')) {
         const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
-        document.getElementById('mono-c4-highlight').innerHTML = currentLang === 'en'
-          ? `First 3 months free trial<br />Afterwards <strong>${clubCost} / month</strong> (per club)`
-          : `İlk 3 ay deneme bedava<br />Sonrasında <strong>${clubCost} / ay</strong> (kulüp başı)`;
+        document.getElementById('pitch-biz-c3-hl').textContent = currentLang === 'en'
+          ? `$0.05 MAU / ${clubCost} Club`
+          : `$0.05 MAU / ${clubCost} Kulüp`;
       }
-      if (document.getElementById('tag-clubs-el')) {
-        const clubCost = currentCurrency === 'USD' ? `$${Math.round(500 / USD_TRY)}` : '500 ₺';
-        document.getElementById('tag-clubs-el').textContent = currentLang === 'en'
-          ? `School Clubs (${clubCost}/Month)`
-          : `Okul Kulüpleri (${clubCost}/Ay)`;
-      }
-      if (document.getElementById('mau-desc-el')) {
-        const mktTotalVal = currentCurrency === 'USD' ? `$${Math.round(53000 / USD_TRY)}` : '53.000 ₺';
-        const cpaValText = currentCurrency === 'USD' ? `$${Math.round(90 / USD_TRY)}` : '90 ₺';
-        document.getElementById('mau-desc-el').innerHTML = currentLang === 'en'
-          ? `<strong>Realistic model:</strong> Reachable market in TRNC ~60,000 people (TRNC Statistics Department 2024: 489K population, 40K university students + 20K workers). Cumulative MAU calculated based on a 6-month marketing budget of ${mktTotalVal} with CPA=${cpaValText} (~590 paid installs) and D-30 retention rate of 15%. Source: Adjust EMEA 2024, pmtoolkit.ai.`
-          : `<strong>Gerçekçi model:</strong> KKTC'deki ulaşılabilir pazar ~60.000 kişi (KKTC İstatistik Kurumu 2024: 489K nüfus, 40K üniversite öğrencisi + 20K çalışan). 6 aylık toplam pazarlama bütçesi ${mktTotalVal} ile CPA=${cpaValText} baz alındığında (~590 ödenen install) ve D-30 elde tutma %15 ile toplu MAU hesaplandı. Kaynak: Adjust EMEA 2024, pmtoolkit.ai.`;
-      }
-      if (document.getElementById('focus-survival-title')) {
-        document.getElementById('focus-survival-title').textContent = currentLang === 'en'
-          ? 'Minimum Survival Budget (12 Months)'
-          : 'Minimum Hayatta Kalma Bütçesi (12 Ay)';
-      }
-      if (document.getElementById('be-survival-label')) {
-        document.getElementById('be-survival-label').textContent = currentLang === 'en'
-          ? 'Minimum Survival Budget (12 Months)'
-          : 'Minimum Hayatta Kalma Bütçesi (12 Ay)';
-      }
-      if (document.getElementById('be-survival-sub')) {
-        document.getElementById('be-survival-sub').textContent = currentLang === 'en'
-          ? 'Total 12-month cash requirement — excluding founder labor'
-          : '12 aylık toplam nakit ihtiyacı — kurucu emeği hariç';
+      if (document.getElementById('pitch-ask-box-note')) {
+        document.getElementById('pitch-ask-box-note').textContent = currentLang === 'en'
+          ? `For operational costs, Firebase infrastructure, and social media marketing. Excludes founder labor. Cumulative profitability is targeted in Month 12.`
+          : `Operasyonel maliyet, Firebase altyapısı ve sosyal medya pazarlaması için. Kurucu emeği hariçtir. 12. ayda kümülatif kârlılık hedeflenmektedir.`;
       }
     }
 
-    // ══════════════════════════════
-    //  UTILS
-    // ══════════════════════════════
     // ══════════════════════════════
     //  UTILS
     // ══════════════════════════════
@@ -1386,8 +2207,10 @@
       if (btn) {
         btn.textContent = currentCurrency === 'TRY' ? '₺ (TRY)' : '$ (USD)';
       }
-      buildCostTable();
-      buildRevenueTable();
+      if (currentDeck === 'investor') {
+        buildCostTable();
+        buildRevenueTable();
+      }
       updateAll();
     }
 
@@ -1471,7 +2294,123 @@
         "f-c1-desc": "CPA 90 ₺ (Adjust EMEA 2024), aylık churn %55→%30 (pmtoolkit.ai 2024), K-faktörü 0.05→0.15 (bootstrap rideshare benchmark). KKTC pazarı 60K kişi. Tüm veriler endüstri raporlarına dayanmaktadır.",
         "f-c2-title": "Son Derece Düşük Nakit Yakımı",
         "f-c3-title": "Üniversite Öğrencisi Avantajı",
-        "f-c3-desc": "Hedef kitle öğrenciler — ve kurucular da öğrenci. Kampüs ağı sıfır maliyetli edinim kanalı. Teknopark/TÜBİTAK 2244 gibi devlet destekleri ile UA maliyetleri sübvanse edilebilir (startinturkey.com)."
+        "f-c3-desc": "Hedef kitle öğrenciler — ve kurucular da öğrenci. Kampüs ağı sıfır maliyetli edinim kanalı. Teknopark/TÜBİTAK 2244 gibi devlet destekleri ile UA maliyetleri sübvanse edilebilir (startinturkey.com).",
+
+        // Selector Hub
+        "hub-title": "Paylaşalım Sunum Paneli",
+        "hub-subtitle": "Lütfen görüntülemek istediğiniz sunumu seçin.",
+        "hub-c1-title": "Yatırım & Büyüme Raporu",
+        "hub-c1-badge": "Stratejik Plan",
+        "hub-c1-desc": "Lojistik büyüme modeli, K-Faktörü ve ağ etkisi çerçevesinde 12 aylık detaylı finansal projeksiyon ve P&L analizi.",
+        "hub-c2-title": "Startup Pitch Deck",
+        "hub-c2-badge": "Hızlı Sunum",
+        "hub-c2-desc": "Problem, Çözüm, Pazar Büyüklüğü, İş Modeli, Büyüme Stratejisi ve Yatırım İhtiyacını içeren özet girişim sunumu (Cheat Sheet).",
+        "hub-view": "Sunumu İncele ➔",
+        "hub-back": "⌂ Paneli Aç",
+
+        // Pitch Deck Slides
+        "pitch-cover-badge": "Startup Pitch Deck",
+        "pitch-cover-title": "Paylaşalım<br>Yolculuk Paylaşım Platformu",
+        "pitch-cover-subtitle": "Kuzey Kıbrıs'ın Akıllı, Güvenli ve Çevre Dostu Carpool Uygulaması:<br>Ulaşımda Birlikte Tasarruf ve Topluluk Gücü",
+        "pitch-cover-stat-mau": "12. Ay MAU Hedefi",
+        "pitch-cover-stat-market": "Ulaşılabilir Pazar (TRNC)",
+        "pitch-cover-stat-ask": "Minimum Gerekli Nakit",
+        "pitch-prob-tag": "Pazar İhtiyacı",
+        "pitch-prob-title": "Kuzey Kıbrıs Ulaşımındaki Temel Sorunlar",
+        "pitch-prob-note": "KKTC'de üniversiteler arası ve şehirler arası ulaşım, özellikle öğrenciler ve sabit gelirliler için ciddi bir yaşam kalitesi sorununa dönüşmüştür.",
+        "pitch-prob-c1-title": "Aşırı Yüksek Maliyetler",
+        "pitch-prob-c1-desc": "Artan akaryakıt fiyatları ve fahiş taksi ücretleri, günlük ulaşımı öğrenciler için sürdürülemez hale getiriyor. Aylık harcamalarda seyahat bütçesi ilk sıralarda yer alıyor.",
+        "pitch-prob-c2-title": "Yetersiz Toplu Taşıma",
+        "pitch-prob-c2-desc": "Şehirler ve kampüsler arasındaki otobüs seferleri seyrek, belirli saatlerden sonra tamamen duruyor ve güzergahlar son derece sınırlı. Alternatif ulaşım imkanı bulunmuyor.",
+        "pitch-prob-c3-title": "Güvensiz Çözüm Arayışları",
+        "pitch-prob-c3-desc": "İnsanlar çaresizlikten WhatsApp/Telegram gruplarında veya sosyal medyada kimlik doğrulaması olmadan yolculuk paylaşmaya çalışıyor. Bu durum ciddi güvenlik açıkları yaratıyor.",
+        "pitch-sol-tag": "Çözümümüz",
+        "pitch-sol-title": "Paylaşalım: Güvenli, Ekonomik ve Topluluk Odaklı Carpool",
+        "pitch-sol-note": "Paylaşalım, aynı güzergahta seyahat eden sürücü ve yolcuları buluşturarak ortak masrafları paylaşmalarını sağlayan akıllı mobil platformdur.",
+        "pitch-sol-c1-title": "Masraf Paylaşımı",
+        "pitch-sol-c1-desc": "Sürücüler boş koltuklarını paylaşarak yakıt masraflarını amorti eder; yolcular ise taksiye kıyasla %80, otobüse kıyasla daha konforlu ve esnek yolculuk eder.",
+        "pitch-sol-c2-title": "Güvenli Topluluk",
+        "pitch-sol-c2-desc": "Firebase SMS doğrulaması, üniversite e-posta kontrolleri, profil puanlama ve yorum sistemi ile yalnızca güvenilir kullanıcıların yer aldığı bir topluluk ekosistemi oluşturulur.",
+        "pitch-sol-c3-title": "Çevre Dostu Mobilite",
+        "pitch-sol-c3-desc": "Tek araçla birden fazla kişinin yolculuk etmesini sağlayarak yollardaki araç yoğunluğunu azaltır, karbon emisyonlarını düşürür ve yeşil bir kampüs hayatını destekler.",
+        "pitch-prod-tag": "Ürün & Altyapı",
+        "pitch-prod-title": "Kusursuz Mobil Deneyim ve Güçlü Tech Stack",
+        "pitch-prod-f1-title": "Modern Flutter Arayüzü",
+        "pitch-prod-f1-desc": "Cross-platform (iOS/Android) yüksek performanslı akıcı arayüz.",
+        "pitch-prod-f2-title": "Firebase Cloud Backend",
+        "pitch-prod-f2-desc": "Firestore ile gerçek zamanlı veri eşleme, güvenli Auth ve bildirimler.",
+        "pitch-prod-f3-title": "Akıllı Harita Entegrasyonu",
+        "pitch-prod-f3-desc": "Google Maps ile canlı rota eşleme, kalkış-varış noktası belirleme.",
+        "pitch-events-tag": "Sosyal &amp; Topluluk",
+        "pitch-events-title": "Sosyal Etkinlikler ve Okul Kulüpleri",
+        "pitch-events-note": "Paylaşalım sadece bir carpool uygulaması değil; kullanıcıların satranç oynamak, restorana gitmek veya film izlemek gibi etkinlikler oluşturup sosyalleşebildiği, ağ etkisini tetikleyen organik bir sosyal ağdır.",
+        "pitch-events-c1-title": "Etkinlik Oluştur (Create)",
+        "pitch-events-c1-desc": "Kullanıcılar; beraber satranç oynamak, restorana gitmek, film izlemek veya kampüs etkinliklerine katılmak için başlık, rota ve zaman belirterek sosyal etkinlikler oluşturabilir.",
+        "pitch-events-c2-title": "Topluluğu Yönet (Manage)",
+        "pitch-events-c2-desc": "Okul kulüpleri kendilerine özel SaaS yönetim panelinden üyelerini doğrulanmış e-postalarla kontrol eder, katılım listesini listeler ve grup seyahatlerini koordine eder.",
+        "pitch-events-c3-title": "Yolculuğa Katıl (Participate)",
+        "pitch-events-c3-desc": "Aynı konsere veya maça giden diğer tüm kullanıcılar, tek bir tıkla ortak rotada seyahat eden araç sahiplerini bulup katılır. Bu, K-faktörünü ve ağ etkisini katlar.",
+        "pitch-events-mock-tag": "KAMPÜS ETKİNLİĞİ",
+        "pitch-events-mock-club": "DAÜ Müzik Kulübü",
+        "pitch-events-mock-title": "Bahar Şenliği Konseri 2026",
+        "pitch-events-mock-details": "📅 15 Mayıs 2026, 20:00 &nbsp;·&nbsp; 📍 Lefkoşa ➔ Gazimağusa Kampüsü",
+        "pitch-events-mock-rides": "5 Aktif Yolculuk Paylaşımı",
+        "pitch-events-mock-btn": "Yolculuk Bul / Oluştur",
+        "pitch-events-mock-user-tag": "SOSYAL ETKİNLİK",
+        "pitch-events-mock-user-creator": "Oluşturan: Tamer A.",
+        "pitch-events-mock-user-title": "Satranç Turnuvası &amp; Film Gecesi",
+        "pitch-events-mock-user-details": "📅 Bugün, 18:30 &nbsp;·&nbsp; 📍 Lefkoşa ➔ Gloria Jean's &amp; Cinemax",
+        "pitch-events-mock-user-rides": "2 Aktif Yolculuk Paylaşımı",
+        "pitch-events-mock-user-btn": "Yolculuk Bul / Katıl",
+        "pitch-events-db-title": "Kulüp SaaS Yönetim Paneli",
+        "pitch-events-db-status": "Aktif",
+        "pitch-events-db-stat1-num": "420",
+        "pitch-events-db-stat1-lbl": "Aktif Üye",
+        "pitch-events-db-stat2-num": "18",
+        "pitch-events-db-stat2-lbl": "Düzenlenen Etkinlik",
+        "pitch-events-db-stat3-num": "%84",
+        "pitch-events-db-stat3-lbl": "Carpool Tercihi",
+        "pitch-mkt-tag": "Pazar Fırsatı",
+        "pitch-mkt-title": "Hedef Kitle ve Potansiyel Pazar Büyüklüğü",
+        "pitch-mkt-note": "Kuzey Kıbrıs, yüksek öğrenci yoğunluğu ve kısıtlı ulaşım alternatifleri nedeniyle viral büyüme ve carpool modeli için ideal bir kapalı pazardır.",
+        "pitch-mkt-c1-title": "Toplam Pazar",
+        "pitch-mkt-c1-desc": "Kuzey Kıbrıs genel nüfusu. Toplu taşıma yetersizliği nedeniyle araç paylaşımı tüm kesimler için potansiyel barındırıyor.",
+        "pitch-mkt-c2-title": "Ulaşılabilir Pazar",
+        "pitch-mkt-c2-desc": "Haftalık veya günlük olarak şehirler arası seyahat eden aktif üniversite öğrencileri ve düzenli çalışan kesim.",
+        "pitch-mkt-c3-title": "Hedef Odak Noktası",
+        "pitch-mkt-c3-desc": "KKTC üniversitelerindeki (DAÜ, EMÜ, GAÜ vb.) cep telefonu kullanan, bütçe kısıtı yüksek ve dijital uygulamalara yatkın öğrenciler.",
+        "pitch-biz-tag": "Gelir Modeli",
+        "pitch-biz-title": "Gelir Akışları (Cheat Sheet)",
+        "pitch-biz-note": "Proje, çoklu gelir modeli yapısıyla ilk aylardan itibaren nakit yakımını minimize edip hızlıca kâra geçmeyi hedeflemektedir.",
+        "pitch-biz-c1-title": "Paylaşalım Plus",
+        "pitch-biz-c1-desc": "Günlük eşleşme sınırını kaldıran, aramalarda öncelik veren ve profil öne çıkaran abonelik modeli.",
+        "pitch-biz-c2-title": "Yolculuk Komisyonu",
+        "pitch-biz-c2-desc": "Güven ortamı oluştuktan sonra (7. aydan itibaren) seyahat başına sürücüden alınan düşük oranlı hizmet komisyonu.",
+        "pitch-biz-c3-title": "AdMob & SaaS",
+        "pitch-biz-c3-desc": "Hedefli reklamlar ve öğrenci kulüplerine özel etkinlik planlama ve koordinasyon paneli (SaaS abonelik).",
+        "pitch-map-tag": "Büyüme Planı",
+        "pitch-map-title": "Stratejik Yol Haritası ve Hedefler",
+        "pitch-map-s1-title": "Aşama 1: Lansman & Kampüs",
+        "pitch-map-s1-desc": "Üniversite temsilcileri (DAÜ, EMÜ, GAÜ vb.) aracılığıyla sıfır maliyetle kulüp entegrasyonu ve kampüs aktivasyonu. Güven inşası.",
+        "pitch-map-s2-title": "Aşama 2: Optimizasyon",
+        "pitch-map-s2-desc": "CPA optimizasyonu (hedef: 90 ₺'den 55 ₺'ye düşürmek), viral k-faktörünü 0.15'e çekmek ve ilk 6 ay içinde 1.500 MAU sınırını aşmak.",
+        "pitch-map-s3-title": "Aşama 3: Kârlılık & Ölçek",
+        "pitch-map-s3-desc": "7. aydan itibaren komisyon açılması, reklam ve SaaS gelirlerinin devreye girmesi, 11-12. ayda break-even seviyesine ulaşarak 8.800 MAU elde etmek.",
+        "pitch-ask-tag": "Ekip & Yatırım",
+        "pitch-ask-title": "Ekip Yapımız ve Finansal Talep",
+        "pitch-ask-team-desc": "Kurucu ekip, KKTC pazarını ve öğrenci ulaşım dinamiklerini çok iyi bilen, teknik olarak yetkin ve operasyonel olarak çevik kişilerden oluşmaktadır.",
+        "pitch-ask-m1-role": "Kurucu & Flutter Geliştirici",
+        "pitch-ask-m2-role": "Kurucu Ortak & Pazarlama",
+        "pitch-ask-box-title": "Minimum Hayatta Kalma Bütçesi (12 Ay)",
+        "pitch-thumb-title-1": "Giriş & Vizyon",
+        "pitch-thumb-title-2": "Problem",
+        "pitch-thumb-title-3": "Çözüm",
+        "pitch-thumb-title-4": "Ürün",
+        "pitch-thumb-title-5": "Sosyal & Kulüpler",
+        "pitch-thumb-title-6": "Pazar Fırsatı",
+        "pitch-thumb-title-7": "İş Modeli",
+        "pitch-thumb-title-8": "Yol Haritası",
+        "pitch-thumb-title-9": "Yatırım & Ekip"
       },
       en: {
         "auth-title": "Investor Presentation",
@@ -1552,7 +2491,123 @@
         "f-c1-desc": "CPA 90 ₺ (Adjust EMEA 2024), monthly churn %55→%30 (pmtoolkit.ai 2024), K-factor 0.05→0.15 (bootstrap rideshare benchmark). TRNC market size 60K. All data based on industry reports.",
         "f-c2-title": "Extremely Low Cash Burn",
         "f-c3-title": "University Student Advantage",
-        "f-c3-desc": "Target audience is students — and founders are students. Campus network is a zero-cost acquisition channel. UA costs can be subsidized by state grants."
+        "f-c3-desc": "Target audience is students — and founders are students. Campus network is a zero-cost acquisition channel. UA costs can be subsidized by state grants.",
+
+        // Selector Hub
+        "hub-title": "Paylaşalım Presentation Panel",
+        "hub-subtitle": "Please select the presentation you want to view.",
+        "hub-c1-title": "Investment & Growth Report",
+        "hub-c1-badge": "Strategic Plan",
+        "hub-c1-desc": "Detailed 12-month financial projection and P&L analysis within logistics growth model, K-Factor, and network effects.",
+        "hub-c2-title": "Startup Pitch Deck",
+        "hub-c2-badge": "Pitch Deck",
+        "hub-c2-desc": "Summary startup presentation (Cheat Sheet) covering Problem, Solution, Market Size, Business Model, Growth Strategy, and Investment Ask.",
+        "hub-view": "View Presentation ➔",
+        "hub-back": "⌂ Open Hub",
+
+        // Pitch Deck Slides
+        "pitch-cover-badge": "Startup Pitch Deck",
+        "pitch-cover-title": "Paylaşalım<br>Ride-Sharing Platform",
+        "pitch-cover-subtitle": "North Cyprus's Smart, Safe, and Eco-Friendly Carpool App:<br>Co-saving in Travel and Community Power",
+        "pitch-cover-stat-mau": "Month 12 MAU Target",
+        "pitch-cover-stat-market": "Reachable Market (TRNC)",
+        "pitch-cover-stat-ask": "Minimum Cash Required",
+        "pitch-prob-tag": "Market Need",
+        "pitch-prob-title": "Key Transport Problems in North Cyprus",
+        "pitch-prob-note": "Inter-city and campus transport in TRNC has become a serious quality-of-life issue, especially for students and fixed-income earners.",
+        "pitch-prob-c1-title": "Extremely High Costs",
+        "pitch-prob-c1-desc": "Rising fuel prices and exorbitant taxi fares make daily transport unsustainable for students. Travel budget ranks top in monthly expenses.",
+        "pitch-prob-c2-title": "Inadequate Public Transport",
+        "pitch-prob-c2-desc": "Bus services between cities and campuses are sparse, stop completely after certain hours, and routes are extremely limited. No alternative transit exists.",
+        "pitch-prob-c3-title": "Unsafe Workarounds",
+        "pitch-prob-c3-desc": "Out of desperation, people try to share rides in unverified WhatsApp/Telegram groups or social media. This creates severe security risks.",
+        "pitch-sol-tag": "Our Solution",
+        "pitch-sol-title": "Paylaşalım: Safe, Affordable & Community-Driven Carpool",
+        "pitch-sol-note": "Paylaşalım is a smart mobile platform that matches drivers and passengers traveling on the same route to share joint travel expenses.",
+        "pitch-sol-c1-title": "Expense Sharing",
+        "pitch-sol-c1-desc": "Drivers share empty seats to offset fuel costs; passengers travel up to 80% cheaper than taxis, with more comfort and flexibility than buses.",
+        "pitch-sol-c2-title": "Safe Community",
+        "pitch-sol-c2-desc": "A community ecosystem of trusted users is built via Firebase SMS verification, university email checks, rating, and review systems.",
+        "pitch-sol-c3-title": "Eco-Friendly Mobility",
+        "pitch-sol-c3-desc": "Car sharing reduces traffic density, lowers carbon emissions, and supports a green campus life by allowing multiple people to travel in a single vehicle.",
+        "pitch-prod-tag": "Product & Infrastructure",
+        "pitch-prod-title": "Seamless Mobile Experience & Robust Tech Stack",
+        "pitch-prod-f1-title": "Modern Flutter Interface",
+        "pitch-prod-f1-desc": "Cross-platform (iOS/Android) high performance fluid interface.",
+        "pitch-prod-f2-title": "Firebase Cloud Backend",
+        "pitch-prod-f2-desc": "Real-time data mapping with Firestore, secure Auth and push notifications.",
+        "pitch-prod-f3-title": "Smart Map Integration",
+        "pitch-prod-f3-desc": "Live route mapping, departure-arrival selection with Google Maps.",
+        "pitch-events-tag": "Social &amp; Community",
+        "pitch-events-title": "Social Events &amp; School Clubs",
+        "pitch-events-note": "Paylaşalım is not just a carpooling app; it is an organic social network where users can socialize and create events like playing chess, going to restaurants, or watching movies together.",
+        "pitch-events-c1-title": "Create Event (Create)",
+        "pitch-events-c1-desc": "Users can create social events to play chess, go to a restaurant, watch a movie, or attend campus activities, specifying a title, route, and time.",
+        "pitch-events-c2-title": "Manage Community (Manage)",
+        "pitch-events-c2-desc": "School clubs coordinate their members with verified emails, track attendee lists, and manage group rides through their dedicated SaaS portal.",
+        "pitch-events-c3-title": "Join Ride (Participate)",
+        "pitch-events-c3-desc": "Anyone heading to the same concert or match can instantly find and join carpools with others on the same route. This multiplies virality and network effects.",
+        "pitch-events-mock-tag": "CAMPUS EVENT",
+        "pitch-events-mock-club": "EMU Music Club",
+        "pitch-events-mock-title": "Spring Fest Concert 2026",
+        "pitch-events-mock-details": "📅 May 15, 2026, 20:00 &nbsp;·&nbsp; 📍 Nicosia ➔ Famagusta Campus",
+        "pitch-events-mock-rides": "5 Active Carpools",
+        "pitch-events-mock-btn": "Find or Create Ride",
+        "pitch-events-mock-user-tag": "SOCIAL EVENT",
+        "pitch-events-mock-user-creator": "Created by: Tamer A.",
+        "pitch-events-mock-user-title": "Chess Tournament &amp; Movie Night",
+        "pitch-events-mock-user-details": "📅 Today, 18:30 &nbsp;·&nbsp; 📍 Nicosia ➔ Gloria Jean's &amp; Cinemax",
+        "pitch-events-mock-user-rides": "2 Active Carpools",
+        "pitch-events-mock-user-btn": "Find / Join Ride",
+        "pitch-events-db-title": "Club SaaS Admin Portal",
+        "pitch-events-db-status": "Active",
+        "pitch-events-db-stat1-num": "420",
+        "pitch-events-db-stat1-lbl": "Active Members",
+        "pitch-events-db-stat2-num": "18",
+        "pitch-events-db-stat2-lbl": "Events Organized",
+        "pitch-events-db-stat3-num": "84%",
+        "pitch-events-db-stat3-lbl": "Carpool Adoption",
+        "pitch-mkt-tag": "Market Opportunity",
+        "pitch-mkt-title": "Target Audience & Potential Market Size",
+        "pitch-mkt-note": "North Cyprus is an ideal closed market for viral growth and carpooling due to its high density of students and limited transit alternatives.",
+        "pitch-mkt-c1-title": "Total Market",
+        "pitch-mkt-c1-desc": "Total population of North Cyprus. Due to lack of public transport, car sharing holds potential for all demographics.",
+        "pitch-mkt-c2-title": "Serviceable Market",
+        "pitch-mkt-c2-desc": "Active university students and regular employees who travel between cities weekly or daily.",
+        "pitch-mkt-c3-title": "Target Focus (SOM)",
+        "pitch-mkt-c3-desc": "Mobile phone using, budget-sensitive, tech-savvy students at TRNC universities (EMU, CIU, GAU, etc.).",
+        "pitch-biz-tag": "Revenue Model",
+        "pitch-biz-title": "Revenue Streams (Cheat Sheet)",
+        "pitch-biz-note": "The project aims to minimize cash burn and reach profitability quickly starting from the first months with its multi-revenue structure.",
+        "pitch-biz-c1-title": "Paylaşalım Plus",
+        "pitch-biz-c1-desc": "Subscription model removing daily match limits, prioritizing searches and boosting profiles.",
+        "pitch-biz-c2-title": "Ride Commission",
+        "pitch-biz-c2-desc": "Low-rate service commission taken from drivers per trip after trust is established (starting from Month 7).",
+        "pitch-biz-c3-title": "AdMob & SaaS",
+        "pitch-biz-c3-desc": "Targeted ads and event planning / coordination panel for student clubs (SaaS subscription).",
+        "pitch-map-tag": "Growth Plan",
+        "pitch-map-title": "Strategic Roadmap & Milestones",
+        "pitch-map-s1-title": "Phase 1: Launch & Campus",
+        "pitch-map-s1-desc": "Zero-cost club integration and campus activation via student ambassadors (EMU, CIU, GAU, etc.). Trust building.",
+        "pitch-map-s2-title": "Phase 2: Optimization",
+        "pitch-map-s2-desc": "CPA optimization (target: reduce from 90 ₺ to 55 ₺), push viral K-factor to 0.15, and cross 1,500 MAU within first 6 months.",
+        "pitch-map-s3-title": "Phase 3: Profitability & Scale",
+        "pitch-map-s3-desc": "Enabling commission from Month 7, starting ads & SaaS revenues, reaching break-even by month 11-12 with 8,800 MAU.",
+        "pitch-ask-tag": "Team & Investment",
+        "pitch-ask-title": "Team Structure & Funding Ask",
+        "pitch-ask-team-desc": "The founding team is technically competent, operationally agile, and has deep knowledge of the TRNC market and student transit dynamics.",
+        "pitch-ask-m1-role": "Founder & Flutter Developer",
+        "pitch-ask-m2-role": "Co-founder & Marketing",
+        "pitch-ask-box-title": "Minimum Survival Budget (12 Months)",
+        "pitch-thumb-title-1": "Vision & Intro",
+        "pitch-thumb-title-2": "Problem",
+        "pitch-thumb-title-3": "Solution",
+        "pitch-thumb-title-4": "Product",
+        "pitch-thumb-title-5": "Social & Clubs",
+        "pitch-thumb-title-6": "Market Size",
+        "pitch-thumb-title-7": "Business Model",
+        "pitch-thumb-title-8": "Roadmap",
+        "pitch-thumb-title-9": "Ask & Team"
       }
     };
 
@@ -1563,8 +2618,11 @@
         btn.textContent = currentLang === 'tr' ? 'EN' : 'TR';
       }
       translatePage();
-      buildCostTable();
-      buildRevenueTable();
+      buildSidebar();
+      if (currentDeck === 'investor') {
+        buildCostTable();
+        buildRevenueTable();
+      }
       updateAll();
     }
 
@@ -1584,7 +2642,6 @@
 
     // Init slider bars on load
     window.addEventListener('load', () => {
-      // Pre-fill slider bars
       setTimeout(() => {
         updateCPA(); updateK(); updateChurn();
       }, 100);
