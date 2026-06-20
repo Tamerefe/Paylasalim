@@ -4,30 +4,37 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Paylaşalım erken erişim listesine katıl. Kuzey Kıbrıs'ın carpool uygulaması yayına girdiğinde ilk sen haberdar ol ve özel avantajlardan yararlan.">
-    <meta name="keywords" content="paylaşalım erken erişim, kıbrıs carpool uygulaması, kıbrıs yolculuk paylaşımı bekleme listesi">
-    <title>Erken Erişim Listesi | Paylaşalım</title>
+    <meta name="description"
+        content="Paylaşalım Kulüp & Dernek Ortaklığı — Etkinlik oluşturma özelliğiyle üyelerinizle daha kolay iletişim kurun, ağınızı güçlendirin.">
+    <meta name="keywords" content="paylaşalım kulüp, dernek ortaklığı, etkinlik oluşturma, kıbrıs kulüp yönetimi">
+    <title data-i18n="wl-page-title">Kulüp Programı | Paylaşalım</title>
     <link rel="canonical" href="https://paylasalim.com.tr/waitlist.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Erken Erişim Listesi | Paylaşalım">
-    <meta property="og:description" content="Paylaşalım erken erişim listesine katıl. Kuzey Kıbrıs'ın carpool uygulaması yayına girdiğinde ilk sen haberdar ol.">
+    <meta property="og:title" content="Kulüp Programı | Paylaşalım">
+    <meta property="og:description"
+        content="Kulüp veya derneğinizi Paylaşalım'ın güçlü etkinlik oluşturma özelliğiyle tanıştırın. Üyelerinizle daha kolay iletişim kurun.">
     <meta property="og:url" content="https://paylasalim.com.tr/waitlist.html">
     <meta property="og:image" content="https://paylasalim.com.tr/assets/logo.jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Erken Erişim Listesi | Paylaşalım">
-    <meta name="twitter:description" content="Paylaşalım erken erişim listesine katıl. Kuzey Kıbrıs'ın carpool uygulaması yayına girdiğinde ilk sen haberdar ol.">
+    <meta name="twitter:title" content="Kulüp Programı | Paylaşalım">
+    <meta name="twitter:description" content="Kulüp veya derneğinizi Paylaşalım ile tanıştırın.">
     <meta name="twitter:image" content="https://paylasalim.com.tr/assets/logo.jpeg">
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* ── Waitlist Page Styles ── */
+        /* ══════════════════════════════════════
+           WAITLIST / CLUB PAGE — Site-Consistent
+           White + Green palette (matches index.html)
+        ══════════════════════════════════════ */
+
+        /* ── Hero ── */
         .wl-hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 40%, #bbf7d0 100%);
-            display: flex;
-            align-items: center;
-            padding: 6rem 1.5rem 4rem;
+            padding: 7rem 1.5rem 5rem;
+            background: linear-gradient(160deg, #ecfdf5 0%, #f8fffe 50%, #ecfdf5 100%);
             position: relative;
             overflow: hidden;
         }
@@ -35,11 +42,11 @@
         .wl-hero::before {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 700px;
+            height: 700px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(76,175,80,0.12) 0%, transparent 70%);
-            top: -200px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.10) 0%, transparent 70%);
+            top: -300px;
             right: -200px;
             pointer-events: none;
         }
@@ -47,281 +54,471 @@
         .wl-hero::after {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 450px;
+            height: 450px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(76,175,80,0.08) 0%, transparent 70%);
-            bottom: -150px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.07) 0%, transparent 70%);
+            bottom: -200px;
             left: -100px;
             pointer-events: none;
         }
 
-        .wl-container {
-            max-width: 560px;
+        .wl-hero-inner {
+            max-width: 800px;
             margin: 0 auto;
+            text-align: center;
             position: relative;
             z-index: 1;
-            text-align: center;
         }
 
+        /* Badge */
         .wl-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            background: rgba(76,175,80,0.15);
-            border: 1px solid rgba(76,175,80,0.3);
+            gap: 0.45rem;
+            background: white;
+            border: 1px solid var(--border);
             color: #15803d;
-            font-size: 0.875rem;
+            font-size: 0.82rem;
             font-weight: 600;
             padding: 0.4rem 1rem;
             border-radius: 100px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            box-shadow: var(--shadow-sm);
         }
 
         .wl-badge-dot {
             width: 7px;
             height: 7px;
-            background: #16a34a;
+            background: var(--primary);
             border-radius: 50%;
             flex-shrink: 0;
-            animation: pulse-dot 2s infinite;
+            animation: pulse-dot 2s ease-in-out infinite;
         }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.3); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(1.4);
+            }
         }
 
         .wl-logo {
-            width: 72px;
-            height: 72px;
+            width: 76px;
+            height: 76px;
             border-radius: 20px;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.75rem;
             display: block;
-            box-shadow: 0 8px 24px rgba(76,175,80,0.25);
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 8px 28px rgba(76, 175, 80, 0.22);
+            padding: 2px;
+            background: white;
         }
 
         .wl-hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2.1rem, 5vw, 3.2rem);
             font-weight: 800;
-            color: #0f172a;
-            line-height: 1.15;
+            color: var(--text-dark);
+            line-height: 1.12;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .wl-hero h1 .wl-accent {
+            color: var(--primary);
+        }
+
+        .wl-hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.75;
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .wl-hero-desc strong {
+            color: var(--primary-dark);
+        }
+
+        /* Benefit chips */
+        .wl-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .wl-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 0.45rem 1rem;
+            font-size: 0.855rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .wl-chip:hover {
+            border-color: var(--primary-light);
+            color: var(--primary-dark);
+            box-shadow: 0 2px 10px rgba(76, 175, 80, 0.12);
+        }
+
+        /* ── Stats row ── */
+        .wl-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            max-width: 820px;
+            margin: 0 auto 4rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .wl-stat {
+            background: white;
+            padding: 1.75rem 1rem;
+            text-align: center;
+        }
+
+        .wl-stat strong {
+            display: block;
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .wl-stat span {
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* ── Main 2-col layout ── */
+        .wl-main {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* ── Left: Feature cards ── */
+        .wl-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .wl-feature-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .wl-feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .wl-feature-icon {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
         }
 
-        .wl-hero h1 .highlight {
+        .wl-feature-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .wl-feature-card p {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            line-height: 1.65;
+        }
+
+        /* Quote card */
+        .wl-quote {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 1px solid #bbf7d0;
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .wl-quote blockquote {
+            font-size: 0.9rem;
+            color: #166534;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 0.85rem;
+        }
+
+        .wl-quote-author {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .wl-quote-avatar {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .wl-quote-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #15803d;
+        }
+
+        .wl-quote-role {
+            font-size: 0.76rem;
             color: #16a34a;
         }
 
-        .wl-hero p {
-            font-size: 1.1rem;
-            color: #475569;
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Counter */
-        .wl-counter {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .wl-counter-item {
+        /* ── Right: Form card ── */
+        .wl-form-card {
             background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 0.6rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 2.5rem 2.25rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 5.5rem;
+        }
+
+        .wl-form-header {
+            margin-bottom: 1.75rem;
+        }
+
+        .wl-form-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #15803d;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 0.85rem;
+        }
+
+        .wl-form-header h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.3;
+            margin-bottom: 0.35rem;
+        }
+
+        .wl-form-header p {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            line-height: 1.55;
+        }
+
+        /* Form divider */
+        .wl-divider {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #334155;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            gap: 0.65rem;
+            margin: 0.25rem 0 1.1rem;
         }
 
-        /* Form Card */
-        .wl-card {
-            background: white;
-            border-radius: 24px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-            border: 1px solid rgba(76,175,80,0.15);
+        .wl-divider::before,
+        .wl-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
         }
 
-        .wl-card h2 {
-            font-size: 1.25rem;
+        .wl-divider span {
+            font-size: 0.7rem;
             font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            white-space: nowrap;
         }
 
-        .wl-card > p {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .wl-form-group {
+        /* Form fields */
+        .wl-field {
             margin-bottom: 1rem;
             text-align: left;
         }
 
-        .wl-form-group label {
+        .wl-field label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             color: #374151;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.38rem;
         }
 
-        .wl-form-group input,
-        .wl-form-group select {
+        .wl-field label .req {
+            color: var(--primary);
+            margin-left: 2px;
+        }
+
+        .wl-field label .opt {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        .wl-field input,
+        .wl-field select,
+        .wl-field textarea {
             width: 100%;
-            padding: 0.8rem 1rem;
+            padding: 0.78rem 1rem;
             border: 1.5px solid #e5e7eb;
             border-radius: 10px;
-            font-size: 1rem;
-            font-family: inherit;
-            color: #1e293b;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
             background: #fafafa;
             transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-            box-sizing: border-box;
             outline: none;
+            -webkit-appearance: none;
+            box-sizing: border-box;
         }
 
-        .wl-form-group input:focus,
-        .wl-form-group select:focus {
-            border-color: #16a34a;
-            box-shadow: 0 0 0 3px rgba(22,163,74,0.12);
+        .wl-field input::placeholder,
+        .wl-field textarea::placeholder {
+            color: #c0c6d4;
+        }
+
+        .wl-field select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234CAF50' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-color: #fafafa;
+            padding-right: 2.5rem;
+        }
+
+        .wl-field textarea {
+            resize: vertical;
+            min-height: 88px;
+        }
+
+        .wl-field input:focus,
+        .wl-field select:focus,
+        .wl-field textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.12);
             background: white;
         }
 
-        .wl-form-row {
+        .wl-field input.error,
+        .wl-field select.error {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        .wl-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
 
-        .wl-checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.65rem;
-            margin-top: 0.5rem;
-            margin-bottom: 0.25rem;
-            text-align: left;
-            cursor: pointer;
-        }
-
-        .wl-checkbox-group input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
-            min-width: 18px;
-            border: 1.5px solid #d1d5db;
-            border-radius: 5px;
-            background: #fafafa;
-            cursor: pointer;
-            margin-top: 2px;
-            transition: border-color 0.2s, background 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .wl-checkbox-group input[type="checkbox"]:checked {
-            background: #16a34a;
-            border-color: #16a34a;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 11px;
-        }
-
-        .wl-checkbox-group input[type="checkbox"]:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(22,163,74,0.15);
-        }
-
-        .wl-checkbox-label {
-            font-size: 0.875rem;
-            color: #374151;
-            line-height: 1.5;
-            cursor: pointer;
-        }
-
-        .wl-submit {
+        /* Submit */
+        .wl-submit-btn {
             width: 100%;
-            padding: 1rem;
+            padding: 0.95rem 1.5rem;
             background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
             color: white;
             border: none;
             border-radius: 12px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
-            font-family: inherit;
+            font-family: 'Inter', sans-serif;
             cursor: pointer;
-            margin-top: 1.25rem;
-            transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
-            box-shadow: 0 4px 16px rgba(22,163,74,0.35);
+            margin-top: 1.35rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            box-shadow: 0 4px 16px rgba(22, 163, 74, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
         }
 
-        .wl-submit:hover {
+        .wl-submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(22,163,74,0.4);
+            box-shadow: 0 8px 24px rgba(22, 163, 74, 0.42);
         }
 
-        .wl-submit:active {
+        .wl-submit-btn:active {
             transform: translateY(0);
         }
 
-        .wl-submit:disabled {
-            opacity: 0.7;
+        .wl-submit-btn:disabled {
+            opacity: 0.65;
             cursor: not-allowed;
             transform: none;
         }
 
-        .wl-privacy {
-            font-size: 0.78rem;
+        .wl-privacy-note {
+            font-size: 0.76rem;
             color: #94a3b8;
-            margin-top: 1rem;
+            text-align: center;
+            margin-top: 0.85rem;
+            line-height: 1.5;
         }
 
-        /* Perks */
-        .wl-perks {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        .wl-perk {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: #475569;
-        }
-
-        .wl-perk-icon {
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            margin-top: 0.05rem;
-        }
-
-        /* Success State */
+        /* ── Success state ── */
         .wl-success {
             display: none;
             text-align: center;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
         }
 
         .wl-success-icon {
@@ -332,116 +529,89 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1.25rem;
+            margin: 0 auto 1.35rem;
+            box-shadow: 0 8px 28px rgba(22, 163, 74, 0.3);
             animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         @keyframes pop-in {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .wl-success h3 {
             font-size: 1.4rem;
-            font-weight: 700;
-            color: #0f172a;
+            font-weight: 800;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
         .wl-success p {
-            color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.65;
         }
 
-        .wl-share {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #f1f5f9;
-        }
-
-        .wl-share p {
-            font-size: 0.875rem;
-            color: #64748b;
-            margin-bottom: 0.75rem;
-        }
-
-        .wl-share-link {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 0.6rem 1rem;
-            font-size: 0.85rem;
-            color: #16a34a;
-            font-weight: 600;
-            display: flex;
+        .wl-success-detail {
+            display: inline-flex;
             align-items: center;
-            justify-content: space-between;
             gap: 0.5rem;
-            cursor: pointer;
-        }
-
-        .wl-share-link:hover {
             background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 0.6rem 1.1rem;
+            margin-top: 1.25rem;
+            font-size: 0.82rem;
+            color: #15803d;
+            font-weight: 600;
         }
 
-        /* Testimonial strip */
-        .wl-social-proof {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
+        /* ── Responsive ── */
+        @media (max-width: 880px) {
+            .wl-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .wl-form-card {
+                position: static;
+                order: -1;
+            }
+
+            .wl-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
 
-        .wl-avatars {
-            display: flex;
-        }
+        @media (max-width: 600px) {
+            .wl-hero {
+                padding: 5.5rem 1.25rem 3.5rem;
+            }
 
-        .wl-avatar {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 2px solid white;
-            background: linear-gradient(135deg, #16a34a, #86efac);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: white;
-            margin-left: -8px;
-        }
+            .wl-form-card {
+                padding: 2rem 1.5rem;
+            }
 
-        .wl-avatar:first-child { margin-left: 0; }
+            .wl-row {
+                grid-template-columns: 1fr;
+            }
 
-        .wl-social-text {
-            font-size: 0.875rem;
-            color: #475569;
-        }
-
-        .wl-social-text strong {
-            color: #0f172a;
-        }
-
-        /* Stars */
-        .wl-stars {
-            color: #f59e0b;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 500px) {
-            .wl-card { padding: 2rem 1.25rem; }
-            .wl-form-row { grid-template-columns: 1fr; }
-            .wl-perks { grid-template-columns: 1fr; }
-            .wl-counter { flex-wrap: wrap; }
+            .wl-stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
-<body>
+<body style="background-color: #f7fdf9;">
+    <!-- ── Standard Site Navbar (identical to index.html) ── -->
     <header class="site-header">
         <div class="container nav-row">
             <a class="logo" href="index.html">
@@ -455,9 +625,12 @@
                     <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
                     <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
                     <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
+                    <li><a href="waitlist.html" class="btn btn-primary"
+                            style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none;"
+                            data-i18n="nav-waitlist">Kulüp Programı</a></li>
                     <li>
                         <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
-                            <span class="lang-flag"></span>
+                            <span class="lang-flag" id="lang-flag"></span>
                             <span class="lang-text">EN</span>
                         </button>
                     </li>
@@ -466,205 +639,368 @@
         </div>
     </header>
 
-    <section class="wl-hero">
-        <div class="wl-container">
+    <main>
 
-            <div class="wl-badge">
-                <span class="wl-badge-dot"></span>
-                <span data-i18n="wl-badge">Yakında Yayında</span>
+        <!-- ── Hero ── -->
+        <section class="wl-hero">
+            <div class="wl-hero-inner">
+
+                <div class="wl-badge">
+                    <span class="wl-badge-dot"></span>
+                    <span data-i18n="wl-badge">Özel Ortaklık Programı</span>
+                </div>
+
+                <img src="assets/logo.jpeg" alt="Paylaşalım" class="wl-logo">
+
+                <h1 data-i18n="wl-title">
+                    Kulübünüzü<br>
+                    <span class="wl-accent">Güçlendirin</span>
+                </h1>
+
+                <p class="wl-hero-desc" data-i18n="wl-subtitle-text">
+                    Bir kulüp yöneticisi veya dernek mi yönetiyorsunuz?
+                    Paylaşalım'ın <strong>özel etkinlik oluşturma özelliğiyle</strong> tanışın —
+                    üyelerinizle daha kolay iletişim kurun, ağınızı güçlendirin ve topluluğunuzu bir araya getirin.
+                </p>
+
+                <div class="wl-chips">
+                    <span class="wl-chip" data-i18n="wl-chip1">Özel Etkinlik Sayfası</span>
+                    <span class="wl-chip" data-i18n="wl-chip2">Üye Yönetimi</span>
+                    <span class="wl-chip" data-i18n="wl-chip3">Anlık Bildirimler</span>
+                    <span class="wl-chip" data-i18n="wl-chip4">Grup Mesajlaşma</span>
+                    <span class="wl-chip" data-i18n="wl-chip5">İlk 3 Ay Ücretsiz</span>
+                    <span class="wl-chip" data-i18n="wl-chip6">Hızlı Kurulum</span>
+                </div>
+
             </div>
+        </section>
 
-            <img src="assets/logo.jpeg" alt="Paylaşalım" class="wl-logo">
-
-            <h1>
-                <span data-i18n="wl-heading-main">Kıbrıs'ın Carpool Uygulaması</span><br>
-                <span class="highlight" data-i18n="wl-heading-highlight">Yolda Geliyor</span>
-            </h1>
-            <p data-i18n="wl-subtitle">Paylaşalım'ı erken keşfeden kullanıcılardan biri ol. Yayına girdiğimizde sana hemen haber veririz ve özel avantajlardan yararlanırsın.</p>
-
-            <!-- Social Proof -->
-            <div class="wl-social-proof">
-                <div class="wl-avatars">
-                    <div class="wl-avatar">M</div>
-                    <div class="wl-avatar">Z</div>
-                    <div class="wl-avatar">A</div>
-                    <div class="wl-avatar">S</div>
-                    <div class="wl-avatar">+</div>
-                </div>
-                <div>
-                    <div class="wl-stars">★★★★★</div>
-                    <div class="wl-social-text" data-i18n="wl-social-text"><strong>50+</strong> kişi bekleme listesinde</div>
-                </div>
+        <!-- ── Stats ── -->
+        <div class="wl-stats">
+            <div class="wl-stat">
+                <strong data-i18n="wl-stat1-num">5+</strong>
+                <span data-i18n="wl-stat1-label">Ortaklık Görüşmesi</span>
             </div>
-
-            <!-- Counter chips -->
-            <div class="wl-counter">
-                <div class="wl-counter-item">
-                    🗺️ <span data-i18n="wl-counter-cities">3 şehir</span>
-                </div>
-                <div class="wl-counter-item">
-                    🎓 <span data-i18n="wl-counter-uni">5 üniversite</span>
-                </div>
-                <div class="wl-counter-item">
-                    💰 <span data-i18n="wl-counter-savings">%40 tasarruf</span>
-                </div>
+            <div class="wl-stat">
+                <strong data-i18n="wl-stat2-num">3 Ay</strong>
+                <span data-i18n="wl-stat2-label">Ücretsiz Deneme</span>
             </div>
+            <div class="wl-stat">
+                <strong data-i18n="wl-stat3-num">%100</strong>
+                <span data-i18n="wl-stat3-label">Özelleştirilebilir</span>
+            </div>
+        </div>
 
-            <!-- Form Card -->
-            <div class="wl-card">
+        <!-- ── Main 2-col ── -->
+        <div class="wl-main">
 
-                <!-- Form (görünür) -->
+            <!-- LEFT: Feature cards -->
+            <div class="wl-features">
+
+                <div class="wl-feature-card">
+                    <div class="wl-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                            <path d="m9 16 2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="wl-feat1-title">Etkinlik Oluştur, Üyeleri Topla</h3>
+                    <p data-i18n="wl-feat1-desc">Spor turnuvaları, sosyal buluşmalar, seminerler ve daha fazlası için tek tıkla etkinlik
+                        oluşturun. Üyeleriniz anında haberdar edilsin.</p>
+                </div>
+
+                <div class="wl-feature-card">
+                    <div class="wl-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="wl-feat2-title">Doğrudan Üyelerinize Ulaşın</h3>
+                    <p data-i18n="wl-feat2-desc">Push bildirimleri ve uygulama içi mesajlarla duyurularınızı anında iletin. WhatsApp gruplarında
+                        kaybolmaktan kurtulun.</p>
+                </div>
+
+                <div class="wl-feature-card">
+                    <div class="wl-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v4l3 3" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="wl-feat3-title">Etkinliğe Gidiş: Yolculuk Paylaşımı</h3>
+                    <p data-i18n="wl-feat3-desc">Üyeler etkinliğe giderken de Paylaşalım'ı kullanabilir. Araç paylaşımıyla katılım artar, ulaşım
+                        masrafları düşer.</p>
+                </div>
+
+                <div class="wl-feature-card">
+                    <div class="wl-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="wl-feat4-title">Katılım Takibi &amp; Analitik</h3>
+                    <p data-i18n="wl-feat4-desc">Kaç üye katıldı, doluluk oranı nedir, hangi saatler daha popüler? Tüm verilere tek panelden
+                        erişin.</p>
+                </div>
+
+                <div class="wl-quote">
+                    <blockquote data-i18n="wl-quote-text">
+                        "Paylaşalım sayesinde etkinliklerimizi çok daha kolay duyuruyoruz. Üye katılımı ikiye katlandı
+                        ve koordinasyon çok kolaylaştı."
+                    </blockquote>
+                    <div class="wl-quote-author">
+                        <div class="wl-quote-avatar">B</div>
+                        <div>
+                            <div class="wl-quote-name" data-i18n="wl-quote-author">Berkay T.</div>
+                            <div class="wl-quote-role" data-i18n="wl-quote-role">Yazılım Kulübü Başkanı</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /wl-features -->
+
+            <!-- RIGHT: Form card -->
+            <div class="wl-form-card">
+
                 <div id="wl-form-wrap">
-                    <h2 data-i18n="wl-form-title">Erken Erişim Listesine Katıl</h2>
-                    <p data-i18n="wl-form-desc">Bildirim al, sürpriz ayrıcalıkları yakala.</p>
+                    <div class="wl-form-header">
+                        <div class="wl-form-tag" data-i18n="wl-form-tag">Ücretsiz Başla</div>
+                        <h2 data-i18n="wl-form-title">Kulüp Programı</h2>
+                        <p data-i18n="wl-form-desc">Bilgilerinizi bırakın, sizi arayalım ve birlikte en iyi çözümü planlayalım.</p>
+                    </div>
 
-                    <!--
-                    ══════════════════════════════════════════════════════════
-                    MAILCHIMP KURULUM (5 dakika, ücretsiz):
+                    <form id="club-form" novalidate>
 
-                    1. mailchimp.com adresinde ücretsiz hesap aç
-                    2. Sol menü → Audience → Signup forms → Embedded forms
-                    3. "Action" URL'ini kopyala — şu formattadır:
-                       https://xxx.us1.list-manage.com/subscribe/post?u=XXX&id=XXX
-                    4. Aşağıdaki form action="..." kısmını o URL ile değiştir
-                    5. FNAME ve EMAIL field adları Mailchimp'te aynı kalır
-                    6. MERGE1 alanını Mailchimp'te "Kullanici Tipi" adıyla
-                       ekle (Text field) ve field tag'ini MERGE1 yap
+                        <div class="wl-divider"><span data-i18n="wl-div1">Kulüp / Dernek Bilgileri</span></div>
 
-                    Kayıtlar otomatik olarak Mailchimp Audience'ına düşer.
-                    Uygulama çıkınca Campaigns → Create → Email Campaign ile
-                    tüm listeye tek seferde bildirim gönderirsin.
-                    ══════════════════════════════════════════════════════════
-                    -->
-                    <form
-                        id="waitlist-form"
-                        action="https://paylasalim.us1.list-manage.com/subscribe/post?u=8d67abc09bd41b7954c179e54&amp;id=292e4f22af&amp;f_id=0083d5e0f0"
-                        method="post"
-                        target="_blank"
-                        novalidate>
-
-                        <!-- Mailchimp spam koruması — silme -->
-                        <div style="position:absolute;left:-5000px;" aria-hidden="true">
-                            <input type="text" name="b_8d67abc09bd41b7954c179e54_292e4f22af" tabindex="-1" value="">
+                        <div class="wl-field">
+                            <label for="cf-club"><span data-i18n="wl-lbl-club">Kulüp / Dernek Adı</span> <span class="req">*</span></label>
+                            <input type="text" id="cf-club" name="club_name" placeholder="ör. DAÜ Yazılım Kulübü" data-i18n-placeholder="wl-ph-club"
+                                required autocomplete="organization">
                         </div>
 
-                        <div class="wl-form-group">
-                            <label for="wl-fname" data-i18n="wl-label-fname">Adın Soyadın</label>
-                            <input type="text" id="wl-fname" name="FNAME" placeholder="Ahmet Yılmaz" required>
+                        <div class="wl-row">
+                            <div class="wl-field">
+                                <label for="cf-type"><span data-i18n="wl-lbl-type">Tür</span> <span class="req">*</span></label>
+                                <select id="cf-type" name="club_type" required>
+                                    <option value="" data-i18n="wl-opt-select">Seçin...</option>
+                                    <option value="Üniversite Kulübü" data-i18n="wl-opt-university">Üniversite Kulübü</option>
+                                    <option value="Spor Kulübü" data-i18n="wl-opt-sports">Spor Kulübü</option>
+                                    <option value="Dernek / STK" data-i18n="wl-opt-ngo">Dernek / STK</option>
+                                    <option value="Okul Kulübü" data-i18n="wl-opt-school">Okul Kulübü</option>
+                                    <option value="Meslek Birliği" data-i18n="wl-opt-professional">Meslek Birliği</option>
+                                    <option value="Diğer" data-i18n="wl-opt-other">Diğer</option>
+                                </select>
+                            </div>
+                            <div class="wl-field">
+                                <label for="cf-members" data-i18n="wl-lbl-members">Üye Sayısı</label>
+                                <select id="cf-members" name="member_count">
+                                    <option value="" data-i18n="wl-opt-select">Seçin...</option>
+                                    <option value="1-25" data-i18n="wl-opt-m1">1 – 25</option>
+                                    <option value="26-100" data-i18n="wl-opt-m2">26 – 100</option>
+                                    <option value="101-300" data-i18n="wl-opt-m3">101 – 300</option>
+                                    <option value="300+" data-i18n="wl-opt-m4">300+</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="wl-form-group">
-                            <label for="wl-os" data-i18n="wl-label-os">Telefon İşletim Sistemi</label>
-                            <select id="wl-os" name="LNAME">
-                                <option value="" data-i18n="wl-os-placeholder">Seçin...</option>
-                                <option value="Android" data-i18n="wl-os-android">Android</option>
-                                <option value="Apple iOS" data-i18n="wl-os-apple">Apple iOS</option>
+                        <div class="wl-field">
+                            <label for="cf-city"><span data-i18n="wl-lbl-city">Şehir / Kampüs</span> <span class="req">*</span></label>
+                            <select id="cf-city" name="city" required>
+                                <option value="" data-i18n="wl-opt-select">Seçin...</option>
+                                <option value="Girne" data-i18n="wl-opt-c1">Girne</option>
+                                <option value="Lefkoşa" data-i18n="wl-opt-c2">Lefkoşa</option>
+                                <option value="Gazimağusa" data-i18n="wl-opt-c3">Gazimağusa</option>
+                                <option value="Güzelyurt" data-i18n="wl-opt-c4">Güzelyurt</option>
+                                <option value="İskele" data-i18n="wl-opt-c5">İskele</option>
+                                <option value="Diğer" data-i18n="wl-opt-other">Diğer</option>
                             </select>
                         </div>
 
-                        <div class="wl-form-group">
-                            <label for="wl-email" data-i18n="wl-label-email">E-posta adresin *</label>
-                            <input type="email" id="wl-email" name="EMAIL" placeholder="ahmet@ornek.com" required>
+                        <div class="wl-divider"><span data-i18n="wl-div2">İletişim Bilgileri</span></div>
+
+                        <div class="wl-field">
+                            <label for="cf-name"><span data-i18n="wl-lbl-name">Adınız Soyadınız</span> <span class="req">*</span></label>
+                            <input type="text" id="cf-name" name="contact_name" placeholder="Ahmet Yılmaz" data-i18n-placeholder="wl-ph-name" required
+                                autocomplete="name">
                         </div>
 
-                        <div class="wl-form-group">
-                            <label for="wl-tester" data-i18n="wl-check-label">Test kullanıcısı olmak ister misin?</label>
-                            <select id="wl-tester" name="COMPANY">
-                                <option value="" data-i18n="wl-tester-placeholder">Seçin...</option>
-                                <option value="Evet" data-i18n="wl-tester-yes">Evet</option>
-                                <option value="Hayır" data-i18n="wl-tester-no">Hayır</option>
-                            </select>
+                        <div class="wl-row">
+                            <div class="wl-field">
+                                <label for="cf-phone"><span data-i18n="wl-lbl-phone">Telefon Numarası</span> <span class="req">*</span></label>
+                                <input type="tel" id="cf-phone" name="phone" placeholder="+90 548 000 00 00" data-i18n-placeholder="wl-ph-phone" required
+                                    autocomplete="tel">
+                            </div>
+                            <div class="wl-field">
+                                <label for="cf-role"><span data-i18n="wl-lbl-role">Unvanınız</span> <span class="opt" data-i18n="wl-lbl-optional">(isteğe bağlı)</span></label>
+                                <input type="text" id="cf-role" name="role" placeholder="Başkan, Koordinatör..." data-i18n-placeholder="wl-ph-role"
+                                    autocomplete="organization-title">
+                            </div>
                         </div>
 
-                        <button type="submit" id="wl-submit-btn" class="wl-submit">
-                            <span data-i18n="wl-submit">Listeye Katıl (Ücretsiz)</span>
+                        <div class="wl-field">
+                            <label for="cf-email"><span data-i18n="wl-lbl-email">E-posta</span> <span class="opt" data-i18n="wl-lbl-optional">(isteğe bağlı)</span></label>
+                            <input type="email" id="cf-email" name="email" placeholder="ahmet@ornek.com" data-i18n-placeholder="wl-ph-email"
+                                autocomplete="email">
+                        </div>
+
+                        <div class="wl-field">
+                            <label for="cf-msg"><span data-i18n="wl-lbl-msg">Bize Kısaca Anlatın</span> <span class="opt" data-i18n="wl-lbl-optional">(isteğe bağlı)</span></label>
+                            <textarea id="cf-msg" name="message"
+                                placeholder="Kulübünüz hakkında kısaca bilgi verin veya sormak istediklerinizi yazın..." data-i18n-placeholder="wl-ph-msg"></textarea>
+                        </div>
+
+                        <button type="submit" id="wl-submit-btn" class="wl-submit-btn">
+                            <span id="submit-label" data-i18n="wl-btn-submit">Hemen İletişime Geç</span>
                         </button>
+
                     </form>
 
-                    <p class="wl-privacy" data-i18n="wl-privacy">🔒 E-posta adresin güvende. Sadece uygulama haberleri için kullanılır, asla satılmaz.</p>
-
-                    <!-- Perks -->
-                    <div class="wl-perks">
-                        <div class="wl-perk">
-                            <span class="wl-perk-icon">⚡</span>
-                            <span data-i18n="wl-perk1">Yayında ilk sana haber veririz</span>
-                        </div>
-                        <div class="wl-perk">
-                            <span class="wl-perk-icon">🎁</span>
-                            <span data-i18n="wl-perk2">İlk kullanıcılara özel avantajlar</span>
-                        </div>
-                    </div>
+                    <p class="wl-privacy-note" data-i18n="wl-privacy-text">Bilgileriniz güvende. Yalnızca sizinle iletişim kurmak için kullanılır,
+                        asla paylaşılmaz.</p>
                 </div>
+                <!-- /wl-form-wrap -->
 
-                <!-- Başarı mesajı (gizli, form gönderilince JS gösterir) -->
+                <!-- Success state -->
                 <div id="wl-success" class="wl-success">
-                    <div class="wl-success-icon">✅</div>
-                    <h3 data-i18n="wl-success-title">Harika, listedesin!</h3>
-                    <p>
-                        <span data-i18n="wl-success-pre">Uygulama yayına girdiğinde </span><strong id="wl-success-email"></strong><span data-i18n="wl-success-post"> adresine haber vereceğiz. Bizi arkadaşlarınla paylaş!</span>
-                    </p>
-
-                    <div class="wl-share">
-                        <p data-i18n="wl-share-desc">Arkadaşlarını da davet et:</p>
-                        <div class="wl-share-link" onclick="copyLink()">
-                            <span>🔗 paylasalim.com.tr/waitlist.html</span>
-                            <span id="copy-label" style="font-size:0.8rem; color:#94a3b8;" data-i18n="wl-copy-label">Kopyala</span>
-                        </div>
+                    <div class="wl-success-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="wl-success-header">Mesajınız Alındı</h3>
+                    <p data-i18n="wl-success-body">En kısa sürede sizinle iletişime geçeceğiz.<br>Genellikle <strong>24 saat</strong> içinde dönüş
+                        yapıyoruz.</p>
+                    <div class="wl-success-detail">
+                        <span id="success-msg" data-i18n="wl-success-fallback">Sizi en kısa sürede arayacağız</span>
                     </div>
                 </div>
 
             </div>
-            <!-- /wl-card -->
+            <!-- /wl-form-card -->
 
         </div>
-    </section>
+        <!-- /wl-main -->
+
+    </main>
 
     <div id="footer-placeholder"></div>
 
+    <script src="analytics-config.js"></script>
+    <script src="cookie-consent.js"></script>
     <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script>
-        const form = document.getElementById('waitlist-form');
+        // ══════════════════════════════════════════════════════════
+        // GOOGLE FORMS BAĞLANTISI
+        // 1. forms.google.com'da form oluşturun
+        // 2. Önizleme URL'i: .../viewform → .../formResponse yapın
+        // 3. Sayfa kaynağında (Ctrl+U) "entry." aratarak ID'leri bulun
+        // 4. Aşağıdaki GFORM_URL ve ENTRIES alanlarını doldurun
+        // ══════════════════════════════════════════════════════════
+        const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfyamNTMPFG3gOdWVKfd0WXmh1OlH7srUZFuTxBHdGots0rCA/formResponse';
+
+        const ENTRIES = {
+            club_name: 'entry.281587894',    // Kulüp / Dernek Adı
+            club_type: 'entry.1808034549',   // Tür
+            member_count: 'entry.1691945484',   // Üye Sayısı
+            city: 'entry.880122526',    // Şehir / Kampüs
+            contact_name: 'entry.721514495',    // Adınız Soyadınız
+            phone: 'entry.252040039',    // Telefon Numarası
+            role: 'entry.26892677',     // Unvanınız
+            email: 'entry.559255056',    // E-posta
+            message: 'entry.327924533',    // Bize Kısaca Anlatın
+        };
+
+        // ── Form submission ──
+        const clubForm = document.getElementById('club-form');
         const formWrap = document.getElementById('wl-form-wrap');
         const successEl = document.getElementById('wl-success');
         const submitBtn = document.getElementById('wl-submit-btn');
-        const successEmailEl = document.getElementById('wl-success-email');
+        const submitLabel = document.getElementById('submit-label');
 
-        form.addEventListener('submit', function () {
-            const email = document.getElementById('wl-email').value.trim();
-            if (!email) return;
+        clubForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const values = {
+                club_name: document.getElementById('cf-club').value.trim(),
+                club_type: document.getElementById('cf-type').value,
+                member_count: document.getElementById('cf-members').value,
+                city: document.getElementById('cf-city').value,
+                contact_name: document.getElementById('cf-name').value.trim(),
+                phone: document.getElementById('cf-phone').value.trim(),
+                role: document.getElementById('cf-role').value.trim(),
+                email: document.getElementById('cf-email').value.trim(),
+                message: document.getElementById('cf-msg').value.trim(),
+            };
+
+            // Zorunlu alan kontrolü
+            const requiredKeys = ['club_name', 'club_type', 'city', 'contact_name', 'phone'];
+            const fieldMap = {
+                club_name: 'cf-club', club_type: 'cf-type', city: 'cf-city',
+                contact_name: 'cf-name', phone: 'cf-phone'
+            };
+
+            let hasError = false;
+            requiredKeys.forEach(key => {
+                if (!values[key]) {
+                    const el = document.getElementById(fieldMap[key]);
+                    el.classList.add('error');
+                    setTimeout(() => el.classList.remove('error'), 2800);
+                    hasError = true;
+                }
+            });
+            if (hasError) return;
 
             submitBtn.disabled = true;
-            submitBtn.querySelector('[data-i18n]').textContent = '⏳';
+            submitLabel.textContent = translations[currentLang]['wl-btn-sending'] || (currentLang === 'en' ? 'Sending...' : 'Gönderiliyor...');
 
-            // Mailchimp target="_blank" ile yeni sekmede açar.
-            // 1.5sn sonra başarı ekranını göster.
-            setTimeout(() => {
-                successEmailEl.textContent = email;
-                formWrap.style.display = 'none';
-                successEl.style.display = 'block';
-                // Re-apply translations to the success state
-                if (typeof setLanguage === 'function') {
-                    setLanguage(localStorage.getItem('language') || 'tr');
+            // Google Forms'a gönder (no-cors — CORS kısıtlaması nedeniyle)
+            const formData = new URLSearchParams();
+            Object.entries(ENTRIES).forEach(([key, entryId]) => {
+                if (values[key] !== undefined) {
+                    formData.append(entryId, values[key]);
                 }
-            }, 1500);
+            });
+
+            try {
+                await fetch(GFORM_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',   // Google Forms CORS'a izin vermez — opaque response normaldir
+                    body: formData
+                });
+            } catch (_) { /* Ağ hatası olsa bile başarı ekranı göster */ }
+
+            showSuccess(values.contact_name);
         });
 
-        function copyLink() {
-            const url = 'https://paylasalim.com.tr/waitlist.html';
-            const copyLabel = document.getElementById('copy-label');
-            const lang = localStorage.getItem('language') || 'tr';
-            const copiedText = lang === 'tr' ? '✓ Kopyalandı!' : '✓ Copied!';
-            const defaultText = lang === 'tr' ? 'Kopyala' : 'Copy';
+        function showSuccess(name) {
+            const isEn = (currentLang === 'en');
+            document.getElementById('success-msg').textContent =
+                name ? (isEn ? `${name}, we will call you as soon as possible` : `${name}, sizi en kısa sürede arayacağız`) 
+                     : (isEn ? 'We will call you as soon as possible' : 'Sizi en kısa sürede arayacağız');
 
-            navigator.clipboard.writeText(url).then(() => {
-                copyLabel.textContent = copiedText;
-                setTimeout(() => {
-                    copyLabel.textContent = defaultText;
-                }, 2000);
-            });
+            formWrap.style.transition = 'opacity 0.3s, transform 0.3s';
+            formWrap.style.opacity = '0';
+            formWrap.style.transform = 'translateY(-8px)';
+            setTimeout(() => {
+                formWrap.style.display = 'none';
+                successEl.style.display = 'block';
+            }, 300);
         }
     </script>
-
 </body>
+
 </html>

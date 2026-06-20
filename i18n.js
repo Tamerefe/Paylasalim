@@ -10,6 +10,7 @@ const translations = {
         'nav-faq': 'SSS',
         'nav-about': 'Hakkımızda',
         'nav-contact': 'İletişim',
+        'nav-waitlist': 'Kulüp Programı',
 
         // Hero Section
         'hero-badge': 'Flutter ile Geliştirildi',
@@ -319,37 +320,77 @@ const translations = {
         'home-wl-btn': 'Erken Erişim Listesine Katıl',
         'home-wl-privacy': '🔒 E-posta adresin güvende. Spam göndermiyoruz.',
 
-        // Waitlist Page
-        'wl-badge': 'Yakında Yayında',
-        'wl-heading-main': 'Kıbrıs\'ın Carpool Uygulaması',
-        'wl-heading-highlight': 'Yolda Geliyor',
-        'wl-subtitle': 'Paylaşalım\'ı erken keşfeden kullanıcılardan biri ol. Yayına girdiğimizde sana hemen haber veririz ve özel avantajlardan yararlanırsın.',
-        'wl-social-text': '<strong>50+</strong> kişi bekleme listesinde',
-        'wl-counter-cities': '3 şehir',
-        'wl-counter-uni': '5 üniversite',
-        'wl-counter-savings': '%40 tasarruf',
-        'wl-form-title': 'Erken Erişim Listesine Katıl',
-        'wl-form-desc': 'Bildirim al, sürpriz ayrıcalıkları yakala.',
-        'wl-label-fname': 'Adın Soyadın',
-        'wl-label-os': 'Telefon İşletim Sistemi',
-        'wl-os-placeholder': 'Seçin...',
-        'wl-os-android': 'Android',
-        'wl-os-apple': 'Apple iOS',
-        'wl-label-email': 'E-posta adresin *',
-
-        'wl-check-label': 'Test kullanıcısı olmak ister misin?',
-        'wl-tester-placeholder': 'Seçin...',
-        'wl-tester-yes': 'Evet',
-        'wl-tester-no': 'Hayır',
-        'wl-submit': 'Listeye Katıl (Ücretsiz)',
-        'wl-privacy': '🔒 E-posta adresin güvende. Sadece uygulama haberleri için kullanılır, asla satılmaz.',
-        'wl-perk1': 'Yayında ilk sana haber veririz',
-        'wl-perk2': 'İlk kullanıcılara özel avantajlar',
-        'wl-success-title': 'Harika, listedesin!',
-        'wl-success-pre': 'Uygulama yayına girdiğinde ',
-        'wl-success-post': ' adresine haber vereceğiz. Bizi arkadaşlarınla paylaş!',
-        'wl-share-desc': 'Arkadaşlarını da davet et:',
-        'wl-copy-label': 'Kopyala'
+        // Waitlist Page / Club Program
+        'wl-page-title': 'Kulüp Programı | Paylaşalım',
+        'wl-badge': 'Özel Ortaklık Programı',
+        'wl-title': 'Kulübünüzü<br><span class="wl-accent">Güçlendirin</span>',
+        'wl-subtitle-text': 'Bir kulüp yöneticisi veya dernek mi yönetiyorsunuz? Paylaşalım\'ın özel etkinlik oluşturma özelliğiyle tanışın — üyelerinizle daha kolay iletişim kurun, ağınızı güçlendirin ve topluluğunuzu bir araya getirin.',
+        'wl-chip1': 'Özel Etkinlik Sayfası',
+        'wl-chip2': 'Üye Yönetimi',
+        'wl-chip3': 'Anlık Bildirimler',
+        'wl-chip4': 'Grup Mesajlaşma',
+        'wl-chip5': 'İlk 3 Ay Ücretsiz',
+        'wl-chip6': 'Hızlı Kurulum',
+        'wl-stat1-num': '5+',
+        'wl-stat1-label': 'Ortaklık Görüşmesi',
+        'wl-stat2-num': '3 Ay',
+        'wl-stat2-label': 'Ücretsiz Deneme',
+        'wl-stat3-num': '%100',
+        'wl-stat3-label': 'Özelleştirilebilir',
+        'wl-feat1-title': 'Etkinlik Oluştur, Üyeleri Topla',
+        'wl-feat1-desc': 'Spor turnuvaları, sosyal buluşmalar, seminerler ve daha fazlası için tek tıkla etkinlik oluşturun. Üyeleriniz anında haberdar edilsin.',
+        'wl-feat2-title': 'Doğrudan Üyelerinize Ulaşın',
+        'wl-feat2-desc': 'Push bildirimleri ve uygulama içi mesajlarla duyurularınızı anında iletin. WhatsApp gruplarında kaybolmaktan kurtulun.',
+        'wl-feat3-title': 'Etkinliğe Gidiş: Yolculuk Paylaşımı',
+        'wl-feat3-desc': 'Üyeler etkinliğe giderken de Paylaşalım\'ı kullanabilir. Araç paylaşımıyla katılım artar, ulaşım masrafları düşer.',
+        'wl-feat4-title': 'Katılım Takibi & Analitik',
+        'wl-feat4-desc': 'Kaç üye katıldı, doluluk oranı nedir, hangi saatler daha popüler? Tüm verilere tek panelden erişin.',
+        'wl-quote-text': '"Paylaşalım sayesinde etkinliklerimizi çok daha kolay duyuruyoruz. Üye katılımı ikiye katlandı ve koordinasyon çok kolaylaştı."',
+        'wl-quote-author': 'Berkay T.',
+        'wl-quote-role': 'NEU Yazılım Kulübü Başkanı',
+        'wl-form-tag': 'Ücretsiz Başla',
+        'wl-form-title': 'Kulüp Programı',
+        'wl-form-desc': 'Bilgilerinizi bırakın, sizi arayalım ve birlikte en iyi çözümü planlayalım.',
+        'wl-div1': 'Kulüp / Dernek Bilgileri',
+        'wl-lbl-club': 'Kulüp / Dernek Adı',
+        'wl-ph-club': 'ör. DAÜ Yazılım Kulübü',
+        'wl-lbl-type': 'Tür',
+        'wl-opt-select': 'Seçin...',
+        'wl-opt-university': 'Üniversite Kulübü',
+        'wl-opt-sports': 'Spor Kulübü',
+        'wl-opt-ngo': 'Dernek / STK',
+        'wl-opt-school': 'Okul Kulübü',
+        'wl-opt-professional': 'Meslek Birliği',
+        'wl-opt-other': 'Diğer',
+        'wl-lbl-members': 'Üye Sayısı',
+        'wl-opt-m1': '1 – 25',
+        'wl-opt-m2': '26 – 100',
+        'wl-opt-m3': '101 – 300',
+        'wl-opt-m4': '300+',
+        'wl-lbl-city': 'Şehir / Kampüs',
+        'wl-opt-c1': 'Girne',
+        'wl-opt-c2': 'Lefkoşa',
+        'wl-opt-c3': 'Gazimağusa',
+        'wl-opt-c4': 'Güzelyurt',
+        'wl-opt-c5': 'İskele',
+        'wl-div2': 'İletişim Bilgileri',
+        'wl-lbl-name': 'Adınız Soyadınız',
+        'wl-lbl-phone': 'Telefon Numarası',
+        'wl-lbl-role': 'Unvanınız',
+        'wl-ph-role': 'Başkan, Koordinatör...',
+        'wl-lbl-email': 'E-posta',
+        'wl-lbl-msg': 'Bize Kısaca Anlatın',
+        'wl-ph-msg': 'Kulübünüz hakkında kısaca bilgi verin veya sormak istediklerinizi yazın...',
+        'wl-btn-submit': 'Hemen İletişime Geç',
+        'wl-privacy-text': 'Bilgileriniz güvende. Yalnızca sizinle iletişim kurmak için kullanılır, asla paylaşılmaz.',
+        'wl-success-header': 'Mesajınız Alındı',
+        'wl-success-body': 'En kısa sürede sizinle iletişime geçeceğiz.<br>Genellikle <strong>24 saat</strong> içinde dönüş yapıyoruz.',
+        'wl-success-fallback': 'Sizi en kısa sürede arayacağız',
+        'wl-lbl-optional': '(isteğe bağlı)',
+        'wl-ph-name': 'Ahmet Yılmaz',
+        'wl-ph-phone': '+90 548 000 00 00',
+        'wl-ph-email': 'ahmet@ornek.com',
+        'wl-btn-sending': 'Gönderiliyor...'
     },
     en: {
         // Navigation
@@ -361,6 +402,7 @@ const translations = {
         'nav-faq': 'FAQ',
         'nav-about': 'About Us',
         'nav-contact': 'Contact',
+        'nav-waitlist': 'Club Program',
 
         // Hero Section
         'hero-badge': 'Built with Flutter',
@@ -673,37 +715,77 @@ const translations = {
         'home-wl-btn': 'Join the Early Access List',
         'home-wl-privacy': '🔒 Your email is safe. We don\'t send spam.',
 
-        // Waitlist Page
-        'wl-badge': 'Coming Soon',
-        'wl-heading-main': 'Cyprus\'s Carpool App',
-        'wl-heading-highlight': 'On the Way',
-        'wl-subtitle': 'Be one of the first to discover Paylaşalım. When we launch, we\'ll notify you immediately and you\'ll enjoy exclusive benefits.',
-        'wl-social-text': '<strong>50+</strong> people on the waitlist',
-        'wl-counter-cities': '3 cities',
-        'wl-counter-uni': '5 universities',
-        'wl-counter-savings': '40% savings',
-        'wl-form-title': 'Join the Early Access List',
-        'wl-form-desc': 'Get notified, grab surprise perks.',
-        'wl-label-fname': 'Full Name',
-        'wl-label-os': 'Phone Operating System',
-        'wl-os-placeholder': 'Select...',
-        'wl-os-android': 'Android',
-        'wl-os-apple': 'Apple iOS',
-        'wl-label-email': 'Your Email *',
-
-        'wl-check-label': 'Would you like to be a test user?',
-        'wl-tester-placeholder': 'Select...',
-        'wl-tester-yes': 'Yes',
-        'wl-tester-no': 'No',
-        'wl-submit': 'Join the List (Free)',
-        'wl-privacy': '🔒 Your email is safe. Used only for app updates, never sold.',
-        'wl-perk1': 'You\'ll be first to know when we launch',
-        'wl-perk2': 'Exclusive perks for early users',
-        'wl-success-title': 'You\'re on the list!',
-        'wl-success-pre': 'We\'ll notify ',
-        'wl-success-post': ' when the app launches. Share us with your friends!',
-        'wl-share-desc': 'Invite your friends too:',
-        'wl-copy-label': 'Copy'
+        // Waitlist Page / Club Program
+        'wl-page-title': 'Club Program | Paylaşalım',
+        'wl-badge': 'Special Partnership Program',
+        'wl-title': 'Empower Your<br><span class="wl-accent">Club</span>',
+        'wl-subtitle-text': 'Are you a club manager or leading an association? Meet Paylaşalım\'s exclusive event creation feature — communicate more easily with your members, strengthen your network, and bring your community together.',
+        'wl-chip1': 'Custom Event Page',
+        'wl-chip2': 'Member Management',
+        'wl-chip3': 'Instant Notifications',
+        'wl-chip4': 'Group Messaging',
+        'wl-chip5': 'First 3 Months Free',
+        'wl-chip6': 'Fast Setup',
+        'wl-stat1-num': '5+',
+        'wl-stat1-label': 'Partnership Meetings',
+        'wl-stat2-num': '3 Months',
+        'wl-stat2-label': 'Free Trial',
+        'wl-stat3-num': '100%',
+        'wl-stat3-label': 'Customizable',
+        'wl-feat1-title': 'Create Events, Gather Members',
+        'wl-feat1-desc': 'Create events with a single click for sports tournaments, social gatherings, seminars, and more. Let your members be notified instantly.',
+        'wl-feat2-title': 'Reach Your Members Directly',
+        'wl-feat2-desc': 'Deliver your announcements instantly with push notifications and in-app messages. Get rid of getting lost in WhatsApp groups.',
+        'wl-feat3-title': 'Going to Event: Ridesharing',
+        'wl-feat3-desc': 'Members can use Paylaşalım while going to the event. Ridesharing increases attendance and lowers transportation costs.',
+        'wl-feat4-title': 'Attendance Tracking & Analytics',
+        'wl-feat4-desc': 'How many members attended, what is the occupancy rate, which hours are more popular? Access all data from a single panel.',
+        'wl-quote-text': '"Thanks to Paylaşalım, we announce our events much more easily. Member participation has doubled, and coordination has become very easy."',
+        'wl-quote-author': 'Berkay T.',
+        'wl-quote-role': 'NEU Software Club President',
+        'wl-form-tag': 'Start Free',
+        'wl-form-title': 'Club Program',
+        'wl-form-desc': 'Leave your information, we will call you and plan the best solution together.',
+        'wl-div1': 'Club / Association Information',
+        'wl-lbl-club': 'Club / Association Name',
+        'wl-ph-club': 'e.g. EMU Software Club',
+        'wl-lbl-type': 'Type',
+        'wl-opt-select': 'Select...',
+        'wl-opt-university': 'University Club',
+        'wl-opt-sports': 'Sports Club',
+        'wl-opt-ngo': 'Association / NGO',
+        'wl-opt-school': 'School Club',
+        'wl-opt-professional': 'Professional Association',
+        'wl-opt-other': 'Other',
+        'wl-lbl-members': 'Member Count',
+        'wl-opt-m1': '1 – 25',
+        'wl-opt-m2': '26 – 100',
+        'wl-opt-m3': '101 – 300',
+        'wl-opt-m4': '300+',
+        'wl-lbl-city': 'City / Campus',
+        'wl-opt-c1': 'Kyrenia',
+        'wl-opt-c2': 'Nicosia',
+        'wl-opt-c3': 'Famagusta',
+        'wl-opt-c4': 'Morphou',
+        'wl-opt-c5': 'Trikomo',
+        'wl-div2': 'Contact Information',
+        'wl-lbl-name': 'Your Name Surname',
+        'wl-lbl-phone': 'Phone Number',
+        'wl-lbl-role': 'Your Title',
+        'wl-ph-role': 'President, Coordinator...',
+        'wl-lbl-email': 'Email',
+        'wl-lbl-msg': 'Tell Us Briefly',
+        'wl-ph-msg': 'Briefly describe your club or write what you would like to ask...',
+        'wl-btn-submit': 'Get in Touch Now',
+        'wl-privacy-text': 'Your information is safe. Used only to contact you, never shared.',
+        'wl-success-header': 'Message Received',
+        'wl-success-body': 'We will contact you as soon as possible.<br>Usually we get back to you within <strong>24 hours</strong>.',
+        'wl-success-fallback': 'We will call you as soon as possible',
+        'wl-lbl-optional': '(optional)',
+        'wl-ph-name': 'John Doe',
+        'wl-ph-phone': '+90 548 000 00 00',
+        'wl-ph-email': 'john@example.com',
+        'wl-btn-sending': 'Sending...'
     }
 };
 
@@ -733,18 +815,35 @@ function setLanguage(lang) {
 
             // Güvenli içerik güncellemesi
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.value = content;
+                if (element.hasAttribute('placeholder')) {
+                    // Do not overwrite typed values
+                } else {
+                    element.value = content;
+                }
             } else if (content.includes('<') && content.includes('>')) {
-                // HTML içeriği varsa innerHTML kullan
-                // Çeviriler kontrollü olduğu için güvenle kullanabiliriz
-                // İzin verilen tagler: <br>, <strong>, <a>, <em>, <ul>, <li>, <p>
                 element.innerHTML = content;
             } else {
-                // Diğerleri için güvenli textContent
                 element.textContent = content;
             }
         }
     });
+
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            element.setAttribute('placeholder', translations[lang][key]);
+        }
+    });
+
+    // Update page document title if meta exists
+    const titleEl = document.querySelector('title[data-i18n]');
+    if (titleEl) {
+        const key = titleEl.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            document.title = translations[lang][key].replace(/<[^>]*>/g, '');
+        }
+    }
 
     // Update language toggle button
     const langToggle = document.getElementById('lang-toggle');

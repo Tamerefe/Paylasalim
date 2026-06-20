@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.firebaseapp.com https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://www.google-analytics.com https://www.clarity.ms; frame-src 'self';">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.firebaseapp.com https://*.googleapis.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://static.cloudflareinsights.com; frame-src 'self';">
     <title>Paylaşalım | Kuzey Kıbrıs'ta Güvenli Yolculuk Paylaşımı (Carpool)</title>
     <meta name="description" content="Paylaşalım, Kuzey Kıbrıs'ta güvenli carpool platformudur. Girne-Lefkoşa, Gazimağusa ve tüm KKTC'de şehirler arası ucuz yolculuk paylaşımı için sürücü ve yolcuları eşleştirir.">
     <meta name="keywords" content="kıbrıs yolculuk paylaşımı, carpool kıbrıs, girne lefkoşa yolculuk paylaşımı, kıbrıs şehirler arası ucuz ulaşım, üniversite carpool kıbrıs, kıbrıs öğrenci ulaşım çözümü, araç paylaşımı KKTC, paylaşalım">
@@ -48,13 +48,14 @@
                 <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
             </a>
             <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
-            <nav class="nav" id="main-nav" aria-hidden="false">
+                        <nav class="nav" id="main-nav" aria-hidden="false">
                 <ul>
-                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji & Nasıl Çalışır</a></li>
+                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
+                    <li><a href="tech.html" data-i18n="nav-tech">Teknoloji &amp; Nasıl Çalışır</a></li>
                     <li><a href="search.html" data-i18n="nav-search">Yolculuk Ara</a></li>
                     <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
                     <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
-                    <li><a href="waitlist.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none;">Erken Erişim</a></li>
+                    <li><a href="waitlist.html" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none;" data-i18n="nav-waitlist">Kulüp Programı</a></li>
                     <li>
                         <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
                             <span class="lang-flag" id="lang-flag"></span>
@@ -547,7 +548,7 @@
     <script src="script.js"></script>
 
     <!-- Vanilla Tilt for 3D hover effect -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".feature-card"), {
             max: 10,
