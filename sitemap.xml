@@ -86,15 +86,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Sefer Ara -->
-  <url>
-    <loc>https://paylasalim.com.tr/search.html</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Erken Erişim / Waitlist -->
+  <!-- Kulüp Programı -->
   <url>
     <loc>https://paylasalim.com.tr/waitlist.html</loc>
     <lastmod>2026-04-27</lastmod>

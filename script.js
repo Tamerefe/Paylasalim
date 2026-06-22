@@ -151,58 +151,213 @@ if (navToggle && mainNav) {
     });
 }
 
-// Screenshot Slider
-const sliderImages = document.querySelectorAll('.slider-image');
-const sliderDots = document.querySelectorAll('.dot');
-let currentSlide = 0;
-let slideInterval;
-
-function showSlide(index) {
-    // Remove active class from all images and dots
-    sliderImages.forEach(img => img.classList.remove('active'));
-    sliderDots.forEach(dot => dot.classList.remove('active'));
-
-    // Add active class to current slide
-    if (sliderImages[index]) {
-        sliderImages[index].classList.add('active');
-    }
-    if (sliderDots[index]) {
-        sliderDots[index].classList.add('active');
-    }
-
-    currentSlide = index;
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % sliderImages.length;
-    showSlide(currentSlide);
-}
-
-// Auto-advance slider every 4 seconds
-if (sliderImages.length > 0) {
-    slideInterval = setInterval(nextSlide, 4000);
-
-    // Dot click handlers
-    sliderDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            clearInterval(slideInterval);
-            showSlide(index);
-            slideInterval = setInterval(nextSlide, 4000);
-        });
-    });
-
-    // Pause on hover
+// Screenshot Slider - Premium Horizontal Track
+(function() {
+    const sliderTrack = document.querySelector('.slider-track');
+    const sliderImages = document.querySelectorAll('.slider-image');
+    const dotsContainer = document.getElementById('slider-dots');
+    const slideCounter = document.getElementById('slide-counter');
+    const arrowLeft = document.querySelector('.slider-arrow-left');
+    const arrowRight = document.querySelector('.slider-arrow-right');
     const phoneMockup = document.querySelector('.phone-mockup');
+    
+    if (!sliderTrack || sliderImages.length === 0) return;
+    
+    const totalSlides = sliderImages.length;
+    let currentSlide = 0;
+    let slideInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    
+    // Dynamically create dots
+    if (dotsContainer) {
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-slide', i);
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+                resetAutoAdvance();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        
+        currentSlide = index;
+        const translateX = -currentSlide * 100;
+        sliderTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+        
+        // Update counter
+        if (slideCounter) {
+            slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+    }
+    
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+    
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+    
+    function resetAutoAdvance() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 3500);
+    }
+    
+    // Arrow click handlers
+    if (arrowLeft) {
+        arrowLeft.addEventListener('click', (e) => {
+            e.stopPropagation();
+            prevSlide();
+            resetAutoAdvance();
+        });
+    }
+    
+    if (arrowRight) {
+        arrowRight.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nextSlide();
+            resetAutoAdvance();
+        });
+    }
+    
+    // Touch/Swipe & Mouse Drag support
+    const slider = document.getElementById('screenshot-slider');
+    if (slider) {
+        // Touch Events
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+            sliderTrack.style.transition = 'none';
+        }, { passive: true });
+        
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            const translateX = -currentSlide * 100 + (diff / slider.offsetWidth * 100);
+            sliderTrack.style.transform = `translateX(${translateX}%)`;
+        }, { passive: true });
+        
+        slider.addEventListener('touchend', (e) => {
+            isDragging = false;
+            sliderTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            const threshold = slider.offsetWidth * 0.2;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    prevSlide();
+                } else {
+                    nextSlide();
+                }
+            } else {
+                goToSlide(currentSlide); // snap back
+            }
+            resetAutoAdvance();
+        }, { passive: true });
+
+        // Mouse Events
+        slider.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent text/image selection
+            touchStartX = e.clientX;
+            touchEndX = e.clientX;
+            isDragging = true;
+            sliderTrack.style.transition = 'none';
+            clearInterval(slideInterval);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.clientX;
+            const diff = touchEndX - touchStartX;
+            const translateX = -currentSlide * 100 + (diff / slider.offsetWidth * 100);
+            sliderTrack.style.transform = `translateX(${translateX}%)`;
+        });
+
+        window.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            sliderTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            const diff = touchEndX - touchStartX;
+            const threshold = slider.offsetWidth * 0.2;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    prevSlide();
+                } else {
+                    nextSlide();
+                }
+            } else {
+                goToSlide(currentSlide); // snap back
+            }
+            resetAutoAdvance();
+        });
+    }
+    
+    // Keyboard navigation when phone is focused/hovered
+    if (phoneMockup) {
+        phoneMockup.setAttribute('tabindex', '0');
+        phoneMockup.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+                resetAutoAdvance();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+                resetAutoAdvance();
+            }
+        });
+    }
+    
+    // Auto-advance every 3.5 seconds
+    slideInterval = setInterval(nextSlide, 3500);
+    
+    // Pause on hover
     if (phoneMockup) {
         phoneMockup.addEventListener('mouseenter', () => {
             clearInterval(slideInterval);
         });
-
+        
         phoneMockup.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 4000);
+            slideInterval = setInterval(nextSlide, 3500);
         });
     }
-}
+    
+    // Live Clock for Phone Mockup Status Bar
+    const statusTime = document.querySelector('.status-time');
+    if (statusTime) {
+        const updateTime = () => {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            statusTime.textContent = `${hours}:${minutes}`;
+        };
+        updateTime();
+        setInterval(updateTime, 60000);
+    }
+    
+    // Initialize first slide
+    goToSlide(0);
+})();
 
 // Feature Cards Scroll Animation
 const featureCards = document.querySelectorAll('.feature-card');

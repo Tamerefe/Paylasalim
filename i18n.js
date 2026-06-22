@@ -4,7 +4,6 @@ const translations = {
         // Navigation
         'nav-home': 'Ana Sayfa',
         'nav-tech': 'Teknoloji & Nasıl Çalışır',
-        'nav-search': 'Yolculuk Ara',
         'nav-download': 'İndir',
         'nav-blog': 'Blog',
         'nav-faq': 'SSS',
@@ -14,16 +13,41 @@ const translations = {
 
         // Hero Section
         'hero-badge': 'Flutter ile Geliştirildi',
-        'hero-title': 'Güvenli ve Uygun<br>Yolculuk Paylaşımı',
-        'hero-subtitle': 'Sürücüler ve yolcuları akıllı şekilde eşleştiren modern ulaşım çözümü. Kıbrıs\'ta ekonomik ve çevre dostu seyahat.',
+        'hero-title': 'Sosyal Keşif ve<br>Yolculuk Paylaşımı',
+        'hero-subtitle': 'Etkinlikleri keşfet, insanlarla eşleşip birlikte katıl ve masrafları paylaş!',
         'hero-download': 'Uygulamayı İndir',
         'hero-explore': 'Özellikleri Keşfet',
         'stat-secure': 'Güvenli',
         'stat-savings': 'Tasarruf',
 
+        // Page Titles
+        'page-title': 'Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşım Platformu',
+        'about-page-title': 'Hakkımızda | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'tech-page-title': 'Teknoloji & Nasıl Çalışır | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'download-page-title': 'İndir | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'faq-page-title': 'Sık Sorulan Sorular | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'delete-page-title': 'Hesabı Sil | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'privacy-page-title': 'Gizlilik ve Sorumluluk Reddi | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'blog-page-title': 'Blog | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'waitlist-page-title': 'Kulüp Programı | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+
         // Features Section
         'features-title': 'Neden Paylaşalım?',
-        'features-subtitle': 'Modern teknoloji ile güvenli yolculuk deneyimi',
+        'features-subtitle': 'Sosyal keşif ve güvenli yolculuk deneyimi',
+
+        // New Features
+        'feature-event-match-title': 'Etkinlik Eşleşme',
+        'feature-event-match-desc': 'Gitmek istediğin bir konseri, tiyatroyu veya partiyi seç, o etkinliğe katılmak isteyen diğer kullanıcılarla eşleş! Uygulama üzerinden tanış, yolculuğu beraber planla ve etkinlikte yalnız kalma.',
+        'feature-event-discovery-title': 'Etkinlik ve Aktivite Keşfi',
+        'feature-event-discovery-desc': 'Çevrendeki kullanıcılar tarafından oluşturulan spor müsabakaları, kahve buluşmaları veya doğa yürüyüşlerine katıl. İstersen kendi aktiviteni oluşturarak ilgini çeken insanları davet et.',
+        'feature-ai-discovery-title': 'Yapay Zeka Destekli "Çevrende Ne Var?"',
+        'feature-ai-discovery-desc': 'Instagram\'da veya bir bilet sitesinde gördüğün etkinliğin linkini uygulamaya yapıştır, yapay zeka senin için anında etkinliği oluştursun! Şehrin nabzını tutan tüm etkinlikleri tek ekranda gör.',
+        'feature-ride-sharing-title': 'Yolculuk Paylaşımı',
+        'feature-ride-sharing-desc': 'Aynı yöne giden kullanıcılarla kolayca eşleş. Sürücü olarak akaryakıt masraflarınızı düşür, yolcu olarak uygun fiyatlı ve konforlu seyahat et.',
+        'feature-messaging-security-title': 'Mesajlaşma ve Güvenlik',
+        'feature-messaging-security-desc': 'Kullanıcı değerlendirmeleri ve profilleri sayesinde kiminle eşleştiğini bil. Uygulama içi şifreli mesajlaşma özelliği ile güvenle buluşma planı yap.',
+
+        // Old Features (maintained for compatibility)
         'feature1-title': 'Kullanıcı Yönetimi',
         'feature1-desc': 'Firebase Authentication ile güvenli kayıt, profil yönetimi ve değerlendirme sistemi.',
         'feature2-title': 'Akıllı Eşleştirme',
@@ -75,7 +99,7 @@ const translations = {
 
         // Footer
         'footer-about': 'Paylaşalım',
-        'footer-description': 'Kuzey Kıbrıs\'ta güvenli ve ekonomik paylaşımlı yolculuk platformu.',
+        'footer-description': 'Sosyal keşif, etkinlik eşleşmesi ve yolculuk paylaşım platformu.',
         'footer-links-title': 'Hızlı Bağlantılar',
         'footer-social-title': 'Sosyal Medya',
         'footer-privacy': 'Gizlilik ve Sorumluluk',
@@ -98,17 +122,15 @@ const translations = {
 
         // Tech Page - How It Works
         'tech-how-title': 'Nasıl Çalışır?',
-        'tech-how-subtitle': '5 basit adımda yolculuğa başla',
-        'tech-step1-title': 'Kayıt Ol ve Profil Oluştur',
-        'tech-step1-desc': 'Firebase ile güvenli kayıt, profil fotoğrafı ve tercihlerini ekle.',
-        'tech-step2-title': 'Yolculuk Oluştur veya Ara',
-        'tech-step2-desc': 'Sürücüysen yolculuğunu oluştur (başlangıç, bitiş, tarih, koltuk sayısı). Yolcuysan uygun yolculukları bul.',
-        'tech-step3-title': 'Anlık Mesajlaşma ile Anlaş',
-        'tech-step3-desc': 'Uygulama içi güvenli mesajlaşma ile detayları netleştir.',
-        'tech-step4-title': 'Canlı Takip ile Yolculuğa Çık',
-        'tech-step4-desc': 'Google Maps entegrasyonu ile gerçek zamanlı konum paylaşımı.',
-        'tech-step5-title': 'Değerlendir ve Topluluğu Güçlendir',
-        'tech-step5-desc': 'Yolculuk sonrası puanlama sistemiyle güvenilir bir topluluk oluştur.',
+        'tech-how-subtitle': '4 basit adımda sosyalleşmeye ve masrafları paylaşmaya başla',
+        'tech-step1-title': 'Sekmeleri Gezin',
+        'tech-step1-desc': 'İhtiyacına göre Yolculuk Ara, Etkinlik Bul veya Çevrende Ne Var sekmelerinde gezin.',
+        'tech-step2-title': 'Katılma İsteği Gönder ve Eşleş',
+        'tech-step2-desc': 'İlgi duyduğun bir etkinliğe katılma isteği göndererek diğer kullanıcılarla eşleşmeye başla.',
+        'tech-step3-title': 'İlan Oluştur',
+        'tech-step3-desc': 'Kendi etkinlik veya yolculuk ilanını saniyeler içinde oluştur.',
+        'tech-step4-title': 'Paylaş ve Sosyalleş',
+        'tech-step4-desc': 'Sana uygun kişilerle eşleş, masrafları paylaş, etkinliklere birlikte git ve sosyalleş!',
 
         // Tech Page - Technology Stack
         'tech-stack-title': 'Teknoloji Stack',
@@ -150,37 +172,21 @@ const translations = {
 
         // About Page
         'about-title': 'Hakkımızda',
-        'about-subtitle': 'Kuzey Kıbrıs için geliştirilmiş güvenli paylaşımlı yolculuk uygulaması',
-        'about-intro': '<strong>Paylaşalım</strong>, Kıbrıs\'ta yaşayan insanlar için geliştirilmiş, güvenli ve kullanıcı dostu bir paylaşımlı yolculuk uygulamasıdır.',
-        'about-description': 'Uygulama, yolcuların ve sürücülerin bir araya gelmesini sağlayarak hem ekonomik hem de çevre dostu bir ulaşım çözümü sunar. Flutter ve Firebase teknolojileriyle geliştirilmiş modern bir mobil platformdur.',
-        'about-feature1-title': 'Güvenli Firebase Authentication',
-        'about-feature1-desc': 'Kullanıcı bilgileriniz Firebase ile güvence altında',
-        'about-feature2-title': 'Çevre Dostu Paylaşım',
-        'about-feature2-desc': 'Karşılıklı paylaşımla karbon ayak izini azalt',
-        'about-feature3-title': 'Ekonomik Yolculuklar',
-        'about-feature3-desc': 'Yakıt masraflarını paylaşarak tasarruf edin',
+        'about-subtitle': 'Kuzey Kıbrıs\'ın ilk sosyal keşif ve yolculuk paylaşım platformu',
+        'about-intro': '<strong>Paylaşalım</strong>, çevrendeki etkinlikleri keşfedebileceğin, yeni insanlarla eşleşip etkinliklere birlikte katılabileceğin ve yolculuklarını paylaşarak sosyalleşebileceğin yeni nesil bir platformdur.',
+        'about-description': 'Paylaşalım sadece bir ulaşım uygulaması değil; konserlerden spor müsabakalarına, doğa yürüyüşlerinden kahve buluşmalarına kadar çevrendeki aktiviteleri keşfetmeni ve kafa dengi insanlarla eşleşerek birlikte katılmanı sağlayan sosyal keşif ve yolculuk paylaşım topluluğudur.',
+        'about-feature1-title': 'Güvenli Eşleşme',
+        'about-feature1-desc': 'Doğrulanmış profiller ve şeffaf değerlendirmeler ile güvenle sosyalleşin.',
+        'about-feature2-title': 'Sosyal Keşif',
+        'about-feature2-desc': 'Çevrendeki spor, konser ve sosyal aktiviteleri keşfedip yeni insanlarla tanışın.',
+        'about-feature3-title': 'Yolculuk Paylaşımı',
+        'about-feature3-desc': 'Aynı yöne giden kişilerle masrafları paylaşarak karbon ayak izinizi ve seyahat giderlerinizi azaltın.',
 
-
-        // Search Page
-        'search-badge': 'Gerçek Zamanlı Arama',
-        'search-title': 'Yolculuk Ara',
-        'search-subtitle': 'Rotana uygun yolculukları bul ve sürücülerle iletişime geç',
-        'search-from': 'Nereden',
-        'search-to': 'Nereye',
-        'search-date': 'Tarih',
-        'search-seats': 'Koltuk',
-        'search-button': 'Ara',
-        'search-loading': 'Yolculuklar yükleniyor...',
-        'search-empty-title': 'Yolculuk Bulunamadı',
-        'search-empty-desc': 'Filtreleri değiştirerek tekrar deneyin veya uygulamadan yeni yolculuk oluşturun.',
-        'search-download-app': 'Uygulamayı İndir',
-        'search-seats-all': 'Tümü',
 
         // Privacy Page
         'privacy-title': 'Gizlilik Politikası ve Sorumluluk Reddi',
         'privacy-subtitle': 'Kişisel Verilerin Korunması ve Kullanım Şartları',
         'privacy-page-title': 'Gizlilik ve Sorumluluk Reddi | Paylaşalım',
-        'search-page-title': 'Yolculuk Ara | Paylaşalım',
 
         // Privacy Page - Section 1
         'privacy-section1-title': '1. Genel Bilgiler',
@@ -314,17 +320,17 @@ const translations = {
         'faq-a9': 'Bagaj politikası sürücü tarafından belirlenir. Yolculuk oluştururken sürücüler bagaj kabul edip etmediklerini ve boyut limitlerini belirtirler. Genellikle küçük bir sırt çantası veya el bagajı kabul edilir. Büyük bavul veya hacimli eşyalarınız varsa rezervasyon öncesi mutlaka sürücü ile iletişime geçin ve onay alın.',
 
         // Home Waitlist Section
-        'home-wl-heading': 'Yayına Girdiğimizde<br>İlk Sen Haberdar Ol',
-        'home-wl-desc': 'Erken erişim listesine katıl, uygulama çıktığında sana hemen bildiririz.',
-        'home-wl-notify': '⚡ Anında bildirim',
-        'home-wl-btn': 'Erken Erişim Listesine Katıl',
-        'home-wl-privacy': '🔒 E-posta adresin güvende. Spam göndermiyoruz.',
+        'home-wl-heading': 'Kulüp Ortaklık Programı<br>Topluluğunuzu Bir Araya Getirin',
+        'home-wl-desc': 'Herkes normal etkinlik oluşturabilir, ancak kulüp yöneticisi olarak doğrulanmış bir profil edinebilir, sadece üyelerinize özel kapalı/açık etkinlikler düzenleyebilir ve onlara doğrudan duyurular gönderebilirsiniz.',
+        'home-wl-notify': '✨ İlk 3 Ay Ücretsiz',
+        'home-wl-btn': 'Kulüp Programına Katıl',
+        'home-wl-privacy': '🔒 Bilgileriniz güvende. Yalnızca sizinle iletişim kurmak için kullanılır.',
 
         // Waitlist Page / Club Program
         'wl-page-title': 'Kulüp Programı | Paylaşalım',
         'wl-badge': 'Özel Ortaklık Programı',
         'wl-title': 'Kulübünüzü<br><span class="wl-accent">Güçlendirin</span>',
-        'wl-subtitle-text': 'Bir kulüp yöneticisi veya dernek mi yönetiyorsunuz? Paylaşalım\'ın özel etkinlik oluşturma özelliğiyle tanışın — üyelerinizle daha kolay iletişim kurun, ağınızı güçlendirin ve topluluğunuzu bir araya getirin.',
+        'wl-subtitle-text': 'Paylaşalım\'da herkes bireysel etkinlik oluşturabilir, ancak kulüp yöneticileri ve dernekler için özel araçlar sunuyoruz. Doğrulanmış kurumsal profilinizle üyelerinize özel gizli veya açık etkinlikler düzenleyin, katılımı ve üyeleriniz arasındaki iletişimi güçlendirin.',
         'wl-chip1': 'Özel Etkinlik Sayfası',
         'wl-chip2': 'Üye Yönetimi',
         'wl-chip3': 'Anlık Bildirimler',
@@ -337,17 +343,17 @@ const translations = {
         'wl-stat2-label': 'Ücretsiz Deneme',
         'wl-stat3-num': '%100',
         'wl-stat3-label': 'Özelleştirilebilir',
-        'wl-feat1-title': 'Etkinlik Oluştur, Üyeleri Topla',
-        'wl-feat1-desc': 'Spor turnuvaları, sosyal buluşmalar, seminerler ve daha fazlası için tek tıkla etkinlik oluşturun. Üyeleriniz anında haberdar edilsin.',
-        'wl-feat2-title': 'Doğrudan Üyelerinize Ulaşın',
-        'wl-feat2-desc': 'Push bildirimleri ve uygulama içi mesajlarla duyurularınızı anında iletin. WhatsApp gruplarında kaybolmaktan kurtulun.',
-        'wl-feat3-title': 'Etkinliğe Gidiş: Yolculuk Paylaşımı',
-        'wl-feat3-desc': 'Üyeler etkinliğe giderken de Paylaşalım\'ı kullanabilir. Araç paylaşımıyla katılım artar, ulaşım masrafları düşer.',
-        'wl-feat4-title': 'Katılım Takibi & Analitik',
-        'wl-feat4-desc': 'Kaç üye katıldı, doluluk oranı nedir, hangi saatler daha popüler? Tüm verilere tek panelden erişin.',
+        'wl-feat1-title': 'Doğrulanmış Kulüp Etkinlikleri',
+        'wl-feat1-desc': 'Standart kullanıcı ilanlarından farklı olarak, kulübünüzün logosu ve doğrulanmış rozetiyle resmi etkinlikler oluşturun. Üyelerinize güven verin.',
+        'wl-feat2-title': 'Üyelere Özel / Kapalı Etkinlikler',
+        'wl-feat2-desc': 'Etkinliklerinizi dışarıya kapatarak sadece onaylı kulüp üyelerinizin katılımına ve eşleşmesine açık hale getirebilirsiniz.',
+        'wl-feat3-title': 'Doğrudan Duyuru & Push Bildirimler',
+        'wl-feat3-desc': 'Etkinlik güncellemelerini ve duyurularınızı doğrudan üyelerinizin telefonuna push bildirimi olarak gönderin, WhatsApp karmaşasını bitirin.',
+        'wl-feat4-title': 'Yolculuk Entegrasyonu & Yönetim',
+        'wl-feat4-desc': 'Üyelerinizin etkinliğe giderken kendi aralarında carpool/yolculuk paylaşımı planlamasını sağlayın. Katılımı ve yol arkadaşlarını panelden izleyin.',
         'wl-quote-text': '"Paylaşalım sayesinde etkinliklerimizi çok daha kolay duyuruyoruz. Üye katılımı ikiye katlandı ve koordinasyon çok kolaylaştı."',
         'wl-quote-author': 'Berkay T.',
-        'wl-quote-role': 'NEU Yazılım Kulübü Başkanı',
+        'wl-quote-role': 'Yazılım Kulübü Başkanı',
         'wl-form-tag': 'Ücretsiz Başla',
         'wl-form-title': 'Kulüp Programı',
         'wl-form-desc': 'Bilgilerinizi bırakın, sizi arayalım ve birlikte en iyi çözümü planlayalım.',
@@ -396,7 +402,6 @@ const translations = {
         // Navigation
         'nav-home': 'Home',
         'nav-tech': 'Technology & How It Works',
-        'nav-search': 'Search Trips',
         'nav-download': 'Download',
         'nav-blog': 'Blog',
         'nav-faq': 'FAQ',
@@ -406,16 +411,41 @@ const translations = {
 
         // Hero Section
         'hero-badge': 'Built with Flutter',
-        'hero-title': 'Safe and Affordable<br>Ridesharing',
-        'hero-subtitle': 'Modern transportation solution that smartly matches drivers and passengers. Economical and eco-friendly travel in Cyprus.',
+        'hero-title': 'Social Discovery &<br>Ride Sharing',
+        'hero-subtitle': 'Discover events, match with people to attend together, and share the costs!',
         'hero-download': 'Download App',
         'hero-explore': 'Explore Features',
         'stat-secure': 'Secure',
         'stat-savings': 'Savings',
 
+        // Page Titles
+        'page-title': 'Paylaşalım - Social Discovery and Ride Sharing Platform',
+        'about-page-title': 'About Us | Paylaşalım - Social Discovery and Ride Sharing',
+        'tech-page-title': 'Technology & How It Works | Paylaşalım - Social Discovery and Ride Sharing',
+        'download-page-title': 'Download | Paylaşalım - Social Discovery and Ride Sharing',
+        'faq-page-title': 'FAQ | Paylaşalım - Social Discovery and Ride Sharing',
+        'delete-page-title': 'Delete Account | Paylaşalım - Social Discovery and Ride Sharing',
+        'privacy-page-title': 'Privacy Policy and Disclaimer | Paylaşalım - Social Discovery and Ride Sharing',
+        'blog-page-title': 'Blog | Paylaşalım - Social Discovery and Ride Sharing',
+        'waitlist-page-title': 'Club Program | Paylaşalım - Social Discovery and Ride Sharing',
+
         // Features Section
         'features-title': 'Why Paylaşalım?',
-        'features-subtitle': 'Safe travel experience with modern technology',
+        'features-subtitle': 'Social discovery and safe ride sharing experience',
+
+        // New Features
+        'feature-event-match-title': 'Event Matching',
+        'feature-event-match-desc': 'Choose a concert, theater, or party you want to go to, and match with other users who want to attend! Meet through the app, plan the trip together, and never go to an event alone.',
+        'feature-event-discovery-title': 'Event & Activity Discovery',
+        'feature-event-discovery-desc': 'Join sports matches, coffee meetups, or nature walks created by users around you. Or create your own activity and invite people who share your interests.',
+        'feature-ai-discovery-title': 'AI-Powered "What\'s Nearby?"',
+        'feature-ai-discovery-desc': 'Paste the link of an event you saw on Instagram or a ticket site, and let AI create the event instantly! See all the city\'s events on a single screen.',
+        'feature-ride-sharing-title': 'Ride Sharing',
+        'feature-ride-sharing-desc': 'Easily match with users heading in the same direction. Lower your fuel costs as a driver, or travel affordably and comfortably as a passenger.',
+        'feature-messaging-security-title': 'Messaging & Security',
+        'feature-messaging-security-desc': 'Know who you\'re matching with thanks to user reviews and profiles. Make meeting plans securely with the in-app encrypted messaging feature.',
+
+        // Old Features (maintained for compatibility)
         'feature1-title': 'User Management',
         'feature1-desc': 'Secure registration with Firebase Authentication, profile management and rating system.',
         'feature2-title': 'Smart Matching',
@@ -467,9 +497,8 @@ const translations = {
         'cta-download': 'Download App',
         'cta-learn': 'Learn More',
 
-        // Footer
         'footer-about': 'Paylaşalım',
-        'footer-description': 'Safe and economical ridesharing platform in North Cyprus.',
+        'footer-description': 'Social discovery, event matching, and ride sharing platform.',
         'footer-links-title': 'Quick Links',
         'footer-social-title': 'Social Media',
         'footer-privacy': 'Privacy & Disclaimer',
@@ -492,17 +521,15 @@ const translations = {
 
         // Tech Page - How It Works
         'tech-how-title': 'How It Works?',
-        'tech-how-subtitle': 'Start your journey in 5 simple steps',
-        'tech-step1-title': 'Register and Create Profile',
-        'tech-step1-desc': 'Secure registration with Firebase, add profile photo and preferences.',
-        'tech-step2-title': 'Create or Search Trip',
-        'tech-step2-desc': 'If you\'re a driver, create your trip (start, end, date, seats). If you\'re a passenger, find suitable trips.',
-        'tech-step3-title': 'Coordinate with Instant Messaging',
-        'tech-step3-desc': 'Clarify details with secure in-app messaging.',
-        'tech-step4-title': 'Travel with Live Tracking',
-        'tech-step4-desc': 'Real-time location sharing with Google Maps integration.',
-        'tech-step5-title': 'Rate and Strengthen Community',
-        'tech-step5-desc': 'Build a trusted community with post-trip rating system.',
+        'tech-how-subtitle': 'Start socializing and sharing costs in 4 simple steps',
+        'tech-step1-title': 'Browse the Tabs',
+        'tech-step1-desc': 'Browse through the Search Trips, Find Events, or What\'s Nearby tabs depending on your needs.',
+        'tech-step2-title': 'Send Request & Match',
+        'tech-step2-desc': 'Send a request to join an event you\'re interested in and start matching with other users.',
+        'tech-step3-title': 'Create Listing',
+        'tech-step3-desc': 'Create your own event or trip listing in seconds.',
+        'tech-step4-title': 'Share & Socialize',
+        'tech-step4-desc': 'Match with people who suit you, share the costs, attend events together, and socialize!',
 
         // Tech Page - Technology Stack
         'tech-stack-title': 'Technology Stack',
@@ -544,38 +571,22 @@ const translations = {
 
         // About Page
         'about-title': 'About Us',
-        'about-subtitle': 'Safe ridesharing app developed for North Cyprus',
-        'about-intro': '<strong>Paylaşalım</strong> is a secure and user-friendly ridesharing app developed for people living in Cyprus.',
-        'about-description': 'The app provides an economical and eco-friendly transportation solution by bringing passengers and drivers together. It is a modern mobile platform developed with Flutter and Firebase technologies.',
-        'about-feature1-title': 'Secure Firebase Authentication',
-        'about-feature1-desc': 'Your user information is secured with Firebase',
-        'about-feature2-title': 'Eco-Friendly Sharing',
-        'about-feature2-desc': 'Reduce carbon footprint with mutual sharing',
-        'about-feature3-title': 'Economical Trips',
-        'about-feature3-desc': 'Save money by sharing fuel costs',
+        'about-subtitle': 'North Cyprus\'s first social discovery and ride sharing platform',
+        'about-intro': '<strong>Paylaşalım</strong> is a next-generation platform where you can discover events around you, match with new people to attend them together, and socialize by sharing your rides.',
+        'about-description': 'Paylaşalım is not just a transportation app; it is a social discovery and ride-sharing community that allows you to discover activities around you—from concerts to sports matches, nature walks to coffee meetups—and match with like-minded people to attend them together.',
+        'about-feature1-title': 'Secure Matching',
+        'about-feature1-desc': 'Socialize with confidence thanks to verified profiles and transparent ratings.',
+        'about-feature2-title': 'Social Discovery',
+        'about-feature2-desc': 'Discover sports, concerts, and social activities around you and meet new people.',
+        'about-feature3-title': 'Ride Sharing',
+        'about-feature3-desc': 'Reduce your carbon footprint and travel expenses by sharing costs with people heading in the same direction.',
 
         // Contact Page
-
-        // Search Page
-        'search-badge': 'Real-Time Search',
-        'search-title': 'Search Trips',
-        'search-subtitle': 'Find trips that match your route and connect with drivers',
-        'search-from': 'From',
-        'search-to': 'To',
-        'search-date': 'Date',
-        'search-seats': 'Seats',
-        'search-button': 'Search',
-        'search-loading': 'Loading trips...',
-        'search-empty-title': 'No Trips Found',
-        'search-empty-desc': 'Try changing filters or create a new trip from the app.',
-        'search-download-app': 'Download App',
-        'search-seats-all': 'All',
 
         // Privacy Page
         'privacy-title': 'Privacy Policy and Disclaimer',
         'privacy-subtitle': 'Personal Data Protection and Terms of Use',
         'privacy-page-title': 'Privacy & Disclaimer | Paylaşalım',
-        'search-page-title': 'Search Trips | Paylaşalım',
 
         // Privacy Page - Section 1
         'privacy-section1-title': '1. General Information',
@@ -709,17 +720,17 @@ const translations = {
         'faq-a9': 'Luggage policy is determined by the driver. When creating a trip, drivers specify whether they accept luggage and size limits. Generally, a small backpack or hand luggage is accepted. If you have large suitcases or bulky items, be sure to contact the driver and get approval before booking.',
 
         // Home Waitlist Section
-        'home-wl-heading': 'Be First to Know<br>When We Launch',
-        'home-wl-desc': 'Join the early access list, we\'ll notify you when the app launches.',
-        'home-wl-notify': '⚡ Instant notification',
-        'home-wl-btn': 'Join the Early Access List',
-        'home-wl-privacy': '🔒 Your email is safe. We don\'t send spam.',
+        'home-wl-heading': 'Club Partnership Program<br>Bring Your Community Together',
+        'home-wl-desc': 'Anyone can create standard events, but as a club manager, you get a verified organization profile, can host member-exclusive public/private events, and send direct announcements.',
+        'home-wl-notify': '✨ First 3 Months Free',
+        'home-wl-btn': 'Join Club Program',
+        'home-wl-privacy': '🔒 Your information is safe. Used only to contact you.',
 
         // Waitlist Page / Club Program
         'wl-page-title': 'Club Program | Paylaşalım',
         'wl-badge': 'Special Partnership Program',
         'wl-title': 'Empower Your<br><span class="wl-accent">Club</span>',
-        'wl-subtitle-text': 'Are you a club manager or leading an association? Meet Paylaşalım\'s exclusive event creation feature — communicate more easily with your members, strengthen your network, and bring your community together.',
+        'wl-subtitle-text': 'While anyone can create individual events on Paylaşalım, we offer special tools for club managers and associations. Set up public or member-exclusive events with your verified organization profile, and boost participation and member engagement.',
         'wl-chip1': 'Custom Event Page',
         'wl-chip2': 'Member Management',
         'wl-chip3': 'Instant Notifications',
@@ -732,17 +743,17 @@ const translations = {
         'wl-stat2-label': 'Free Trial',
         'wl-stat3-num': '100%',
         'wl-stat3-label': 'Customizable',
-        'wl-feat1-title': 'Create Events, Gather Members',
-        'wl-feat1-desc': 'Create events with a single click for sports tournaments, social gatherings, seminars, and more. Let your members be notified instantly.',
-        'wl-feat2-title': 'Reach Your Members Directly',
-        'wl-feat2-desc': 'Deliver your announcements instantly with push notifications and in-app messages. Get rid of getting lost in WhatsApp groups.',
-        'wl-feat3-title': 'Going to Event: Ridesharing',
-        'wl-feat3-desc': 'Members can use Paylaşalım while going to the event. Ridesharing increases attendance and lowers transportation costs.',
-        'wl-feat4-title': 'Attendance Tracking & Analytics',
-        'wl-feat4-desc': 'How many members attended, what is the occupancy rate, which hours are more popular? Access all data from a single panel.',
+        'wl-feat1-title': 'Verified Club Events',
+        'wl-feat1-desc': 'Unlike standard user listings, create official events featuring your club logo and a verified badge. Build trust among your members.',
+        'wl-feat2-title': 'Member-Only / Private Events',
+        'wl-feat2-desc': 'Restrict your events so only approved club members can view, join, and match for rides.',
+        'wl-feat3-title': 'Direct Announcements & Push Notifications',
+        'wl-feat3-desc': 'Send event updates and announcements directly to your members\' phones via push notifications, avoiding WhatsApp chaos.',
+        'wl-feat4-title': 'Ride Integration & Management',
+        'wl-feat4-desc': 'Enable members to arrange carpooling among themselves for your events. Track attendance and travel arrangements from a unified dashboard.',
         'wl-quote-text': '"Thanks to Paylaşalım, we announce our events much more easily. Member participation has doubled, and coordination has become very easy."',
         'wl-quote-author': 'Berkay T.',
-        'wl-quote-role': 'NEU Software Club President',
+        'wl-quote-role': 'Software Club President',
         'wl-form-tag': 'Start Free',
         'wl-form-title': 'Club Program',
         'wl-form-desc': 'Leave your information, we will call you and plan the best solution together.',

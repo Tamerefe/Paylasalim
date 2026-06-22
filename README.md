@@ -19,7 +19,6 @@ Paylasalim/
 ├── about.html                     # Hakkımızda
 ├── tech.html                      # Teknoloji & Nasıl Çalışır
 ├── download.html                  # Uygulama İndirme
-├── search.html                    # Yolculuk Arama
 ├── blog.html                      # Blog Listesi
 ├── contact.html                   # İletişim
 ├── faq.html                       # Sık Sorulan Sorular
@@ -41,8 +40,7 @@ Paylasalim/
 ├── i18n.js                        # TR/EN çoklu dil desteği
 ├── analytics-config.js            # Google Analytics 4 + Microsoft Clarity
 ├── cookie-consent.js              # KVKK uyumlu çerez yönetimi
-├── search.js                      # Firebase yolculuk arama
-├── sitemap.xml                    # SEO sitemap (17 URL)
+├── sitemap.xml                    # SEO sitemap (16 URL)
 ├── robots.txt                     # Arama motoru yönergeleri
 └── CNAME                          # GitHub Pages domain: paylasalim.com.tr
 ```
@@ -80,7 +78,6 @@ Tüm yazılar 1000+ kelime, özgün SEO içeriği ve long-tail anahtar kelimeler
 - **SEO Optimizasyonu** — Meta description, canonical, Open Graph, Twitter Card, JSON-LD
 - **KVKK Uyumu** — Çerez onay banner, gizlilik politikası
 - **Google Analytics 4 + Microsoft Clarity** — Kullanıcı davranışı analizi
-- **Firebase Arama** — Gerçek zamanlı yolculuk ilanı arama (Firestore)
 - **Blog** — SEO odaklı long-tail içerik stratejisi
 
 ---
