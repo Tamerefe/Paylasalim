@@ -3,7 +3,7 @@ const translations = {
     tr: {
         // Navigation
         'nav-home': 'Ana Sayfa',
-        'nav-tech': 'Teknoloji & Nasıl Çalışır',
+        'nav-tech': 'Özellikler & Nasıl Çalışır',
         'nav-download': 'İndir',
         'nav-blog': 'Blog',
         'nav-faq': 'SSS',
@@ -23,7 +23,7 @@ const translations = {
         // Page Titles
         'page-title': 'Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşım Platformu',
         'about-page-title': 'Hakkımızda | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
-        'tech-page-title': 'Teknoloji & Nasıl Çalışır | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
+        'tech-page-title': 'Özellikler & Nasıl Çalışır | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
         'download-page-title': 'İndir | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
         'faq-page-title': 'Sık Sorulan Sorular | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
         'delete-page-title': 'Hesabı Sil | Paylaşalım - Sosyal Keşif ve Yolculuk Paylaşımı',
@@ -162,12 +162,26 @@ const translations = {
         'events-highlight': 'Etkinlikleri keşfet, katıl ve sosyalleş!',
         'events-cta': 'Hemen Dene',
 
+        // Trip Feature Section
+        'trip-badge': 'YOLCULUK PAYLAŞIMI',
+        'trip-title': 'Hızlıca Yolculuk İlanı Oluşturun',
+        'trip-subtitle': 'Kendi aracınızla seyahat ederken boş koltuklarınızı paylaşın, masrafları bölüşün ve yeni insanlarla tanışın.',
+        'trip-how-title': 'NASIL KULLANILIR?',
+        'trip-step1': '1. Kalkış ve varış noktalarını gir',
+        'trip-step1-desc': 'Nereden nereye gideceğinizi ve rotanızı seçin',
+        'trip-step2': '2. Tarih, saat ve koltuk sayısını belirle',
+        'trip-step2-desc': 'Seyahat zamanını ve kaç yolcu alabileceğinizi seçin',
+        'trip-step3': '3. İstekleri incele ve yola çık',
+        'trip-step3-desc': 'İstek gönderen yolcuların profillerini inceleyip onaylayın',
+        'trip-highlight': 'Yolculuk paylaş, masrafları bölüş ve karbon ayak izini azalt!',
+        'trip-cta': 'Hemen Yolculuk Paylaş',
+        'trip-badge-float': 'Hemen yolculuğunu paylaş!',
+
         // Download Page
         'download-title': 'Uygulamayı İndir',
-        'download-subtitle': 'iOS ve Android için yakında App Store ve Play Store\'da!',
+        'download-subtitle': 'iOS ve Android için App Store ve Play Store\'da!',
         'download-appstore': 'App Store\'dan İndir',
-        'download-playstore': 'Google Play\'den İndir (Kapalı Beta)',
-        'closed-beta-note': '<strong>Kapalı Beta:</strong> Uygulamayı indirdikten sonra erişim almak için kayıt formunu doldurmanız gerekmektedir.',
+        'download-playstore': 'Google Play\'den İndir',
         'download-requirements': 'Minimum gereksinimler: Android 5.0+ • iOS 12.0+',
 
         // About Page
@@ -322,7 +336,7 @@ const translations = {
         // Home Waitlist Section
         'home-wl-heading': 'Kulüp Ortaklık Programı<br>Topluluğunuzu Bir Araya Getirin',
         'home-wl-desc': 'Herkes normal etkinlik oluşturabilir, ancak kulüp yöneticisi olarak doğrulanmış bir profil edinebilir, sadece üyelerinize özel kapalı/açık etkinlikler düzenleyebilir ve onlara doğrudan duyurular gönderebilirsiniz.',
-        'home-wl-notify': '✨ İlk 3 Ay Ücretsiz',
+        'home-wl-notify': 'İlk 3 Ay Ücretsiz',
         'home-wl-btn': 'Kulüp Programına Katıl',
         'home-wl-privacy': '🔒 Bilgileriniz güvende. Yalnızca sizinle iletişim kurmak için kullanılır.',
 
@@ -401,7 +415,7 @@ const translations = {
     en: {
         // Navigation
         'nav-home': 'Home',
-        'nav-tech': 'Technology & How It Works',
+        'nav-tech': 'Features & How It Works',
         'nav-download': 'Download',
         'nav-blog': 'Blog',
         'nav-faq': 'FAQ',
@@ -421,7 +435,7 @@ const translations = {
         // Page Titles
         'page-title': 'Paylaşalım - Social Discovery and Ride Sharing Platform',
         'about-page-title': 'About Us | Paylaşalım - Social Discovery and Ride Sharing',
-        'tech-page-title': 'Technology & How It Works | Paylaşalım - Social Discovery and Ride Sharing',
+        'tech-page-title': 'Features & How It Works | Paylaşalım - Social Discovery and Ride Sharing',
         'download-page-title': 'Download | Paylaşalım - Social Discovery and Ride Sharing',
         'faq-page-title': 'FAQ | Paylaşalım - Social Discovery and Ride Sharing',
         'delete-page-title': 'Delete Account | Paylaşalım - Social Discovery and Ride Sharing',
@@ -561,12 +575,26 @@ const translations = {
         'events-highlight': 'Discover events, participate and socialize!',
         'events-cta': 'Try Now',
 
+        // Trip Feature Section
+        'trip-badge': 'RIDE SHARING',
+        'trip-title': 'Quickly Create a Ride Listing',
+        'trip-subtitle': 'Share your empty seats while traveling in your own vehicle, split expenses, and meet new people.',
+        'trip-how-title': 'HOW TO USE?',
+        'trip-step1': '1. Enter departure and arrival points',
+        'trip-step1-desc': 'Choose where you are going and your route',
+        'trip-step2': '2. Set date, time and available seats',
+        'trip-step2-desc': 'Select travel time and how many passengers you can take',
+        'trip-step3': '3. Review requests and set off',
+        'trip-step3-desc': 'Review and approve profiles of passengers sending requests',
+        'trip-highlight': 'Share rides, split costs, and reduce your carbon footprint!',
+        'trip-cta': 'Share a Ride Now',
+        'trip-badge-float': 'Share your ride now!',
+
         // Download Page
         'download-title': 'Download App',
-        'download-subtitle': 'Coming soon to App Store and Play Store for iOS and Android!',
+        'download-subtitle': 'Available on the App Store and Play Store for iOS and Android!',
         'download-appstore': 'Download from App Store',
-        'download-playstore': 'Download from Google Play (Closed Beta)',
-        'closed-beta-note': '<strong>Closed Beta:</strong> After downloading the app, you need to fill out the registration form to get access.',
+        'download-playstore': 'Download from Google Play',
         'download-requirements': 'Minimum requirements: Android 5.0+ • iOS 12.0+',
 
         // About Page
@@ -722,7 +750,7 @@ const translations = {
         // Home Waitlist Section
         'home-wl-heading': 'Club Partnership Program<br>Bring Your Community Together',
         'home-wl-desc': 'Anyone can create standard events, but as a club manager, you get a verified organization profile, can host member-exclusive public/private events, and send direct announcements.',
-        'home-wl-notify': '✨ First 3 Months Free',
+        'home-wl-notify': 'First 3 Months Free',
         'home-wl-btn': 'Join Club Program',
         'home-wl-privacy': '🔒 Your information is safe. Used only to contact you.',
 
