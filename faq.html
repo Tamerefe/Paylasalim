@@ -48,31 +48,7 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container nav-row">
-            <a class="logo" href="index.html">
-                <img src="assets/logo.jpeg" alt="Paylaşalım Logo" class="logo-img">
-            </a>
-            <button id="nav-toggle" class="nav-toggle" aria-expanded="false">☰</button>
-            <nav class="nav" id="main-nav" aria-hidden="false">
-                <ul>
-                    <li><a href="index.html" data-i18n="nav-home">Ana Sayfa</a></li>
-                    <li><a href="tech.html" data-i18n="nav-tech">Özellikler &amp; Nasıl Çalışır</a></li>
-                    <li><a href="download.html" data-i18n="nav-download">İndir</a></li>
-                    <li><a href="about.html" data-i18n="nav-about">Hakkımızda</a></li>
-                    <li><a href="waitlist.html" class="btn btn-primary"
-                            style="background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none;"
-                            data-i18n="nav-waitlist">Kulüp Programı</a></li>
-                    <li>
-                        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
-                            <span class="lang-flag" id="lang-flag"></span>
-                            <span class="lang-text">EN</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="navbar-placeholder"></div>
 
     <main style="margin-bottom: 2rem;">
         <section class="faq-section">
@@ -241,37 +217,6 @@
     <script src="i18n.js"></script>
     <script src="script.js"></script>
 
-    <!-- FAQ Accordion Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-
-                question.addEventListener('click', () => {
-                    const isOpen = question.getAttribute('aria-expanded') === 'true';
-
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        const otherQuestion = otherItem.querySelector('.faq-question');
-                        const otherAnswer = otherItem.querySelector('.faq-answer');
-                        otherQuestion.setAttribute('aria-expanded', 'false');
-                        otherAnswer.style.maxHeight = null;
-                        otherItem.classList.remove('active');
-                    });
-
-                    // Toggle current item
-                    if (!isOpen) {
-                        question.setAttribute('aria-expanded', 'true');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        item.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -12,7 +12,6 @@ const translations = {
         'nav-waitlist': 'Kulüp Programı',
 
         // Hero Section
-        'hero-badge': 'Flutter ile Geliştirildi',
         'hero-title': 'Sosyal Keşif ve<br>Yolculuk Paylaşımı',
         'hero-subtitle': 'Etkinlikleri keşfet, insanlarla eşleşip birlikte katıl ve masrafları paylaş!',
         'hero-download': 'Uygulamayı İndir',
@@ -424,7 +423,6 @@ const translations = {
         'nav-waitlist': 'Club Program',
 
         // Hero Section
-        'hero-badge': 'Built with Flutter',
         'hero-title': 'Social Discovery &<br>Ride Sharing',
         'hero-subtitle': 'Discover events, match with people to attend together, and share the costs!',
         'hero-download': 'Download App',
@@ -907,12 +905,12 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
 
-    // Language toggle button
-    const langToggle = document.getElementById('lang-toggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', () => {
+    // Language toggle button with event delegation (robust to dynamic component load)
+    document.addEventListener('click', (e) => {
+        const langToggle = e.target.closest('#lang-toggle');
+        if (langToggle) {
             const newLang = currentLang === 'tr' ? 'en' : 'tr';
             setLanguage(newLang);
-        });
-    }
+        }
+    });
 });
